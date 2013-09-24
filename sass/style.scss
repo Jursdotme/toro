@@ -1,0 +1,31 @@
+/******************************************************************
+Site Name: Artlinco
+Author: Web&Co
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+
+//
+// IMPORTING STYLES
+//
+
+@import "compass";
+
+// import normalize
+@import "normalize";
+@import "mixins";
+
+// Import configurable settings
+@import "variables";
+@import "typography";
+@import "elements";
+@import "navigation";
+
+@import "grid";
+@import "base";

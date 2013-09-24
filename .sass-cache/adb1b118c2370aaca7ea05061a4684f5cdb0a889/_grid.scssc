@@ -1,0 +1,824 @@
+3.2.4 (Media Mark)
+dfa33220f287b66a22ce86e1850bc44c3d3663f7
+o:Sass::Tree::RootNode
+:@template"†//
+// @version
+//   4.3.0
+//
+// @title
+//   Grid
+//
+// @description
+//   With a default "small-#" grid, a 640-1024px "medium-#" grid, and a 1024+ "large-#" grid, we've got you covered for any layout you can think of.
+//
+
+//
+// Grid Variables
+//
+$include-html-grid-classes: true !default;
+$row-width: emCalc(1000) !default;
+$column-gutter: emCalc(30) !default;
+$total-columns: 12 !default;
+
+//
+// Grid Calc Function
+//
+@function gridCalc($colNumber, $totalColumns) {
+  @return percentage(($colNumber / $totalColumns));
+}
+
+// Right and Left "auto" for grid
+%right-auto { #{$opposite-direction}: auto; }
+%left-auto { #{$default-float}: auto; }
+
+//
+// Grid Mixins
+//
+
+// Create default, nested, and collapsed rows
+@mixin grid-row($behavior: false) {
+
+  // use @include grid-row(nest); to include a nested row
+  @if $behavior == nest {
+    margin-#{$default-float}: -($column-gutter/2);
+    margin-#{$opposite-direction}: -($column-gutter/2);
+    max-width: none;
+    width: auto;
+  }
+
+  // use @include grid-row(collapse); to collapsed a container row margins
+  @else if $behavior == collapse {
+    margin-#{$default-float}: 0;
+    margin-#{$opposite-direction}: 0;
+    max-width: $row-width;
+    width: 100%;
+  }
+
+  // use @include grid-row(nest-collapse); to collapse outer margins on a nested row
+  @else if $behavior == nest-collapse {
+    margin-#{$default-float}: 0;
+    margin-#{$opposite-direction}: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  // use @include grid-row; to use a container row
+  @else {
+    margin-#{$default-float}: auto;
+    margin-#{$opposite-direction}: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: $row-width;
+    width: 100%;
+  }
+
+  @include clearfix;
+}
+
+
+// For creating columns - @include these inside a media query to control small vs. large grid layouts
+@mixin grid-column($columns:false, $last-column:false, $center:false, $offset:false, $push:false, $pull:false, $collapse:false, $float:true, $include-position-relative: false) {
+
+  // If collapsed, get rid of gutter padding
+  @if $collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Gutter padding whenever a column isn't set to collapse
+  // (use $collapse:null to do nothing)
+  @else if $collapse == false {
+    padding-left: $column-gutter / 2;
+    padding-right: $column-gutter / 2;
+  }
+
+  // If a column number is given, calculate width
+  @if $columns {
+    width: gridCalc($columns, $total-columns);
+
+    // If last column, float naturally instead of to the right
+    @if $last-column { float: $opposite-direction; }
+  }
+
+  // If offset, calculate appropriate margins
+  @if $offset { margin-#{$default-float}: gridCalc($offset, $total-columns); }
+
+  // Source Ordering, adds left/right depending on which you use.
+  @if $push { #{$default-float}: gridCalc($push, $total-columns); #{$opposite-direction}: auto; }
+  @if $pull { #{$opposite-direction}: gridCalc($pull, $total-columns); #{$default-float}: auto; }
+
+  // If centered, get rid of float and add appropriate margins
+  @if $center {
+    margin-#{$default-float}: auto;
+    margin-#{$opposite-direction}: auto;
+    float: none !important;
+  }
+
+  @if $float {
+    @if $float == left or $float == true { float: $default-float; }
+    @else if $float == right { float: $opposite-direction; }
+    @else { float: none; }
+  }
+
+  // This helps us not need to repeat "position:relative" everywehere
+  @if $include-position-relative { position: relative; }
+}
+
+
+@if $include-html-grid-classes != false {
+  /* Grid HTML Classes */
+  .row {
+    @include grid-row;
+
+    &.collapse {
+      .column,
+      .columns { @include grid-column($collapse:true); }
+    }
+
+    .row { @include grid-row($behavior:nest);
+      &.collapse { @include grid-row($behavior:nest-collapse); }
+    }
+  }
+
+  .column,
+  .columns { @include grid-column($columns:$total-columns, $include-position-relative: true); }
+
+  
+
+    @for $i from 1 through $total-columns {
+      .large#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+    }
+
+    @for $i from 0 through $total-columns - 1 {
+      .large-offset-#{$i} { @include grid-column($offset:$i, $collapse:null,$float:false); }
+    }
+
+    @for $i from 1 through $total-columns - 1 {
+      .large-push#{-$i} { @include grid-column($push:$i, $collapse:null, $float:false); }
+      .large-pull#{-$i} { @include grid-column($pull:$i, $collapse:null, $float:false); }
+    }
+
+    .column.large-centered,
+    .columns.large-centered { @include grid-column($center:true, $collapse:null, $float:false); }
+
+    .column.large-uncentered,
+    .columns.large-uncentered {
+      margin-#{$default-float}: 0;
+      margin-#{$opposite-direction}: 0;
+      float: $default-float !important;
+    }
+
+  
+
+  @media only screen and (max-width: 1024px) {
+
+    @for $i from 1 through $total-columns {
+      .medium#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+    }
+
+    @for $i from 0 through $total-columns - 1 {
+      .medium-offset-#{$i} { @include grid-column($offset:$i, $collapse:null,$float:false); }
+    }
+
+    @for $i from 1 through $total-columns - 1 {
+      .medium-push#{-$i} { @include grid-column($push:$i, $collapse:null, $float:false); }
+      .medium-pull#{-$i} { @include grid-column($pull:$i, $collapse:null, $float:false); }
+    }
+
+    .column.medium-centered,
+    .columns.medium-centered { @include grid-column($center:true, $collapse:null, $float:false); }
+
+    .column.medium-uncentered,
+    .columns.medium-uncentered {
+      margin-#{$default-float}: 0;
+      margin-#{$opposite-direction}: 0;
+      float: $default-float !important;
+    }
+
+  }
+
+  @media only screen and (max-width: 640px) {
+
+     @for $i from 1 through $total-columns {
+      .small#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+    }
+
+    @for $i from 0 through $total-columns - 2 {
+      .small-offset-#{$i} { @include grid-column($offset:$i, $collapse:null,$float:false); }
+    }
+
+    [class*="column"] + [class*="column"]:last-child { float: $opposite-direction; }
+    [class*="column"] + [class*="column"].end { float: $default-float; }
+
+    .column.small-centered,
+    .columns.small-centered { @include grid-column($center:true, $collapse:null, $float:false); }
+
+  }
+
+}
+
+//
+// Block Grid Variables
+//
+$include-html-grid-classes: $include-html-classes !default;
+
+// We use this to control the maximum number of block grid elements per row
+$block-grid-elements: 12 !default;
+$block-grid-default-spacing: $column-gutter; //emCalc(20) !default;
+
+// Enables media queries for block-grid classes. Set to false if writing semantic HTML.
+$block-grid-media-queries: true !default;
+
+//
+// Block Grid Mixins
+//
+
+// We use this mixin to create different block-grids. You can apply per-row and spacing options.
+// Setting $base-style to false will ommit default styles.
+@mixin block-grid($per-row:false, $spacing:$block-grid-default-spacing, $base-style:true) {
+
+  @if $base-style {
+    display: block;
+    padding: 0;
+    margin: 0 (-$spacing/2);
+    @include clearfix;
+
+    &>li {
+      display: inline;
+      height: auto;
+      float: $default-float;
+      padding: 0 ($spacing/2) $spacing;
+    }
+  }
+
+  @if $per-row {
+    &>li {
+      width: 100%/$per-row;
+      padding: 0 ($spacing/2) $spacing;
+
+      &:nth-of-type(n) { clear: none; }
+      &:nth-of-type(#{$per-row}n+1) { clear: both; }
+    }
+  }
+
+}
+
+@if $include-html-grid-classes {
+  /* Foundation Block Grids for below small breakpoint */
+  @media only screen {
+    [class*="block-grid-"] { @include block-grid; }
+
+    @for $i from 1 through $block-grid-elements {
+      .small-block-grid-#{($i)} {
+        @include block-grid($i,$block-grid-default-spacing,false);
+      }
+    }
+  }
+
+  /* Foundation Block Grids for above small breakpoint */
+  @media #{$small} {
+    /* Remove small grid clearing */
+    @for $i from 1 through $block-grid-elements {
+      .small-block-grid-#{($i)} > li:nth-of-type(#{$i}n+1) { clear: none; }
+    }
+    @for $i from 1 through $block-grid-elements {
+      .large-block-grid-#{($i)} {
+        @include block-grid($i,$block-grid-default-spacing,false);
+      }
+    }
+  }
+}:@has_childrenT:
+@options{ :@children["o:Sass::Tree::CommentNode
+;@;	[ :@value["ﬁ/*
+ * @version
+ *   4.3.0
+ *
+ * @title
+ *   Grid
+ *
+ * @description
+ *   With a default "small-#" grid, a 640-1024px "medium-#" grid, and a 1024+ "large-#" grid, we've got you covered for any layout you can think of.
+ * */:
+@type:silent:
+@lineio;
+
+;@;	[ ;["/*
+ * Grid Variables
+ * */;;
+;io:Sass::Tree::VariableNode:
+@expro:Sass::Script::Bool;@;T;i;@;	[ :
+@name"include-html-grid-classes:
+@guarded"
+!default;io;;o:Sass::Script::Funcall;@:@splat0:
+@args[o:Sass::Script::Number:@numerator_units[ ;@:@original"	1000;iË:@denominator_units[ ;i;"emCalc;i:@keywords{ ;@;	[ ;"row-width;"
+!default;io;;o;;@;0;[o;;[ ;@;"30;i#;@;i;"emCalc;i;{ ;@;	[ ;"column-gutter;"
+!default;io;;o;;[ ;@;"12;i;@;i;@;	[ ;"total-columns;"
+!default;io;
+
+;@;	[ ;["#/*
+ * Grid Calc Function
+ * */;;
+;io:Sass::Tree::FunctionNode;T;@;	[o:Sass::Tree::ReturnNode	;o;;@;0;[o:Sass::Script::Operation
+:@operator:div;@:@operand2o:Sass::Script::Variable	;@:@underscored_name"totalColumns;"totalColumns;i:@operand1o;"	;@;#"colNumber;"colNumber;i;i;"percentage;i;{ ;@;	[ ;i;0;[[o;";@;#"colNumber;"colNumber0[o;";@;#"totalColumns;"totalColumns0;"
+gridCalc;io;
+
+;@;	[ ;[")/* Right and Left "auto" for grid */;;
+;i o:Sass::Tree::RuleNode;T;@:
+@tabsi ;	[o:Sass::Tree::PropNode;@;&i ;	[ :@prop_syntax:new;o:Sass::Script::String;@;"	auto;:identifier;[o;"	;@;#"opposite_direction;"opposite-direction;i!;i!:
+@rule["%right-auto:@parsed_ruleso:"Sass::Selector::CommaSequence:
+@members[o:Sass::Selector::Sequence;/[o:#Sass::Selector::ToroSequence
+;/[o: Sass::Selector::Placeholder;["right-auto:@filename" ;i!:
+@subject0;3@j:
+@sourceso:Set:
+@hash{ ;i!;3@j;i!;i!o;%;T;@;&i ;	[o;';@;&i ;	[ ;(;);o;*;@;"	auto;;+;[o;"	;@;#"default_float;"default-float;i";i";,["%left-auto;-o;.;/[o;0;/[o;1
+;/[o;2;["left-auto;3" ;i";40;3@};5o;6;7{ ;i";3@};i";i"o;
+
+;@;	[ ;["/*
+ * Grid Mixins
+ * */;;
+;i$o;
+
+;@;	[ ;["5/* Create default, nested, and collapsed rows */;;
+;i(o:Sass::Tree::MixinDefNode;T;@;	[o;
+
+;@;	[ ;["?/* use @include grid-row(nest); to include a nested row */;;
+;i+u:Sass::Tree::IfNodeE[o:Sass::Script::Operation
+:@operator:eq:
+@options{ :@operand2o:Sass::Script::String	;@:@value"	nest:
+@type:identifier:
+@linei,:@operand1o:Sass::Script::Variable	;@:@underscored_name"
+behavior:
+@name"
+behavior;i,;i,u:Sass::Tree::IfNodeô[o:Sass::Script::Operation
+:@operator:eq:
+@options{ :@operand2o:Sass::Script::String	;@:@value"
+collapse:
+@type:identifier:
+@linei4:@operand1o:Sass::Script::Variable	;@:@underscored_name"
+behavior:
+@name"
+behavior;i4;i4u:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operator:eq:
+@options{ :@operand2o:Sass::Script::String	;@:@value"nest-collapse:
+@type:identifier:
+@linei<:@operand1o:Sass::Script::Variable	;@:@underscored_name"
+behavior:
+@name"
+behavior;i<;i<u:Sass::Tree::IfNodex[00[o:Sass::Tree::PropNode:
+@options{ :
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::String;@;"	auto:
+@type:identifier:
+@name["margin-o:Sass::Script::Variable	;@:@underscored_name"default_float;"default-float:
+@lineiE;iEo; ;@;i ;[ ;	;
+;o;;@;"	auto;
+;;["margin-o;	;@;"opposite_direction;"opposite-direction;iF;iFo; ;@;i ;[ ;	;
+;o;;@;"0;
+;;["margin-top;iGo; ;@;i ;[ ;	;
+;o;;@;"0;
+;;["margin-bottom;iHo; ;@;i ;[ ;	;
+;o;	;@;"row_width;"row-width;iI;["max-width;iIo; ;@;i ;[ ;	;
+;o;;@;"	100%;
+;;["
+width;iJ[	o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new;o;
+;@;"0;;
+;["margin-o;	;@;"default_float;"default-float;i=;i=o;;@;i ;[ ;;;o;
+;@;"0;;
+;["margin-o;	;@;"opposite_direction;"opposite-direction;i>;i>o;;@;i ;[ ;;;o;
+;@;"	none;;
+;["max-width;i?o;;@;i ;[ ;;;o;
+;@;"	auto;;
+;["
+width;i@[	o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new;o;
+;@;"0;;
+;["margin-o;	;@;"default_float;"default-float;i5;i5o;;@;i ;[ ;;;o;
+;@;"0;;
+;["margin-o;	;@;"opposite_direction;"opposite-direction;i6;i6o;;@;i ;[ ;;;o;	;@;"row_width;"row-width;i7;["max-width;i7o;;@;i ;[ ;;;o;
+;@;"	100%;;
+;["
+width;i8[	o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new;o:!Sass::Script::UnaryOperation	;:
+minus;@:
+@operando; 
+;:div;@;	o:Sass::Script::Number:@numerator_units[ ;@:@original"2;i:@denominator_units[ ;i-;o;	;@;"column_gutter;"column-gutter;i-;i-;i-;["margin-o;	;@;"default_float;"default-float;i-;i-o;;@;i ;[ ;;;o;	;;;@;o; 
+;;;@;	o;;[ ;@;"2;i; @;i.;o;	;@;"column_gutter;"column-gutter;i.;i.;i.;["margin-o;	;@;"opposite_direction;"opposite-direction;i.;i.o;;@;i ;[ ;;;o;
+;@;"	none;;
+;["max-width;i/o;;@;i ;[ ;;;o;
+;@;"	auto;;
+;["
+width;i0o:Sass::Tree::MixinNode;@;	[ ;0;[ ;"
+clearfix;iM;{ ;0;[[o;";@;#"
+behavior;"
+behavioro;;@;F;i);"
+grid-row;i)o;
+
+;@;	[ ;["m/* For creating columns - @include these inside a media query to control small vs. large grid layouts */;;
+;iQo;8;T;@;	[o;
+
+;@;	[ ;["2/* If collapsed, get rid of gutter padding */;;
+;iTu;9≠[o:Sass::Script::Variable	:
+@options{ :@underscored_name"
+collapse:
+@name"
+collapse:
+@lineiUu:Sass::Tree::IfNode][o:Sass::Script::Operation
+:@operator:eq:
+@options{ :@operand2o:Sass::Script::Bool;@:@valueF:
+@linei\:@operand1o:Sass::Script::Variable	;@:@underscored_name"
+collapse:
+@name"
+collapse;i\;i\0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new;o; 
+;:div;@;	o:Sass::Script::Number:@numerator_units[ ;@:@original"2;i:@denominator_units[ ;i];
+o;	;@;"column_gutter;"column-gutter;i];i];["padding-left;i]o;;@;i ;[ ;;;o; 
+;;;@;	o;;[ ;@;"2;i;@;i^;
+o;	;@;"column_gutter;"column-gutter;i^;i^;["padding-right;i^[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::String;@;"0:
+@type:identifier;["padding-left;	iVo;;@;i ;
+[ ;;;o;;@;"0;;;["padding-right;	iWo;
+
+;@;	[ ;["7/* If a column number is given, calculate width */;;
+;iau;9Ë[o:Sass::Script::Variable	:
+@options{ :@underscored_name"columns:
+@name"columns:
+@lineib0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::Funcall;@:@splat0:
+@args[o; 	;@;"columns;"columns;	ico; 	;@;"total_columns;"total-columns;	ic;"
+gridCalc;	ic:@keywords{ ;["
+width;	ico:Sass::Tree::CommentNode
+;@;[ ;["B/* If last column, float naturally instead of to the right */:
+@type:silent;	ieu:Sass::Tree::IfNode˛[o:Sass::Script::Variable	:
+@options{ :@underscored_name"last_column:
+@name"last-column:
+@lineif0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo; 	;@;"opposite_direction;"opposite-direction;	if;["
+float;	ifo;
+
+;@;	[ ;["3/* If offset, calculate appropriate margins */;;
+;iiu;9Ü[o:Sass::Script::Variable	:
+@options{ :@underscored_name"offset:
+@name"offset:
+@lineij0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::Funcall;@:@splat0:
+@args[o; 	;@;"offset;"offset;	ijo; 	;@;"total_columns;"total-columns;	ij;"
+gridCalc;	ij:@keywords{ ;["margin-o; 	;@;"default_float;"default-float;	ij;	ijo;
+
+;@;	[ ;["G/* Source Ordering, adds left/right depending on which you use. */;;
+;ilu;9[o:Sass::Script::Variable	:
+@options{ :@underscored_name"	push:
+@name"	push:
+@lineim0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::Funcall;@:@splat0:
+@args[o; 	;@;"	push;"	push;	imo; 	;@;"total_columns;"total-columns;	im;"
+gridCalc;	im:@keywords{ ;[o; 	;@;"default_float;"default-float;	im;	imo;
+;@;i ;[ ;
+;;o:Sass::Script::String;@;"	auto:
+@type:identifier;[o; 	;@;"opposite_direction;"opposite-direction;	im;	imu;9[o:Sass::Script::Variable	:
+@options{ :@underscored_name"	pull:
+@name"	pull:
+@linein0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::Funcall;@:@splat0:
+@args[o; 	;@;"	pull;"	pull;	ino; 	;@;"total_columns;"total-columns;	in;"
+gridCalc;	in:@keywords{ ;[o; 	;@;"opposite_direction;"opposite-direction;	in;	ino;
+;@;i ;[ ;
+;;o:Sass::Script::String;@;"	auto:
+@type:identifier;[o; 	;@;"default_float;"default-float;	in;	ino;
+
+;@;	[ ;["D/* If centered, get rid of float and add appropriate margins */;;
+;ipu;9&[o:Sass::Script::Variable	:
+@options{ :@underscored_name"center:
+@name"center:
+@lineiq0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::String;@;"	auto:
+@type:identifier;["margin-o; 	;@;"default_float;"default-float;	ir;	iro;
+;@;i ;[ ;
+;;o;;@;"	auto;;;["margin-o; 	;@;"opposite_direction;"opposite-direction;	is;	iso;
+;@;i ;[ ;
+;;o:Sass::Script::List	;@:@separator:
+space;[o;	;@;"	none;;;	ito;	;@;"!important;;;	it;	it;["
+float;	itu;9ö[o:Sass::Script::Variable	:
+@options{ :@underscored_name"
+float:
+@name"
+float:
+@lineiw0[u:Sass::Tree::IfNode$[o:Sass::Script::Operation
+:@operator:or:
+@options{ :@operand2o; 
+;:eq;@;	o:Sass::Script::Bool;@:@valueT:
+@lineix:@operand1o:Sass::Script::Variable	;@:@underscored_name"
+float:
+@name"
+float;
+ix;
+ix;o; 
+;;
+;@;	o:Sass::Script::String	;@;"	left:
+@type:identifier;
+ix;o;	;@;"
+float;"
+float;
+ix;
+ix;
+ixu:Sass::Tree::IfNode9[o:Sass::Script::Operation
+:@operator:eq:
+@options{ :@operand2o:Sass::Script::String	;@:@value"
+right:
+@type:identifier:
+@lineiy:@operand1o:Sass::Script::Variable	;@:@underscored_name"
+float:
+@name"
+float;iy;iyu:Sass::Tree::IfNode≠[00[o:Sass::Tree::PropNode:
+@options{ :
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::String;@;"	none:
+@type:identifier:
+@name["
+float:
+@lineiz[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new;o;	;@;"opposite_direction;"opposite-direction;iy;["
+float;iy[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new;o;	;@;"default_float;"default-float;
+ix;["
+float;
+ixo;
+
+;@;	[ ;["K/* This helps us not need to repeat "position:relative" everywehere */;;
+;i}u;9 [o:Sass::Script::Variable	:
+@options{ :@underscored_name"include_position_relative:
+@name"include-position-relative:
+@linei~0[o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::String;@;"
+relative:
+@type:identifier;["
+position;	i~;0;[[o;";@;#"columns;"columnso;;@;F;iR[o;";@;#"last_column;"last-columno;;@;F;iR[o;";@;#"center;"centero;;@;F;iR[o;";@;#"offset;"offseto;;@;F;iR[o;";@;#"	push;"	pusho;;@;F;iR[o;";@;#"	pull;"	pullo;;@;F;iR[o;";@;#"
+collapse;"
+collapseo;;@;F;iR[o;";@;#"
+float;"
+floato;;@;T;iR[o;";@;#"include_position_relative;"include-position-relativeo;;@;F;iR;"grid-column;iRu;9ã#[o:Sass::Script::Operation
+:@operator:neq:
+@options{ :@operand2o:Sass::Script::Bool;@:@valueF:
+@linei}:@operand1o:Sass::Script::Variable	;@:@underscored_name"include_html_grid_classes:
+@name"include-html-grid-classes;i};i}0[o:Sass::Tree::CommentNode
+;@:@children[ ;["/* Grid HTML Classes */:
+@type:normal;i~o:Sass::Tree::RuleNode:@has_childrenT;@:
+@tabsi ;[o:Sass::Tree::MixinNode;@;[ :@splat0:
+@args[ ;"
+grid-row;iÄ:@keywords{ o;;T;@;i ;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iÑ;{"
+collapseo;
+;@;T;iÑ:
+@rule[".column,
+      .columns:@parsed_ruleso:"Sass::Selector::CommaSequence:
+@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::ToroSequence
+;[o:Sass::Selector::Class;["column:@filename" ;iÑ:
+@subject0;#@.:
+@sourceso:Set:
+@hash{ ;iÑo; ;["
+o;!
+;[o;";["columns;#@.;iÑ;$0;#@.;%o;&;'{ ;iÑ;#@.;iÑ;iÑ;["&.collapse;o;;[o; ;[o;!
+;[o:Sass::Selector::Parent;#" ;iÇo;";["
+collapse;#@D;iÇ;$0;#@D;%o;&;'{ ;iÇ;#@D;iÇ;iÇo;;T;@;i ;[o;;@;[ ;0;[ ;"
+grid-row;iá;{"
+behavioro:Sass::Script::String	;@;"	nest;:identifier;iáo;;T;@;i ;[o;;@;[ ;0;[ ;"
+grid-row;ià;{"
+behavioro;)	;@;"nest-collapse;;*;ià;["&.collapse;o;;[o; ;[o;!
+;[o;(;#" ;iào;";["
+collapse;#@g;ià;$0;#@g;%o;&;'{ ;ià;#@g;ià;ià;["	.row;o;;[o; ;[o;!
+;[o;";["row;#" ;iá;$0;#@x;%o;&;'{ ;iá;#@x;iá;iá;["	.row;o;;[o; ;[o;!
+;[o;";["row;#" ;i;$0;#@Å;%o;&;'{ ;i;#@Å;i;io;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iç;{"include_position_relativeo;
+;@;T;iç"columnso;	;@;"total_columns;"total-columns;iç;[".column,
+  .columns;o;;[o; ;[o;!
+;[o;";["column;#" ;iç;$0;#@ú;%o;&;'{ ;iço; ;["
+o;!
+;[o;";["columns;#@ú;iç;$0;#@ú;%o;&;'{ ;iç;#@ú;iç;iço:Sass::Tree::ForNode
+:
+@fromo:Sass::Script::Number:@numerator_units[ ;@:@original"1;i:@denominator_units[ ;ië;T;@:	@var"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;ií;{"
+floato;
+;@;F;ií"columnso;	;@;"i;"i;ií"
+collapseo:Sass::Script::Null;@;0;ií;[".largeo:!Sass::Script::UnaryOperation	;:
+minus;@:
+@operando;	;@;"i;"i;ií;ií;ií:@too;	;@;"total_columns;"total-columns;ië:@exclusiveF;iëo;+
+;,o;-;.[ ;@;/"0;i ;0@≠;iï;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iñ;{"
+floato;
+;@;F;iñ"
+collapseo;2;@;0;iñ"offseto;	;@;"i;"i;iñ;[".large-offset-o;	;@;"i;"i;iñ;iñ;6o; 
+;;4;@;	o;-;.[ ;@;/"1;i;0@≠;iï;
+o;	;@;"total_columns;"total-columns;iï;iï;7F;iïo;+
+;,o;-;.[ ;@;/"1;i;0@≠;iô;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iö;{"
+floato;
+;@;F;iö"
+collapseo;2;@;0;iö"	pusho;	;@;"i;"i;iö;[".large-pusho;3	;;4;@;5o;	;@;"i;"i;iö;iö;iöo;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iõ;{"
+floato;
+;@;F;iõ"
+collapseo;2;@;0;iõ"	pullo;	;@;"i;"i;iõ;[".large-pullo;3	;;4;@;5o;	;@;"i;"i;iõ;iõ;iõ;6o; 
+;;4;@;	o;-;.[ ;@;/"1;i;0@≠;iô;
+o;	;@;"total_columns;"total-columns;iô;iô;7F;iôo;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iü;{"
+floato;
+;@;F;iü"centero;
+;@;T;iü"
+collapseo;2;@;0;iü;["8.column.large-centered,
+    .columns.large-centered;o;;[o; ;[o;!
+;[o;";["column;#" ;iüo;";["large-centered;#@8;iü;$0;#@8;%o;&;'{ ;iüo; ;["
+o;!
+;[o;";["columns;#@8;iüo;";["large-centered;#@8;iü;$0;#@8;%o;&;'{ ;iü;#@8;iü;iüo;;T;@;i ;[o:Sass::Tree::PropNode;@;i ;[ :@prop_syntax:new;o;);@;"0;;*;["margin-o;	;@;"default_float;"default-float;i£;i£o;8;@;i ;[ ;9;:;o;);@;"0;;*;["margin-o;	;@;"opposite_direction;"opposite-direction;i§;i§o;8;@;i ;[ ;9;:;o:Sass::Script::List	;@:@separator:
+space;[o;	;@;"default_float;"default-float;i•o;)	;@;"!important;;*;i•;i•;["
+float;i•;["<.column.large-uncentered,
+    .columns.large-uncentered;o;;[o; ;[o;!
+;[o;";["column;#" ;i¢o;";["large-uncentered;#@u;i¢;$0;#@u;%o;&;'{ ;i¢o; ;["
+o;!
+;[o;";["columns;#@u;i¢o;";["large-uncentered;#@u;i¢;$0;#@u;%o;&;'{ ;i¢;#@u;i¢;i¢o:Sass::Tree::MediaNode;T;@;i ;[
+o;+
+;,o;-;.[ ;@;/"1;i;0@≠;i¨;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;i≠;{"
+floato;
+;@;F;i≠"columnso;	;@;"i;"i;i≠"
+collapseo;2;@;0;i≠;[".mediumo;3	;;4;@;5o;	;@;"i;"i;i≠;i≠;i≠;6o;	;@;"total_columns;"total-columns;i¨;7F;i¨o;+
+;,o;-;.[ ;@;/"0;i ;0@≠;i∞;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;i±;{"
+floato;
+;@;F;i±"
+collapseo;2;@;0;i±"offseto;	;@;"i;"i;i±;[".medium-offset-o;	;@;"i;"i;i±;i±;6o; 
+;;4;@;	o;-;.[ ;@;/"1;i;0@≠;i∞;
+o;	;@;"total_columns;"total-columns;i∞;i∞;7F;i∞o;+
+;,o;-;.[ ;@;/"1;i;0@≠;i¥;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iµ;{"
+floato;
+;@;F;iµ"
+collapseo;2;@;0;iµ"	pusho;	;@;"i;"i;iµ;[".medium-pusho;3	;;4;@;5o;	;@;"i;"i;iµ;iµ;iµo;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;i∂;{"
+floato;
+;@;F;i∂"
+collapseo;2;@;0;i∂"	pullo;	;@;"i;"i;i∂;[".medium-pullo;3	;;4;@;5o;	;@;"i;"i;i∂;i∂;i∂;6o; 
+;;4;@;	o;-;.[ ;@;/"1;i;0@≠;i¥;
+o;	;@;"total_columns;"total-columns;i¥;i¥;7F;i¥o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;i∫;{"
+floato;
+;@;F;i∫"centero;
+;@;T;i∫"
+collapseo;2;@;0;i∫;[":.column.medium-centered,
+    .columns.medium-centered;o;;[o; ;[o;!
+;[o;";["column;#" ;i∫o;";["medium-centered;#@;i∫;$0;#@;%o;&;'{ ;i∫o; ;["
+o;!
+;[o;";["columns;#@;i∫o;";["medium-centered;#@;i∫;$0;#@;%o;&;'{ ;i∫;#@;i∫;i∫o;;T;@;i ;[o;8;@;i ;[ ;9;:;o;);@;"0;;*;["margin-o;	;@;"default_float;"default-float;iæ;iæo;8;@;i ;[ ;9;:;o;);@;"0;;*;["margin-o;	;@;"opposite_direction;"opposite-direction;iø;iøo;8;@;i ;[ ;9;:;o;;	;@;<;=;[o;	;@;"default_float;"default-float;i¿o;)	;@;"!important;;*;i¿;i¿;["
+float;i¿;[">.column.medium-uncentered,
+    .columns.medium-uncentered;o;;[o; ;[o;!
+;[o;";["column;#" ;iΩo;";["medium-uncentered;#@U;iΩ;$0;#@U;%o;&;'{ ;iΩo; ;["
+o;!
+;[o;";["columns;#@U;iΩo;";["medium-uncentered;#@U;iΩ;$0;#@U;%o;&;'{ ;iΩ;#@U;iΩ;iΩ:@query["	only" "screen"
+ and "(o;)	;@;"max-width;;*;i™": o;-;.["px;@;/"1024px;i ;0[ ;i™");" ;i™o;>;T;@;i ;[
+o;+
+;,o;-;.[ ;@;/"1;i;0@≠;i«;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;i»;{"
+floato;
+;@;F;i»"columnso;	;@;"i;"i;i»"
+collapseo;2;@;0;i»;[".smallo;3	;;4;@;5o;	;@;"i;"i;i»;i»;i»;6o;	;@;"total_columns;"total-columns;i«;7F;i«o;+
+;,o;-;.[ ;@;/"0;i ;0@≠;iÀ;T;@;1"i;[o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;iÃ;{"
+floato;
+;@;F;iÃ"
+collapseo;2;@;0;iÃ"offseto;	;@;"i;"i;iÃ;[".small-offset-o;	;@;"i;"i;iÃ;iÃ;6o; 
+;;4;@;	o;-;.[ ;@;/"2;i;0@≠;iÀ;
+o;	;@;"total_columns;"total-columns;iÀ;iÀ;7F;iÀo;;T;@;i ;[o;8;@;i ;[ ;9;:;o;	;@;"opposite_direction;"opposite-direction;iœ;["
+float;iœ;["5[class*="column"] + [class*="column"]:last-child;o;;[o; ;[o;!
+;[o:Sass::Selector::Attribute;"*=;["
+"column";["
+class;#" :@flags0;iœ:@namespace0;$0;#@–;%o;&;'{ ;iœ"+o;!
+;[o;@;"*=;["
+"column";["
+class;#@–;A0;iœ;B0o:Sass::Selector::Pseudo
+;["last-child;:
+class;#@–;iœ:	@arg0;$0;#@–;%o;&;'{ ;iœ;#@–;iœ;iœo;;T;@;i ;[o;8;@;i ;[ ;9;:;o;	;@;"default_float;"default-float;i–;["
+float;i–;[".[class*="column"] + [class*="column"].end;o;;[o; ;[o;!
+;[o;@;"*=;["
+"column";["
+class;#" ;A0;i–;B0;$0;#@¯;%o;&;'{ ;i–"+o;!
+;[o;@;"*=;["
+"column";["
+class;#@¯;A0;i–;B0o;";["end;#@¯;i–;$0;#@¯;%o;&;'{ ;i–;#@¯;i–;i–o;;T;@;i ;[o;;@;[ ;0;[ ;"grid-column;i”;{"
+floato;
+;@;F;i”"centero;
+;@;T;i”"
+collapseo;2;@;0;i”;["8.column.small-centered,
+    .columns.small-centered;o;;[o; ;[o;!
+;[o;";["column;#" ;i”o;";["small-centered;#@!;i”;$0;#@!;%o;&;'{ ;i”o; ;["
+o;!
+;[o;";["columns;#@!;i”o;";["small-centered;#@!;i”;$0;#@!;%o;&;'{ ;i”;#@!;i”;i”;?["	only" "screen"
+ and "(o;)	;@;"max-width;;*;i≈": o;-;.["px;@;/"
+640px;iÄ;0[ ;i≈");" ;i≈o;
+
+;@;	[ ;["%/*
+ * Block Grid Variables
+ * */;;
+;iŸo;;o;"	;@;#"include_html_classes;"include-html-classes;i‹;@;	[ ;"include-html-grid-classes;"
+!default;i‹o;
+
+;@;	[ ;["S/* We use this to control the maximum number of block grid elements per row */;;
+;iﬁo;;o;;[ ;@;"12;i;@;iﬂ;@;	[ ;"block-grid-elements;"
+!default;iﬂo;;o;"	;@;#"column_gutter;"column-gutter;i‡;@;	[ ;"block-grid-default-spacing;0;i‡o;
+
+;@;	[ ;["/*emCalc(20) !default; */;;
+;i‡o;
+
+;@;	[ ;["_/* Enables media queries for block-grid classes. Set to false if writing semantic HTML. */;;
+;i‚o;;o;;@;T;i„;@;	[ ;"block-grid-media-queries;"
+!default;i„o;
+
+;@;	[ ;[""/*
+ * Block Grid Mixins
+ * */;;
+;iÂo;
+
+;@;	[ ;["û/* We use this mixin to create different block-grids. You can apply per-row and spacing options.
+ * Setting $base-style to false will ommit default styles. */;;
+;iÈo;8;T;@;	[u;96[o:Sass::Script::Variable	:
+@options{ :@underscored_name"base_style:
+@name"base-style:
+@lineiÌ0[
+o:Sass::Tree::PropNode;@:
+@tabsi :@children[ :@prop_syntax:new:@valueo:Sass::Script::String;@;"
+block:
+@type:identifier;["display;	iÓo;
+;@;i ;[ ;
+;;o;;@;"0;;;["padding;	iÔo;
+;@;i ;[ ;
+;;o:Sass::Script::List	;@:@separator:
+space;[o:Sass::Script::Number:@numerator_units[ ;@:@original"0;i :@denominator_units[ ;	io:Sass::Script::Operation
+:@operator:div;@:@operand2o;;[ ;@;"2;i;@;	i:@operand1o:!Sass::Script::UnaryOperation	;:
+minus;@:
+@operando; 	;@;"spacing;"spacing;	i;	i;	i;	i;["margin;	io:Sass::Tree::MixinNode;@;[ :@splat0:
+@args[ ;"
+clearfix;	iÒ:@keywords{ o:Sass::Tree::RuleNode:@has_childrenT;@;i ;[	o;
+;@;i ;[ ;
+;;o;;@;"inline;;;["display;	iÙo;
+;@;i ;[ ;
+;;o;;@;"	auto;;;["height;	iıo;
+;@;i ;[ ;
+;;o; 	;@;"default_float;"default-float;	iˆ;["
+float;	iˆo;
+;@;i ;[ ;
+;;o;	;@;;;[o;;[ ;@;"0;i ;@;	i˜o;
+;;;@;o;;[ ;@;"2;i;@;	i˜;o; 	;@;"spacing;"spacing;	i˜;	i˜o; 	;@;"spacing;"spacing;	i˜;	i˜;["padding;	i˜:
+@rule["& > li:@parsed_ruleso:"Sass::Selector::CommaSequence:
+@members[o:Sass::Selector::Sequence;+[o:#Sass::Selector::ToroSequence
+;+[o:Sass::Selector::Parent:@filename" ;	iÛ:
+@subject0;/@_:
+@sourceso:Set:
+@hash{ ;	iÛ">o;-
+;+[o:Sass::Selector::Element	;["li;/@_;	iÛ:@namespace0;00;/@_;1o;2;3{ ;	iÛ;/@_;	iÛ;	iÛu;9ø[o:Sass::Script::Variable	:
+@options{ :@underscored_name"per_row:
+@name"per-row:
+@linei˚0[o:Sass::Tree::RuleNode:@has_childrenT;@:
+@tabsi :@children[	o:Sass::Tree::PropNode;@;i ;
+[ :@prop_syntax:new:@valueo:Sass::Script::Operation
+:@operator:div;@:@operand2o; 	;@;"per_row;"per-row;	i˝:@operand1o:Sass::Script::Number:@numerator_units["%;@:@original"	100%;ii:@denominator_units[ ;	i˝;	i˝;["
+width;	i˝o;;@;i ;
+[ ;;;o:Sass::Script::List	;@:@separator:
+space;[o;;[ ;@;"0;i ;[ ;	i˛o;
+;;;@;o;;[ ;@;"2;i;@!;	i˛;o; 	;@;"spacing;"spacing;	i˛;	i˛o; 	;@;"spacing;"spacing;	i˛;	i˛;["padding;	i˛o;
+;T;@;i ;
+[o;;@;i ;
+[ ;;;o:Sass::Script::String;@;"	none:
+@type:identifier;["
+clear;	i :
+@rule["&:nth-of-type(n):@parsed_ruleso:"Sass::Selector::CommaSequence:
+@members[o:Sass::Selector::Sequence;$[o:#Sass::Selector::ToroSequence
+;$[o:Sass::Selector::Parent:@filename" ;	i o:Sass::Selector::Pseudo
+;["nth-of-type;:
+class;(@?;	i :	@arg["n:
+@subject0;(@?:
+@sourceso:Set:
+@hash{ ;	i ;(@?;	i ;	i o;
+;T;@;i ;
+[o;;@;i ;
+[ ;;;o;;@;"	both;; ;["
+clear;	i;!["&:nth-of-type(o; 	;@;"per_row;"per-row;	i"	n+1);	i;!["& > li;"o;#;$[o;%;$[o;&
+;$[o;';(" ;	i¸;,0;(@^;-o;.;/{ ;	i¸">o;&
+;$[o:Sass::Selector::Element	;["li;(@^;	i¸:@namespace0;,0;(@^;-o;.;/{ ;	i¸;(@^;	i¸;	i¸;0;[[o;";@;#"per_row;"per-rowo;;@;F;iÎ[o;";@;#"spacing;"spacingo;"	;@;#"block_grid_default_spacing;"block-grid-default-spacing;iÎ[o;";@;#"base_style;"base-styleo;;@;T;iÎ;"block-grid;iÎu;9æ[o:Sass::Script::Variable	:
+@options{ :@underscored_name"include_html_grid_classes:
+@name"include-html-grid-classes:
+@linei0[	o:Sass::Tree::CommentNode
+;@:@children[ :@value["</* Foundation Block Grids for below small breakpoint */:
+@type:normal;	io:Sass::Tree::MediaNode:@has_childrenT;@:
+@tabsi ;[o:Sass::Tree::RuleNode;T;@;i ;[o:Sass::Tree::MixinNode;@;[ :@splat0:
+@args[ ;"block-grid;	i
+:@keywords{ :
+@rule["[class*="block-grid-"]:@parsed_ruleso:"Sass::Selector::CommaSequence:
+@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::ToroSequence
+;[o:Sass::Selector::Attribute:@operator"*=;[""block-grid-";["
+class:@filename" :@flags0;	i
+:@namespace0:
+@subject0;@&:
+@sourceso:Set:
+@hash{ ;	i
+;@&;	i
+;	i
+o:Sass::Tree::ForNode
+:
+@fromo:Sass::Script::Number:@numerator_units[ ;@:@original"1;i:@denominator_units[ ;	i;T;@:	@var"i;[o;;T;@;i ;[o;;@;[ ;0;[o; 	;@;"i;"i;	io; 	;@;"block_grid_default_spacing;"block-grid-default-spacing;	io:Sass::Script::Bool;@;F;	i;"block-grid;	i;{ ;[".small-block-grid-o; 	;@;"i;"i;	i
+;	i
+:@too; 	;@;"block_grid_elements;"block-grid-elements;	i:@exclusiveF;	i:@query["	only" "screen;" ;	i	o;
+
+;@;[ ;["</* Foundation Block Grids for above small breakpoint */;
+;;	io;;T;@;i ;[o;
+
+;@;[ ;["%/* Remove small grid clearing */;
+;;	io;&
+;'o;(;)[ ;@;*"1;i;+@-;	i;T;@;,"i;[o;;T;@;i ;[o:Sass::Tree::PropNode;@;i ;[ :@prop_syntax:new;o:Sass::Script::String;@;"	none;
+:identifier;["
+clear;	i;[
+".small-block-grid-o; 	;@;"i;"i;	i" > li:nth-of-type(o; 	;@;"i;"i;	i"	n+1);	i;.o; 	;@;"block_grid_elements;"block-grid-elements;	i;/F;	io;&
+;'o;(;)[ ;@;*"1;i;+@-;	i;T;@;,"i;[o;;T;@;i ;[o;;@;[ ;0;[o; 	;@;"i;"i;	io; 	;@;"block_grid_default_spacing;"block-grid-default-spacing;	io;-;@;F;	i;"block-grid;	i;{ ;[".large-block-grid-o; 	;@;"i;"i;	i;	i;.o; 	;@;"block_grid_elements;"block-grid-elements;	i;/F;	i;0[o; 	;@;"
+small;"
+small;	i;" ;	i;i

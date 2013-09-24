@@ -1,0 +1,43 @@
+/*==================================
+=            Page Setup            =
+==================================*/
+
+ $include-html-grid-classes: true;
+ $row-width: emCalc(1000);
+ $column-gutter: emCalc(26);
+ $total-columns: 12;
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+// We use these as default colors throughout
+$primary-color: #f06d06;
+$secondary-color: #f06d06;
+$body-bg: #F2F2F2;
+
+// We use these to make sure border radius matches unless we want it different.
+$global-radius: 3px;
+$global-rounded: 1000px;
+
+$link-color: $primary-color;
+$link-hover: darken($link-color, 9%);
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
+/*=============================
+=            Fonts            =
+=============================*/
+
+$body-font-color: #555;
+$body-font-family:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+$header-font-color: #555;
+$header-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+

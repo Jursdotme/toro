@@ -1,0 +1,254 @@
+/******************************************************************
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up toro changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*=======================================
+=            From Foundation            =
+=======================================*/
+
+//
+// Global Foundation Mixins
+//
+
+$experimental: true !default;
+
+// We use this to add box-sizing across browser prefixes
+@mixin box-sizing($type:border-box) {
+  @if $experimental {
+    -moz-box-sizing: $type;
+    -webkit-box-sizing: $type;
+  }
+  box-sizing: $type;
+}
+
+// We use this to do clear floats
+@mixin clearfix() {
+  *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+
+//
+// Foundation Variables
+//
+
+// The default font-size is set to 100% of the browser style sheet (usually 16px)
+// for compatibility with brower-based text zoom or user-set defaults.
+
+// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+// If you want your base font-size to be different and not have it effect the grid breakpoints,
+// set $em-base to $base-font-size and make sure $base-font-size is a px value.
+$base-font-size: 100% !default;
+
+// $base-line-height is 24px while $base-font-size is 16px
+$base-line-height: 150% !default;
+
+// This is the default html and body font-size for the base em value.
+$em-base: 16 !default;
+
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Converts "px" to "em" using the ($)em-base
+@function convert-to-em($value)  {
+  $value: strip-unit($value) / strip-unit($em-base) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#)
+// Just enter the number, no need to mention "px"
+@function emCalc($values...) {
+  $max: length($values); // Get the total number of parameters passed
+
+  // If there is only 1 parameter, then return it as an integer.
+  // This is done because a list can't be multiplied or divided even if it contains a single value
+  @if $max == 1 { @return convert-to-em(nth($values, 1)); }
+
+  $emValues: (); // This will eventually store the converted $values in a list
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i)));
+  }
+  @return $emValues;
+}
+
+// Maybe you want to create rems and pixels
+// @function remCalc($pxWidth) {
+//   @return $pxWidth / $em-base * 1rem;
+// }
+
+// We use this to control font-smoothing
+$font-smoothing: subpixel-antialiased !default;
+
+// We use these to control text direction settings
+$text-direction: ltr !default;
+
+// NOTE: No need to change this conditional statement, $text-direction variable controls it all.
+$default-float: left !default;
+$opposite-direction: right !default;
+@if $text-direction == ltr {
+  $default-float: left;
+  $opposite-direction: right;
+} @else {
+  $default-float: right;
+  $opposite-direction: left;
+}
+
+// We use these to control inset shadow shiny edges and depressions.
+$shiny-edge-size: 0 1px 0 !default;
+$shiny-edge-color: rgba(#fff, .5) !default;
+$shiny-edge-active-color: rgba(#000, .2) !default;
+
+// We use this to control whether or not CSS classes come through in the gem files.
+$include-html-classes: true !default;
+$include-print-styles: true !default;
+$include-html-global-classes: $include-html-classes !default;
+
+//We use this as cursors values for enabling the option of having custom cursors in the whole site's stylesheet
+$cursor-crosshair-value: crosshair !default;
+$cursor-default-value: default !default;
+$cursor-pointer-value: pointer !default;
+$cursor-help-value: help !default;
+$cursor-text-value: text !default;
+
+
+@if $include-html-global-classes {
+
+  // Set box-sizing globally to handle padding and border widths
+  *,
+  *:before,
+  *:after {
+    @include box-sizing(border-box);
+  }
+
+  html,
+  body { font-size: $base-font-size; }
+
+a:hover { cursor: $cursor-pointer-value; }
+
+  // Override outline from normalize, we don't like it
+  a:focus { outline: none; }
+
+  // Grid Defaults to get images and embeds to work properly
+  img,
+  object,
+  embed { max-width: 100%; height: auto; }
+
+  object,
+  embed { height: 100%; }
+  img { -ms-interpolation-mode: bicubic; }
+
+  #map_canvas,
+  .map_canvas {
+    img,
+    embed,
+    object { max-width: none !important;
+    }
+  }
+
+  // Miscellaneous useful HTML classes
+  .left         { float: left !important; }
+  .right        { float: right !important; }
+  .text-left    { text-align: left !important; }
+  .text-right   { text-align: right !important; }
+  .text-center  { text-align: center !important; }
+  .text-justify { text-align: justify !important; }
+  .hide         { display: none; }
+
+  // Font smoothing
+  // Antialiased font smoothing works best for light text on a dark background.
+  // Apply to single elements instead of globally to body.
+  // Note this only applies to webkit-based desktop browsers on the Mac.
+  .antialiased { -webkit-font-smoothing: antialiased; }
+
+  // Get rid of gap under images by making them display: inline-block; by default
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+  }
+
+}
+
+// Media Queries
+$small-screen: 640px !default;
+$medium-screen: 1024px !default;
+$large-screen: 1440px !default;
+
+$screen: "only screen" !default;
+$small: "only screen and (max-width: #{$small-screen})" !default;
+$medium: "only screen and (max-width:#{$medium-screen}) and (min-width: #{$small-screen})" !default;
+$large: "only screen and (max-width:#{$large-screen})" !default;
+$landscape: "only screen and (orientation: landscape)" !default;
+$portrait: "only screen and (orientation: portrait)" !default;
+
+/* Foundation Visibility HTML Classes */
+  .show-for-small,
+  .show-for-medium,
+  .show-for-medium-down { display: none !important; }
+
+  .show-for-large,
+  .show-for-xlarge,
+  .show-for-large-down,
+  .show-for-medium-up { display: inherit !important; }
+
+  .hide-for-small,
+  .hide-for-medium,
+  .hide-for-medium-down { display: inherit !important; }
+
+  .hide-for-large,
+  .hide-for-xlarge,
+  .hide-for-medium-up { display: none !important; }
+
+  /* Small Displays: 640px - 1024px */
+  @media #{$small} {
+    .show-for-small,
+    .show-for-medium-down { display: inherit !important; }
+
+    .show-for-medium,
+    .show-for-large,
+    .show-for-medium-up { display: none !important; }
+
+    .hide-for-small,
+    .hide-for-medium-down  { display: none !important; }
+
+    .hide-for-medium,
+    .hide-for-large,
+    .hide-for-medium-up { display: inherit !important; }
+  }
+
+  /* Medium Displays: 1024px - 1440px */
+  @media #{$medium} {
+    .show-for-medium,
+    .show-for-medium-down,
+    .show-for-medium-up,
+    .show-for-large-up { display: inherit !important; }
+
+    .show-for-large,
+    .show-for-small
+    .show-for-xlarge { display: none !important; }
+
+    .hide-for-large,
+    .hide-for-small { display: inherit !important; }
+
+    .hide-for-medium,
+    .hide-for-medium-up,
+    .hide-for-medium-down { display: none !important; }
+  }
+
+/*-----  End of From Foundation  ------*/
+
+
