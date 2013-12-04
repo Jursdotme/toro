@@ -1,31 +1,35 @@
-/******************************************************************
-Site Name: Artlinco
-Author: Web&Co
+/*============================
+=            info            =
+============================*/
 
-Stylesheet: Main Stylesheet
+// Site Name: Toro
+// Author: Rasmus Jürs
 
-Here's where the magic happens. Here, you'll see we are calling in
-the separate media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the rest
-of the styles inside media queries.
-******************************************************************/
+// Stylesheet: Main Stylesheet
+
+// There is no actual css or sass in this file. This is where all files 
+// get concatinated and exported as a single file (/stylesheets/style.css).
+// only exception is normalize and conditionizer styles. These are in their
+// seperate files.
+
+/*-----  End of info  ------*/
 
 
-//
-// IMPORTING STYLES
-//
+/*===============================
+=            Imports            =
+===============================*/
 
 @import "compass";
 
-// import normalize
-@import "normalize";
-@import "mixins";
-
-// Import configurable settings
-@import "variables";
-@import "typography";
-@import "elements";
-@import "navigation";
-
+@import "functions";
+@import "settings";
 @import "grid";
-@import "base";
+@import "typography";
+@import "buttons";
+@import "forms";
+@import "alert-boxes";
+@import "panels";
+@import "navigation";
+@import "site";
+
+/*-----  End of Imports  ------*/

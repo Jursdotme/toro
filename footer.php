@@ -1,29 +1,34 @@
-				<footer class="footer row">
+			<!-- footer -->
+			<footer class="footer row" role="contentinfo">
+				
+				<div class="large-9 medium-8 small-12 columns">
 
-						<div class="large-12 columns">
-							<p><a href="<?php echo esc_url( __( 'http://jurs.me/', 'Toro' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'Toro' ), 'Toro' ); ?></a></p>
-						</div>
-						
+					<!-- copyright -->
+					<p class="copyright">
+						&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?> 
+						<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
+					</p>
+					<!-- /copyright -->
+					
+				</div>
 
-				</footer> <!-- end footer -->
+			</footer>
+			<!-- /footer -->
 
-			</div> <!-- end #container -->
-
-			<!-- all js scripts are loaded in library/toro.php -->
-			<?php wp_footer(); ?>
+			</div>
 		
-		<!-- Add fitvids.js for responsive youtube imbedding -->
-		<script src="<?php echo get_template_directory_uri(); ?>/javascripts/jquery.fitvids.js"></script>
+		</div>
+		<!-- /wrapper -->
 
-		<!-- Use fastclick.js to remove 300ms click delay on touch screens -->
-		<script type='application/javascript' src='<?php echo get_template_directory_uri(); ?>/javascripts/fastclick.js'></script>
-
-		<script type="text/javascript">
-			window.addEventListener('load', function() {
-			    FastClick.attach(document.body);
-			}, false);
+		<?php wp_footer(); ?>
+		
+		<!-- analytics -->
+		<script>
+			var _gaq=[['_setAccount','UA-XXXXXXXX-XX'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)})(document,'script');
 		</script>
-
+	
 	</body>
-
-</html> <!-- end page. what a ride! -->
+</html>

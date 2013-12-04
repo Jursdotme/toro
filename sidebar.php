@@ -1,17 +1,11 @@
-				<div id="sidebar1" class="large-3 columns" role="complementary">
+<!-- sidebar -->
+<aside class="sidebar large-3 medium-4 small-12 columns" role="complementary">
 
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
-
-					<?php else : ?>
-
-						<!-- This content shows up if there are no widgets defined in the backend. -->
-
-						<div class="alert alert-help">
-							<p><?php _e("Aktiver venligst nogle Widgets", "torotheme");  ?></p>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
+	<?php get_template_part('searchform'); ?>
+    		
+	<div class="sidebar-widget">
+		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
+	</div>
+		
+</aside>
+<!-- /sidebar -->

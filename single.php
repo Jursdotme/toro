@@ -1,45 +1,69 @@
 <?php get_header(); ?>
-			
-<!-- Get latest Post -->
-<div id="content" class="row nyhed aside">
 
-		<div id="main" class="large-12 columns" role="main">
+<div class="row">
 
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-					<header class="article-header">
-
-						<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-						<p class="byline vcard"><?php
-							printf(__('<time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'torotheme'), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), toro_get_the_author_posts_link(), get_the_category_list(', '));
-						?></p>
-
-					</header> <!-- end article header -->
-
-					<section class="entry-content clearfix" itemprop="articleBody">
-						<?php the_content(); ?>
-					</section> <!-- end article section -->
-
-					<footer class="article-footer right">
-						<?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'torotheme') . '</span> ', ', ', '</p>'); ?>
-						
-						<?php previous_post_link('%link', '<span class="larr">Forrige Nyhed</span>', TRUE); ?>	
-						<?php next_post_link('%link', '<span class="rarr space">Næste Nyhed</span>', TRUE); ?> 
-					
-					</footer> <!-- end article footer -->
-
-				</article> <!-- end article -->
-
-			<?php endwhile; ?>
-
+	<!-- section -->
+	<section role="main" class="large-9 medium-8 small-12 columns">
+	
+	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	
+		<!-- article -->
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		
+			<!-- post thumbnail -->
+			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+				</a>
 			<?php endif; ?>
+			<!-- /post thumbnail -->
+			
+			<!-- post title -->
+			<h1>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+			</h1>
+			<!-- /post title -->
+			
+			<!-- post details -->
+			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+			<span class="author"><?php _e( 'Published by', 'toro' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'toro' ), __( '1 Comment', 'toro' ), __( '% Comments', 'toro' )); ?></span>
+			<!-- /post details -->
+			
+			<?php the_content(); // Dynamic Content ?>
+			
+			<?php the_tags( __( 'Tags: ', 'toro' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+			
+			<p><?php _e( 'Categorised in: ', 'toro' ); the_category(', '); // Separated by commas ?></p>
+			
+			<p><?php _e( 'This post was written by ', 'toro' ); the_author(); ?></p>
+			
+			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+			
+			<?php comments_template(); ?>
+			
+		</article>
+		<!-- /article -->
+		
+	<?php endwhile; ?>
+	
+	<?php else: ?>
+	
+		<!-- article -->
+		<article>
+			
+			<h1><?php _e( 'Sorry, nothing to display.', 'toro' ); ?></h1>
+			
+		</article>
+		<!-- /article -->
+	
+	<?php endif; ?>
+	
+	</section>
+	<!-- /section -->
+	
+	<?php get_sidebar(); // The sidebar has .large-3 columns. (Change it in sidebar.php) ?>
 
-		</div> <!-- end #main -->
+</div>
 
-	</div> <!-- end #inner-content -->
 <?php get_footer(); ?>
-</div> <!-- end #content -->
-
-

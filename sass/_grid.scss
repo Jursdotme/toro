@@ -1,13 +1,4 @@
 //
-// Grid Variables
-//
-$include-html-grid-classes: true;
-$fixed-breakpoints: true;
-$row-width: emCalc(1170);
-$column-gutter: emCalc(30);
-$total-columns: 12;
-
-//
 // Media Queries
 //
 
@@ -20,9 +11,18 @@ $screen: "only screen" !default;
 $small: "only screen and (max-width: #{$small-screen})" !default;
 $medium: "only screen and (max-width:#{$medium-screen}) and (min-width: #{$small-screen})" !default;
 $large: "only screen and (max-width:#{$large-screen})" !default;
-$xlarge: "only screen and (min-width: #{$large-screen})" !default;
+$xlarge: "only screen and (min-width: #{$xlarge-screen})" !default;
 $landscape: "only screen and (orientation: landscape)" !default;
 $portrait: "only screen and (orientation: portrait)" !default;
+
+//
+// Grid Variables
+//
+$include-html-grid-classes: true;
+$fixed-breakpoints: true;
+$row-width: emCalc(1170);
+$column-gutter: emCalc(30);
+$total-columns: 12;
 
 /* Foundation Visibility HTML Classes */
   .show-for-small,
@@ -32,6 +32,7 @@ $portrait: "only screen and (orientation: portrait)" !default;
   .show-for-large,
   .show-for-xlarge,
   .show-for-large-down,
+  .show-for-xlarge-down,
   .show-for-medium-up { display: inherit !important; }
 
   .hide-for-small,
@@ -76,6 +77,10 @@ $portrait: "only screen and (orientation: portrait)" !default;
     .hide-for-medium,
     .hide-for-medium-up,
     .hide-for-medium-down { display: none !important; }
+  }
+
+  @media #{$xlarge} {
+    .show-for-medium { display: inherit !important; }
   }
 
 //
@@ -298,21 +303,35 @@ $experimental: true !default;
 
   }
 
-  @media only screen and (max-width: 768px) {
+   @media #{$small}{
 
-     @for $i from 1 through $total-columns {
+    @for $i from 1 through $total-columns {
       .small#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
     }
 
-    @for $i from 0 through $total-columns - 2 {
+    @for $i from 0 through $total-columns - 1 {
       .small-offset-#{$i} { @include grid-column($offset:$i, $collapse:null,$float:false); }
     }
 
-    [class*="column"] + [class*="column"]:last-child { float: $opposite-direction; }
-    [class*="column"] + [class*="column"].end { float: $default-float; }
+    @for $i from 1 through $total-columns - 1 {
+      .small-push#{-$i} { @include grid-column($push:$i, $collapse:null, $float:false); }
+      .small-pull#{-$i} { @include grid-column($pull:$i, $collapse:null, $float:false); }
+    }
 
     .column.small-centered,
     .columns.small-centered { @include grid-column($center:true, $collapse:null, $float:false); }
+
+    .column.small-uncentered,
+    .columns.small-uncentered {
+      margin-#{$default-float}: 0;
+      margin-#{$opposite-direction}: 0;
+      float: $default-float !important;
+    }
+
+    @for $i from 1 through $total-columns - 1 {
+      .large-push#{-$i} { right: 0; }
+      .large-pull#{-$i} { right: 0; }
+    }
 
   }
 
@@ -372,11 +391,13 @@ $block-grid-media-queries: true !default;
     display: block;
     padding: 0;
     margin: 0 (-$spacing/2);
+    overflow-x: visible;
     @include clearfix;
 
     &>li {
       display: inline;
       height: auto;
+      position: relative;
       float: $default-float;
       padding: 0 ($spacing/2) $spacing;
     }
@@ -400,20 +421,35 @@ $block-grid-media-queries: true !default;
     [class*="block-grid-"] { @include block-grid; }
 
     @for $i from 1 through $block-grid-elements {
-      .small-block-grid-#{($i)} {
+      .large-block-grid-#{($i)} {
+        @include block-grid($i,$block-grid-default-spacing,false);
+      }
+    }
+  }
+  
+  /* Foundation Block Grids for below large breakpoint */
+  @media #{$medium} {
+    /* Remove small grid clearing */
+    @for $i from 1 through $block-grid-elements {
+      .large-block-grid-#{($i)} > li:nth-of-type(#{$i}n+1) { clear: none; }
+    }
+  
+    @for $i from 1 through $block-grid-elements {
+      .medium-block-grid-#{($i)} {
         @include block-grid($i,$block-grid-default-spacing,false);
       }
     }
   }
 
-  /* Foundation Block Grids for above small breakpoint */
+  /* Foundation Block Grids for below medium breakpoint */
   @media #{$small} {
     /* Remove small grid clearing */
     @for $i from 1 through $block-grid-elements {
-      .small-block-grid-#{($i)} > li:nth-of-type(#{$i}n+1) { clear: none; }
+      .large-block-grid-#{($i)} > li:nth-of-type(#{$i}n+1) { clear: none; }
     }
+  
     @for $i from 1 through $block-grid-elements {
-      .large-block-grid-#{($i)} {
+      .small-block-grid-#{($i)} {
         @include block-grid($i,$block-grid-default-spacing,false);
       }
     }

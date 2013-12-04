@@ -1,0 +1,14 @@
+.header {
+	@media #{$small}  {
+		background: $primary-color;
+	}
+}
+.head-wrapper {
+	background: $primary-color;
+	height: 180px;
+	text-align: center;
+	.logo-img {
+		position: relative;
+		top: 25%;
+	}
+}

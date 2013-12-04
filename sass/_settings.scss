@@ -1,0 +1,368 @@
+// /*============================================
+// =            Grid & Media Queries            =
+// ============================================*/
+
+// $small-screen: 767px;
+// $medium-screen: 991px;
+// $large-screen: 1200px;
+// $xlarge-screen: 2560px;
+
+// $row-width: rem-calc(1000);
+// $column-gutter: em-calc(30);
+// $total-columns: 12;
+
+// We use this to control the maximum number of block grid elements per row
+// $block-grid-elements: 12;
+// $block-grid-default-spacing: $column-gutter; //emCalc(20);
+
+// /*======================================
+// =            Basic Settings            =
+// ======================================*/
+
+// $body-bg: #fff;
+// $body-font-color: #222;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-weight: normal;
+// $body-font-style: normal;
+
+// We use these as default colors throughout
+// $primary-color: #008CBA;
+// $secondary-color: #e7e7e7;
+// $alert-color: #f04124;
+// $success-color: #43AC6A;
+
+// We use these to make sure border radius matches unless we want it different.
+// $global-radius: 3px;
+// $global-rounded: 1000px;
+
+/*===============================
+=            Buttons            =
+===============================*/
+
+// We use these to build padding for buttons.
+// $button-med: em-calc(12);
+// $button-tny: em-calc(7);
+// $button-sml: em-calc(9);
+// $button-lrg: em-calc(16);
+
+// We use this to control the display property.
+// $button-display: inline-block;
+// $button-margin-bottom: em-calc(20);
+
+// We use these to control button text styles.
+// $button-font-family: inherit;
+// $button-font-color: #fff;
+// $button-font-color-alt: #333;
+// $button-font-med: em-calc(16);
+// $button-font-tny: em-calc(11);
+// $button-font-sml: em-calc(13);
+// $button-font-lrg: em-calc(20);
+// $button-font-weight: bold;
+// $button-font-align: center;
+
+// We use these to control various hover effects.
+// $button-function-factor: 10%;
+
+// We use these to control button border styles.
+// $button-border-width: 1px;
+// $button-border-style: solid;
+
+// We use this to set the default radius used throughout the core.
+// $button-radius: $global-radius;
+// $button-round: $global-rounded;
+
+// We use this to set default opacity for disabled buttons.
+// $button-disabled-opacity: 0.6;
+
+/*===================================
+=            Alert Boxes            =
+===================================*/
+
+// We use this to control alert padding.
+// $alert-padding-top: em-calc(11);
+// $alert-padding-default-float: $alert-padding-top;
+// $alert-padding-opposite-direction: $alert-padding-top + em-calc(10);
+// $alert-padding-bottom: $alert-padding-top + em-calc(1);
+
+// We use these to control text style.
+// $alert-font-weight: bold;
+// $alert-font-size: em-calc(14);
+// $alert-font-color: #fff;
+// $alert-font-color-alt: darken($secondary-color, 60%);
+
+// We use this for close hover effect.
+// $alert-function-factor: 10%;
+
+// We use these to control border styles.
+// $alert-border-style: solid;
+// $alert-border-width: 1px;
+// $alert-border-color: darken($primary-color, $alert-function-factor);
+// $alert-bottom-margin: em-calc(20);
+
+// We use these to style the close buttons
+// $alert-close-color: #333;
+// $alert-close-position: em-calc(5);
+// $alert-close-font-size: em-calc(22);
+// $alert-close-opacity: 0.3;
+// $alert-close-opacity-hover: 0.5;
+// $alert-close-padding: 5px 4px 4px;
+
+// We use this to control border radius
+// $alert-radius: $global-radius;
+
+/*==============================
+=            Panels            =
+==============================*/
+
+// We use these to control the background and border styles
+// $panel-bg: darken(#fff, 5%);
+// $panel-border-style: solid;
+// $panel-border-size: 1px;
+
+// We use this % to control how much we darken things on hover
+// $panel-function-factor: 10%;
+// $panel-border-color: darken($panel-bg, $panel-function-factor);
+
+// We use these to set default inner padding and bottom margin
+// $panel-margin-bottom: em-calc(20);
+// $panel-padding: em-calc(20);
+
+// We use these to set default font colors
+// $panel-font-color: #333;
+// $panel-font-color-alt: #fff;
+
+// $panel-header-adjust: true;
+// $callout-panel-link-color: #fff;
+
+/*==================================
+=            Typography            =
+==================================*/
+
+//
+// Typography Variables
+//
+// $include-html-type-classes: $include-html-classes;
+
+// We use these to control header font styles
+// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $header-font-weight: bold;
+// $header-font-style: normal;
+// $header-font-color: #222;
+// $header-line-height: 1.4;
+// $header-top-margin: .2em;
+// $header-bottom-margin: .5em;
+// $header-text-rendering: optimizeLegibility;
+
+// We use these to control header font sizes
+// $h1-font-size: em-calc(44);
+// $h2-font-size: em-calc(37);
+// $h3-font-size: em-calc(27);
+// $h4-font-size: em-calc(23);
+// $h5-font-size: em-calc(18);
+// $h6-font-size: 1em;
+
+// These control how subheaders are styled.
+// $subheader-line-height: 1.4;
+// $subheader-font-color: lighten($header-font-color, 30%);
+// $subheader-font-weight: 300;
+// $subheader-top-margin: .2em;
+// $subheader-bottom-margin: .5em;
+
+// A general <small> styling
+// $small-font-size: 60%;
+// $small-font-color: lighten($header-font-color, 30%);
+
+// We use these to style paragraphs
+// $paragraph-font-family: inherit;
+// $paragraph-font-weight: normal;
+// $paragraph-font-size: 1em;
+// $paragraph-line-height: 1.6;
+// $paragraph-margin-bottom: em-calc(20);
+// $paragraph-aside-font-size: em-calc(14);
+// $paragraph-aside-line-height: 1.35;
+// $paragraph-aside-font-style: italic;
+// $paragraph-text-rendering: optimizeLegibility;
+
+// We use these to style <code> tags
+// $code-color: darken($alert-color, 15%);
+// $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
+// $code-font-weight: bold;
+
+// We use these to style anchors
+// $anchor-text-decoration: none;
+// $anchor-font-color: $primary-color;
+// $anchor-font-color-hover: darken($primary-color, 5%);
+
+// We use these to style the <hr> element
+// $hr-border-width: 1px;
+// $hr-border-style: solid;
+// $hr-border-color: #ddd;
+// $hr-margin: em-calc(20);
+
+// We use these to style lists
+// $list-style-position: outside;
+// $list-side-margin: 0;
+// $list-side-margin-no-bullet: $list-side-margin;
+// $list-nested-margin: em-calc(20);
+// $definition-list-header-weight: bold;
+// $definition-list-header-margin-bottom: .3em;
+// $definition-list-margin-bottom: em-calc(12);
+
+// We use these to style blockquotes
+// $blockquote-font-color: lighten($header-font-color, 30%);
+// $blockquote-padding: em-calc(9 20 0 19);
+// $blockquote-border: 1px solid #ddd;
+// $blockquote-cite-font-size: em-calc(13);
+// $blockquote-cite-font-color: lighten($header-font-color, 20%);
+// $blockquote-cite-link-color: $blockquote-cite-font-color;
+
+// Acronym styles
+// $acronym-underline: 1px dotted #ddd;
+
+// We use these to control padding and margin
+// $microformat-padding: em-calc(10 12);
+// $microformat-margin: em-calc(0 0 20 0);
+
+// We use these to control the border styles
+// $microformat-border-width: 1px;
+// $microformat-border-style: solid;
+// $microformat-border-color: #ddd;
+
+// We use these to control full name font styles
+// $microformat-fullname-font-weight: bold;
+// $microformat-fullname-font-size: em-calc(15);
+
+// We use this to control the summary font styles
+// $microformat-summary-font-weight: bold;
+
+// We use this to control abbr padding
+// $microformat-abbr-padding: em-calc(0 1);
+
+// We use this to control abbr font styles
+// $microformat-abbr-font-weight: bold;
+// $microformat-abbr-font-decoration: none;
+
+/*=============================
+=            Forms            =
+=============================*/
+
+//
+// Form Variables
+//
+
+// We use this to set the base for lots of form spacing and positioning styles
+// $form-spacing: em-calc(16);
+
+// We use these to style the labels in different ways
+// $form-label-pointer: pointer;
+// $form-label-font-size: em-calc(14);
+// $form-label-font-weight: 500;
+// $form-label-font-color: lighten(#000, 30%);
+// $form-label-bottom-margin: em-calc(3);
+// $input-font-family: inherit;
+// $input-font-color: rgba(0,0,0,0.75);
+// $input-font-size: em-calc(14);
+// $input-bg-color: #fff;
+// $input-focus-bg-color: darken(#fff, 2%);
+// $input-border-color: darken(#fff, 20%);
+// $input-focus-border-color: darken(#fff, 40%);
+// $input-border-style: solid;
+// $input-border-width: 1px;
+// $input-disabled-bg: #ddd;
+// $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+// $input-include-glowing-effect: true;
+
+// We use these to style the fieldset border and spacing.
+// $fieldset-border-style: solid;
+// $fieldset-border-width: 1px;
+// $fieldset-border-color: #ddd;
+// $fieldset-padding: em-calc(20);
+// $fieldset-margin: em-calc(18 0);
+
+// We use these to style the legends when you use them
+// $legend-bg: #fff;
+// $legend-font-weight: bold;
+// $legend-padding: em-calc(0 3);
+
+// We use these to style the prefix and postfix input elements
+// $input-prefix-bg: darken(#fff, 5%);
+// $input-prefix-border-color: darken(#fff, 20%);
+// $input-prefix-border-size: 1px;
+// $input-prefix-border-type: solid;
+// $input-prefix-overflow: hidden;
+// $input-prefix-font-color: #333;
+// $input-prefix-font-color-alt: #fff;
+
+// We use these to style the error states for inputs and labels
+// $input-error-message-padding: em-calc(6 4);
+// $input-error-message-top: 0;
+// $input-error-message-font-size: em-calc(12);
+// $input-error-message-font-weight: bold;
+// $input-error-message-font-color: #fff;
+// $input-error-message-font-color-alt: #333;
+
+// We use this to style the glowing effect of inputs when focused
+// $glowing-effect-fade-time: 0.45s;
+// $glowing-effect-color: $input-focus-border-color;
+
+/*==========  Custom Forms  ==========*/
+
+// We use these to control the basic form styles input styles
+// $custom-form-border-color: #ccc;
+// $custom-form-border-size: 1px;
+// $custom-form-bg: #fff;
+// $custom-form-bg-disabled: #ddd;
+// $custom-form-input-size: 16px;
+// $custom-form-check-color: #222;
+// $custom-form-check-size: 16px;
+// $custom-form-radio-size: 8px;
+// $custom-form-checkbox-radius: 0;
+
+// We use these to style the custom select form element.
+// $custom-select-bg: #fff;
+// $custom-select-fade-to-color: #f3f3f3;
+// $custom-select-border-color: #ddd;
+// $custom-select-triangle-color: #aaa;
+// $custom-select-triangle-color-open: #222;
+// $custom-select-height: em-calc(13) + ($form-spacing * 1.5);
+// $custom-select-margin-bottom: em-calc(20);
+// $custom-select-font-color-selected: #141414;
+// $custom-select-disabled-color: #888;
+
+// We use these to control the style of the custom select dropdown element.
+// $custom-dropdown-height: 200px;
+// $custom-dropdown-bg: #fff;
+// $custom-dropdown-border-color: darken(#fff, 20%);
+// $custom-dropdown-border-width: 1px;
+// $custom-dropdown-border-style: solid;
+// $custom-dropdown-font-color: #555;
+// $custom-dropdown-font-size: em-calc(14);
+// $custom-dropdown-color-selected: #eeeeee;
+// $custom-dropdown-font-color-selected: #000;
+// $custom-dropdown-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+// $custom-dropdown-offset-top: auto;
+// $custom-dropdown-list-padding: em-calc(4);
+// $custom-dropdown-default-float-padding: em-calc(6);
+// $custom-dropdown-opposite-padding: em-calc(38);
+// $custom-dropdown-list-item-min-height: em-calc(24);
+// $custom-dropdown-width-small: 134px;
+// $custom-dropdown-width-medium: 254px;
+// $custom-dropdown-width-large: 434px;
+
+/*==========  Navigation  ==========*/
+
+// $navigation-width: 100%;
+// $navigation-float: left;
+// $navigation-bg: $primary-color;
+// $navigation-desktop-padding: em-calc(20);
+// $navigation-text-color: #fff;
+// $navigation-hover-darkening: 10%; // Change effect on line 56
+// $navigation-hover-color: $navigation-bg;
+// $navigation-font-family: $body-font-family;
+// $navigation-icon-font: "icons";
+
+// Off Canvas Stuff
+
+// $navigation-offcanvas-easing: ease-out;
+// $navigation-offcanvas-timing: 400ms;
+// $navigation-offcanvas-menu-width: 85%;
