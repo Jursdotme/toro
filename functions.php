@@ -9,7 +9,15 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
+/*
+library/admin.php
+        - removing some default WordPress dashboard widgets
+        - an example custom dashboard widget
+        - adding custom login css
+        - changing text in footer of admin
+*/
+require_once( 'library/admin.php' ); // this comes turned off by default
+
 
 /*------------------------------------*\
 	Theme Support
@@ -428,5 +436,46 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+/*----------------------------------------------------*\
+    Move Menu administration to top level admin menu
+\*----------------------------------------------------*/
+
+function remove_submenus() {
+  global $submenu;
+  unset($submenu['themes.php'][10]); // Removes Menu  
+}
+add_action('admin_menu', 'remove_submenus');
+
+function new_nav_menu () {
+    global $menu;
+    $menu[99] = array('', 'read', 'separator', '', 'menu-top menu-nav');
+    add_menu_page(__('Navigation', 'mav-menus'), __('Navigation', 'nav-menus'), 'edit_themes', 'nav-menus.php', '', '', 99);
+}
+add_action('admin_menu', 'new_nav_menu');
+
+function custom_menu_order($menu_ord) {  
+if (!$menu_ord) return true;  
+
+return array(  
+    'index.php', // Dashboard  
+    'edit.php', // Posts 
+    'upload.php', // Media
+    'edit.php?post_type=page', // Pages
+    'edit-comments.php', // Comments 
+    'link-manager.php', // Links 
+    'separator1', // First separator  
+    'nav-menus.php', // Navigation
+    'separator2', // Second separator  
+    'themes.php', // Appearance  
+    'plugins.php', // Plugins  
+    'users.php', // Users  
+    'tools.php', // Tools  
+    'options-general.php', // Settings  
+    'separator-last', // Last separator  
+);
+}  
+add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order  
+add_filter('menu_order', 'custom_menu_order');
 
 ?>
