@@ -5,10 +5,18 @@
 }
 .head-wrapper {
 	background: $primary-color;
+	margin-bottom: $column-gutter;
+}
+
+.logo {
 	height: 180px;
 	text-align: center;
 	.logo-img {
 		position: relative;
 		top: 25%;
 	}
+}
+
+.nav-wrapper {
+	border-top: 1px solid white;
 }

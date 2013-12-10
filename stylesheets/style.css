@@ -2772,11 +2772,11 @@ label.error {
   font-style: normal; }
 
 /*-----  End of Navigation Variables  ------*/
-/* line 31, ../sass/_navigation.scss */
+/* line 32, ../sass/_navigation.scss */
 .content {
   z-index: 10; }
 
-/* line 32, ../sass/_navigation.scss */
+/* line 33, ../sass/_navigation.scss */
 nav.desktop-navigation {
   width: 100%;
   height: 45px;
@@ -2784,32 +2784,32 @@ nav.desktop-navigation {
   background: #df4931;
   z-index: 1000;
   display: block !important;
-  margin-bottom: 1.875em; }
+  margin-bottom: 0; }
   @media only screen and (max-width: 767px) {
-    /* line 32, ../sass/_navigation.scss */
+    /* line 33, ../sass/_navigation.scss */
     nav.desktop-navigation {
       display: none; } }
-  /* line 43, ../sass/_navigation.scss */
+  /* line 44, ../sass/_navigation.scss */
   nav.desktop-navigation a {
     font-size: 13px;
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     color: white; }
-  /* line 50, ../sass/_navigation.scss */
+  /* line 51, ../sass/_navigation.scss */
   nav.desktop-navigation > ul {
     margin: 0 auto;
     padding: 0;
     float: left;
     width: auto; }
-    /* line 55, ../sass/_navigation.scss */
+    /* line 56, ../sass/_navigation.scss */
     nav.desktop-navigation > ul > li {
       float: left;
       list-style: none;
       position: relative;
       width: auto;
       margin: 0; }
-      /* line 62, ../sass/_navigation.scss */
+      /* line 63, ../sass/_navigation.scss */
       nav.desktop-navigation > ul > li a {
         display: block;
         text-decoration: block;
@@ -2819,10 +2819,10 @@ nav.desktop-navigation {
         height: 45px;
         padding: 0 1.25em;
         line-height: 45px; }
-        /* line 71, ../sass/_navigation.scss */
+        /* line 72, ../sass/_navigation.scss */
         nav.desktop-navigation > ul > li a:hover {
           background: #bf341e; }
-      /* line 73, ../sass/_navigation.scss */
+      /* line 74, ../sass/_navigation.scss */
       nav.desktop-navigation > ul > li > ul {
         display: none;
         position: absolute;
@@ -2830,17 +2830,17 @@ nav.desktop-navigation {
         width: auto;
         margin: 0;
         z-index: 1000; }
-        /* line 81, ../sass/_navigation.scss */
+        /* line 82, ../sass/_navigation.scss */
         nav.desktop-navigation > ul > li > ul > li {
           width: auto;
           margin: 0; }
-          /* line 84, ../sass/_navigation.scss */
+          /* line 85, ../sass/_navigation.scss */
           nav.desktop-navigation > ul > li > ul > li a {
             text-align: left; }
-          /* line 85, ../sass/_navigation.scss */
+          /* line 86, ../sass/_navigation.scss */
           nav.desktop-navigation > ul > li > ul > li:hover > ul {
             display: block; }
-          /* line 88, ../sass/_navigation.scss */
+          /* line 89, ../sass/_navigation.scss */
           nav.desktop-navigation > ul > li > ul > li > ul {
             display: none;
             position: absolute;
@@ -2848,18 +2848,18 @@ nav.desktop-navigation {
             margin-top: -45px;
             margin-left: 0;
             width: auto; }
-            /* line 95, ../sass/_navigation.scss */
+            /* line 96, ../sass/_navigation.scss */
             nav.desktop-navigation > ul > li > ul > li > ul > li {
               width: 100%;
               margin: 0; }
-              /* line 98, ../sass/_navigation.scss */
+              /* line 99, ../sass/_navigation.scss */
               nav.desktop-navigation > ul > li > ul > li > ul > li a {
                 text-align: left; }
-      /* line 103, ../sass/_navigation.scss */
+      /* line 104, ../sass/_navigation.scss */
       nav.desktop-navigation > ul > li:hover > ul {
         display: block; }
 
-/* line 109, ../sass/_navigation.scss */
+/* line 110, ../sass/_navigation.scss */
 .desktop-navigation #label {
   background: #52393A;
   text-transform: uppercase;
@@ -2870,25 +2870,25 @@ nav.desktop-navigation {
   color: #7B5E5E;
   font-size: 13px;
   z-index: 99999999; }
-  /* line 119, ../sass/_navigation.scss */
+  /* line 120, ../sass/_navigation.scss */
   .desktop-navigation #label p {
     margin: 0;
     padding: 0; }
 
-/* line 130, ../sass/_navigation.scss */
+/* line 131, ../sass/_navigation.scss */
 #main-nav span.icon {
   display: none; }
   @media only screen and (max-width: 767px) {
-    /* line 130, ../sass/_navigation.scss */
+    /* line 131, ../sass/_navigation.scss */
     #main-nav span.icon {
       display: inline; } }
 
 @media only screen and (max-width: 767px) {
-  /* line 137, ../sass/_navigation.scss */
+  /* line 138, ../sass/_navigation.scss */
   .navigation-wrapper.columns {
     padding: 0; } }
 
-/* line 143, ../sass/_navigation.scss */
+/* line 144, ../sass/_navigation.scss */
 a#nav-toggle, a#off-canvas-nav-toggle {
   display: block;
   right: 0;
@@ -2906,15 +2906,15 @@ a#nav-toggle, a#off-canvas-nav-toggle {
   border-radius: 5px;
   text-align: center; }
 
-/* line 161, ../sass/_navigation.scss */
+/* line 162, ../sass/_navigation.scss */
 a#nav-toggle, a#nav-toggle.open, a#nav-toggle.closed, a#off-canvas-nav-toggle, a#off-canvas-nav-toggle.open, a#off-canvas-nav-toggle.closed {
   display: none; }
   @media only screen and (max-width: 767px) {
-    /* line 161, ../sass/_navigation.scss */
+    /* line 162, ../sass/_navigation.scss */
     a#nav-toggle, a#nav-toggle.open, a#nav-toggle.closed, a#off-canvas-nav-toggle, a#off-canvas-nav-toggle.open, a#off-canvas-nav-toggle.closed {
       display: block; } }
 
-/* line 168, ../sass/_navigation.scss */
+/* line 169, ../sass/_navigation.scss */
 .mobile-navigation .icon, .offcanvas-navigation .icon {
   font-family: "icons";
   position: absolute;
@@ -2923,7 +2923,7 @@ a#nav-toggle, a#nav-toggle.open, a#nav-toggle.closed, a#off-canvas-nav-toggle, a
   padding: 0 14px;
   font-size: 30px; }
 
-/* line 177, ../sass/_navigation.scss */
+/* line 178, ../sass/_navigation.scss */
 .mobile-navigation #label, .offcanvas-navigation #label {
   background: #52393A;
   text-transform: uppercase;
@@ -2934,32 +2934,32 @@ a#nav-toggle, a#nav-toggle.open, a#nav-toggle.closed, a#off-canvas-nav-toggle, a
   color: #7B5E5E;
   font-size: 13px;
   z-index: 99999999; }
-  /* line 187, ../sass/_navigation.scss */
+  /* line 188, ../sass/_navigation.scss */
   .mobile-navigation #label p, .offcanvas-navigation #label p {
     margin: 0;
     padding: 0; }
 
-/* line 193, ../sass/_navigation.scss */
+/* line 194, ../sass/_navigation.scss */
 .mobile-navigation .before-label, .offcanvas-navigation .before-label {
   border-bottom: 1px solid #e6705d; }
 
-/* line 201, ../sass/_navigation.scss */
+/* line 202, ../sass/_navigation.scss */
 nav.mobile-navigation, nav.offcanvas-navigation {
   display: none; }
 
-/* line 205, ../sass/_navigation.scss */
+/* line 206, ../sass/_navigation.scss */
 nav.mobile-navigation > ul li.has-dropdown ul, nav.offcanvas-navigation > ul li.has-dropdown ul {
   display: none; }
 
-/* line 210, ../sass/_navigation.scss */
+/* line 211, ../sass/_navigation.scss */
 nav.mobile-navigation ul li, nav.offcanvas-navigation ul li {
   position: relative; }
 
-/* line 214, ../sass/_navigation.scss */
+/* line 215, ../sass/_navigation.scss */
 nav.mobile-navigation ul li, nav.offcanvas-navigation ul li ul {
   margin: 0; }
 
-/* line 218, ../sass/_navigation.scss */
+/* line 219, ../sass/_navigation.scss */
 nav.mobile-navigation ul li a, nav.offcanvas-navigation ul li a {
   background: #df4931;
   position: relative;
@@ -2972,50 +2972,50 @@ nav.mobile-navigation ul li a, nav.offcanvas-navigation ul li a {
   line-height: 45px;
   padding: 0 0 0 20px;
   border-bottom: 1px solid #bf341e; }
-  /* line 231, ../sass/_navigation.scss */
+  /* line 232, ../sass/_navigation.scss */
   nav.mobile-navigation ul li a:hover, nav.offcanvas-navigation ul li a:hover {
     background: #dd3d24; }
 
-/* line 242, ../sass/_navigation.scss */
+/* line 243, ../sass/_navigation.scss */
 nav.mobile-navigation > ul > li > ul > li > a, nav.offcanvas-navigation > ul > li > ul > li > a {
   padding: 0 0 0 40px;
   background: #dd3d24;
   border-bottom: 1px solid #b2301c; }
-  /* line 247, ../sass/_navigation.scss */
+  /* line 248, ../sass/_navigation.scss */
   nav.mobile-navigation > ul > li > ul > li > a:hover, nav.offcanvas-navigation > ul > li > ul > li > a:hover {
     background: #d13920; }
 
-/* line 253, ../sass/_navigation.scss */
+/* line 254, ../sass/_navigation.scss */
 nav.mobile-navigation > ul > li > ul > li > ul > li > a, nav.offcanvas-navigation > ul > li > ul > li > ul > li > a {
   padding: 0 0 0 60px;
   background: #d13920;
   border-bottom: 1px solid #a52d1a; }
-  /* line 258, ../sass/_navigation.scss */
+  /* line 259, ../sass/_navigation.scss */
   nav.mobile-navigation > ul > li > ul > li > ul > li > a:hover, nav.offcanvas-navigation > ul > li > ul > li > ul > li > a:hover {
     background: #c4351e; }
 
-/* line 263, ../sass/_navigation.scss */
+/* line 264, ../sass/_navigation.scss */
 .content {
   padding: 20px; }
 
-/* line 267, ../sass/_navigation.scss */
+/* line 268, ../sass/_navigation.scss */
 h1 {
   font-size: 32px;
   padding: 0 0 20px 0; }
 
-/* line 272, ../sass/_navigation.scss */
+/* line 273, ../sass/_navigation.scss */
 p {
   padding: 0 0 16px 0; }
 
-/* line 286, ../sass/_navigation.scss */
+/* line 287, ../sass/_navigation.scss */
 a#off-canvas-nav-toggle, a#off-canvas-nav-toggle.open, a#off-canvas-nav-toggle.closed {
   display: none; }
   @media only screen and (max-width: 767px) {
-    /* line 286, ../sass/_navigation.scss */
+    /* line 287, ../sass/_navigation.scss */
     a#off-canvas-nav-toggle, a#off-canvas-nav-toggle.open, a#off-canvas-nav-toggle.closed {
       display: block; } }
 
-/* line 293, ../sass/_navigation.scss */
+/* line 294, ../sass/_navigation.scss */
 .offcanvas-navigation .icon {
   font-family: "icons";
   position: absolute;
@@ -3024,7 +3024,7 @@ a#off-canvas-nav-toggle, a#off-canvas-nav-toggle.open, a#off-canvas-nav-toggle.c
   padding: 0 14px;
   font-size: 30px; }
 
-/* line 302, ../sass/_navigation.scss */
+/* line 303, ../sass/_navigation.scss */
 .offcanvas-navigation #label {
   background: #52393A;
   text-transform: uppercase;
@@ -3035,12 +3035,12 @@ a#off-canvas-nav-toggle, a#off-canvas-nav-toggle.open, a#off-canvas-nav-toggle.c
   color: #7B5E5E;
   font-size: 13px;
   z-index: 99999999; }
-  /* line 312, ../sass/_navigation.scss */
+  /* line 313, ../sass/_navigation.scss */
   .offcanvas-navigation #label p {
     margin: 0;
     padding: 0; }
 
-/* line 318, ../sass/_navigation.scss */
+/* line 319, ../sass/_navigation.scss */
 nav.offcanvas-navigation {
   position: absolute;
   left: -85%;
@@ -3052,11 +3052,11 @@ nav.offcanvas-navigation {
   top: -176px;
   box-shadow: rgba(0, 0, 0, 0.5) -14px 0px 10px -14px inset; }
 
-/* line 330, ../sass/_navigation.scss */
+/* line 331, ../sass/_navigation.scss */
 nav.offcanvas-navigation ul li a {
   box-shadow: rgba(0, 0, 0, 0.5) -14px 0px 10px -14px inset; }
 
-/* line 334, ../sass/_navigation.scss */
+/* line 335, ../sass/_navigation.scss */
 .close-off-canvas-menu {
   font-family: "icons";
   color: white;
@@ -3065,16 +3065,16 @@ nav.offcanvas-navigation ul li a {
   display: none;
   border-bottom: 1px solid #bf341e; }
   @media only screen and (max-width: 767px) {
-    /* line 334, ../sass/_navigation.scss */
+    /* line 335, ../sass/_navigation.scss */
     .close-off-canvas-menu {
       display: block; } }
 
-/* line 346, ../sass/_navigation.scss */
+/* line 347, ../sass/_navigation.scss */
 .wrapper {
   background: #df4931;
   overflow: hidden; }
 
-/* line 351, ../sass/_navigation.scss */
+/* line 352, ../sass/_navigation.scss */
 .inner-pagewrapper {
   background: white;
   z-index: 100;
@@ -3089,7 +3089,7 @@ nav.offcanvas-navigation ul li a {
   -moz-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out; }
-  /* line 359, ../sass/_navigation.scss */
+  /* line 360, ../sass/_navigation.scss */
   .inner-pagewrapper.unfolded {
     left: 85%;
     position: relative;
@@ -3110,11 +3110,19 @@ nav.offcanvas-navigation ul li a {
 /* line 6, ../sass/_site.scss */
 .head-wrapper {
   background: #df4931;
+  margin-bottom: 1.875em; }
+
+/* line 11, ../sass/_site.scss */
+.logo {
   height: 180px;
   text-align: center; }
-  /* line 10, ../sass/_site.scss */
-  .head-wrapper .logo-img {
+  /* line 14, ../sass/_site.scss */
+  .logo .logo-img {
     position: relative;
     top: 25%; }
+
+/* line 20, ../sass/_site.scss */
+.nav-wrapper {
+  border-top: 1px solid white; }
 
 /*-----  End of Imports  ------*/

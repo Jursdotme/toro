@@ -32,30 +32,38 @@
 			<div class="inner-pagewrapper">
 	
 			<!-- header -->
-			<header class="header row" role="banner">
-				
-					<!-- logo -->
-					<div class="logo large-12 small-12 columns">
-						<div class="head-wrapper">
+			<div class="head-wrapper">
+				<header class="header row" role="banner">
+					
+						<!-- logo -->
+						<div class="logo large-12 small-12 columns">
 							<a href="<?php echo home_url(); ?>">
 								<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 								<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
 							</a>
 						</div>
+						<!-- /logo -->
+						
+						<div class="show-for-small">
+							<a id="off-canvas-nav-toggle" href="#">m</a>
+						</div>
+						
+				</header>
+
+
+				<!-- nav -->
+				<div class="nav-wrapper">
+					<div class="row">
+						<div class="large-12 columns navigation-wrapper">
+							<?php main_nav(); ?>
+						</div>
 					</div>
-					<!-- /logo -->
-					
-					<div class="show-for-small">
-						<a id="off-canvas-nav-toggle" href="#">m</a>
-					</div>
-			</header>
+				</div>
+				<!-- /nav -->
+
+
+			</div>
 			<!-- /header -->
 
 
-			<!-- nav -->
-			<div class="row">
-				<div class="large-12 columns navigation-wrapper">
-					<?php main_nav(); ?>
-				</div>
-			</div>
-			<!-- /nav -->
+			
