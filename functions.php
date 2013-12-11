@@ -165,17 +165,8 @@ function toro_header_scripts()
         
         wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2', true); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
-
-        wp_register_script('foundation', get_template_directory_uri() . '/javascripts/foundation.js', array(), '1.0.0', true); // Custom scripts
-        wp_enqueue_script('foundation'); // Enqueue it!
-
-        wp_register_script('foundationForms', get_template_directory_uri() . '/javascripts/foundation-forms.js', array(), '1.0.0', true); // Custom scripts
-        wp_enqueue_script('foundationForms'); // Enqueue it!
-
-        wp_register_script('navigation', get_template_directory_uri() . '/javascripts/nav.js', array(), '1.0.0', true); // Custom scripts
-        wp_enqueue_script('navigation'); // Enqueue it!
         
-        wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/scripts.js', array(), '1.0.0', true); // Custom scripts
+        wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.min.js', array(), '1.0.0', true); // Custom scripts
         wp_enqueue_script('toroscripts'); // Enqueue it!
     }
 }

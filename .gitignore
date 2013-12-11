@@ -8,4 +8,21 @@ Toro.esproj/Project.espressostorage
 .DS_Store
 
 # Ignore sass-cache files.
-*.sass-cache*
+
+pids
+logs
+results
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+npm-debug.log
+node_modules
+
+.sass-cache
