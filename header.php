@@ -18,12 +18,6 @@
 			
 		<!-- css + javascript -->
 		<?php wp_head(); ?>
-		<script>
-		!function(){
-			// configure legacy, retina, touch requirements @ conditionizr.com
-			conditionizr()
-		}()
-		</script>
 	</head>
 	<body <?php body_class(); ?>>
 	
