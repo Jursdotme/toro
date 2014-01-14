@@ -8,9 +8,9 @@
 // core variables
 
 // $text-color: #f06d06;
- $base-color: #363b3f;
+$base-color: #363b3f;
 // $icon-color: hsl( hue( $base-color ), 7%, 95% );
- $highlight-color: #DF4931;
+$highlight-color: #DF4931;
 $notification-color: #69a8bb;
 
 
@@ -18,7 +18,7 @@ $notification-color: #69a8bb;
 
 // $body-background: #f1f1f1;
 
- $link: #DF4931;
+$link: #DF4931;
 // $link-focus: lighten( $link, 10% );
 
 // $button-color: $highlight-color;
@@ -74,6 +74,7 @@ $notification-color: #69a8bb;
 		top: -12px;
 		font-family: "inzite-logo";
 		font-size: 50px;
+		vertical-align: baseline;
 	}
 
 @font-face {
@@ -87,6 +88,25 @@ $notification-color: #69a8bb;
   font-style: normal;
 }
 
+.login h1 a {
+	background-image: url(../img/Login-logo.png);
+	background-size: 312px 117px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	color: #999;
+	height: 117px;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.3em;
+	margin: 0 auto 25px;
+	padding: 0;
+	text-decoration: none;
+	width: 312px;
+	text-indent: -9999px;
+	outline: 0;
+	overflow: hidden;
+	display: block;
+}
 
 
 /*------------------------------------------------------------------------------
