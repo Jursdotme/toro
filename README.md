@@ -6,7 +6,14 @@
 
 #####A few of the Foundation design elements are also carried over (Panels, forms etc.).
 
-#####Ill write about the rest of the stuff later...
+The documentation is a little lacking but im working on it.
+
+- [X] Grid documentation
+- [ ] Using button style
+- [ ] Using the Navigation
+- [ ] Utility classes
+- [ ] Typography
+- [ ] ..other?
 
 
 
@@ -85,3 +92,4 @@ Use additional classes to specify a different number of items in a row for each 
 
 If you use the `large-block-grid` only, the grid will keep its spacing and configuration no matter the screen size. If you use `small-block-grid` only, the list items will stack on top of each other for small devices. If you use both of those classes combined, you can control the configuration and layout separately for each breakpoint.
 `medium-block-grid` may also be used.
+
