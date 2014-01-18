@@ -261,19 +261,6 @@ nav.mobile-navigation > ul > li > ul > li > ul > li > a, nav.offcanvas-navigatio
 	}
 }
 
-.content {
-	padding: 20px;
-}
-
-h1 {
-	font-size: 32px;
-	padding: 0 0 20px 0;
-}
-
-p {
-	padding: 0 0 16px 0;
-}
-
 //Off Canvas Mobile Nav
 
 @mixin off-canvas-nav-shadow {

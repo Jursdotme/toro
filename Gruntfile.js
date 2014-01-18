@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       build: {
-        src: ['javascripts/foundation.js', 'javascripts/foundation-forms.js', 'javascripts/nav.js', 'javascripts/scripts.js'], //input
+        src: ['javascripts/foundation.js', 'javascripts/foundation-forms.js', 'javascripts/nav.js', 'javascripts/scripts.js', 'javascripts/owl.carousel.js'], //input
         dest: 'javascripts/build/global.min.js' //Output
       }
     },

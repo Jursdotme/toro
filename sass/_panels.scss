@@ -65,7 +65,7 @@ $callout-panel-link-color: #fff !default;
   /* Panels */
   .panel { @include panel;
 
-    &.callout {
+    &.callout, {
       @include panel($primary-color);
       @include inset-shadow($active:false);
       a {

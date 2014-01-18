@@ -23,7 +23,7 @@
 		<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'toro' ), __( '1 Comment', 'toro' ), __( '% Comments', 'toro' )); ?></span>
 		<!-- /post details -->
 		
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+		<?php toro_excerpt('toro_index'); // Build your custom callback length in functions.php ?>
 		
 		<?php edit_post_link(); ?>
 		

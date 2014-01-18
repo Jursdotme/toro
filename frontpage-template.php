@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Forside Skabelon
+Template Name: Frontpage Template
 */
 ?>
 
@@ -9,33 +9,37 @@ Template Name: Forside Skabelon
 <!-- Slider -->
 <?php include 'slider.php'; ?>
 
-<!-- Knapper -->
-<?php include 'knapper.php'; ?>
-
 <!-- Statisk Indhold -->
-	<hr class="hr1">
-	<div class="row frontpage-content">
-		<div class="large-9 medium-8 small-12 columns">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<?php the_content(); ?>
-			<?php endwhile; ?>
-			<?php endif; ?>
-		</div>
+<hr class="hr1">
+
+<div class="row frontpage-content">
+	<div class="large-12 medium-12 small-12 columns">
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php the_content(); ?>
+		<?php endwhile; ?>
+		<?php endif; ?>
 	</div>
-	<hr class="hr1 bottom">
+</div>
+
+<hr class="hr1 bottom">
 
 <div class="row forside-nyhed">
-<?php
+	<?php
 
-// The Query
-$query = new WP_Query( 'posts_per_page=3' );
+	// The Arguments
+	$args = array(
+		'posts_per_page' => 2,
+	);
 
-// The Loop
-if ( $query->have_posts() ) {
-	while ( $query->have_posts() ) {
-		$query->the_post();?>
+	// The Query
+	$query = new WP_Query( $args );
 
-	<div class="large-4 small-12 columns">
+	// The Loop
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();?>
+
+	<div <?php post_class('large-4 small-12 columns'); ?>>
 		<div class="panel">
 			<div class="row collapse">
 				<div class="large-12 columns">
@@ -50,23 +54,11 @@ if ( $query->have_posts() ) {
 		</div>
 	</div>
 
-<?php
-}}
-/* Restore original Post Data */
-wp_reset_postdata();
-?>
+	<?php
+	}}
+	/* Restore original Post Data */
+	wp_reset_postdata();
+	?>
 </div>
 
-<!-- Medarbejdere -->
-<div class="row">
-	<div class="large-9 columns">
-		<h2 class="label-header"><?php _e('Team','toro'); ?></h2>
-	</div>
-	<div class="large-3 columns">
-		<div id="team-arrows">
-    			<a class="team-prev"><img src="<?php echo get_template_directory_uri(); ?>/images/prev.png" style="border:none;" /></a>
-    			<a class="team-next"><img src="<?php echo get_template_directory_uri(); ?>/images/next.png" style="border:none;" /></a>
-		</div>
-	</div>
-</div>
 <?php  get_footer();?>

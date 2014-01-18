@@ -12,7 +12,7 @@
 			<?php get_template_part('pagination'); ?>
 
 	</section>
-	<!-- /section -->
+	<!-- section -->
 	
 	<?php get_sidebar(); // The sidebar has .large-3 columns. (Change it in sidebar.php) ?> 
 
