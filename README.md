@@ -6,16 +6,17 @@
 
 #####A few of the Foundation design elements are also carried over (Panels, forms etc.).
 
+### To do list
+- [ ] Add Table system from Bootstrap.
+
 The documentation is a little lacking but im working on it.
 
-- [X] Grid documentation
+- [x] Grid documentation
 - [ ] Using button style
 - [ ] Using the Navigation
 - [ ] Utility classes
 - [ ] Typography
 - [ ] ..other?
-
-
 
 ## Basic
 The grid system i based on Foundation by [ZURB](http://zurb.com)
