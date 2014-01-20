@@ -40,19 +40,18 @@ Template Name: Frontpage Template
 			$query->the_post();?>
 
 	<div <?php post_class('large-4 small-12 columns'); ?>>
-		<div class="panel">
-			<div class="row collapse">
-				<div class="large-12 columns">
-					<h3><?php the_title(); ?></h3>
-					<hr>
-					<p class="date"><?php the_time(get_option('date_format')); ?></p>
-					<p><?php the_excerpt(); ?>	</p>
-					
-				</div>
-			</div>
-			<a class="readmore" href="<?php the_permalink(); ?>"><?php _e('Læs mere','toro'); ?></a>
+		<div class="panel panel-default">
+			
+					<div class="panel-heading"><h3><?php the_title(); ?></h3></div>
+					<div class="panel-body">
+						<p class="date"><?php the_time(get_option('date_format')); ?></p>
+						<p><?php the_excerpt(); ?>	</p>
+					</div>
+					<div class="panel-footer"><a class="readmore" href="<?php the_permalink(); ?>"><?php _e('Læs mere','toro'); ?></a></div>
 		</div>
 	</div>
+
+
 
 	<?php
 	}}

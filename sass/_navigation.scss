@@ -4,12 +4,12 @@
 
 $navigation-width: 100% !default;
 $navigation-float: left !default;
-$navigation-bg: $primary-color !default;
+$navigation-bg: $brand-primary !default;
 $navigation-desktop-padding: em-calc(20) !default;
 $navigation-text-color: #fff !default;
 $navigation-hover-darkening: 10% !default; // Change effect on line 56
 $navigation-hover-color: $navigation-bg !default;
-$navigation-font-family: $body-font-family !default;
+$navigation-font-family: $font-family-base !default;
 $navigation-icon-font: "icons" !default;
 $navigation-margin-bottom: 0 !default;
 
@@ -78,7 +78,7 @@ nav.desktop-navigation {
 			width: auto;
 			margin: 0;
 			z-index: 1000;
-
+			padding: 0;
 			> li { //Submenu item
 				width: auto;
 				margin: 0;
@@ -148,7 +148,7 @@ a#nav-toggle, a#off-canvas-nav-toggle {
 		text-decoration: none;
 		font-family: $navigation-icon-font;
 		color: White;
-		background: $primary-color;
+		background: $brand-primary;
 		text-transform: uppercase;
 		font-weight: 200;
 		line-height: 35px;
@@ -205,6 +205,10 @@ nav.mobile-navigation, nav.offcanvas-navigation {
 
 nav.mobile-navigation > ul li.has-dropdown ul, nav.offcanvas-navigation > ul li.has-dropdown ul {
 	display: none;
+}
+
+nav ul.desk_menu, nav ul.desk_submenu, nav ul.desk_subsubmenu, .offcanvas-navigation ul {
+	padding: 0;
 }
 
 // Overall Styles
@@ -309,7 +313,7 @@ nav.offcanvas-navigation {
 	height: 100%;
 	top: 0;
 	width: $navigation-offcanvas-menu-width;
-	background: $primary-color;
+	background: $brand-primary;
 	display: block;
 	top: -176px;
 	@include off-canvas-nav-shadow;

@@ -2,7 +2,7 @@
     <div id="frontpage-slider" class="owl-carousel row"> <!-- Slide Wrapper -->
 
       <div class="large-12 columns"> <!-- Slide -->
-        <div class="slider-post row collapse">
+        <div class="slider-post row no-margin">
           <div class="large-12 columns">
 
             <!-- The image -->
@@ -21,7 +21,7 @@
       </div> <!-- END Slide -->
 
       <div class="large-12 columns"> <!-- Slide -->
-        <div class="slider-post row collapse">
+        <div class="slider-post row no-margin">
           <div class="large-12 columns">
 
             <!-- The image -->
@@ -40,7 +40,7 @@
       </div> <!-- END Slide -->
 
       <div class="large-12 columns"> <!-- Slide -->
-        <div class="slider-post row collapse">
+        <div class="slider-post row no-margin">
           <div class="large-12 columns">
 
             <!-- The image -->
@@ -59,7 +59,7 @@
       </div> <!-- END Slide -->
 
       <div class="large-12 columns"> <!-- Slide -->
-        <div class="slider-post row collapse">
+        <div class="slider-post row no-margin">
           <div class="large-12 columns">
 
             <!-- The image -->

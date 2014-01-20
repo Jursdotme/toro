@@ -90,18 +90,13 @@ $em-base: 16 !default;
 
 // We use these to control various global styles
 $body-bg: #fff !default;
-$body-font-color: #222 !default;
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
-$body-font-weight: normal !default;
-$body-font-style: normal !default;
 
 // We use this to control font-smoothing
 $font-smoothing: antialiased !default;
 
 // We use these as default colors throughout
-$primary-color: #DF4931 !default;
-$secondary-color: #e7e7e7 !default;
-$alert-color: #f04124 !default;
+$brand-primary: #DF4931 !default;
+$brand-danger: #f04124 !default;
 $success-color: #43AC6A !default;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -255,7 +250,7 @@ a:hover { cursor: pointer; }
 }
 
 // We use this to add a glowing effect to block elements
-@mixin block-glowing-effect($selector:focus, $fade-time:300ms, $glowing-effect-color:fade-out($primary-color, .25)) {
+@mixin block-glowing-effect($selector:focus, $fade-time:300ms, $glowing-effect-color:fade-out($brand-primary, .25)) {
   @if $experimental {
     -webkit-transition: -webkit-box-shadow $fade-time, border-color $fade-time ease-in-out;
     -moz-transition: -moz-box-shadow $fade-time, border-color $fade-time ease-in-out;

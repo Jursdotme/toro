@@ -5,7 +5,28 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       build: {
-        src: ['javascripts/foundation.js', 'javascripts/foundation-forms.js', 'javascripts/nav.js', 'javascripts/scripts.js', 'javascripts/owl.carousel.js'], //input
+        src: [
+        'javascripts/foundation.js',
+        'javascripts/foundation-forms.js',
+
+        'javascripts/nav.js',
+
+        'javascripts/scripts.js',
+
+        'javascripts/owl.carousel.js',
+
+        'javascripts/bootstrap/affix.js',
+        'javascripts/bootstrap/alert.js',
+        'javascripts/bootstrap/button.js',
+        'javascripts/bootstrap/collapse.js',
+        'javascripts/bootstrap/dropdown.js',
+        'javascripts/bootstrap/tab.js',
+        'javascripts/bootstrap/transition.js',
+        'javascripts/bootstrap/scrollspy.js',
+        'javascripts/bootstrap/modal.js',
+        'javascripts/bootstrap/tooltip.js',
+        'javascripts/bootstrap/popover.js',
+        ] , //input
         dest: 'javascripts/build/global.min.js' //Output
       }
     },
@@ -15,7 +36,7 @@ module.exports = function(grunt) {
         options: {              // Target options
           sassDir: 'sass',
           cssDir: 'stylesheets',
-          environment: 'production'
+          environment: 'development'
         }
       }
     },
@@ -31,7 +52,7 @@ module.exports = function(grunt) {
         }
       },
       css: {
-        files: ['sass/*.scss'],
+        files: ['sass/*.scss', 'sass/bootstrap/*.scss'],
         tasks: ['compass'],
         options: {
            spawn: false,  
