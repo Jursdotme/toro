@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         options: {              // Target options
           sassDir: 'sass',
           cssDir: 'stylesheets',
-          environment: 'development'
+          environment: 'production'
         }
       }
     },
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         livereload: true,
       },
       scripts: {
-        files: ['javascripts/*.js'],
+        files: ['javascripts/*.js, javascripts/bootstrap/*.js'],
         tasks: ['uglify'],
         options: {
           spawn: false,
