@@ -32,7 +32,7 @@
 			p {
 			color: white;
 			margin: 0;
-			font-size: $paragraph-font-size*.7;
+			font-size: $font-size-base*.7;
 			}
 		}
 
@@ -43,13 +43,13 @@
 			background: rgba(black, 0);
 			padding: $column-gutter/2 $column-gutter;
 			h1 {
-			color: $small-font-color;
-			font-size: $h1-font-size*.5;
+			color: $text-color;
+			font-size: $font-size-h1*.5;
 			}
 			p {
-			color:  $small-font-color;
+			color:  $text-color;
 			margin: 0;
-			font-size: $paragraph-font-size*.8;
+			font-size: $font-size-base*.8;
 			}
 		}
 

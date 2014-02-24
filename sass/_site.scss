@@ -1,10 +1,10 @@
 .header {
 	@media #{$small}  {
-		background: $primary-color;
+		background: $brand-primary;
 	}
 }
 .head-wrapper {
-	background: $primary-color;
+	background: $brand-primary;
 	margin-bottom: $column-gutter;
 }
 

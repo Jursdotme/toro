@@ -211,13 +211,13 @@ $experimental: true !default;
   .row {
     @include grid-row;
 
-    &.collapse {
+    &.no-margin {
       .column,
       .columns { @include grid-column($collapse:true); }
     }
 
     .row { @include grid-row($behavior:nest);
-      &.collapse { @include grid-row($behavior:nest-collapse); }
+      &.no-margin { @include grid-row($behavior:nest-collapse); }
     }
   }
 

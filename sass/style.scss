@@ -21,14 +21,10 @@
 
 @import "compass";
 
-@import "functions";
+@import "grid/functions";
 @import "settings";
-@import "grid";
-@import "typography";
-@import "buttons";
-@import "forms";
-@import "alert-boxes";
-@import "panels";
+@import "grid/grid";
+@import "bootstrap/bootstrap";
 @import "navigation";
 @import "owl-slider";
 @import "site";
