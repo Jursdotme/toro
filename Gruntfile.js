@@ -8,13 +8,8 @@ module.exports = function(grunt) {
         src: [
         'javascripts/foundation.js',
         'javascripts/foundation-forms.js',
-
         'javascripts/nav.js',
-
-        'javascripts/scripts.js',
-
         'javascripts/owl.carousel.js',
-
         'javascripts/bootstrap/affix.js',
         'javascripts/bootstrap/alert.js',
         'javascripts/bootstrap/button.js',
@@ -26,6 +21,9 @@ module.exports = function(grunt) {
         'javascripts/bootstrap/modal.js',
         'javascripts/bootstrap/tooltip.js',
         'javascripts/bootstrap/popover.js',
+        'javascripts/headroom.js',
+        'javascripts/cycle2.js',
+        'javascripts/scripts.js',
         ] , //input
         dest: 'javascripts/build/global.min.js' //Output
       }
@@ -36,7 +34,7 @@ module.exports = function(grunt) {
         options: {              // Target options
           sassDir: 'sass',
           cssDir: 'stylesheets',
-          environment: 'production'
+          environment: 'development'
         }
       }
     },
@@ -45,14 +43,14 @@ module.exports = function(grunt) {
         livereload: true,
       },
       scripts: {
-        files: ['javascripts/*.js, javascripts/bootstrap/*.js'],
+        files: ['javascripts/*.js', 'javascripts/bootstrap/*.js'],
         tasks: ['uglify'],
         options: {
           spawn: false,
         }
       },
       css: {
-        files: ['sass/*.scss', 'sass/bootstrap/*.scss'],
+        files: ['sass/*.scss', 'sass/bootstrap/*.scss', 'sass/grid/*.scss'],
         tasks: ['compass'],
         options: {
            spawn: false,  

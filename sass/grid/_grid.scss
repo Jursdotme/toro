@@ -3,9 +3,9 @@
 //
 
 $small-screen: 767px !default;
-$medium-screen: 991px !default;
-$large-screen: 1200px !default;
-$xlarge-screen: 2560px !default;
+$medium-screen: 750px !default;
+$large-screen: 970px !default;
+$xlarge-screen: 1170px !default;
 
 $screen: "only screen" !default;
 $small: "only screen and (max-width: #{$small-screen})" !default;
@@ -18,11 +18,11 @@ $portrait: "only screen and (orientation: portrait)" !default;
 //
 // Grid Variables
 //
-$include-html-grid-classes: true;
-$fixed-breakpoints: true;
-$row-width: emCalc(1170);
-$column-gutter: emCalc(30);
-$total-columns: 12;
+$include-html-grid-classes: true !default;
+$fixed-breakpoints: true !default;
+$row-width: emCalc(4000) !default;
+$column-gutter: emCalc(30) !default;
+$total-columns: 12 !default;
 
 /* Foundation Visibility HTML Classes */
   .show-for-small,
@@ -339,29 +339,29 @@ $experimental: true !default;
 
 @if $fixed-breakpoints == true {
 // Fixed breakpoints
-  // Extra small
+  // Small
     @media only screen and (max-width: 768px) {
     
     }
 
-  //Small devices
+  //medium devices
     @media only screen and (min-width: 769px) and (max-width: 991px){
       .row {
-        width: emCalc(750);
+        width: $medium-screen;
       }
     }
 
-  //Medium Desktop
+  //large Desktop
     @media only screen and (min-width: 992px) and (max-width: 1199px){
       .row {
-        width: emCalc(970);
+        width: $large-screen;
       }
     }
 
-  //Large Desktop
+  //X-Large Desktop
     @media only screen and (min-width: 1200px) {
       .row {
-        width: emCalc(1170);
+        width: $xlarge-screen;
       }
     }
 }

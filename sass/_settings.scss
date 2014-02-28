@@ -2,14 +2,15 @@
 // =            Grid & Media Queries            =
 // ============================================*/
 
-// $small-screen: 767px;
-// $medium-screen: 991px;
-// $large-screen: 1200px;
-// $xlarge-screen: 2560px;
+ $small-screen: 767px;
+ $medium-screen: 750px;
+ $large-screen: 970px;
+ $xlarge-screen: 1170px;
 
-// $row-width: rem-calc(1000);
-// $column-gutter: em-calc(30);
-// $total-columns: 12;
+ $fixed-breakpoints: true;
+ $row-width: $xlarge-screen;
+ $column-gutter: emCalc(30);
+ $total-columns: 12;
 
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;

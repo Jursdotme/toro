@@ -24,6 +24,12 @@
 		<!-- wrapper -->
 		<div class="wrapper">
 			<div class="inner-pagewrapper">
+
+			<!-- Off-Canvas-Nav -->
+			<?php off_canvas_mobile_nav(); ?>
+			<!-- /Off-Canvas-Nav -->
+		
+			
 	
 			<!-- header -->
 			<div class="head-wrapper">
@@ -39,17 +45,20 @@
 						<!-- /logo -->
 						
 						<div class="show-for-small">
-							<a id="off-canvas-nav-toggle" href="#">m</a>
+							<a id="mobile-nav-toggle" href="#">m</a>
 						</div>
 						
 				</header>
 
-
+				<!-- dropdown-Nav -->
+			<?php dropdown_mobile_nav(); ?>
+			<!-- /dropdown-Nav -->
+			
 				<!-- nav -->
 				<div class="nav-wrapper">
 					<div class="row">
 						<div class="large-12 columns navigation-wrapper">
-							<?php main_nav(); ?>
+							<?php desktop_nav(); ?>
 						</div>
 					</div>
 				</div>

@@ -80,13 +80,13 @@ MENUS & NAVIGATION
     // registering wp3+ menus
     register_nav_menus(
         array(
-            'main_nav' => __( 'Main Menu', 'torotheme' ),   // main nav in header
-            'mobil-nav' => __( 'Mobil menu', 'torotheme' ), // secondary nav in footer
-            'off-canvas-mobil-nav' => __( 'Off Canvas Mobil menu', 'torotheme' ), // secondary nav in footer
+            'desktop_nav' => __( 'Desktop Menu', 'torotheme' ),   // main nav in header
+            'dropdown_mobile_nav' => __( 'Dropdown Mobile Menu', 'torotheme' ), // secondary nav in footer
+            'off_canvas_mobile_nav' => __( 'Off Canvas Mobile Menu', 'torotheme' ), // secondary nav in footer
         )
     );
 
-// Custom Walker for Toro Topbar
+// Custom Walker for Toro Navigation
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
@@ -97,38 +97,25 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 }
 
 // the main desktop menu
-function main_nav() {
+function desktop_nav() {
     // display the wp3 menu if available
     wp_nav_menu(array(
         'container' => 'nav',                           // remove nav container
-        'container_id' => 'main-nav',                    // class of container (should you choose to use it)
-        'menu' => __( 'Main Menu', 'torotheme' ),    // nav name
-        'theme_location' => 'main_nav',              // where it's located in the theme
-        'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
-        'depth' => 0,                                   // limit the depth of the nav
-        'fallback_cb' => 'toro_main_nav_fallback',      // fallback function
+        'container_id' => 'desktop-nav',                    // class of container (should you choose to use it)
+        'menu' => __( 'Desktop Menu', 'torotheme' ),    // nav name
+        'theme_location' => 'desktop_nav',              // where it's located in the theme
         'walker' => new My_Walker_Nav_Menu()            // include the new custom desktop walker
     ));
 } /* end toro desktop main nav */
 
 // the main mobile menu
-function mobile_nav() {
+function dropdown_mobile_nav() {
     // display the wp3 menu if available
     wp_nav_menu(array(
         'container' => 'nav',                           // remove nav container
-        'container_id' => 'mobile',                     // class of container (should you choose to use it)
-        'menu' => __( 'Mobil Menu', 'torotheme' ),      // nav name
-        'theme_location' => 'mobil-nav',                // where it's located in the theme
-        'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
-        'depth' => 0,                                   // limit the depth of the nav
-        'fallback_cb' => 'toro_main_nav_fallback',      // fallback function
-        'walker' => new My_Walker_Nav_Menu()            // include the new custom mobile walker
+        'container_id' => 'dropdown-mobile',                     // class of container (should you choose to use it)
+        'menu' => __( 'Dropdown Mobile Menu', 'torotheme' ),      // nav name
+        'theme_location' => 'dropdown_mobile_nav',                // where it's located in the theme
     ));
 } /* end toro mobile main nav */
 
@@ -138,15 +125,9 @@ function off_canvas_mobile_nav() {
     wp_nav_menu(array(
         'container' => 'nav',                           // remove nav container
         'container_id' => 'off-canvas-mobile',          // class of container (should you choose to use it)
-        'menu' => __( 'Off Canvas Mobil Menu', 'torotheme' ),   // nav name
-        'theme_location' => 'off-canvas-mobil-nav',     // where it's located in the theme
-        'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
-        'depth' => 0,                                   // limit the depth of the nav
-        'fallback_cb' => 'toro_main_nav_fallback',      // fallback function
-        'walker' => new My_Walker_Nav_Menu()            // include the new custom mobile walker
+        'container_class' => 'offcanvas-navigation',
+        'menu' => __( 'Off Canvas Mobile Menu', 'torotheme' ),   // nav name
+        'theme_location' => 'off_canvas_mobile_nav',     // where it's located in the theme
     ));
 } /* end toro mobile main nav */
 
