@@ -1,22 +1,10 @@
-.header {
-	@media #{$small}  {
-		background: $brand-primary;
-	}
-}
-.head-wrapper {
-	background: $brand-primary;
-	margin-bottom: $column-gutter;
-}
+/*===============================
+=            Overall            =
+===============================*/
 
-.logo {
-	height: 180px;
-	text-align: center;
-	.logo-img {
-		position: relative;
-		top: 25%;
-	}
-}
+ $border-radius-base:        0;
+ $border-radius-large:       0;
+ $border-radius-small:       0;
 
-.nav-wrapper {
-	border-top: 1px solid white;
-}
+/*-----  End of Overall  ------*/
+

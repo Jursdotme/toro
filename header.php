@@ -20,53 +20,23 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-	
-		<!-- wrapper -->
-		<div class="wrapper">
-			<div class="inner-pagewrapper">
-
-			<!-- Off-Canvas-Nav -->
-			<?php off_canvas_mobile_nav(); ?>
-			<!-- /Off-Canvas-Nav -->
-		
-			
-	
-			<!-- header -->
-			<div class="head-wrapper">
-				<header class="header row" role="banner">
-					
-						<!-- logo -->
-						<div class="logo large-12 small-12 columns">
-							<a href="<?php echo home_url(); ?>">
-								<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-								<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-							</a>
-						</div>
-						<!-- /logo -->
-						
-						<div class="show-for-small">
-							<a id="mobile-nav-toggle" href="#">m</a>
-						</div>
-						
-				</header>
-
-				<!-- dropdown-Nav -->
-			<?php dropdown_mobile_nav(); ?>
-			<!-- /dropdown-Nav -->
-			
-				<!-- nav -->
-				<div class="nav-wrapper">
-					<div class="row">
-						<div class="large-12 columns navigation-wrapper">
-							<?php desktop_nav(); ?>
-						</div>
-					</div>
-				</div>
-				<!-- /nav -->
-
-
-			</div>
-			<!-- /header -->
-
-
-			
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="<?php echo home_url(); ?>">
+		                <?php bloginfo('name'); ?>
+		            </a>
+		    </div>
+		    	<?php desktop_nav(); ?>
+		    </div>
+			</nav>
+		</div>
+		<div class="container">

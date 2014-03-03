@@ -3,7 +3,7 @@
 <div class="row">
 	
 	<!-- section -->
-	<section role="main" class="large-9 medium-8 small-12 columns">
+	<section role="main" class="col-md-9 co-sm-8 col-xs-12 columns">
 		
 			<h1><?php _e( 'Latest Posts', 'toro' ); ?></h1>
 		

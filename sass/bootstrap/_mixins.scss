@@ -54,8 +54,7 @@
 
 // Placeholder text
 @mixin placeholder($color: $input-color-placeholder) {
-  &:-moz-placeholder            { color: $color; } // Firefox 4-18
-  &::-moz-placeholder           { color: $color;   // Firefox 19+
+  &::-moz-placeholder           { color: $color;   // Firefox
                                   opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
   &:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
   &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
@@ -115,6 +114,10 @@
 }
 
 // Drop shadows
+//
+// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
+//   supported browsers that have box shadow capabilities now support the
+//   standard `box-shadow` property.
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
           box-shadow: $shadow;
@@ -145,31 +148,45 @@
 }
 
 // Transformations
-@mixin rotate($degrees) {
-  -webkit-transform: rotate($degrees);
-      -ms-transform: rotate($degrees); // IE9 only
-          transform: rotate($degrees);
+@mixin scale($ratio...) {
+  -webkit-transform: scale($ratio);
+      -ms-transform: scale($ratio); // IE9 only
+          transform: scale($ratio);
 }
-@mixin scale($ratio, $ratio-y...) {
-  -webkit-transform: scale($ratio, $ratio-y);
-      -ms-transform: scale($ratio, $ratio-y); // IE9 only
-          transform: scale($ratio, $ratio-y);
+@mixin scale($ratioX, $ratioY...) {
+  -webkit-transform: scale($ratioX, $ratioY);
+      -ms-transform: scale($ratioX, $ratioY); // IE9 only
+          transform: scale($ratioX, $ratioY);
 }
-@mixin translate($x, $y) {
-  -webkit-transform: translate($x, $y);
-      -ms-transform: translate($x, $y); // IE9 only
-          transform: translate($x, $y);
+@mixin scaleX($ratio) {
+  -webkit-transform: scaleX($ratio);
+      -ms-transform: scaleX($ratio); // IE9 only
+          transform: scaleX($ratio);
+}
+@mixin scaleY($ratio) {
+  -webkit-transform: scaleY($ratio);
+      -ms-transform: scaleY($ratio); // IE9 only
+          transform: scaleY($ratio);
 }
 @mixin skew($x, $y) {
   -webkit-transform: skew($x, $y);
       -ms-transform: skewX($x) skewY($y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
           transform: skew($x, $y);
 }
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9 only
+          transform: translate($x, $y);
+}
 @mixin translate3d($x, $y, $z) {
   -webkit-transform: translate3d($x, $y, $z);
           transform: translate3d($x, $y, $z);
 }
-
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees); // IE9 only
+          transform: rotate($degrees);
+}
 @mixin rotateX($degrees) {
   -webkit-transform: rotateX($degrees);
       -ms-transform: rotateX($degrees); // IE9 only
@@ -249,7 +266,6 @@
   -webkit-user-select: $select;
      -moz-user-select: $select;
       -ms-user-select: $select; // IE10+
-       -o-user-select: $select;
           user-select: $select;
 }
 
@@ -407,12 +423,12 @@
     background-color: $heading-bg-color;
     border-color: $heading-border;
 
-    + .panel-collapse .panel-body {
+    + .panel-collapse > .panel-body {
       border-top-color: $border;
     }
   }
   & > .panel-footer {
-    + .panel-collapse .panel-body {
+    + .panel-collapse > .panel-body {
       border-bottom-color: $border;
     }
   }
@@ -586,18 +602,24 @@
 
 // Contextual backgrounds
 // -------------------------
-@mixin bg-variant($color) {
-  background-color: $color;
-  a:hover {
+// [converter] $parent hack
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+  a#{$parent}:hover {
     background-color: darken($color, 10%);
   }
 }
 
 // Typography
 // -------------------------
-@mixin text-emphasis-variant($color) {
-  color: $color;
-  a:hover {
+// [converter] $parent hack
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover {
     color: darken($color, 10%);
   }
 }
@@ -625,7 +647,9 @@
 // More easily include all the states for responsive-utilities.less.
 // [converter] $parent hack
 @mixin responsive-visibility($parent) {
-  #{$parent} { display: block !important; }
+  #{$parent} {
+    display: block !important;
+  }
   table#{$parent}  { display: table; }
   tr#{$parent}     { display: table-row !important; }
   th#{$parent},
@@ -634,10 +658,9 @@
 
 // [converter] $parent hack
 @mixin responsive-invisibility($parent) {
-    #{$parent},
-  tr#{$parent},
-  th#{$parent},
-  td#{$parent} { display: none !important; }
+  #{$parent} {
+    display: none !important;
+  }
 }
 
 
@@ -778,13 +801,13 @@
 // Used only by Bootstrap to generate the correct number of grid classes given
 // any value of `$grid-columns`.
 
-// [converter] Grid converted to use SASS cycles (LESS uses recursive nested mixin defs not supported by SASS)
+// [converter] This is defined recursively in LESS, but Sass supports real loops
 @mixin make-grid-columns() {
   $list: '';
   $i: 1;
   $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
-  @for $i from 2 through $grid-columns {
-    $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}, #{$list}";
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
   }
   #{$list} {
     position: relative;
@@ -797,13 +820,13 @@
 }
 
 
-// [converter] Grid converted to use SASS cycles (LESS uses recursive nested mixin defs not supported by SASS)
-@mixin make-grid-columns-float($class) {
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin float-grid-columns($class) {
   $list: '';
   $i: 1;
   $list: ".col-#{$class}-#{$i}";
-  @for $i from 2 through $grid-columns {
-    $list: ".col-#{$class}-#{$i}, #{$list}";
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-#{$class}-#{$i}";
   }
   #{$list} {
     float: left;
@@ -811,7 +834,7 @@
 }
 
 
-@mixin calc-grid($index, $class, $type) {
+@mixin calc-grid-column($index, $class, $type) {
   @if ($type == width) and ($index > 0) {
     .col-#{$class}-#{$index} {
       width: percentage(($index / $grid-columns));
@@ -834,14 +857,22 @@
   }
 }
 
-// [converter] This is defined recursively in LESS, but SASS supports real loops
-@mixin make-grid($columns, $class, $type) {
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $class, $type) {
   @for $i from 0 through $columns {
-    @include calc-grid($i, $class, $type);
+    @include calc-grid-column($i, $class, $type);
   }
 }
 
 
+// Create grid for specific class
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}
 
 // Form validation states
 //
@@ -910,17 +941,21 @@
 
 // [converter] $parent hack
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  #{$parent} { height: $input-height;
-  padding: $padding-vertical $padding-horizontal;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius; }
+  #{$parent} {
+    height: $input-height;
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+  }
+
   select#{$parent} {
     height: $input-height;
     line-height: $input-height;
   }
 
-  textarea#{$parent} {
+  textarea#{$parent},
+  select[multiple]#{$parent} {
     height: auto;
   }
 }

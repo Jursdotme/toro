@@ -1,7 +1,10 @@
+			
 			<!-- footer -->
-			<footer class="footer row" role="contentinfo">
+
+
+			<footer id footer class="footer row" role="contentinfo">
 				
-				<div class="large-9 medium-8 small-12 columns">
+				<div class="col-md-9 col-sm-8 col-xs-12">
 
 					<!-- copyright -->
 					<p class="copyright">
@@ -14,11 +17,7 @@
 
 			</footer>
 			<!-- /footer -->
-
-			</div>
-		
-		</div>
-		<!-- /wrapper -->
+			</div> <!-- END Container -->
 
 		<?php wp_footer(); ?>
 		

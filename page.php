@@ -3,7 +3,7 @@
 <div class="row">
 	
 	<!-- section -->
-	<section role="main" class="large-9 medium-8 small-12 columns">
+	<section role="main" class="col-md-9 col-sm-8 col-xs-12">
 		
 			<h1><?php the_title(); ?></h1>
 		
@@ -40,7 +40,7 @@
 	</section>
 	<!-- /section -->
 	
-	<?php get_sidebar(); // The sidebar has .large-3 columns. (Change it in sidebar.php) ?>
+	<?php get_sidebar(); // The sidebar has ..col-md-3. (Change it in sidebar.php) ?>
 
 </div> 
 

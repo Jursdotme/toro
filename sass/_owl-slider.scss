@@ -11,7 +11,7 @@
 		position: absolute;
 		bottom: 0;
 		background: rgba(black, 0);
-		padding: $column-gutter/2 $column-gutter;
+		padding: $grid-gutter-width/2 $grid-gutter-width;
 		h1 {
 			color: white;
 		}
@@ -21,11 +21,11 @@
 		}
 	
 		// This is for medium width
-		@media #{$medium} {
+		@media (min-width: $screen-md-min) {
 			position: absolute;
 			bottom: 0;
 			background: rgba(black, 0);
-			padding: $column-gutter/2 $column-gutter;
+			padding: $grid-gutter-width/2 $grid-gutter-width;
 			h1 {
 			color: white;
 			}
@@ -37,11 +37,11 @@
 		}
 
 		// This is for small width
-		@media #{$small} {
+		@media (min-width: $screen-sm-min) {
 			position: relative;
 			bottom: 0;
 			background: rgba(black, 0);
-			padding: $column-gutter/2 $column-gutter;
+			padding: $grid-gutter-width/2 $grid-gutter-width;
 			h1 {
 			color: $text-color;
 			font-size: $font-size-h1*.5;

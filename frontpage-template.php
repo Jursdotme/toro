@@ -13,7 +13,7 @@ Template Name: Frontpage Template
 <hr class="hr1">
 
 <div class="row frontpage-content">
-	<div class="large-12 medium-12 small-12 columns">
+	<div class=".col-md-12 .col-md-12 columns">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<?php the_content(); ?>
 		<?php endwhile; ?>
@@ -39,7 +39,7 @@ Template Name: Frontpage Template
 		while ( $query->have_posts() ) {
 			$query->the_post();?>
 
-	<div <?php post_class('large-4 small-12 columns'); ?>>
+	<div <?php post_class('.col-md-4 .col-md-12 columns'); ?>>
 		<div class="panel panel-default">
 			
 					<div class="panel-heading"><h3><?php the_title(); ?></h3></div>
