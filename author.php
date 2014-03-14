@@ -46,7 +46,7 @@
 			
 			<br class="clear">
 			
-			<?php edit_post_link(); ?>
+			
 			
 		</article>
 		<!-- /article -->
@@ -71,5 +71,5 @@
 	<!-- /section -->
 	
 <?php get_sidebar(); ?>
-
+<?php include "edit_post_link.php" ?>
 <?php get_footer(); ?>

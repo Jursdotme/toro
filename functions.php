@@ -188,19 +188,33 @@ function my_remove_recent_comments_style()
 function toro_pagination()
 {
     global $wp_query;
-    $big = 999999999;
-    echo paginate_links(array(
-        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-        'format' => '?paged=%#%',
-        'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
-    ));
+    $big = 999999999; // need an unlikely integer
+    $pages = paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $wp_query->max_num_pages,
+            'prev_next' => false,
+            'type'  => 'array',
+            'prev_next'   => TRUE,
+            'prev_text'    => __('«'),
+            'next_text'    => __('»'),
+        ) );
+        if( is_array( $pages ) ) {
+            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+            echo '<ul class="pagination">';
+            foreach ( $pages as $page ) {
+                    echo "<li>$page</li>";
+            }
+           echo '</ul>';
+        }
+
 }
 
 // Custom Excerpts
 function toro_index($length) // Create 20 Word Callback for Index page Excerpts, call using toro_excerpt('toro_index');
 {
-    return 20;
+    return 50;
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using toro_excerpt('toro_custom_post');
@@ -398,5 +412,32 @@ return array(
 }  
 add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order  
 add_filter('menu_order', 'custom_menu_order');
+
+// If Dynamic Sidebar Exists
+if (function_exists('register_sidebar'))
+{
+    // Define Sidebar Widget Area 1
+    register_sidebar(array(
+        'name' => __('Widget Area 1', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'widget-area-1',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    // Define Sidebar Widget Area 2
+    register_sidebar(array(
+        'name' => __('Widget Area 2', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'widget-area-2',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+}
+
 
 ?>

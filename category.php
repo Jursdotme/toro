@@ -1,17 +1,26 @@
 <?php get_header(); ?>
-	
-	<!-- section -->
-	<section role="main">
-	
-		<h1><?php _e( 'Categories for', 'toro' ); the_category(); ?></h1>
-	
-		<?php get_template_part('loop'); ?>
+
+<div class="container">
+	<div class="row">
 		
-		<?php get_template_part('pagination'); ?>
+		<!-- section -->
+		<section role="main" class="col-md-9 col-xs-12">
+
+			<div class="page-header">
+			  <h1><small><?php _e( 'Archive for', 'toro' ); ?></small> <?php single_cat_title(); ?></h1>
+			</div>
+
+		
+			<?php get_template_part('loop'); ?>
+			
+			<?php get_template_part('pagination'); ?>
+		
+		</section>
+		<!-- /section -->
 	
-	</section>
-	<!-- /section -->
-	
-<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
+
+	</div>
+</div>
 
 <?php get_footer(); ?>

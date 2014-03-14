@@ -1,23 +1,23 @@
 			
 			<!-- footer -->
 
-
-			<footer id footer class="footer row" role="contentinfo">
-				
-				<div class="col-md-9 col-sm-8 col-xs-12">
-
-					<!-- copyright -->
-					<p class="copyright">
-						&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?> 
-						<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
-					</p>
-					<!-- /copyright -->
+			<div class="container">
+				<footer id footer class="footer row" role="contentinfo">
 					
-				</div>
+					<div class="col-md-9 col-sm-8 col-xs-12">
 
-			</footer>
+						<!-- copyright -->
+						<p class="copyright">
+							&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?> 
+							<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
+						</p>
+						<!-- /copyright -->
+						
+					</div>
+
+				</footer>
+			</div>
 			<!-- /footer -->
-			</div> <!-- END Container -->
 
 		<?php wp_footer(); ?>
 		
@@ -44,14 +44,11 @@
 			    singleItem : true,
 			    autoHeight : false,
 			    items : 1,
-			    transitionStyle : "goDown"
+			    // transitionStyle : "goDown"
 			  });
 			 
 			});
-		</script>
-
-		<script src="//localhost:35729/livereload.js"></script>
-	
+		</script>	
 
 	</body>
 </html>

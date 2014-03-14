@@ -85,3 +85,33 @@ conditionizr.add('linux', ['class'], function () {
 console.log(conditionizr)
 
 /*-----  End of Conditionizr  ------*/
+
+/*===============================================
+=            Pagination active state            =
+===============================================*/
+
+var pagination = $('.pagination .pagination .current');
+pagination.parent().addClass('active');
+
+/*-----  End of Pagination active state  ------*/
+
+/*==============================================================
+=            Make <abbr> automaticaly have tooltips            =
+==============================================================*/
+  
+  var abbrs = $("abbr");
+
+    abbrs.each(function() {
+      
+      $(this)
+      .attr("data-toggle", "tooltip")
+      .attr("data-placement", "top")
+      .tooltip()
+      
+    });
+
+
+/*-----  End of Make <abbr> automaticaly have tooltips  ------*/
+
+
+
