@@ -3525,7 +3525,7 @@ input[type="button"].btn-block {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
   /* line 51, ../sass/bootstrap/_dropdowns.scss */
-  .dropdown-menu.pull-right {
+  .dropdown-menu.pull-right, img.dropdown-menu.alignright {
     right: 0;
     left: auto; }
   /* line 57, ../sass/bootstrap/_dropdowns.scss */
@@ -3604,7 +3604,7 @@ input[type="button"].btn-block {
   z-index: 990; }
 
 /* line 170, ../sass/bootstrap/_dropdowns.scss */
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, img.alignright > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -4853,7 +4853,7 @@ a.list-group-item.active > .badge,
         font-size: 63px; } }
 
 /* line 7, ../sass/bootstrap/_thumbnails.scss */
-.thumbnail {
+.thumbnail, .wp-caption {
   display: block;
   padding: 4px;
   margin-bottom: 20px;
@@ -4864,22 +4864,25 @@ a.list-group-item.active > .badge,
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   /* line 17, ../sass/bootstrap/_thumbnails.scss */
-  .thumbnail > img,
-  .thumbnail a > img {
+  .thumbnail > img, .wp-caption > img,
+  .thumbnail a > img,
+  .wp-caption a > img {
     display: block;
     max-width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto; }
   /* line 27, ../sass/bootstrap/_thumbnails.scss */
-  .thumbnail .caption {
+  .thumbnail .caption, .wp-caption .caption {
     padding: 9px;
     color: #333333; }
 
 /* line 34, ../sass/bootstrap/_thumbnails.scss */
-a.thumbnail:hover,
+a.thumbnail:hover, a.wp-caption:hover,
 a.thumbnail:focus,
-a.thumbnail.active {
+a.wp-caption:focus,
+a.thumbnail.active,
+a.active.wp-caption {
   border-color: #dd4232; }
 
 /* line 9, ../sass/bootstrap/_alerts.scss */
@@ -5069,10 +5072,10 @@ a.thumbnail.active {
   margin: 0 0 5px; }
 
 /* line 40, ../sass/bootstrap/_media.scss */
-.media > .pull-left {
+.media > .pull-left, .media > img.alignleft {
   margin-right: 10px; }
 /* line 43, ../sass/bootstrap/_media.scss */
-.media > .pull-right {
+.media > .pull-right, .media > img.alignright {
   margin-left: 10px; }
 
 /* line 53, ../sass/bootstrap/_media.scss */
@@ -6131,17 +6134,17 @@ button.close {
   clear: both; }
 
 /* line 12, ../sass/bootstrap/_utilities.scss */
-.center-block {
+.center-block, .aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto; }
 
 /* line 15, ../sass/bootstrap/_utilities.scss */
-.pull-right {
+.pull-right, img.alignright {
   float: right !important; }
 
 /* line 18, ../sass/bootstrap/_utilities.scss */
-.pull-left {
+.pull-left, img.alignleft {
   float: left !important; }
 
 /* line 27, ../sass/bootstrap/_utilities.scss */
@@ -6300,6 +6303,21 @@ div.pagination {
 img {
   max-width: 100%;
   height: auto; }
+
+/* line 18, ../sass/_toro.scss */
+img.alignleft {
+  margin-right: 15px; }
+
+/* line 23, ../sass/_toro.scss */
+img.alignright {
+  margin-left: 15px; }
+
+/* line 32, ../sass/_toro.scss */
+.wp-caption {
+  max-width: 100%; }
+  /* line 35, ../sass/_toro.scss */
+  .wp-caption p:last-child {
+    margin-bottom: 0; }
 
 /*================================
 =            Captions            =

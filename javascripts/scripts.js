@@ -95,23 +95,45 @@ pagination.parent().addClass('active');
 
 /*-----  End of Pagination active state  ------*/
 
-/*==============================================================
-=            Make <abbr> automaticaly have tooltips            =
-==============================================================*/
+
+/*================================================================
+=            Integrate Bootstrap stuff with Wordpress            =
+================================================================*/
+
+// Automatic tooltips on <abbr>
+var abbrs = $("abbr");
+
+abbrs.each(function() {
   
-  var abbrs = $("abbr");
+  $(this)
+  .attr("data-toggle", "tooltip")
+  .attr("data-placement", "top")
+  .tooltip()
+  
+});
 
-    abbrs.each(function() {
-      
-      $(this)
-      .attr("data-toggle", "tooltip")
-      .attr("data-placement", "top")
-      .tooltip()
-      
-    });
+// Automatic Thumbnail on Image captions
+var wpcaptiontxt = $(".wp-caption-text");
 
+wpcaptiontxt.each(function() {
 
-/*-----  End of Make <abbr> automaticaly have tooltips  ------*/
+  $(this)
+  .wrap("<div class='caption'></div>");
+});
 
+// add table styling to tables with no class
+var tables = $("table");
+
+  tables.each(function() {
+
+    var theClass = $(this).attr("class");
+
+    if(theClass == null || theClass == "") {
+      $(this).addClass("table table-default");
+    }
+
+  });
+
+/*-----  End of Integrate Bootstrap stuff with Wordpress  ------*/
 
 
