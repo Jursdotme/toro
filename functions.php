@@ -74,6 +74,8 @@ if (function_exists('add_theme_support'))
 MENUS & NAVIGATION
 *********************/
 
+
+
 // wp menus
     add_theme_support( 'menus' );
 
@@ -81,56 +83,27 @@ MENUS & NAVIGATION
     register_nav_menus(
         array(
             'desktop_nav' => __( 'Desktop Menu', 'torotheme' ),   // main nav in header
-            'dropdown_mobile_nav' => __( 'Dropdown Mobile Menu', 'torotheme' ), // secondary nav in footer
-            'off_canvas_mobile_nav' => __( 'Off Canvas Mobile Menu', 'torotheme' ), // secondary nav in footer
         )
     );
 
-// Custom Walker for Toro Navigation
-class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-  function start_lvl(&$output, $depth) {
-    $indent = str_repeat("\t", $depth);
-    if ($depth >= 1) {
-        $output .= "\n$indent<ul class=\"desk_menu desk_submenu desk_subsubmenu\">\n"; }
-    else { $output .= "\n$indent<ul class=\"has-dropdown\">\n";}
-  }
-}
+// Register Custom Navigation Walker
+require_once('wp_bootstrap_navwalker.php');
 
 // the main desktop menu
 function desktop_nav() {
     // display the wp3 menu if available
     wp_nav_menu(array(
-        'container' => 'nav',                           // remove nav container
-        'container_id' => 'desktop-nav',                    // class of container (should you choose to use it)
-        'menu' => __( 'Desktop Menu', 'torotheme' ),    // nav name
-        'theme_location' => 'desktop_nav',              // where it's located in the theme
-        'walker' => new My_Walker_Nav_Menu()            // include the new custom desktop walker
+        'menu'              => __( 'Desktop Menu', 'torotheme' ),    // nav name
+        'theme_location'    => 'desktop_nav',
+        'depth'             => 2,
+        'container'         => 'div',
+        'container_class'   => 'collapse navbar-collapse',
+        'container_id'      => 'bs-example-navbar-collapse-1',
+        'menu_class'        => 'nav navbar-nav',
+        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+        'walker'            => new wp_bootstrap_navwalker()
     ));
 } /* end toro desktop main nav */
-
-// the main mobile menu
-function dropdown_mobile_nav() {
-    // display the wp3 menu if available
-    wp_nav_menu(array(
-        'container' => 'nav',                           // remove nav container
-        'container_id' => 'dropdown-mobile',                     // class of container (should you choose to use it)
-        'menu' => __( 'Dropdown Mobile Menu', 'torotheme' ),      // nav name
-        'theme_location' => 'dropdown_mobile_nav',                // where it's located in the theme
-    ));
-} /* end toro mobile main nav */
-
-// the off canvas mobile menu
-function off_canvas_mobile_nav() {
-    // display the wp3 menu if available
-    wp_nav_menu(array(
-        'container' => 'nav',                           // remove nav container
-        'container_id' => 'off-canvas-mobile',          // class of container (should you choose to use it)
-        'container_class' => 'offcanvas-navigation',
-        'menu' => __( 'Off Canvas Mobile Menu', 'torotheme' ),   // nav name
-        'theme_location' => 'off_canvas_mobile_nav',     // where it's located in the theme
-    ));
-} /* end toro mobile main nav */
-
 
 // Load Toro scripts (footer.php)
 function toro_header_scripts()
@@ -215,19 +188,33 @@ function my_remove_recent_comments_style()
 function toro_pagination()
 {
     global $wp_query;
-    $big = 999999999;
-    echo paginate_links(array(
-        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-        'format' => '?paged=%#%',
-        'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
-    ));
+    $big = 999999999; // need an unlikely integer
+    $pages = paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $wp_query->max_num_pages,
+            'prev_next' => false,
+            'type'  => 'array',
+            'prev_next'   => TRUE,
+            'prev_text'    => __('«'),
+            'next_text'    => __('»'),
+        ) );
+        if( is_array( $pages ) ) {
+            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+            echo '<ul class="pagination">';
+            foreach ( $pages as $page ) {
+                    echo "<li>$page</li>";
+            }
+           echo '</ul>';
+        }
+
 }
 
 // Custom Excerpts
 function toro_index($length) // Create 20 Word Callback for Index page Excerpts, call using toro_excerpt('toro_index');
 {
-    return 20;
+    return 50;
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using toro_excerpt('toro_custom_post');
@@ -425,5 +412,32 @@ return array(
 }  
 add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order  
 add_filter('menu_order', 'custom_menu_order');
+
+// If Dynamic Sidebar Exists
+if (function_exists('register_sidebar'))
+{
+    // Define Sidebar Widget Area 1
+    register_sidebar(array(
+        'name' => __('Widget Area 1', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'widget-area-1',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    // Define Sidebar Widget Area 2
+    register_sidebar(array(
+        'name' => __('Widget Area 2', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
+        'id' => 'widget-area-2',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+}
+
 
 ?>

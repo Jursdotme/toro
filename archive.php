@@ -1,17 +1,22 @@
 <?php get_header(); ?>
+
+<div class="container">
+	<div class="row">
 	
-	<!-- section -->
-	<section role="main">
-	
-		<h1><?php _e( 'Archives', 'toro' ); ?></h1>
-	
-		<?php get_template_part('loop'); ?>
+		<!-- section -->
+		<section role="main" class="col-md-9 col-xs-12">
 		
-		<?php get_template_part('pagination'); ?>
+			<h1><?php _e( 'Archives', 'toro' ); ?></h1>
+		
+			<?php get_template_part('loop'); ?>
+			
+			<?php get_template_part('pagination'); ?>
+		
+		</section>
+		<!-- /section -->
 	
-	</section>
-	<!-- /section -->
-	
-<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
+	</div>
+</div>
 
 <?php get_footer(); ?>

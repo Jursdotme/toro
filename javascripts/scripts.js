@@ -85,3 +85,55 @@ conditionizr.add('linux', ['class'], function () {
 console.log(conditionizr)
 
 /*-----  End of Conditionizr  ------*/
+
+/*===============================================
+=            Pagination active state            =
+===============================================*/
+
+var pagination = $('.pagination .pagination .current');
+pagination.parent().addClass('active');
+
+/*-----  End of Pagination active state  ------*/
+
+
+/*================================================================
+=            Integrate Bootstrap stuff with Wordpress            =
+================================================================*/
+
+// Automatic tooltips on <abbr>
+var abbrs = $("abbr");
+
+abbrs.each(function() {
+  
+  $(this)
+  .attr("data-toggle", "tooltip")
+  .attr("data-placement", "top")
+  .tooltip()
+  
+});
+
+// Automatic Thumbnail on Image captions
+var wpcaptiontxt = $(".wp-caption-text");
+
+wpcaptiontxt.each(function() {
+
+  $(this)
+  .wrap("<div class='caption'></div>");
+});
+
+// add table styling to tables with no class
+var tables = $("table");
+
+  tables.each(function() {
+
+    var theClass = $(this).attr("class");
+
+    if(theClass == null || theClass == "") {
+      $(this).addClass("table table-default");
+    }
+
+  });
+
+/*-----  End of Integrate Bootstrap stuff with Wordpress  ------*/
+
+

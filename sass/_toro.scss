@@ -1,0 +1,38 @@
+div.pagination {
+	display: block;
+	padding-left: 0;
+	margin: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.sticky {
+	@extend .well;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+img.alignleft {
+	margin-right: $grid-gutter-width/2;
+	@extend .pull-left;
+}
+
+img.alignright {
+	margin-left: $grid-gutter-width/2;
+	@extend .pull-right;
+}
+
+.aligncenter {
+	@extend .center-block;
+}
+
+.wp-caption {
+	@extend .thumbnail;
+	max-width: 100%;
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

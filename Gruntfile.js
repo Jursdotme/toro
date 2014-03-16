@@ -6,13 +6,12 @@ module.exports = function(grunt) {
     uglify: {
       build: {
         src: [
-        'javascripts/foundation.js',
-        'javascripts/foundation-forms.js',
         'javascripts/nav.js',
         'javascripts/owl.carousel.js',
         'javascripts/bootstrap/affix.js',
         'javascripts/bootstrap/alert.js',
         'javascripts/bootstrap/button.js',
+        'javascripts/bootstrap/carousel.js',
         'javascripts/bootstrap/collapse.js',
         'javascripts/bootstrap/dropdown.js',
         'javascripts/bootstrap/tab.js',
@@ -21,9 +20,13 @@ module.exports = function(grunt) {
         'javascripts/bootstrap/modal.js',
         'javascripts/bootstrap/tooltip.js',
         'javascripts/bootstrap/popover.js',
+        
         'javascripts/headroom.js',
         'javascripts/cycle2.js',
         'javascripts/scripts.js',
+
+
+
         ] , //input
         dest: 'javascripts/build/global.min.js' //Output
       }
