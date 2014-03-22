@@ -24,6 +24,13 @@
 				<p><span class="date text-muted"><?php the_time('j. F - Y'); ?></span>
 				<span class="author text-muted"><?php _e( 'Skrevet af', 'toro' ); ?> <?php the_author_posts_link(); ?></span></p>
 				<!-- /post details -->
+
+				<!-- Featured Image -->
+				<?php // check if the post has a Post Thumbnail assigned to it.
+				if ( has_post_thumbnail() ) { ?>
+					<?php the_post_thumbnail(" img-thumbnail"); ?>
+				<?php } ?>
+				<!-- /Featured Image -->
 				
 				<?php the_content(); // Dynamic Content ?>
 
@@ -53,5 +60,5 @@
 
 	</div>
 </div>
-
+<?php include "edit_post_link.php" ?>
 <?php get_footer(); ?>

@@ -17,6 +17,7 @@ library/admin.php
         - changing text in footer of admin
 */
 require_once( 'library/admin.php' ); // this comes turned off by default
+require_once( 'gallery.php' ); // this comes turned off by default
 
 
 /*------------------------------------*\
@@ -137,7 +138,7 @@ function toro_conditional_scripts()
 // Load Toro styles
 function toro_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/stylesheets/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize-css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
     
     wp_register_style('toro', get_template_directory_uri() . '/stylesheets/style.css', array(), '1.0', 'all');
@@ -438,6 +439,17 @@ if (function_exists('register_sidebar'))
         'after_title' => '</h3>'
     ));
 }
+
+/*==========================================================
+=            Disable Woocommerce default styles            =
+==========================================================*/
+
+define('WOOCOMMERCE_USE_CSS', false);
+add_theme_support( 'woocommerce' );
+
+/*-----  End of Disable Woocommerce default styles  ------*/
+
+
 
 
 ?>

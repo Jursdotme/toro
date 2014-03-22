@@ -5,25 +5,6 @@
 =            Custom stuff and overrides            =
 ==================================================*/
 /* line 68, ../sass/admin.scss */
-#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon {
-  width: 47px !important; }
-
-/* line 72, ../sass/admin.scss */
-#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
-  content: "i";
-  top: -12px;
-  font-family: "inzite-logo";
-  font-size: 50px;
-  vertical-align: baseline; }
-
-@font-face {
-  font-family: 'inzite-logo';
-  src: url("../fonts/inzite.eot?53911773");
-  src: url("../fonts/inzite.eot?53911773#iefix") format("embedded-opentype"), url("../fonts/inzite.woff?53911773") format("woff"), url("../fonts/inzite.ttf?53911773") format("truetype"), url("../fonts/inzite.svg?53911773#inzite") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-/* line 91, ../sass/admin.scss */
 .login h1 a {
   background-image: url(../img/Login-logo.png);
   background-size: 312px 117px;
@@ -58,12 +39,12 @@ TABLE OF CONTENTS:
 /*------------------------------------------------------------------------------
   1.0 - General
 ------------------------------------------------------------------------------*/
-/* line 130, ../sass/admin.scss */
+/* line 107, ../sass/admin.scss */
 html {
   background: #f1f1f1; }
 
 /* Checkbooms */
-/* line 137, ../sass/admin.scss */
+/* line 113, ../sass/admin.scss */
 input[type=checkbox],
 input[type=radio] {
   background: #fff;
@@ -72,52 +53,52 @@ input[type=radio] {
   -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1); }
 
-/* line 146, ../sass/admin.scss */
+/* line 123, ../sass/admin.scss */
 input[type=checkbox]:checked:before {
   color: #1e8cbe; }
 
-/* line 150, ../sass/admin.scss */
+/* line 127, ../sass/admin.scss */
 input[type=radio]:checked:before {
   background-color: #1e8cbe; }
 
-/* line 155, ../sass/admin.scss */
+/* line 131, ../sass/admin.scss */
 .wp-core-ui input[type="reset"]:hover,
 .wp-core-ui input[type="reset"]:active {
   color: #2ea2cc; }
 
 /* Helper classes for plugins to leverage the active WordPress color scheme */
-/* line 162, ../sass/admin.scss */
+/* line 139, ../sass/admin.scss */
 .wp-ui-primary {
   color: #fff;
   background-color: #333; }
 
-/* line 166, ../sass/admin.scss */
+/* line 143, ../sass/admin.scss */
 .wp-ui-text-primary {
   color: #333; }
 
-/* line 170, ../sass/admin.scss */
+/* line 147, ../sass/admin.scss */
 .wp-ui-highlight {
   color: white;
   background-color: #1e8cbe; }
 
-/* line 174, ../sass/admin.scss */
+/* line 151, ../sass/admin.scss */
 .wp-ui-text-highlight {
   color: #1e8cbe; }
 
-/* line 178, ../sass/admin.scss */
+/* line 155, ../sass/admin.scss */
 .wp-ui-notification {
   color: #fff;
   background-color: #D54E21; }
 
-/* line 182, ../sass/admin.scss */
+/* line 159, ../sass/admin.scss */
 .wp-ui-text-notification {
   color: #D54E21; }
 
-/* line 186, ../sass/admin.scss */
+/* line 163, ../sass/admin.scss */
 .wp-ui-text-icon {
   color: #999; }
 
-/* line 195, ../sass/admin.scss */
+/* line 168, ../sass/admin.scss */
 #adminmenu .wp-has-current-submenu .wp-submenu,
 .no-js li.wp-has-current-submenu:hover .wp-submenu,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
@@ -125,7 +106,7 @@ input[type=radio]:checked:before {
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu {
   background-color: #333; }
 
-/* line 203, ../sass/admin.scss */
+/* line 176, ../sass/admin.scss */
 #adminmenu .wp-has-current-submenu .wp-submenu a,
 .no-js li.wp-has-current-submenu:hover .wp-submenu a,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu a,
@@ -133,7 +114,7 @@ input[type=radio]:checked:before {
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a {
   color: #bbb; }
 
-/* line 221, ../sass/admin.scss */
+/* line 184, ../sass/admin.scss */
 #adminmenu .wp-submenu a:hover,
 #adminmenu .wp-submenu a:focus,
 #adminmenu .wp-has-current-submenu .wp-submenu a:hover,
@@ -152,49 +133,49 @@ input[type=radio]:checked:before {
   background: none;
   color: #2ea2cc; }
 
-/* line 227, ../sass/admin.scss */
+/* line 203, ../sass/admin.scss */
 ul#adminmenu a.wp-has-current-submenu:after,
 ul#adminmenu > li.current > a.current:after {
   border-right-color: #f1f1f1; }
 
-/* line 231, ../sass/admin.scss */
+/* line 208, ../sass/admin.scss */
 .row-actions {
   color: #ddd; }
 
-/* line 236, ../sass/admin.scss */
+/* line 212, ../sass/admin.scss */
 .find-box-search,
 .find-box-buttons {
   background-color: #f7f7f7;
   border-top: 1px solid #dfdfdf; }
 
-/* line 241, ../sass/admin.scss */
+/* line 218, ../sass/admin.scss */
 .find-box {
   background-color: #444; }
 
-/* line 245, ../sass/admin.scss */
+/* line 222, ../sass/admin.scss */
 .find-box-head {
   color: #eee; }
 
-/* line 249, ../sass/admin.scss */
+/* line 226, ../sass/admin.scss */
 .find-box-inside {
   background-color: #fff; }
 
-/* line 253, ../sass/admin.scss */
+/* line 230, ../sass/admin.scss */
 a.page-numbers:hover {
   border-color: #999; }
 
-/* line 260, ../sass/admin.scss */
+/* line 234, ../sass/admin.scss */
 body,
 #wpbody,
 .form-table .pre,
 .ui-autocomplete li a {
   color: #444; }
 
-/* line 264, ../sass/admin.scss */
+/* line 241, ../sass/admin.scss */
 body > #upload-menu {
   border-bottom-color: #fff; }
 
-/* line 272, ../sass/admin.scss */
+/* line 245, ../sass/admin.scss */
 #postcustomstuff table,
 #your-profile fieldset,
 #rightnow,
@@ -202,62 +183,62 @@ div.dashboard-widget,
 #dashboard-widgets p.dashboard-widget-links {
   border-color: #ccc; }
 
-/* line 276, ../sass/admin.scss */
+/* line 253, ../sass/admin.scss */
 #dashboard-widgets h4 {
   color: #222; }
 
-/* line 281, ../sass/admin.scss */
+/* line 257, ../sass/admin.scss */
 #poststuff .inside label.spam,
 #poststuff .inside label.deleted {
   color: red; }
 
-/* line 285, ../sass/admin.scss */
+/* line 262, ../sass/admin.scss */
 #poststuff .inside label.waiting {
   color: orange; }
 
-/* line 289, ../sass/admin.scss */
+/* line 266, ../sass/admin.scss */
 #poststuff .inside label.approved {
   color: green; }
 
-/* line 293, ../sass/admin.scss */
+/* line 270, ../sass/admin.scss */
 #postcustomstuff table {
   border-color: #dfdfdf;
   background-color: #f9f9f9; }
 
-/* line 298, ../sass/admin.scss */
+/* line 275, ../sass/admin.scss */
 #postcustomstuff thead th {
   background-color: #f1f1f1; }
 
-/* line 302, ../sass/admin.scss */
+/* line 279, ../sass/admin.scss */
 table.widefat {
   border-color: #fff;
   background-color: #fff; }
 
-/* line 307, ../sass/admin.scss */
+/* line 284, ../sass/admin.scss */
 th .comment-grey-bubble:before {
   color: #444; }
 
-/* line 311, ../sass/admin.scss */
+/* line 288, ../sass/admin.scss */
 .sorting-indicator:before {
   color: #444; }
 
-/* line 315, ../sass/admin.scss */
+/* line 292, ../sass/admin.scss */
 div.dashboard-widget-error {
   background-color: #c43; }
 
-/* line 319, ../sass/admin.scss */
+/* line 296, ../sass/admin.scss */
 div.dashboard-widget-notice {
   background-color: #cfe1ef; }
 
-/* line 323, ../sass/admin.scss */
+/* line 300, ../sass/admin.scss */
 div.dashboard-widget-submit {
   border-top-color: #ccc; }
 
-/* line 327, ../sass/admin.scss */
+/* line 304, ../sass/admin.scss */
 ul.category-tabs li {
   border-color: transparent; }
 
-/* line 334, ../sass/admin.scss */
+/* line 308, ../sass/admin.scss */
 div.tabs-panel,
 .wp-tab-panel,
 ul.add-menu-item-tabs li.tabs,
@@ -265,23 +246,23 @@ ul.add-menu-item-tabs li.tabs,
   border-color: #dfdfdf;
   background-color: #fdfdfd; }
 
-/* line 339, ../sass/admin.scss */
+/* line 316, ../sass/admin.scss */
 ul.category-tabs li.tabs {
   border-color: #dfdfdf #dfdfdf #fdfdfd; }
 
-/* line 345, ../sass/admin.scss */
+/* line 320, ../sass/admin.scss */
 ul.category-tabs li.tabs,
 ul.add-menu-item-tabs li.tabs,
 .wp-tab-active {
   background-color: #fdfdfd; }
 
-/* line 350, ../sass/admin.scss */
+/* line 326, ../sass/admin.scss */
 kbd,
 code {
   background: #eaeaea;
   background: rgba(0, 0, 0, 0.07); }
 
-/* line 364, ../sass/admin.scss */
+/* line 332, ../sass/admin.scss */
 textarea,
 input[type="text"],
 input[type="password"],
@@ -295,7 +276,7 @@ select {
   border-color: #ddd;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07); }
 
-/* line 384, ../sass/admin.scss */
+/* line 346, ../sass/admin.scss */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -314,7 +295,7 @@ select:focus,
 .menu-item-bar .menu-item-handle:hover {
   border-color: #999; }
 
-/* line 391, ../sass/admin.scss */
+/* line 365, ../sass/admin.scss */
 input:disabled,
 input.disabled,
 textarea:disabled,
@@ -325,7 +306,7 @@ textarea.disabled {
   background: rgba(255, 255, 255, 0.5);
   color: rgba(51, 51, 51, 0.5); }
 
-/* line 401, ../sass/admin.scss */
+/* line 376, ../sass/admin.scss */
 #plugin-information .action-button a,
 #plugin-information .action-button a:hover,
 #plugin-information .action-button a:visited {
@@ -352,7 +333,7 @@ h3.dashboard-widget-title small,
 	border-bottom: 1px solid #e1e1e1;
 }
 */
-/* line 427, ../sass/admin.scss */
+/* line 404, ../sass/admin.scss */
 .accordion-section-content {
   border-left: none;
   border-right: none; }
@@ -366,126 +347,126 @@ h3.dashboard-widget-title small,
 	border-color: #0074a2 !important;
 }
 */
-/* line 442, ../sass/admin.scss */
+/* line 419, ../sass/admin.scss */
 .widefat tfoot th {
   border-bottom: none;
   border-top: 1px solid #e1e1e1; }
 
-/* line 447, ../sass/admin.scss */
+/* line 424, ../sass/admin.scss */
 .widefat thead th {
   border-bottom: 1px solid #e1e1e1; }
 
-/* line 452, ../sass/admin.scss */
+/* line 428, ../sass/admin.scss */
 .form-table th,
 .form-wrap label {
   color: #222; }
 
-/* line 456, ../sass/admin.scss */
+/* line 433, ../sass/admin.scss */
 .form-table.editcomment td {
   border-bottom: none; }
 
-/* line 461, ../sass/admin.scss */
+/* line 437, ../sass/admin.scss */
 .description,
 .form-wrap p {
   color: #666; }
 
-/* line 465, ../sass/admin.scss */
+/* line 442, ../sass/admin.scss */
 strong .post-com-count span {
   background-color: #0074a2; }
 
-/* line 469, ../sass/admin.scss */
+/* line 446, ../sass/admin.scss */
 .post-com-count:after {
   /* draw bubble connector using CSS! */
   border-top: 5px solid #bbbbbb;
   border-right: 5px solid transparent; }
 
-/* line 474, ../sass/admin.scss */
+/* line 451, ../sass/admin.scss */
 strong .post-com-count:after {
   border-top: 5px solid #0076a0; }
 
-/* line 478, ../sass/admin.scss */
+/* line 455, ../sass/admin.scss */
 .post-com-count:hover:after {
   border-top: 5px solid #2ea2cc; }
 
-/* line 482, ../sass/admin.scss */
+/* line 459, ../sass/admin.scss */
 .sorthelper {
   background-color: #ccf3fa; }
 
-/* line 487, ../sass/admin.scss */
+/* line 463, ../sass/admin.scss */
 .ac_match,
 .subsubsub a.current {
   color: #000; }
 
-/* line 492, ../sass/admin.scss */
+/* line 468, ../sass/admin.scss */
 h2,
 h3 {
   color: #222; }
 
-/* line 497, ../sass/admin.scss */
+/* line 473, ../sass/admin.scss */
 .wrap .add-new-h2,
 .wrap .add-new-h2:active {
   background: #e0e0e0; }
 
-/* line 501, ../sass/admin.scss */
+/* line 478, ../sass/admin.scss */
 .wrap .add-new-h2:hover {
   background: #2ea2cc;
   color: #fff; }
 
-/* line 506, ../sass/admin.scss */
+/* line 483, ../sass/admin.scss */
 .subtitle {
   color: #777; }
 
-/* line 510, ../sass/admin.scss */
+/* line 487, ../sass/admin.scss */
 .ac_over {
   background-color: #f0f0b8; }
 
-/* line 514, ../sass/admin.scss */
+/* line 491, ../sass/admin.scss */
 .ac_results {
   background-color: #fff;
   border-color: #808080; }
 
-/* line 519, ../sass/admin.scss */
+/* line 496, ../sass/admin.scss */
 .ac_results li {
   color: #101010; }
 
-/* line 524, ../sass/admin.scss */
+/* line 500, ../sass/admin.scss */
 .alternate,
 .alt {
   background-color: #f9f9f9; }
 
-/* line 528, ../sass/admin.scss */
+/* line 505, ../sass/admin.scss */
 .available-theme a.screenshot {
   background-color: #fff;
   border-color: #ccc; }
 
-/* line 533, ../sass/admin.scss */
+/* line 510, ../sass/admin.scss */
 #current-theme {
   border-bottom-color: #dfdfdf; }
 
-/* line 537, ../sass/admin.scss */
+/* line 514, ../sass/admin.scss */
 .bar {
   background-color: #e8e8e8;
   border-right-color: #99d; }
 
-/* line 542, ../sass/admin.scss */
+/* line 519, ../sass/admin.scss */
 .form-invalid {
   background-color: #ffebe8 !important; }
 
-/* line 547, ../sass/admin.scss */
+/* line 523, ../sass/admin.scss */
 .form-invalid input,
 .form-invalid select {
-  border-color: #cc0000 !important; }
+  border-color: #c00 !important; }
 
-/* line 551, ../sass/admin.scss */
+/* line 528, ../sass/admin.scss */
 .submit {
   border: none; }
 
-/* line 555, ../sass/admin.scss */
+/* line 532, ../sass/admin.scss */
 .highlight {
   background-color: #e4f2fd;
   color: #000; }
 
-/* line 564, ../sass/admin.scss */
+/* line 537, ../sass/admin.scss */
 .howto,
 .nonessential,
 #edit-slug-box,
@@ -493,56 +474,56 @@ h3 {
 .subsubsub {
   color: #666; }
 
-/* line 569, ../sass/admin.scss */
+/* line 545, ../sass/admin.scss */
 .media-upload-form label.form-help,
 td.help {
   color: #9a9a9a; }
 
-/* line 573, ../sass/admin.scss */
+/* line 550, ../sass/admin.scss */
 .ui-autocomplete {
   border-color: #aaa;
   background-color: #efefef; }
 
-/* line 578, ../sass/admin.scss */
+/* line 555, ../sass/admin.scss */
 .ui-autocomplete li a.ui-state-focus {
   background-color: #ddd; }
 
-/* line 582, ../sass/admin.scss */
+/* line 559, ../sass/admin.scss */
 .post-com-count {
   color: #fff; }
 
-/* line 586, ../sass/admin.scss */
+/* line 563, ../sass/admin.scss */
 .post-com-count span {
   background-color: #bbb;
   color: #fff; }
 
-/* line 591, ../sass/admin.scss */
+/* line 568, ../sass/admin.scss */
 .post-com-count:hover span {
   background-color: #2ea2cc; }
 
-/* line 595, ../sass/admin.scss */
+/* line 572, ../sass/admin.scss */
 .quicktags, .search {
   background-color: #ccc;
   color: #000; }
 
-/* line 600, ../sass/admin.scss */
+/* line 577, ../sass/admin.scss */
 .side-info h5 {
   border-bottom-color: #dadada; }
 
-/* line 604, ../sass/admin.scss */
+/* line 581, ../sass/admin.scss */
 .side-info ul {
   color: #666; }
 
-/* line 609, ../sass/admin.scss */
+/* line 585, ../sass/admin.scss */
 a:hover,
 a:active {
   color: #2ea2cc; }
 
-/* line 613, ../sass/admin.scss */
+/* line 590, ../sass/admin.scss */
 a:focus {
   color: #124964; }
 
-/* line 625, ../sass/admin.scss */
+/* line 594, ../sass/admin.scss */
 #adminmenu a:hover,
 #adminmenu li.menu-top > a:focus,
 #adminmenu .wp-submenu a:hover,
@@ -554,31 +535,31 @@ div.dashboard-widget-submit input:hover,
 .ui-tabs-nav a:hover {
   color: #2ea2cc; }
 
-/* line 629, ../sass/admin.scss */
+/* line 606, ../sass/admin.scss */
 #the-comment-list .comment-item {
   border: none; }
 
-/* line 635, ../sass/admin.scss */
+/* line 610, ../sass/admin.scss */
 #side-sortables .category-tabs .tabs a,
 #side-sortables .add-menu-item-tabs .tabs a,
 .wp-tab-bar .wp-tab-active a {
   color: #333; }
 
-/* line 639, ../sass/admin.scss */
+/* line 616, ../sass/admin.scss */
 #rightnow .rbutton {
   background-color: #ebebeb;
   color: #264761; }
 
-/* line 644, ../sass/admin.scss */
+/* line 621, ../sass/admin.scss */
 p.submit {
   border-top-color: #dfdfdf; }
 
-/* line 648, ../sass/admin.scss */
+/* line 625, ../sass/admin.scss */
 .submitbox .submit {
   background-color: #464646;
   color: #ccc; }
 
-/* line 662, ../sass/admin.scss */
+/* line 630, ../sass/admin.scss */
 table.widefat span.delete a,
 table.widefat span.trash a,
 table.widefat span.spam a,
@@ -591,7 +572,7 @@ table.widefat span.spam a,
 #nav-menu-footer .menu-delete {
   color: #a00; }
 
-/* line 675, ../sass/admin.scss */
+/* line 643, ../sass/admin.scss */
 table.widefat span.delete a:hover,
 table.widefat span.trash a:hover,
 table.widefat span.spam a:hover,
@@ -604,29 +585,29 @@ table.widefat span.spam a:hover,
 #nav-menu-footer .menu-delete:hover {
   color: #f00; }
 
-/* line 679, ../sass/admin.scss */
+/* line 656, ../sass/admin.scss */
 #normal-sortables .submitbox .submitdelete:hover {
   color: #000;
   background-color: #f00;
   border-bottom-color: #f00; }
 
-/* line 685, ../sass/admin.scss */
+/* line 662, ../sass/admin.scss */
 .tablenav .dots {
   border-color: transparent; }
 
-/* line 690, ../sass/admin.scss */
+/* line 666, ../sass/admin.scss */
 .tablenav .next,
 .tablenav .prev {
   border-color: transparent;
   color: #0074a2; }
 
-/* line 696, ../sass/admin.scss */
+/* line 672, ../sass/admin.scss */
 .tablenav .next:hover,
 .tablenav .prev:hover {
   border-color: transparent;
   color: #2ea2cc; }
 
-/* line 703, ../sass/admin.scss */
+/* line 678, ../sass/admin.scss */
 div.updated,
 .login .message,
 .press-this #message {
@@ -635,7 +616,7 @@ div.updated,
   -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1); }
 
-/* line 712, ../sass/admin.scss */
+/* line 688, ../sass/admin.scss */
 #update-nag,
 .update-nag {
   background-color: #fff;
@@ -643,7 +624,7 @@ div.updated,
   -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1); }
 
-/* line 721, ../sass/admin.scss */
+/* line 697, ../sass/admin.scss */
 div.error,
 .login #login_error {
   background: #fff;
@@ -651,30 +632,30 @@ div.error,
   -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1); }
 
-/* line 729, ../sass/admin.scss */
+/* line 706, ../sass/admin.scss */
 .update-message {
   color: #000; }
 
-/* line 733, ../sass/admin.scss */
+/* line 710, ../sass/admin.scss */
 a.page-numbers {
   border-bottom-color: #b8d3e2; }
 
-/* line 737, ../sass/admin.scss */
+/* line 714, ../sass/admin.scss */
 .commentlist li {
   border-bottom-color: #ccc; }
 
-/* line 742, ../sass/admin.scss */
+/* line 718, ../sass/admin.scss */
 .widefat td,
 .widefat th {
   color: #555; }
 
-/* line 748, ../sass/admin.scss */
+/* line 723, ../sass/admin.scss */
 .widefat p,
 .widefat ol,
 .widefat ul {
   color: #333; }
 
-/* line 756, ../sass/admin.scss */
+/* line 729, ../sass/admin.scss */
 .widefat thead tr th,
 .widefat tfoot tr th,
 h3.dashboard-widget-title,
@@ -682,26 +663,26 @@ h3.dashboard-widget-title span,
 h3.dashboard-widget-title small {
   color: #333; }
 
-/* line 763, ../sass/admin.scss */
+/* line 737, ../sass/admin.scss */
 th.manage-column a,
 th.sortable a:hover,
 th.sortable a:active,
 th.sortable a:focus {
   color: #333; }
 
-/* line 767, ../sass/admin.scss */
+/* line 744, ../sass/admin.scss */
 th.sortable a:focus {
   background: #e1e1e1; }
 
-/* line 771, ../sass/admin.scss */
+/* line 748, ../sass/admin.scss */
 h3.dashboard-widget-title small a {
   color: #d7d7d7; }
 
-/* line 775, ../sass/admin.scss */
+/* line 752, ../sass/admin.scss */
 h3.dashboard-widget-title small a:hover {
   color: #fff; }
 
-/* line 786, ../sass/admin.scss */
+/* line 756, ../sass/admin.scss */
 a,
 #the-comment-list p.comment-author strong a,
 #media-upload a.del-link,
@@ -721,18 +702,18 @@ a,
   -moz-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out; }
 
-/* line 800, ../sass/admin.scss */
+/* line 776, ../sass/admin.scss */
 .wp-list-table a,
 .media-router a {
   -moz-transition: none;
   -webkit-transition: none;
   transition: none; }
 
-/* line 806, ../sass/admin.scss */
+/* line 783, ../sass/admin.scss */
 #adminmenu a {
   color: #eee; }
 
-/* line 813, ../sass/admin.scss */
+/* line 787, ../sass/admin.scss */
 #adminmenu .awaiting-mod,
 #adminmenu .update-plugins,
 #sidemenu a .update-plugins,
@@ -740,100 +721,100 @@ a,
   background-color: #d54e21;
   color: #fff; }
 
-/* line 817, ../sass/admin.scss */
+/* line 794, ../sass/admin.scss */
 #plugin-information .action-button {
   background-color: #2ea2cc;
   color: #fff; }
 
-/* line 823, ../sass/admin.scss */
+/* line 799, ../sass/admin.scss */
 #adminmenu li.current a .awaiting-mod,
 #adminmenu li a.wp-has-current-submenu .update-plugins {
   background-color: #2ea2cc;
   color: #fff; }
 
-/* line 829, ../sass/admin.scss */
+/* line 805, ../sass/admin.scss */
 div#media-upload-header,
 div#plugin-information-header {
   background-color: #f9f9f9;
   border-bottom-color: #dfdfdf; }
 
-/* line 834, ../sass/admin.scss */
+/* line 811, ../sass/admin.scss */
 #currenttheme img {
   border-color: #666; }
 
-/* line 838, ../sass/admin.scss */
+/* line 815, ../sass/admin.scss */
 input.readonly, textarea.readonly {
   background-color: #ddd; }
 
-/* line 842, ../sass/admin.scss */
+/* line 819, ../sass/admin.scss */
 #editable-post-name {
   background-color: #fffbcc; }
 
-/* line 849, ../sass/admin.scss */
+/* line 823, ../sass/admin.scss */
 #edit-slug-box strong,
 .tablenav .displaying-num,
 #submitted-on,
 .submitted-on {
   color: #777; }
 
-/* line 853, ../sass/admin.scss */
+/* line 830, ../sass/admin.scss */
 .plugins .inactive a:hover {
   color: #2ea2cc; }
 
-/* line 857, ../sass/admin.scss */
+/* line 834, ../sass/admin.scss */
 #wpfooter {
   color: #777;
   border-color: transparent; }
 
-/* line 864, ../sass/admin.scss */
+/* line 839, ../sass/admin.scss */
 .imgedit-group,
 #media-items .media-item,
 .media-item .describe {
   border-color: #dfdfdf; }
 
-/* line 869, ../sass/admin.scss */
+/* line 845, ../sass/admin.scss */
 .plugins .plugin-description p,
 .plugins .plugin-version-author-uri {
   color: #333; }
 
-/* line 873, ../sass/admin.scss */
+/* line 850, ../sass/admin.scss */
 .plugins .inactive .plugin-title strong {
   color: #333; }
 
-/* line 877, ../sass/admin.scss */
+/* line 854, ../sass/admin.scss */
 .plugin-update-tr .plugin-update {
   border: none;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
 
-/* line 883, ../sass/admin.scss */
+/* line 860, ../sass/admin.scss */
 .plugin-update-tr .update-message {
   background-color: #f7f7f7;
   background-color: rgba(0, 0, 0, 0.03); }
 
-/* line 888, ../sass/admin.scss */
+/* line 865, ../sass/admin.scss */
 tr.active.update + tr.plugin-update-tr .plugin-update .update-message {
   background-color: #fcf3ef; }
 
-/* line 892, ../sass/admin.scss */
+/* line 869, ../sass/admin.scss */
 .plugin-update-tr .update-message:before {
   color: #d54e21; }
 
-/* line 898, ../sass/admin.scss */
+/* line 873, ../sass/admin.scss */
 .plugins,
 .plugins th,
 .plugins td {
   color: #000; }
 
-/* line 902, ../sass/admin.scss */
+/* line 879, ../sass/admin.scss */
 .plugins .inactive a {
   color: #579; }
 
-/* line 906, ../sass/admin.scss */
+/* line 883, ../sass/admin.scss */
 .plugins tr {
   background: #fff; }
 
-/* line 914, ../sass/admin.scss */
+/* line 887, ../sass/admin.scss */
 .plugins .inactive td,
 .plugins .inactive th,
 .plugins .active td,
@@ -842,26 +823,26 @@ tr.active.update + tr.plugin-update-tr .plugin-update .update-message {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
 
-/* line 920, ../sass/admin.scss */
+/* line 896, ../sass/admin.scss */
 .plugins .update td,
 .plugins .update th {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-/* line 927, ../sass/admin.scss */
+/* line 902, ../sass/admin.scss */
 .plugins .active td,
 .plugins .active th,
 tr.active + tr.plugin-update-tr .plugin-update {
   background-color: #f7fcfe; }
 
-/* line 934, ../sass/admin.scss */
+/* line 908, ../sass/admin.scss */
 .plugins .active.update td,
 .plugins .active.update th,
 tr.active.update + tr.plugin-update-tr .plugin-update,
 #activity-widget #the-comment-list .unapproved {
   background-color: #fefaf7; }
 
-/* line 941, ../sass/admin.scss */
+/* line 915, ../sass/admin.scss */
 .plugins tr.active.plugin-update-tr + tr.inactive th,
 .plugins tr.active.plugin-update-tr + tr.inactive td,
 .plugins tr.active + tr.inactive th,
@@ -870,110 +851,110 @@ tr.active.update + tr.plugin-update-tr .plugin-update,
   -webkit-box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.02), inset 0 -1px 0 #e1e1e1;
   box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.02), inset 0 -1px 0 #e1e1e1; }
 
-/* line 949, ../sass/admin.scss */
+/* line 925, ../sass/admin.scss */
 .plugins tr.active + tr.inactive.update th,
 .plugins tr.active + tr.inactive.update td {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-/* line 954, ../sass/admin.scss */
+/* line 931, ../sass/admin.scss */
 .plugins .active th.check-column {
   border-left: 4px solid #2ea2cc; }
 
-/* line 959, ../sass/admin.scss */
+/* line 935, ../sass/admin.scss */
 .plugins .active.update th.check-column,
 .plugins .active.update + .plugin-update-tr .plugin-update {
   border-left: 4px solid #d54e21; }
 
-/* line 964, ../sass/admin.scss */
+/* line 940, ../sass/admin.scss */
 .post-state-format:before,
 .post-format-icon:before {
   color: #ddd;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out; }
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out; }
 
-/* line 971, ../sass/admin.scss */
+/* line 948, ../sass/admin.scss */
 input[type="radio"]:checked + label:before {
   color: #888888; }
 
-/* line 976, ../sass/admin.scss */
+/* line 952, ../sass/admin.scss */
 a.post-state-format:hover:before,
 a.post-format-icon:hover:before {
   color: #2ea2cc; }
 
-/* line 981, ../sass/admin.scss */
+/* line 957, ../sass/admin.scss */
 #the-list tr:last-child td,
 #the-list tr:last-child th {
   border-bottom: none !important;
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-/* line 988, ../sass/admin.scss */
+/* line 964, ../sass/admin.scss */
 #the-comment-list tr.undo,
 #the-comment-list div.undo {
   background-color: #f4f4f4; }
 
-/* line 993, ../sass/admin.scss */
+/* line 969, ../sass/admin.scss */
 #the-comment-list .unapproved th,
 #the-comment-list .unapproved td {
   background-color: #fefaf7; }
 
-/* line 997, ../sass/admin.scss */
+/* line 974, ../sass/admin.scss */
 #the-comment-list .unapproved th.check-column {
   border-left: 4px solid #d54e21; }
 
-/* line 1001, ../sass/admin.scss */
+/* line 978, ../sass/admin.scss */
 #the-comment-list .approve a {
   color: #006505; }
 
-/* line 1005, ../sass/admin.scss */
+/* line 982, ../sass/admin.scss */
 #the-comment-list .unapprove a {
   color: #d98500; }
 
-/* line 1010, ../sass/admin.scss */
+/* line 986, ../sass/admin.scss */
 #the-comment-list th,
 #the-comment-list td {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
 
-/* line 1015, ../sass/admin.scss */
+/* line 992, ../sass/admin.scss */
 #activity-widget #the-comment-list .comment {
   -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06); }
 
-/* line 1021, ../sass/admin.scss */
+/* line 997, ../sass/admin.scss */
 #the-comment-list tr:last-child th,
 #the-comment-list tr:last-child td {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-/* line 1027, ../sass/admin.scss */
+/* line 1003, ../sass/admin.scss */
 #the-comment-list tr.unapproved + tr.approved th,
 #the-comment-list tr.unapproved + tr.approved td {
   border-top: 1px solid rgba(0, 0, 0, 0.03); }
 
-/* line 1031, ../sass/admin.scss */
+/* line 1008, ../sass/admin.scss */
 #activity-widget .comments #the-comment-list .alt {
   background-color: transparent; }
 
-/* line 1035, ../sass/admin.scss */
+/* line 1012, ../sass/admin.scss */
 .welcome-panel p {
   color: #777; }
 
-/* line 1039, ../sass/admin.scss */
+/* line 1016, ../sass/admin.scss */
 .welcome-panel a {
   text-decoration: none; }
 
-/* line 1043, ../sass/admin.scss */
+/* line 1020, ../sass/admin.scss */
 .welcome-panel-column p {
   color: #464646; }
 
-/* line 1047, ../sass/admin.scss */
+/* line 1024, ../sass/admin.scss */
 .welcome-panel .welcome-icon:before {
   color: #888; }
 
-/* line 1068, ../sass/admin.scss */
+/* line 1028, ../sass/admin.scss */
 .widget-top,
 .menu-item-handle,
 .menu-item-settings,
@@ -996,16 +977,16 @@ p.popular-tags,
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); }
 
-/* line 1074, ../sass/admin.scss */
+/* line 1051, ../sass/admin.scss */
 #post-status-info {
   border-top: none; }
 
-/* line 1078, ../sass/admin.scss */
+/* line 1055, ../sass/admin.scss */
 .postbox table.widefat {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-/* line 1092, ../sass/admin.scss */
+/* line 1060, ../sass/admin.scss */
 .welcome-panel,
 .postbox,
 table.widefat,
@@ -1018,19 +999,19 @@ p.popular-tags,
 .imgedit-group {
   background: #fff; }
 
-/* line 1098, ../sass/admin.scss */
+/* line 1073, ../sass/admin.scss */
 .postbox h3,
 #namediv h3,
 #submitdiv h3 {
   border-bottom: 1px solid #eeeeee; }
 
-/* line 1103, ../sass/admin.scss */
+/* line 1079, ../sass/admin.scss */
 .widget .widget-top,
 .menu-item-handle {
   background: #fafafa;
   color: #222; }
 
-/* line 1112, ../sass/admin.scss */
+/* line 1085, ../sass/admin.scss */
 #misc-publishing-actions label[for="post_status"]:before,
 #post-body #visibility:before,
 .curtime #timestamp:before,
@@ -1038,15 +1019,15 @@ p.popular-tags,
 span.wp-media-buttons-icon:before {
   color: #888; }
 
-/* line 1116, ../sass/admin.scss */
+/* line 1093, ../sass/admin.scss */
 #rightnow .youhave {
   background-color: #f0f6fb; }
 
-/* line 1120, ../sass/admin.scss */
+/* line 1097, ../sass/admin.scss */
 #rightnow a {
   color: #448abd; }
 
-/* line 1127, ../sass/admin.scss */
+/* line 1101, ../sass/admin.scss */
 #welcome-panel.welcome-panel .welcome-panel-close::before,
 .tagchecklist span a:before,
 #bulk-titles div a:before,
@@ -1054,41 +1035,41 @@ span.wp-media-buttons-icon:before {
   background: none;
   color: #bbb; }
 
-/* line 1135, ../sass/admin.scss */
+/* line 1109, ../sass/admin.scss */
 #welcome-panel.welcome-panel .welcome-panel-close:hover:before,
 .tagchecklist span a:hover:before,
 #bulk-titles div a:hover:before,
 .wp-pointer-buttons a.close:hover:before {
   color: #c00; }
 
-/* line 1139, ../sass/admin.scss */
+/* line 1116, ../sass/admin.scss */
 #screen-meta {
   background-color: #fff;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-top: none;
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.025);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.025); }
 
-/* line 1147, ../sass/admin.scss */
+/* line 1124, ../sass/admin.scss */
 #contextual-help-back {
   background: #f6fbfd; }
 
-/* line 1151, ../sass/admin.scss */
+/* line 1128, ../sass/admin.scss */
 .contextual-help-tabs a:hover {
   color: #333; }
 
-/* line 1156, ../sass/admin.scss */
+/* line 1132, ../sass/admin.scss */
 #contextual-help-back,
 .contextual-help-tabs .active a {
   border-color: #e1e1e1; }
 
-/* line 1160, ../sass/admin.scss */
+/* line 1137, ../sass/admin.scss */
 .contextual-help-tabs .active {
   border-color: #2ea2cc;
   -webkit-box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
   box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02); }
 
-/* line 1169, ../sass/admin.scss */
+/* line 1144, ../sass/admin.scss */
 .contextual-help-tabs .active,
 .contextual-help-tabs .active a,
 .contextual-help-tabs .active a:hover {
@@ -1096,29 +1077,29 @@ span.wp-media-buttons-icon:before {
   color: #333; }
 
 /* screen options and help tabs */
-/* line 1176, ../sass/admin.scss */
+/* line 1152, ../sass/admin.scss */
 #screen-options-link-wrap,
 #contextual-help-link-wrap {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-top: none;
   background: #fff;
   -webkit-box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.1); }
 
-/* line 1184, ../sass/admin.scss */
+/* line 1161, ../sass/admin.scss */
 #screen-meta-links a {
   color: #777; }
 
-/* line 1188, ../sass/admin.scss */
+/* line 1165, ../sass/admin.scss */
 #screen-meta-links a:after {
   color: #bbb; }
 
-/* line 1193, ../sass/admin.scss */
+/* line 1169, ../sass/admin.scss */
 #screen-meta-links a:hover,
 #screen-meta-links a:active {
   color: #333; }
 
-/* line 1197, ../sass/admin.scss */
+/* line 1174, ../sass/admin.scss */
 #screen-meta-links a:focus {
   border-color: #aaa;
   color: #333;
@@ -1126,15 +1107,15 @@ span.wp-media-buttons-icon:before {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); }
 
 /* end screen options and help tabs */
-/* line 1205, ../sass/admin.scss */
+/* line 1182, ../sass/admin.scss */
 #wphead {
   border-bottom-color: #dfdfdf; }
 
-/* line 1209, ../sass/admin.scss */
+/* line 1186, ../sass/admin.scss */
 #wphead h1 a {
   color: #464646; }
 
-/* line 1218, ../sass/admin.scss */
+/* line 1190, ../sass/admin.scss */
 .file-error,
 abbr.required,
 .widget-control-remove:hover,
@@ -1143,78 +1124,78 @@ table.widefat .trash a:hover,
 table.widefat .spam a:hover {
   color: #f00; }
 
-/* line 1222, ../sass/admin.scss */
+/* line 1199, ../sass/admin.scss */
 #pass-strength-result {
   background-color: #eee;
-  border-color: #dddddd !important; }
+  border-color: #ddd !important; }
 
-/* line 1227, ../sass/admin.scss */
+/* line 1204, ../sass/admin.scss */
 #pass-strength-result.bad {
   background-color: #ffb78c;
   border-color: #ff853c !important; }
 
-/* line 1232, ../sass/admin.scss */
+/* line 1209, ../sass/admin.scss */
 #pass-strength-result.good {
   background-color: #ffec8b;
-  border-color: #ffcc00 !important; }
+  border-color: #fc0 !important; }
 
-/* line 1237, ../sass/admin.scss */
+/* line 1214, ../sass/admin.scss */
 #pass-strength-result.short {
   background-color: #ffa0a0;
   border-color: #f04040 !important; }
 
-/* line 1242, ../sass/admin.scss */
+/* line 1219, ../sass/admin.scss */
 #pass-strength-result.strong {
   background-color: #c3ff88;
   border-color: #8dff1c !important; }
 
-/* line 1247, ../sass/admin.scss */
+/* line 1224, ../sass/admin.scss */
 #post-status-info {
   background-color: #f7f7f7; }
 
-/* line 1252, ../sass/admin.scss */
+/* line 1228, ../sass/admin.scss */
 .widget-inside,
 .menu-item-settings {
   background: #fff; }
 
-/* line 1256, ../sass/admin.scss */
+/* line 1233, ../sass/admin.scss */
 .menu-item-settings {
   border-top: none; }
 
-/* line 1260, ../sass/admin.scss */
+/* line 1237, ../sass/admin.scss */
 #titlediv #title {
   background-color: #fff; }
 
-/* line 1264, ../sass/admin.scss */
+/* line 1241, ../sass/admin.scss */
 #tTips p#tTips_inside {
   background-color: #ddd;
   color: #333; }
 
-/* line 1269, ../sass/admin.scss */
+/* line 1246, ../sass/admin.scss */
 #poststuff .inside .the-tagcloud {
   border-color: #ddd; }
 
 /* menu */
-/* line 1276, ../sass/admin.scss */
+/* line 1251, ../sass/admin.scss */
 #adminmenuback,
 #adminmenuwrap,
 #adminmenu {
   background-color: #222; }
 
-/* line 1280, ../sass/admin.scss */
+/* line 1257, ../sass/admin.scss */
 #adminmenu li.wp-menu-separator {
   background: transparent;
   border-color: transparent; }
 
-/* line 1285, ../sass/admin.scss */
+/* line 1262, ../sass/admin.scss */
 #adminmenu div.separator {
   border-color: transparent; }
 
-/* line 1289, ../sass/admin.scss */
+/* line 1266, ../sass/admin.scss */
 #adminmenu li.wp-menu-open {
   border-color: #dfdfdf; }
 
-/* line 1295, ../sass/admin.scss */
+/* line 1270, ../sass/admin.scss */
 #adminmenu li.menu-top:hover,
 #adminmenu li.opensub > a.menu-top,
 #adminmenu li > a.menu-top:focus {
@@ -1222,11 +1203,11 @@ table.widefat .spam a:hover {
   color: #2ea2cc; }
 
 /* flyout menu arrow */
-/* line 1301, ../sass/admin.scss */
+/* line 1278, ../sass/admin.scss */
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
   border-right-color: #333; }
 
-/* line 1311, ../sass/admin.scss */
+/* line 1282, ../sass/admin.scss */
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
 #adminmenu li.current a.menu-top,
 .folded #adminmenu li.wp-has-current-submenu,
@@ -1236,30 +1217,30 @@ table.widefat .spam a:hover {
 #adminmenu .wp-menu-arrow div {
   background: #0074a2; }
 
-/* line 1315, ../sass/admin.scss */
+/* line 1292, ../sass/admin.scss */
 #adminmenu li.wp-not-current-submenu .wp-menu-arrow {
   border-top-color: #f9f9f9;
   border-bottom-color: #dfdfdf;
   background: transparent; }
 
-/* line 1321, ../sass/admin.scss */
+/* line 1298, ../sass/admin.scss */
 #adminmenu li.wp-not-current-submenu .wp-menu-arrow div {
   background: #111;
   border-color: #111; }
 
-/* line 1328, ../sass/admin.scss */
+/* line 1303, ../sass/admin.scss */
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
 #adminmenu li.current a.menu-top,
 #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head {
   color: #fff; }
 
-/* line 1333, ../sass/admin.scss */
+/* line 1309, ../sass/admin.scss */
 .folded #adminmenu li.wp-has-current-submenu,
 .folded #adminmenu li.current.menu-top {
   border-color: #666;
   /* Match the background color of the current menu item for a flat appearance */ }
 
-/* line 1342, ../sass/admin.scss */
+/* line 1314, ../sass/admin.scss */
 #adminmenu .wp-submenu li.current,
 #adminmenu .wp-submenu li.current a,
 #adminmenu .opensub .wp-submenu li.current a,
@@ -1269,7 +1250,7 @@ table.widefat .spam a:hover {
   color: #fff;
   background: transparent; }
 
-/* line 1349, ../sass/admin.scss */
+/* line 1324, ../sass/admin.scss */
 #adminmenu .wp-submenu,
 .folded #adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu {
@@ -1277,53 +1258,53 @@ table.widefat .spam a:hover {
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); }
 
-/* line 1358, ../sass/admin.scss */
+/* line 1333, ../sass/admin.scss */
 #adminmenu .wp-submenu a,
 .folded #adminmenu a.wp-has-current-submenu:focus + .wp-submenu a,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu a {
   color: #bbb; }
 
-/* line 1362, ../sass/admin.scss */
+/* line 1339, ../sass/admin.scss */
 #adminmenu .wp-submenu .wp-submenu-head {
   color: #fff; }
 
 /* collapse menu button */
-/* line 1367, ../sass/admin.scss */
+/* line 1344, ../sass/admin.scss */
 #collapse-menu {
   color: #aaa;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out; }
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out; }
 
-/* line 1374, ../sass/admin.scss */
+/* line 1351, ../sass/admin.scss */
 #collapse-menu:hover {
   color: #2ea2cc; }
 
-/* line 1378, ../sass/admin.scss */
+/* line 1355, ../sass/admin.scss */
 #collapse-button div:after {
   color: #aaa; }
 
-/* line 1382, ../sass/admin.scss */
+/* line 1359, ../sass/admin.scss */
 #collapse-menu:hover #collapse-button div:after {
   color: #2ea2cc; }
 
-/* line 1386, ../sass/admin.scss */
+/* line 1363, ../sass/admin.scss */
 #adminmenu div.wp-menu-image:before {
   color: #999; }
 
-/* line 1390, ../sass/admin.scss */
+/* line 1367, ../sass/admin.scss */
 .icon16:before {
   color: #999; }
 
-/* line 1394, ../sass/admin.scss */
+/* line 1371, ../sass/admin.scss */
 #adminmenu li.wp-has-current-submenu:hover div.wp-menu-image:before {
   color: #fff; }
 
-/* line 1398, ../sass/admin.scss */
+/* line 1375, ../sass/admin.scss */
 #adminmenu li:hover div.wp-menu-image:before {
   color: #2ea2cc; }
 
-/* line 1405, ../sass/admin.scss */
+/* line 1379, ../sass/admin.scss */
 #adminmenu .wp-has-current-submenu div.wp-menu-image:before,
 #adminmenu .current div.wp-menu-image:before,
 #adminmenu a.wp-has-current-submenu:hover div.wp-menu-image:before,
@@ -1331,79 +1312,79 @@ table.widefat .spam a:hover {
   color: #fff; }
 
 /* Collapse button in theme preview */
-/* line 1411, ../sass/admin.scss */
+/* line 1388, ../sass/admin.scss */
 .wp-full-overlay a.collapse-sidebar {
   color: #777; }
 
-/* line 1415, ../sass/admin.scss */
+/* line 1392, ../sass/admin.scss */
 .wp-full-overlay a.collapse-sidebar:hover {
   color: #0074a2; }
 
-/* line 1419, ../sass/admin.scss */
+/* line 1396, ../sass/admin.scss */
 .wp-full-overlay .collapse-sidebar-arrow:before {
   background: #eee; }
 
 /* Diff */
-/* line 1425, ../sass/admin.scss */
+/* line 1402, ../sass/admin.scss */
 table.diff .diff-deletedline del {
   background-color: #f99; }
 
-/* line 1429, ../sass/admin.scss */
+/* line 1406, ../sass/admin.scss */
 .ui-tooltip, .arrow::after {
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
 
-/* line 1436, ../sass/admin.scss */
+/* line 1411, ../sass/admin.scss */
 .revisions-meta,
 .revisions-diff,
 .revisions.pinned .revisions-controls {
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
 
-/* line 1441, ../sass/admin.scss */
+/* line 1418, ../sass/admin.scss */
 table.diff .diff-deletedline {
   background-color: #ffe9e9; }
 
-/* line 1445, ../sass/admin.scss */
+/* line 1422, ../sass/admin.scss */
 table.diff .diff-deletedline del {
   background-color: #faa; }
 
-/* line 1449, ../sass/admin.scss */
+/* line 1426, ../sass/admin.scss */
 table.diff .diff-addedline {
   background-color: #e9ffe9; }
 
-/* line 1453, ../sass/admin.scss */
+/* line 1430, ../sass/admin.scss */
 table.diff .diff-addedline ins {
   background-color: #afa; }
 
-/* line 1458, ../sass/admin.scss */
+/* line 1434, ../sass/admin.scss */
 .revisions-tooltip,
 .revisions-tooltip-arrow span {
   border-color: #d7d7d7;
   background-color: #fff; }
 
-/* line 1463, ../sass/admin.scss */
+/* line 1440, ../sass/admin.scss */
 .revisions-tickmarks {
   background-color: #fff; }
 
-/* line 1467, ../sass/admin.scss */
+/* line 1444, ../sass/admin.scss */
 .revisions-tickmarks > div {
   border-color: #aaa; }
 
-/* line 1471, ../sass/admin.scss */
+/* line 1448, ../sass/admin.scss */
 .revisions.pinned .revisions-controls {
   background: #fff; }
 
-/* line 1475, ../sass/admin.scss */
+/* line 1452, ../sass/admin.scss */
 .revisions.pinned .revisions-meta {
   box-shadow: none; }
 
 /* jQuery UI Slider */
-/* line 1481, ../sass/admin.scss */
+/* line 1458, ../sass/admin.scss */
 .wp-slider.ui-slider {
   border-color: #d7d7d7; }
 
-/* line 1487, ../sass/admin.scss */
+/* line 1462, ../sass/admin.scss */
 .wp-slider .ui-slider-handle,
 .wp-slider .ui-slider-handle.ui-state-hover,
 .wp-slider .ui-slider-handle.focus {
@@ -1412,99 +1393,99 @@ table.diff .diff-addedline ins {
   -webkit-box-shadow: inset 0 1px 0 #78c8e6, 0 1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px 0 #78c8e6, 0 1px 0 rgba(0, 0, 0, 0.15); }
 
-/* line 1494, ../sass/admin.scss */
+/* line 1471, ../sass/admin.scss */
 .wp-slider .ui-slider-handle:before {
   color: #fff; }
 
 /* edit image */
-/* line 1499, ../sass/admin.scss */
+/* line 1476, ../sass/admin.scss */
 #sidemenu a {
   background-color: #f9f9f9;
   border-color: #f9f9f9;
   border-bottom-color: #dfdfdf; }
 
-/* line 1505, ../sass/admin.scss */
+/* line 1482, ../sass/admin.scss */
 #sidemenu a.current {
   background-color: #f1f1f1;
   border-color: #dfdfdf #dfdfdf #f1f1f1;
   color: #000; }
 
-/* line 1511, ../sass/admin.scss */
+/* line 1488, ../sass/admin.scss */
 #replyerror {
   border-color: #ddd;
   background-color: #f9f9f9; }
 
 /* table vim shortcuts */
-/* line 1519, ../sass/admin.scss */
+/* line 1494, ../sass/admin.scss */
 .vim-current,
 .vim-current th,
 .vim-current td {
-  background-color: #e4f2fd !important; }
+  background-color: #E4F2FD !important; }
 
 /* Install Plugins */
-/* line 1525, ../sass/admin.scss */
+/* line 1502, ../sass/admin.scss */
 #plugin-information {
   height: auto; }
 
-/* line 1529, ../sass/admin.scss */
+/* line 1506, ../sass/admin.scss */
 #plugin-information .fyi ul {
   background-color: #eaf3fa; }
 
-/* line 1533, ../sass/admin.scss */
+/* line 1510, ../sass/admin.scss */
 #plugin-information .fyi h2.mainheader {
   background-color: #cee1ef; }
 
-/* line 1538, ../sass/admin.scss */
+/* line 1514, ../sass/admin.scss */
 #plugin-information pre,
 #plugin-information code {
   background-color: #ededff; }
 
-/* line 1542, ../sass/admin.scss */
+/* line 1519, ../sass/admin.scss */
 #plugin-information pre {
   border-color: #ccc; }
 
 /* inline editor */
-/* line 1547, ../sass/admin.scss */
+/* line 1524, ../sass/admin.scss */
 #bulk-titles {
   border-color: #ddd; }
 
-/* line 1551, ../sass/admin.scss */
+/* line 1528, ../sass/admin.scss */
 .inline-editor div.title {
   background-color: #eaf3fa; }
 
-/* line 1555, ../sass/admin.scss */
+/* line 1532, ../sass/admin.scss */
 .inline-editor ul.cat-checklist {
   background-color: #fff;
   border-color: #ddd; }
 
-/* line 1560, ../sass/admin.scss */
+/* line 1537, ../sass/admin.scss */
 .inline-editor .quick-edit-save {
   background-color: #f1f1f1; }
 
-/* line 1564, ../sass/admin.scss */
+/* line 1541, ../sass/admin.scss */
 fieldset.inline-edit-col-right .inline-edit-col {
   border-color: #dfdfdf; }
 
-/* line 1568, ../sass/admin.scss */
+/* line 1545, ../sass/admin.scss */
 .attention {
   color: #2ea2cc; }
 
-/* line 1572, ../sass/admin.scss */
+/* line 1549, ../sass/admin.scss */
 .tablenav .tablenav-pages {
   color: #555; }
 
-/* line 1576, ../sass/admin.scss */
+/* line 1553, ../sass/admin.scss */
 .tablenav .tablenav-pages a {
   background: #eee;
   background: rgba(0, 0, 0, 0.05); }
 
-/* line 1582, ../sass/admin.scss */
+/* line 1558, ../sass/admin.scss */
 .tablenav .tablenav-pages a:hover,
 .tablenav .tablenav-pages a:focus {
   color: #fff;
   background: #2ea2cc; }
 
-/* line 1589, ../sass/admin.scss */
+/* line 1564, ../sass/admin.scss */
 .tablenav .tablenav-pages a.disabled,
 .tablenav .tablenav-pages a.disabled:hover,
 .tablenav .tablenav-pages a.disabled:focus {
@@ -1512,116 +1493,116 @@ fieldset.inline-edit-col-right .inline-edit-col {
   background: #eee;
   background: rgba(0, 0, 0, 0.05); }
 
-/* line 1595, ../sass/admin.scss */
+/* line 1572, ../sass/admin.scss */
 .tablenav .tablenav-pages .current {
   background: #dfdfdf;
   border-color: #d3d3d3; }
 
-/* line 1601, ../sass/admin.scss */
+/* line 1577, ../sass/admin.scss */
 #availablethemes,
 #availablethemes td {
   border-color: #ddd; }
 
-/* line 1605, ../sass/admin.scss */
+/* line 1582, ../sass/admin.scss */
 #current-theme img {
   border-color: #999; }
 
-/* line 1610, ../sass/admin.scss */
+/* line 1586, ../sass/admin.scss */
 #TB_window #TB_title a.tb-theme-preview-link,
 #TB_window #TB_title a.tb-theme-preview-link:visited {
   color: #999; }
 
-/* line 1615, ../sass/admin.scss */
+/* line 1591, ../sass/admin.scss */
 #TB_window #TB_title a.tb-theme-preview-link:hover,
 #TB_window #TB_title a.tb-theme-preview-link:focus {
   color: #ccc; }
 
-/* line 1622, ../sass/admin.scss */
+/* line 1599, ../sass/admin.scss */
 #minor-publishing {
   border-bottom-color: #dfdfdf; }
 
-/* line 1629, ../sass/admin.scss */
+/* line 1606, ../sass/admin.scss */
 .post-com-count span {
   background-color: #bbb; }
 
-/* line 1633, ../sass/admin.scss */
+/* line 1610, ../sass/admin.scss */
 .sortable-placeholder {
   border-color: #bbb; }
 
-/* line 1639, ../sass/admin.scss */
+/* line 1614, ../sass/admin.scss */
 #post-body ul.category-tabs li.tabs a,
 #post-body ul.add-menu-item-tabs li.tabs a,
 body.press-this ul.category-tabs li.tabs a {
   color: #333; }
 
-/* line 1643, ../sass/admin.scss */
+/* line 1620, ../sass/admin.scss */
 .view-switch > a:before {
   color: #bbb; }
 
-/* line 1647, ../sass/admin.scss */
+/* line 1624, ../sass/admin.scss */
 .view-switch a:hover:before {
   color: #727272; }
 
-/* line 1651, ../sass/admin.scss */
+/* line 1628, ../sass/admin.scss */
 .view-switch a.current:before {
   color: #0074a2; }
 
-/* line 1657, ../sass/admin.scss */
+/* line 1632, ../sass/admin.scss */
 div.widgets-sortables,
 #widgets-left .inactive,
 #available-widgets .widget-holder {
   background-color: #fff;
   border-color: #fff; }
 
-/* line 1662, ../sass/admin.scss */
+/* line 1639, ../sass/admin.scss */
 #widgets-left #available-widgets {
   background: transparent; }
 
-/* line 1666, ../sass/admin.scss */
+/* line 1643, ../sass/admin.scss */
 #widgets-left .widgets-holder-wrap {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none; }
 
-/* line 1672, ../sass/admin.scss */
+/* line 1649, ../sass/admin.scss */
 .sidebar-name {
   border-bottom-color: #e1e1e1; }
 
-/* line 1676, ../sass/admin.scss */
+/* line 1653, ../sass/admin.scss */
 .js #removing-widget {
   color: #2ea2cc; }
 
-/* line 1680, ../sass/admin.scss */
+/* line 1657, ../sass/admin.scss */
 #removing-widget span {
   color: black; }
 
-/* line 1687, ../sass/admin.scss */
+/* line 1661, ../sass/admin.scss */
 .in-widget-title,
 #widgets-right .widget-top a.widget-control-edit,
 #wp_inactive_widgets .in-widget-title,
 #available-widgets .widget-description {
   color: #666; }
 
-/* line 1691, ../sass/admin.scss */
+/* line 1668, ../sass/admin.scss */
 #widgets-right .widget-top a.widget-control-edit:hover {
   color: #fff; }
 
-/* line 1696, ../sass/admin.scss */
+/* line 1672, ../sass/admin.scss */
 .deleting .widget-title,
 .deleting .widget-top a.widget-action:after {
   color: #aaa; }
 
-/* line 1700, ../sass/admin.scss */
+/* line 1677, ../sass/admin.scss */
 .imgedit-menu div {
   border-color: #d5d5d5;
   background-color: #f1f1f1; }
 
-/* line 1705, ../sass/admin.scss */
+/* line 1682, ../sass/admin.scss */
 .imgedit-menu div:hover {
   border-color: #c1c1c1;
   background-color: #eaeaea; }
 
-/* line 1710, ../sass/admin.scss */
+/* line 1687, ../sass/admin.scss */
 .imgedit-menu div.disabled {
   border-color: #ccc;
   background-color: #ddd;
@@ -1629,73 +1610,73 @@ div.widgets-sortables,
   opacity: 0.5; }
 
 /* added from nav-menu.css */
-/* line 1718, ../sass/admin.scss */
+/* line 1695, ../sass/admin.scss */
 #menu-management {
   background: whitesmoke; }
 
-/* line 1722, ../sass/admin.scss */
+/* line 1699, ../sass/admin.scss */
 #menu-management #post-body {
   background: #fff;
   border-top-color: #fff;
   border-bottom-color: #dfdfdf; }
 
-/* line 1728, ../sass/admin.scss */
+/* line 1705, ../sass/admin.scss */
 #nav-menu-header {
   border-bottom-color: #dfdfdf; }
 
-/* line 1732, ../sass/admin.scss */
+/* line 1709, ../sass/admin.scss */
 #menu-management .nav-tabs-arrow a {
   color: #c1c1c1; }
 
-/* line 1736, ../sass/admin.scss */
+/* line 1713, ../sass/admin.scss */
 #menu-management .nav-tabs-arrow a:hover {
   color: #2ea2cc; }
 
-/* line 1740, ../sass/admin.scss */
+/* line 1717, ../sass/admin.scss */
 #menu-management .nav-tabs-arrow a:active {
   color: #464646; }
 
-/* line 1744, ../sass/admin.scss */
+/* line 1721, ../sass/admin.scss */
 #menu-management .nav-tab-active {
   border-color: #dfdfdf; }
 
-/* line 1748, ../sass/admin.scss */
+/* line 1725, ../sass/admin.scss */
 #menu-management .nav-tab {
   background: #fbfbfb;
   border-color: #dfdfdf; }
 
-/* line 1753, ../sass/admin.scss */
+/* line 1730, ../sass/admin.scss */
 .js .input-with-default-title {
   color: #aaa; }
 
-/* line 1757, ../sass/admin.scss */
+/* line 1734, ../sass/admin.scss */
 #cancel-save {
   color: #f00; }
 
-/* line 1761, ../sass/admin.scss */
+/* line 1738, ../sass/admin.scss */
 #cancel-save:hover {
   background-color: #f00;
   color: #fff; }
 
-/* line 1767, ../sass/admin.scss */
+/* line 1743, ../sass/admin.scss */
 .list-container,
 .menu-item-handle {
   border-color: #dfdfdf; }
 
-/* line 1771, ../sass/admin.scss */
+/* line 1748, ../sass/admin.scss */
 .menu li.deleting .menu-item-handle {
   background-color: #f66; }
 
-/* line 1775, ../sass/admin.scss */
+/* line 1752, ../sass/admin.scss */
 .item-type {
   /* Menu item controls */
   color: #777; }
 
-/* line 1779, ../sass/admin.scss */
+/* line 1756, ../sass/admin.scss */
 .item-controls .menu-item-delete:hover {
   color: #f00; }
 
-/* line 1787, ../sass/admin.scss */
+/* line 1760, ../sass/admin.scss */
 .widget-action,
 .handlediv,
 .item-edit,
@@ -1703,7 +1684,7 @@ div.widgets-sortables,
 .accordion-section-title:after {
   color: #aaa; }
 
-/* line 1795, ../sass/admin.scss */
+/* line 1768, ../sass/admin.scss */
 .widget-action:hover,
 .handlediv:hover,
 .item-edit:hover,
@@ -1712,72 +1693,72 @@ div.widgets-sortables,
   color: #777; }
 
 /* Menu editing */
-/* line 1801, ../sass/admin.scss */
+/* line 1778, ../sass/admin.scss */
 .link-to-original {
   color: #777;
   border-color: #dfdfdf; }
 
-/* line 1806, ../sass/admin.scss */
+/* line 1783, ../sass/admin.scss */
 #cancel-save:hover {
-  color: white !important; }
+  color: #fff !important; }
 
-/* line 1810, ../sass/admin.scss */
+/* line 1787, ../sass/admin.scss */
 #update-menu-item {
-  color: white !important; }
+  color: #fff !important; }
 
-/* line 1816, ../sass/admin.scss */
+/* line 1791, ../sass/admin.scss */
 #update-menu-item:hover,
 #update-menu-item:active,
 #update-menu-item:focus {
   color: #eaf2fa !important;
   border-color: #13455b !important; }
 
-/* line 1821, ../sass/admin.scss */
+/* line 1798, ../sass/admin.scss */
 .submitbox .submitcancel {
   color: #0074a2;
   border-bottom-color: #0074a2; }
 
-/* line 1826, ../sass/admin.scss */
+/* line 1803, ../sass/admin.scss */
 .submitbox .submitcancel:hover {
   background: #0074a2;
   color: #fff; }
 
-/* line 1831, ../sass/admin.scss */
+/* line 1808, ../sass/admin.scss */
 .manage-menus {
   background: #fbfbfb; }
 
-/* line 1835, ../sass/admin.scss */
+/* line 1812, ../sass/admin.scss */
 .menu-settings {
   border-top-color: #eeeeee; }
 
-/* line 1839, ../sass/admin.scss */
+/* line 1816, ../sass/admin.scss */
 .theme-location-set {
   color: #999999; }
 
-/* line 1843, ../sass/admin.scss */
+/* line 1820, ../sass/admin.scss */
 .nav-menus-php .delete-action a {
   color: #bc0b0b; }
 
-/* line 1847, ../sass/admin.scss */
+/* line 1824, ../sass/admin.scss */
 .is-submenu {
   color: #999999; }
 
-/* line 1851, ../sass/admin.scss */
+/* line 1828, ../sass/admin.scss */
 .nav-tab {
   color: #555;
   border-color: #ccc;
   background: #e4e4e4; }
 
-/* line 1857, ../sass/admin.scss */
+/* line 1834, ../sass/admin.scss */
 .nav-tab:hover {
   background-color: #fff;
   color: #464646; }
 
-/* line 1862, ../sass/admin.scss */
+/* line 1839, ../sass/admin.scss */
 .nav-tab-active {
   color: #464646; }
 
-/* line 1867, ../sass/admin.scss */
+/* line 1843, ../sass/admin.scss */
 .nav-tab-active,
 .nav-tab-active:hover {
   color: #000;
@@ -1785,149 +1766,149 @@ div.widgets-sortables,
   border-color: #ccc;
   border-bottom-color: #f1f1f1; }
 
-/* line 1874, ../sass/admin.scss */
+/* line 1851, ../sass/admin.scss */
 h2.nav-tab-wrapper, h3.nav-tab-wrapper {
   border-bottom-color: #ccc; }
 
-/* line 1878, ../sass/admin.scss */
+/* line 1855, ../sass/admin.scss */
 #upload-form label {
   color: #777; }
 
 /* Begin About Pages */
-/* line 1883, ../sass/admin.scss */
+/* line 1860, ../sass/admin.scss */
 .about-wrap h1 {
   color: #333; }
 
-/* line 1887, ../sass/admin.scss */
+/* line 1864, ../sass/admin.scss */
 .about-text {
   color: #777; }
 
-/* line 1891, ../sass/admin.scss */
+/* line 1868, ../sass/admin.scss */
 .wp-badge {
   background-color: #0074a2;
   color: #78c8e6;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
 
-/* line 1898, ../sass/admin.scss */
+/* line 1875, ../sass/admin.scss */
 .about-wrap h2 .nav-tab-active {
   border-color: #ccc;
   border-bottom-color: #f1f1f1; }
 
-/* line 1905, ../sass/admin.scss */
+/* line 1880, ../sass/admin.scss */
 .about-wrap h2,
 .about-wrap h3,
 .about-wrap h4 {
   color: #222; }
 
-/* line 1911, ../sass/admin.scss */
+/* line 1886, ../sass/admin.scss */
 .about-wrap .feature-section .col-2:before,
 .about-wrap .feature-section .col-2:after,
 .about-wrap .feature-section.two-col p:before {
   color: #1e8cbe; }
 
-/* line 1915, ../sass/admin.scss */
+/* line 1892, ../sass/admin.scss */
 .about-wrap .point-releases {
   border-bottom: 1px solid #dfdfdf; }
 
-/* line 1919, ../sass/admin.scss */
+/* line 1896, ../sass/admin.scss */
 .about-wrap .point-releases h3 {
   border-top-color: #dfdfdf; }
 
-/* line 1923, ../sass/admin.scss */
+/* line 1900, ../sass/admin.scss */
 .about-wrap li.wp-person img.gravatar {
   border-color: #ccc; }
 
-/* line 1927, ../sass/admin.scss */
+/* line 1904, ../sass/admin.scss */
 .about-wrap li.wp-person .title {
   color: #464646; }
 
-/* line 1931, ../sass/admin.scss */
+/* line 1908, ../sass/admin.scss */
 .freedoms-php .about-wrap ol li {
   color: #999; }
 
-/* line 1935, ../sass/admin.scss */
+/* line 1912, ../sass/admin.scss */
 .freedoms-php .about-wrap ol p {
   color: #464646; }
 
 /* End About Pages */
 /* Press This and Image editing icons */
-/* line 1943, ../sass/admin.scss */
+/* line 1920, ../sass/admin.scss */
 .pressthis a span:before {
   color: #777; }
 
-/* line 1947, ../sass/admin.scss */
+/* line 1924, ../sass/admin.scss */
 .imgedit-menu div {
   color: #777; }
 
-/* line 1951, ../sass/admin.scss */
+/* line 1928, ../sass/admin.scss */
 .imgedit-menu div:hover {
   color: #333; }
 
 /* End Press This and Image editing icons */
 /* Media Manager */
-/* line 1959, ../sass/admin.scss */
+/* line 1936, ../sass/admin.scss */
 .media-modal-content {
   background: #fcfcfc;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); }
 
-/* line 1964, ../sass/admin.scss */
+/* line 1941, ../sass/admin.scss */
 .media-menu {
   background: #f3f3f3;
   border-right-color: #ccc; }
 
-/* line 1969, ../sass/admin.scss */
+/* line 1946, ../sass/admin.scss */
 .media-menu > a {
   color: #0074a2; }
 
-/* line 1974, ../sass/admin.scss */
+/* line 1950, ../sass/admin.scss */
 .media-menu .active,
 .media-menu .active:hover {
   color: #222; }
 
-/* line 1978, ../sass/admin.scss */
+/* line 1955, ../sass/admin.scss */
 .media-frame-content {
   background: #fff;
   border-top-color: #ddd;
   border-bottom-color: #ddd; }
 
-/* line 1984, ../sass/admin.scss */
+/* line 1961, ../sass/admin.scss */
 .media-menu .separator {
   border-top-color: #ddd;
   border-bottom: none; }
 
-/* line 1989, ../sass/admin.scss */
+/* line 1966, ../sass/admin.scss */
 .media-sidebar {
   background: #f3f3f3;
   border-color: #ddd; }
 
-/* line 1995, ../sass/admin.scss */
+/* line 1971, ../sass/admin.scss */
 .media-router .active,
 .media-router > a.active:last-child {
   background: #fff;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-bottom: none; }
 
-/* line 2001, ../sass/admin.scss */
+/* line 1978, ../sass/admin.scss */
 .details.attachment {
-  box-shadow: 0 0 0 1px white, 0 0 0 5px #1e8cbe; }
+  box-shadow: 0 0 0 1px #fff, 0 0 0 5px #1e8cbe; }
 
-/* line 2005, ../sass/admin.scss */
+/* line 1982, ../sass/admin.scss */
 .attachment .check {
   background: #eee;
   box-shadow: 0 0 0 1px white, 0 0 0 2px rgba(0, 0, 0, 0.4); }
 
-/* line 2010, ../sass/admin.scss */
+/* line 1987, ../sass/admin.scss */
 .attachment.details .check {
   background-color: #1e8cbe;
-  box-shadow: 0 0 0 1px white, 0 0 0 2px #1e8cbe; }
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #1e8cbe; }
 
 /* TinyMCE modal */
-/* line 2017, ../sass/admin.scss */
+/* line 1994, ../sass/admin.scss */
 .clearlooks2 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); }
 
-/* line 2027, ../sass/admin.scss */
+/* line 1998, ../sass/admin.scss */
 .clearlooks2 .mceMiddle span,
 .clearlooks2 .mceMiddle .mceLeft,
 .clearlooks2 .mceMiddle .mceRight,
@@ -1937,67 +1918,67 @@ h2.nav-tab-wrapper, h3.nav-tab-wrapper {
 .clearlooks2 .mceBottom .mceRight {
   background-color: #fcfcfc; }
 
-/* line 2032, ../sass/admin.scss */
+/* line 2008, ../sass/admin.scss */
 .clearlooks2 .mceTop span,
 .clearlooks2 .mceFocus .mceTop span {
   color: #222; }
 
-/* line 2036, ../sass/admin.scss */
+/* line 2013, ../sass/admin.scss */
 .clearlooks2 .mceClose:before {
   color: #999; }
 
-/* line 2040, ../sass/admin.scss */
+/* line 2017, ../sass/admin.scss */
 .clearlooks2 .mceClose:hover:before {
   color: #2ea2cc; }
 
 /* Lightbox */
-/* line 2047, ../sass/admin.scss */
+/* line 2024, ../sass/admin.scss */
 .sticky-menu #TB_window {
   background: #f1f1f1; }
 
 /* tinymce */
-/* line 2052, ../sass/admin.scss */
+/* line 2029, ../sass/admin.scss */
 a .mceIcon, .mceAction {
   color: #777; }
 
-/* line 2056, ../sass/admin.scss */
+/* line 2033, ../sass/admin.scss */
 a .mceIcon:hover {
   color: #333; }
 
 /* Log in page */
-/* line 2064, ../sass/admin.scss */
+/* line 2039, ../sass/admin.scss */
 .login form .input,
 .login input[type="text"],
 .login form input[type="checkbox"] {
   background: #fbfbfb; }
 
-/* line 2068, ../sass/admin.scss */
+/* line 2045, ../sass/admin.scss */
 .login form {
   background: #fff;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13); }
 
-/* line 2074, ../sass/admin.scss */
+/* line 2051, ../sass/admin.scss */
 body.login {
   background: #f1f1f1; }
 
-/* line 2079, ../sass/admin.scss */
+/* line 2055, ../sass/admin.scss */
 .login #nav a,
 .login #backtoblog a {
   text-decoration: none;
   color: #999; }
 
-/* line 2085, ../sass/admin.scss */
+/* line 2061, ../sass/admin.scss */
 .login #nav a:hover,
 .login #backtoblog a:hover {
   color: #2ea2cc; }
 
-/* line 2089, ../sass/admin.scss */
+/* line 2066, ../sass/admin.scss */
 .login h1 a:hover {
   color: #2ea2cc; }
 
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* line 2142, ../sass/admin.scss */
+  /* line 2074, ../sass/admin.scss */
   .curtime #timestamp,
   #screen-meta-links a.show-settings,
   .widget-top a.widget-action,
@@ -2055,19 +2036,19 @@ body.login {
  * Button mixin- creates 3d-ish button effect with correct 
  * highlights/shadows, based on a base color.
  */
-/* line 2254, ../sass/admin.scss */
+/* line 2231, ../sass/admin.scss */
 html {
   background: #f1f1f1; }
 
 /* Links */
-/* line 2261, ../sass/admin.scss */
+/* line 2238, ../sass/admin.scss */
 a {
   color: #df4931; }
-  /* line 2266, ../sass/admin.scss */
+  /* line 2241, ../sass/admin.scss */
   a:hover, a:active, a:focus {
     color: #e6705d; }
 
-/* line 2276, ../sass/admin.scss */
+/* line 2248, ../sass/admin.scss */
 #rightnow a:hover,
 #media-upload a.del-link:hover,
 div.dashboard-widget-submit input:hover,
@@ -2077,74 +2058,74 @@ div.dashboard-widget-submit input:hover,
   color: #e6705d; }
 
 /* Forms */
-/* line 2283, ../sass/admin.scss */
+/* line 2260, ../sass/admin.scss */
 input[type=checkbox]:checked:before {
   color: #df4931; }
 
-/* line 2287, ../sass/admin.scss */
+/* line 2264, ../sass/admin.scss */
 input[type=radio]:checked:before {
   background: #df4931; }
 
-/* line 2292, ../sass/admin.scss */
+/* line 2268, ../sass/admin.scss */
 .wp-core-ui input[type="reset"]:hover,
 .wp-core-ui input[type="reset"]:active {
   color: #e6705d; }
 
 /* Core UI */
-/* line 2300, ../sass/admin.scss */
+/* line 2277, ../sass/admin.scss */
 .wp-core-ui .button-primary {
   background: #df4931;
   border-color: #bf341e;
   color: white;
   -webkit-box-shadow: inset 0 1px 0 #e98473, 0 1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px 0 #e98473, 0 1px 0 rgba(0, 0, 0, 0.15); }
-  /* line 2228, ../sass/admin.scss */
+  /* line 2204, ../sass/admin.scss */
   .wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus {
     background: #c8361f;
     border-color: #a92e1a;
     color: white;
     -webkit-box-shadow: inset 0 1px 0 #e6705d, 0 1px 0 rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 1px 0 #e6705d, 0 1px 0 rgba(0, 0, 0, 0.15); }
-  /* line 2236, ../sass/admin.scss */
+  /* line 2213, ../sass/admin.scss */
   .wp-core-ui .button-primary:active {
     background: #c8361f;
     border-color: #a92e1a;
     color: white;
     -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5); }
-  /* line 2246, ../sass/admin.scss */
+  /* line 2221, ../sass/admin.scss */
   .wp-core-ui .button-primary[disabled], .wp-core-ui .button-primary:disabled, .wp-core-ui .button-primary.button-primary-disabled {
     color: #d1c8c7 !important;
     background: #c8361f !important;
     border-color: #a92e1a !important;
     text-shadow: none !important; }
-/* line 2304, ../sass/admin.scss */
+/* line 2281, ../sass/admin.scss */
 .wp-core-ui .wp-ui-primary {
   color: white;
   background-color: #363b3f; }
-/* line 2308, ../sass/admin.scss */
+/* line 2285, ../sass/admin.scss */
 .wp-core-ui .wp-ui-text-primary {
   color: #363b3f; }
-/* line 2312, ../sass/admin.scss */
+/* line 2289, ../sass/admin.scss */
 .wp-core-ui .wp-ui-highlight {
   color: white;
   background-color: #df4931; }
-/* line 2316, ../sass/admin.scss */
+/* line 2293, ../sass/admin.scss */
 .wp-core-ui .wp-ui-text-highlight {
   color: #df4931; }
-/* line 2320, ../sass/admin.scss */
+/* line 2297, ../sass/admin.scss */
 .wp-core-ui .wp-ui-notification {
   color: white;
   background-color: #69a8bb; }
-/* line 2324, ../sass/admin.scss */
+/* line 2301, ../sass/admin.scss */
 .wp-core-ui .wp-ui-text-notification {
   color: #69a8bb; }
-/* line 2328, ../sass/admin.scss */
+/* line 2305, ../sass/admin.scss */
 .wp-core-ui .wp-ui-text-icon {
   color: #f1f2f3; }
 
 /* List tables */
-/* line 2339, ../sass/admin.scss */
+/* line 2313, ../sass/admin.scss */
 .wrap .add-new-h2:hover,
 #add-new-comment a:hover,
 .tablenav .tablenav-pages a:hover,
@@ -2152,47 +2133,47 @@ input[type=radio]:checked:before {
   color: white;
   background-color: #363b3f; }
 
-/* line 2344, ../sass/admin.scss */
+/* line 2321, ../sass/admin.scss */
 .view-switch a.current:before {
   color: #363b3f; }
 
-/* line 2348, ../sass/admin.scss */
+/* line 2325, ../sass/admin.scss */
 .view-switch a:hover:before {
   color: #69a8bb; }
 
-/* line 2352, ../sass/admin.scss */
+/* line 2329, ../sass/admin.scss */
 .post-com-count:hover:after {
   border-top-color: #363b3f; }
 
-/* line 2355, ../sass/admin.scss */
+/* line 2332, ../sass/admin.scss */
 .post-com-count:hover span {
   color: white;
   background-color: #363b3f; }
 
-/* line 2360, ../sass/admin.scss */
+/* line 2337, ../sass/admin.scss */
 strong .post-com-count:after {
   border-top-color: #69a8bb; }
 
-/* line 2363, ../sass/admin.scss */
+/* line 2340, ../sass/admin.scss */
 strong .post-com-count span {
   background-color: #69a8bb; }
 
 /* Admin Menu */
-/* line 2372, ../sass/admin.scss */
+/* line 2347, ../sass/admin.scss */
 #adminmenuback,
 #adminmenuwrap,
 #adminmenu {
   background: #363b3f; }
 
-/* line 2376, ../sass/admin.scss */
+/* line 2353, ../sass/admin.scss */
 #adminmenu a {
   color: white; }
 
-/* line 2380, ../sass/admin.scss */
+/* line 2357, ../sass/admin.scss */
 #adminmenu div.wp-menu-image:before {
   color: #f1f2f3; }
 
-/* line 2387, ../sass/admin.scss */
+/* line 2361, ../sass/admin.scss */
 #adminmenu a:hover,
 #adminmenu li.menu-top:hover,
 #adminmenu li.opensub > a.menu-top,
@@ -2200,20 +2181,20 @@ strong .post-com-count span {
   color: white;
   background-color: #df4931; }
 
-/* line 2393, ../sass/admin.scss */
+/* line 2369, ../sass/admin.scss */
 #adminmenu li.menu-top:hover div.wp-menu-image:before,
 #adminmenu li.opensub > a.menu-top div.wp-menu-image:before {
   color: white; }
 
 /* Active tabs use a bottom border color that matches the page background color. */
-/* line 2402, ../sass/admin.scss */
+/* line 2377, ../sass/admin.scss */
 .about-wrap h2 .nav-tab-active,
 .nav-tab-active,
 .nav-tab-active:hover {
   border-bottom-color: #f1f1f1; }
 
 /* Admin Menu: submenu */
-/* line 2413, ../sass/admin.scss */
+/* line 2386, ../sass/admin.scss */
 #adminmenu .wp-submenu,
 #adminmenu .wp-has-current-submenu .wp-submenu,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
@@ -2221,22 +2202,22 @@ strong .post-com-count span {
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
   background: #26292c; }
 
-/* line 2417, ../sass/admin.scss */
+/* line 2394, ../sass/admin.scss */
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
   border-right-color: #26292c; }
 
-/* line 2421, ../sass/admin.scss */
+/* line 2398, ../sass/admin.scss */
 #adminmenu .wp-submenu .wp-submenu-head {
   color: #c2c4c5; }
 
-/* line 2429, ../sass/admin.scss */
+/* line 2402, ../sass/admin.scss */
 #adminmenu .wp-submenu a,
 #adminmenu .wp-has-current-submenu .wp-submenu a,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu a,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu a,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a {
   color: #c2c4c5; }
-  /* line 2432, ../sass/admin.scss */
+  /* line 2409, ../sass/admin.scss */
   #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover,
   #adminmenu .wp-has-current-submenu .wp-submenu a:focus,
   #adminmenu .wp-has-current-submenu .wp-submenu a:hover,
@@ -2249,12 +2230,12 @@ strong .post-com-count span {
     color: #df4931; }
 
 /* Admin Menu: current */
-/* line 2442, ../sass/admin.scss */
+/* line 2417, ../sass/admin.scss */
 #adminmenu .wp-submenu li.current a,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a {
   color: white; }
-  /* line 2445, ../sass/admin.scss */
+  /* line 2422, ../sass/admin.scss */
   #adminmenu .wp-submenu li.current a:hover, #adminmenu .wp-submenu li.current a:focus,
   #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a:hover,
   #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a:focus,
@@ -2262,12 +2243,12 @@ strong .post-com-count span {
   #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:focus {
     color: #df4931; }
 
-/* line 2451, ../sass/admin.scss */
+/* line 2427, ../sass/admin.scss */
 ul#adminmenu a.wp-has-current-submenu:after,
 ul#adminmenu > li.current > a.current:after {
   border-right-color: #f1f1f1; }
 
-/* line 2458, ../sass/admin.scss */
+/* line 2432, ../sass/admin.scss */
 #adminmenu li.current a.menu-top,
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
 #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
@@ -2275,18 +2256,18 @@ ul#adminmenu > li.current > a.current:after {
   color: white;
   background: #df4931; }
 
-/* line 2463, ../sass/admin.scss */
+/* line 2440, ../sass/admin.scss */
 #adminmenu li.wp-has-current-submenu div.wp-menu-image:before {
   color: white; }
 
 /* Admin Menu: bubble */
-/* line 2471, ../sass/admin.scss */
+/* line 2447, ../sass/admin.scss */
 #adminmenu .awaiting-mod,
 #adminmenu .update-plugins {
   color: white;
   background: #69a8bb; }
 
-/* line 2479, ../sass/admin.scss */
+/* line 2453, ../sass/admin.scss */
 #adminmenu li.current a .awaiting-mod,
 #adminmenu li a.wp-has-current-submenu .update-plugins,
 #adminmenu li:hover a .awaiting-mod,
@@ -2295,43 +2276,43 @@ ul#adminmenu > li.current > a.current:after {
   background: #26292c; }
 
 /* Admin Menu: collapse button */
-/* line 2487, ../sass/admin.scss */
+/* line 2464, ../sass/admin.scss */
 #collapse-menu {
   color: #f1f2f3; }
 
-/* line 2491, ../sass/admin.scss */
+/* line 2468, ../sass/admin.scss */
 #collapse-menu:hover {
   color: white; }
 
-/* line 2495, ../sass/admin.scss */
+/* line 2472, ../sass/admin.scss */
 #collapse-button div:after {
   color: #f1f2f3; }
 
-/* line 2499, ../sass/admin.scss */
+/* line 2476, ../sass/admin.scss */
 #collapse-menu:hover #collapse-button div:after {
   color: white; }
 
 /* Admin Bar */
-/* line 2506, ../sass/admin.scss */
+/* line 2483, ../sass/admin.scss */
 #wpadminbar {
   color: white;
   background: #363b3f; }
 
-/* line 2514, ../sass/admin.scss */
+/* line 2488, ../sass/admin.scss */
 #wpadminbar .ab-item,
 #wpadminbar a.ab-item,
 #wpadminbar > #wp-toolbar span.ab-label,
 #wpadminbar > #wp-toolbar span.noticon {
   color: white; }
 
-/* line 2521, ../sass/admin.scss */
+/* line 2495, ../sass/admin.scss */
 #wpadminbar .ab-icon,
 #wpadminbar .ab-icon:before,
 #wpadminbar .ab-item:before,
 #wpadminbar .ab-item:after {
   color: #f1f2f3; }
 
-/* line 2530, ../sass/admin.scss */
+/* line 2502, ../sass/admin.scss */
 #wpadminbar .ab-top-menu > li:hover > .ab-item,
 #wpadminbar .ab-top-menu > li.hover > .ab-item,
 #wpadminbar .ab-top-menu > li > .ab-item:focus,
@@ -2341,13 +2322,13 @@ ul#adminmenu > li.current > a.current:after {
   color: #df4931;
   background: #26292c; }
 
-/* line 2537, ../sass/admin.scss */
+/* line 2512, ../sass/admin.scss */
 #wpadminbar > #wp-toolbar li:hover span.ab-label,
 #wpadminbar > #wp-toolbar li.hover span.ab-label,
 #wpadminbar > #wp-toolbar a:focus span.ab-label {
   color: #df4931; }
 
-/* line 2544, ../sass/admin.scss */
+/* line 2518, ../sass/admin.scss */
 #wpadminbar li:hover .ab-icon:before,
 #wpadminbar li:hover .ab-item:before,
 #wpadminbar li:hover .ab-item:after,
@@ -2355,28 +2336,28 @@ ul#adminmenu > li.current > a.current:after {
   color: white; }
 
 /* Admin Bar: submenu */
-/* line 2551, ../sass/admin.scss */
+/* line 2528, ../sass/admin.scss */
 #wpadminbar .menupop .ab-sub-wrapper {
   background: #26292c; }
 
-/* line 2556, ../sass/admin.scss */
+/* line 2532, ../sass/admin.scss */
 #wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
 #wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu {
   background: #4c4c4d; }
 
-/* line 2563, ../sass/admin.scss */
+/* line 2537, ../sass/admin.scss */
 #wpadminbar .ab-submenu .ab-item,
 #wpadminbar .quicklinks .menupop ul li a,
 #wpadminbar .quicklinks .menupop.hover ul li a,
 #wpadminbar-nojs .quicklinks .menupop:hover ul li a {
   color: #c2c4c5; }
 
-/* line 2568, ../sass/admin.scss */
+/* line 2544, ../sass/admin.scss */
 #wpadminbar .quicklinks li .blavatar,
 #wpadminbar .menupop .menupop > .ab-item:before {
   color: #f1f2f3; }
 
-/* line 2588, ../sass/admin.scss */
+/* line 2549, ../sass/admin.scss */
 #wpadminbar .quicklinks .menupop ul li a:hover,
 #wpadminbar .quicklinks .menupop ul li a:focus,
 #wpadminbar .quicklinks .menupop ul li a:hover strong,
@@ -2396,106 +2377,106 @@ ul#adminmenu > li.current > a.current:after {
 #wpadminbar li:hover #adminbarsearch:before {
   color: #df4931; }
 
-/* line 2593, ../sass/admin.scss */
+/* line 2569, ../sass/admin.scss */
 #wpadminbar .quicklinks li a:hover .blavatar,
 #wpadminbar .menupop .menupop > .ab-item:hover:before {
   color: #df4931; }
 
 /* Admin Bar: search */
-/* line 2600, ../sass/admin.scss */
+/* line 2577, ../sass/admin.scss */
 #wpadminbar #adminbarsearch:before {
   color: #f1f2f3; }
 
-/* line 2604, ../sass/admin.scss */
+/* line 2581, ../sass/admin.scss */
 #wpadminbar > #wp-toolbar > #wp-admin-bar-top-secondary > #wp-admin-bar-search #adminbarsearch input.adminbar-input:focus {
   color: white;
   background: #464d52; }
 
-/* line 2609, ../sass/admin.scss */
+/* line 2586, ../sass/admin.scss */
 #wpadminbar #adminbarsearch .adminbar-input::-webkit-input-placeholder {
   color: white;
   opacity: .7; }
 
-/* line 2610, ../sass/admin.scss */
+/* line 2587, ../sass/admin.scss */
 #wpadminbar #adminbarsearch .adminbar-input:-moz-placeholder {
   color: white;
   opacity: .7; }
 
-/* line 2611, ../sass/admin.scss */
+/* line 2588, ../sass/admin.scss */
 #wpadminbar #adminbarsearch .adminbar-input::-moz-placeholder {
   color: white;
   opacity: .7; }
 
-/* line 2612, ../sass/admin.scss */
+/* line 2589, ../sass/admin.scss */
 #wpadminbar #adminbarsearch .adminbar-input:-ms-input-placeholder {
   color: white;
   opacity: .7; }
 
 /* Admin Bar: my account */
-/* line 2617, ../sass/admin.scss */
+/* line 2594, ../sass/admin.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   border-color: #464d52;
   background-color: #464d52; }
 
-/* line 2622, ../sass/admin.scss */
+/* line 2599, ../sass/admin.scss */
 #wpadminbar #wp-admin-bar-user-info .display-name {
   color: white; }
 
-/* line 2626, ../sass/admin.scss */
+/* line 2603, ../sass/admin.scss */
 #wpadminbar #wp-admin-bar-user-info a:hover .display-name {
   color: #df4931; }
 
-/* line 2630, ../sass/admin.scss */
+/* line 2607, ../sass/admin.scss */
 #wpadminbar #wp-admin-bar-user-info .username {
   color: #c2c4c5; }
 
 /* Pointers */
-/* line 2637, ../sass/admin.scss */
+/* line 2614, ../sass/admin.scss */
 .wp-pointer .wp-pointer-content h3 {
   background-color: #df4931; }
 
-/* line 2641, ../sass/admin.scss */
+/* line 2618, ../sass/admin.scss */
 .wp-pointer .wp-pointer-content h3:before {
   color: #df4931; }
 
-/* line 2646, ../sass/admin.scss */
+/* line 2622, ../sass/admin.scss */
 .wp-pointer.wp-pointer-top .wp-pointer-arrow,
 .wp-pointer.wp-pointer-undefined .wp-pointer-arrow {
   border-bottom-color: #df4931; }
 
 /* Media Uploader */
-/* line 2654, ../sass/admin.scss */
+/* line 2630, ../sass/admin.scss */
 .media-item .bar,
 .media-progress-bar div {
   background-color: #df4931; }
 
-/* line 2658, ../sass/admin.scss */
+/* line 2635, ../sass/admin.scss */
 .details.attachment {
   box-shadow: 0 0 0 1px white, 0 0 0 5px #df4931; }
 
-/* line 2662, ../sass/admin.scss */
+/* line 2639, ../sass/admin.scss */
 .attachment.details .check {
   background-color: #df4931;
   box-shadow: 0 0 0 1px white, 0 0 0 2px #df4931; }
 
 /* Themes */
-/* line 2671, ../sass/admin.scss */
+/* line 2647, ../sass/admin.scss */
 .theme-browser .theme.active .theme-name,
 .theme-browser .theme.add-new-theme:hover:after {
   background: #df4931; }
 
-/* line 2675, ../sass/admin.scss */
+/* line 2652, ../sass/admin.scss */
 .theme-browser .theme.add-new-theme:hover span:after {
   color: #df4931; }
 
-/* line 2681, ../sass/admin.scss */
+/* line 2656, ../sass/admin.scss */
 .theme-overlay .theme-header .close:hover,
 .theme-overlay .theme-header .right:hover,
 .theme-overlay .theme-header .left:hover {
   background: #df4931; }
 
 /* jQuery UI Slider */
-/* line 2689, ../sass/admin.scss */
+/* line 2664, ../sass/admin.scss */
 .wp-slider .ui-slider-handle,
 .wp-slider .ui-slider-handle.ui-state-hover,
 .wp-slider .ui-slider-handle.focus {
@@ -2505,29 +2486,29 @@ ul#adminmenu > li.current > a.current:after {
   box-shadow: inset 0 1px 0 #e98473, 0 1px 0 rgba(0, 0, 0, 0.15); }
 
 /* Thickbox: Plugin information */
-/* line 2698, ../sass/admin.scss */
+/* line 2675, ../sass/admin.scss */
 #sidemenu a.current {
   background: #f1f1f1;
   border-bottom-color: #f1f1f1; }
 
-/* line 2703, ../sass/admin.scss */
+/* line 2680, ../sass/admin.scss */
 #plugin-information .action-button {
   background: #df4931; }
 
 /* Responsive Component */
-/* line 2709, ../sass/admin.scss */
+/* line 2686, ../sass/admin.scss */
 div#wp-responsive-toggle a:before {
   color: #f1f2f3; }
 
-/* line 2713, ../sass/admin.scss */
+/* line 2690, ../sass/admin.scss */
 .wp-responsive-open div#wp-responsive-toggle a {
   border-color: transparent;
   background: #df4931; }
 
-/* line 2719, ../sass/admin.scss */
+/* line 2696, ../sass/admin.scss */
 .star-rating .star {
   color: #df4931; }
 
-/* line 2723, ../sass/admin.scss */
+/* line 2700, ../sass/admin.scss */
 .wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle a {
   background: #26292c; }

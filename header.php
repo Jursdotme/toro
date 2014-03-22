@@ -18,8 +18,9 @@
 			
 		<!-- css + javascript -->
 		<?php wp_head(); ?>
+		
 		<!-- google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body <?php body_class(); ?>>

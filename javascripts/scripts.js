@@ -1,3 +1,23 @@
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/affix.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/alert.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/button.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/collapse.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/dropdown.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/modal.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/scrollspy.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/tab.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/tooltip.js"
+// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/popover.js"
+// @codekit-prepend "../bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"
+// @codekit-prepend "../bower_components/fancybox/source/jquery.fancybox.pack.js"
+// @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-buttons.js"
+// @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-media.js"
+// @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.js"
+
+
+
 // DOM Ready
 $(function() {
 	
@@ -135,5 +155,28 @@ var tables = $("table");
   });
 
 /*-----  End of Integrate Bootstrap stuff with Wordpress  ------*/
+
+/*=====================================================
+=            Make Wordpress galleries work            =
+=====================================================*/
+
+
+  $(document).ready(function() {
+    $(".fancybox").fancybox({
+      prevEffect  : 'elastic',
+      nextEffect  : 'elastic',
+      helpers : {
+        title : {
+          type: 'inside'
+        }
+      }});
+  });
+
+
+/*-----  End of Make Wordpress galleries work  ------*/
+
+
+
+
 
 

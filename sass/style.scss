@@ -18,13 +18,12 @@
 /*===============================
 =            Imports            =
 ===============================*/
-
-@import "compass";
-@import "bootstrap";
 @import "settings";
+@import "../bower_components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap";
+@import "../bower_components/font-awesome/scss/font-awesome";
 @import "toro";
-@import "owl-slider";
 @import "site";
+@import "woocommerce";
 @import "conditionizr";
 
 /*-----  End of Imports  ------*/

@@ -36,3 +36,10 @@ img.alignright {
 		margin-bottom: 0;
 	}
 }
+
+.glyphicon.fa {top: 0px;}
+
+// Import Fancybox styles
+@import "../bower_components/fancybox/source/jquery.fancybox.css";
+@import "../bower_components/fancybox/source/helpers/jquery.fancybox-buttons.css";
+@import "../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.css";

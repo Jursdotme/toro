@@ -65,29 +65,6 @@ $link: #DF4931;
 =            Custom stuff and overrides            =
 ==================================================*/
 
-#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon {
-	width: 47px !important;
-}
-
-#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before {
-		content: "i";
-		top: -12px;
-		font-family: "inzite-logo";
-		font-size: 50px;
-		vertical-align: baseline;
-	}
-
-@font-face {
-  font-family: 'inzite-logo';
-  src: url('../fonts/inzite.eot?53911773');
-  src: url('../fonts/inzite.eot?53911773#iefix') format('embedded-opentype'),
-       url('../fonts/inzite.woff?53911773') format('woff'),
-       url('../fonts/inzite.ttf?53911773') format('truetype'),
-       url('../fonts/inzite.svg?53911773#inzite') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .login h1 a {
 	background-image: url(../img/Login-logo.png);
 	background-size: 312px 117px;
