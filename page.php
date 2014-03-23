@@ -5,7 +5,9 @@
 		<!-- section -->
 		<section role="main" class="col-md-9 col-sm-8 col-xs-12">
 			
-				<h1><?php the_title(); ?></h1>
+				<div class="page-header">
+					<h1><?php the_title(); ?></h1>
+				</div>
 			
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			
