@@ -8036,6 +8036,10 @@ img.alignright {
 .glyphicon.fa {
   top: 0px; }
 
+/* line 42, ../sass/_toro.scss */
+.input-group > .input-group-btn > .btn {
+  padding: 6px 12px 7px 12px; }
+
 /*===============================
 =            Overall            =
 ===============================*/
