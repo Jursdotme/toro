@@ -26,15 +26,15 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/bower_components\/fancybox\/CHANGELOG.md": {
+	"\/bower_components\/fancybox\/changelog.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/fancybox\/CHANGELOG.md",
-		"outputAbbreviatedPath": "\/bower_components\/fancybox\/CHANGELOG.html",
+		"inputAbbreviatedPath": "\/bower_components\/fancybox\/changelog.md",
+		"outputAbbreviatedPath": "\/bower_components\/fancybox\/changelog.html",
 		"outputPathIsSetByUser": 0
 		},
 	"\/bower_components\/fancybox\/demo\/1_b.jpg": {
@@ -183,15 +183,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/bower_components\/fancybox\/README.md": {
+	"\/bower_components\/fancybox\/readme.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/fancybox\/README.md",
-		"outputAbbreviatedPath": "\/bower_components\/fancybox\/README.html",
+		"inputAbbreviatedPath": "\/bower_components\/fancybox\/readme.md",
+		"outputAbbreviatedPath": "\/bower_components\/fancybox\/readme.html",
 		"outputPathIsSetByUser": 0
 		},
 	"\/bower_components\/fancybox\/source\/fancybox_overlay.png": {
@@ -9013,14 +9013,6 @@
 		"outputAbbreviatedPath": "\/config.rb",
 		"outputPathIsSetByUser": 0
 		},
-	"\/css-test-template.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css-test-template.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/edit_post_link.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -9386,6 +9378,51 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/sass\/ui-kit\/_functions-mixins.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/ui-kit\/_functions-mixins.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_functions-mixins.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/ui-kit\/_ui-kit.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/ui-kit\/_ui-kit.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_ui-kit.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/ui-kit\/content\/_content-1.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/ui-kit\/content\/_content-1.scss",
+		"outputAbbreviatedPath": "\/stylesheets\/_content-1.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/screenshot.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -9497,6 +9534,22 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/template-demo.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/template-uikit-demo.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/template-uikit-demo.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/ui-kit\/content\/content-1.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/ui-kit\/content\/content-1.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},

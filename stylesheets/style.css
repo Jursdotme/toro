@@ -8040,6 +8040,140 @@ img.alignright {
 .input-group > .input-group-btn > .btn {
   padding: 6px 12px 7px 12px; }
 
+/*==========================================
+=            Vertical centering            =
+==========================================*/
+/* line 11, ../sass/ui-kit/_functions-mixins.scss */
+.v-center.v-center, .content-1,
+.v-center .v-center,
+.content-1 .v-center,
+.v-center .content-1,
+.content-1 .content-1 {
+  display: table;
+  width: 100%; }
+  /* line 15, ../sass/ui-kit/_functions-mixins.scss */
+  .v-center.v-center > div, .content-1 > div,
+  .v-center .v-center > div,
+  .content-1 .v-center > div,
+  .v-center .content-1 > div,
+  .content-1 .content-1 > div {
+    display: table-cell;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-bottom: 0;
+    float: none; }
+  @media (min-width: 768px) {
+    /* line 23, ../sass/ui-kit/_functions-mixins.scss */
+    .v-center.v-center.row:before, .row.content-1:before, .v-center.v-center.row:after, .row.content-1:after,
+    .v-center .v-center.row:before,
+    .content-1 .v-center.row:before,
+    .v-center .row.content-1:before,
+    .content-1 .row.content-1:before,
+    .v-center .v-center.row:after,
+    .content-1 .v-center.row:after,
+    .v-center .row.content-1:after,
+    .content-1 .row.content-1:after {
+      display: none; } }
+  @media (max-width: 767px) {
+    /* line 11, ../sass/ui-kit/_functions-mixins.scss */
+    .v-center.v-center, .content-1,
+    .v-center .v-center,
+    .content-1 .v-center,
+    .v-center .content-1,
+    .content-1 .content-1 {
+      .box-sizing: border-box;
+      padding-left: 20px;
+      padding-right: 20px; }
+      /* line 33, ../sass/ui-kit/_functions-mixins.scss */
+      .v-center.v-center.row, .row.content-1,
+      .v-center .v-center.row,
+      .content-1 .v-center.row,
+      .v-center .row.content-1,
+      .content-1 .row.content-1 {
+        display: block;
+        width: auto; }
+        /* line 37, ../sass/ui-kit/_functions-mixins.scss */
+        .v-center.v-center.row:before, .row.content-1:before, .v-center.v-center.row:after, .row.content-1:after,
+        .v-center .v-center.row:before,
+        .content-1 .v-center.row:before,
+        .v-center .row.content-1:before,
+        .content-1 .row.content-1:before,
+        .v-center .v-center.row:after,
+        .content-1 .v-center.row:after,
+        .v-center .row.content-1:after,
+        .content-1 .row.content-1:after {
+          display: none; }
+        /* line 41, ../sass/ui-kit/_functions-mixins.scss */
+        .v-center.v-center.row > *, .row.content-1 > *,
+        .v-center .v-center.row > *,
+        .content-1 .v-center.row > *,
+        .v-center .row.content-1 > *,
+        .content-1 .row.content-1 > * {
+          display: block;
+          vertical-align: baseline; } }
+
+/*-----  End of Vertical centering  ------*/
+/*=========================================
+=            Background colors            =
+=========================================*/
+/* line 65, ../sass/ui-kit/_functions-mixins.scss */
+.bg-primary {
+  background: #d03530 !important; }
+
+/* line 65, ../sass/ui-kit/_functions-mixins.scss */
+.bg-success {
+  background: #5cb85c !important; }
+
+/* line 65, ../sass/ui-kit/_functions-mixins.scss */
+.bg-info {
+  background: #5bc0de !important; }
+
+/* line 65, ../sass/ui-kit/_functions-mixins.scss */
+.bg-warning {
+  background: #f0ad4e !important; }
+
+/* line 65, ../sass/ui-kit/_functions-mixins.scss */
+.bg-danger {
+  background: #d9534f !important; }
+
+/*-----  End of Background colors  ------*/
+/* line 1, ../sass/ui-kit/content/_content-1.scss */
+.content-1 {
+  height: 800px;
+  background: #222222; }
+  /* line 6, ../sass/ui-kit/content/_content-1.scss */
+  .content-1 .hero-unit {
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+    /* line 10, ../sass/ui-kit/content/_content-1.scss */
+    .content-1 .hero-unit h1 {
+      font-size: 48px;
+      color: white;
+      font-weight: 700;
+      margin: 0 0 30px 0;
+      letter-spacing: -2px; }
+      @media (max-width: 480px) {
+        /* line 10, ../sass/ui-kit/content/_content-1.scss */
+        .content-1 .hero-unit h1 {
+          font-size: 42px;
+          color: white; } }
+    /* line 19, ../sass/ui-kit/content/_content-1.scss */
+    .content-1 .hero-unit p {
+      color: #e6e6e6; }
+  /* line 23, ../sass/ui-kit/content/_content-1.scss */
+  .content-1.border .hero-unit {
+    border-radius: 5px; }
+    /* line 26, ../sass/ui-kit/content/_content-1.scss */
+    .content-1.border .hero-unit h1 {
+      padding: 26px 26px 22px;
+      margin: 0;
+      display: inline-block;
+      border: 5px solid white; }
+    /* line 32, ../sass/ui-kit/content/_content-1.scss */
+    .content-1.border .hero-unit p {
+      display: inline-block; }
+
 /*===============================
 =            Overall            =
 ===============================*/
