@@ -1,3 +1,4 @@
+// Bootstrap
 // @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/affix.js"
 // @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/alert.js"
 // @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/button.js"
@@ -10,6 +11,11 @@
 // @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js"
 // @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/tooltip.js"
 // @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/popover.js"
+
+// Owl Carousel
+// @codekit-prepend "../bower_components/owlcarousel/owl-carousel/owl.carousel.js"
+
+// Fancybox 2
 // @codekit-prepend "../bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"
 // @codekit-prepend "../bower_components/fancybox/source/jquery.fancybox.pack.js"
 // @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-buttons.js"

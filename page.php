@@ -46,5 +46,4 @@
 
 	</div>
 </div>
-<?php include "edit_post_link.php" ?>
 <?php get_footer(); ?>

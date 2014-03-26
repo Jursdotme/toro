@@ -1,6 +1,6 @@
 			
 			<!-- footer -->
-
+			<?php include "edit_post_link.php" ?>
 			<div class="container">
 				<footer id footer class="footer row" role="contentinfo">
 					

@@ -24,7 +24,7 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-		<nav class="navbar navbar-custom navbar-static-top" role="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
@@ -38,7 +38,6 @@
 		                <?php bloginfo('name'); ?>
 		            </a>
 		    </div>
-		    	<?php desktop_nav(); ?>
-		    </div>
-			</div>
+	    	<?php desktop_nav(); ?>
+	    </div>
 		</nav>

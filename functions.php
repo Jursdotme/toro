@@ -100,7 +100,7 @@ function desktop_nav() {
         'container'         => 'div',
         'container_class'   => 'collapse navbar-collapse',
         'container_id'      => 'bs-example-navbar-collapse-1',
-        'menu_class'        => 'nav navbar-nav',
+        'menu_class'        => 'nav navbar-nav navbar-right',
         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
         'walker'            => new wp_bootstrap_navwalker()
     ));
@@ -448,6 +448,68 @@ define('WOOCOMMERCE_USE_CSS', false);
 add_theme_support( 'woocommerce' );
 
 /*-----  End of Disable Woocommerce default styles  ------*/
+
+/*============================================================
+=            Add custom editor classes to TinyMCE            =
+============================================================*/
+
+// Callback function to insert 'styleselect' into the $buttons array
+function my_mce_buttons_2( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter('mce_buttons_2', 'my_mce_buttons_2');
+
+// Callback function to filter the MCE settings
+function my_mce_before_init_insert_formats( $init_array ) {  
+    // Define the style_formats array
+    $style_formats = array(  
+        // Each array child is a format with it's own settings
+        array(  
+            'title' => 'Lead',  
+            'block' => 'p',  
+            'classes' => 'lead',
+            'wrapper' => false,
+            
+        ),
+        array(  
+            'title' => 'Quote',  
+            'block' => 'blockquote',  
+            'classes' => '',
+            'wrapper' => false,
+            
+        ),
+        array(  
+            'title' => 'Citat af',  
+            'block' => 'footer',  
+            'classes' => '',
+            'wrapper' => false,
+        ),
+        array(  
+            'title' => 'Small',  
+            'inline' => 'small',  
+            'classes' => '',
+            'wrapper' => false,
+            'exact' => true
+        ),
+    );  
+    // Insert the array, JSON ENCODED, into 'style_formats'
+    $init_array['style_formats'] = json_encode( $style_formats );  
+    
+    return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
+
+
+function my_theme_add_editor_styles() {
+    add_editor_style( 'stylesheets/style.css' );
+}
+add_action( 'init', 'my_theme_add_editor_styles' );
+
+/*-----  End of Add custom editor classes to TinyMCE  ------*/
 
 
 

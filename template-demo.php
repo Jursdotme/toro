@@ -6,7 +6,7 @@
 <div class="jumbotron">
   <div class="container">
     <h1>Toro Kitchen Sink</h1>
-    <p>Use this page to style alle Bootstrap elements</p>
+    <p>Use this page to style all Bootstrap elements</p>
     <p><a class="btn btn-primary btn-large" href="http://getbootstrap.com/">Read Bootstrap Docs »</a></p>
   </div>
 </div>
