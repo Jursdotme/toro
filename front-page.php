@@ -1,13 +1,10 @@
 <?php  get_header();?>
 
+<!-- Slider -->
+<?php include 'slider.php'; ?>
+
 <div class="container">
 	<div class="row">
-
-		<!-- Slider -->
-		<div class="col-md-12 col-xs-12">
-			<?php include 'slider.php'; ?>
-			<hr class="hr1">
-		</div>
 
 		<!-- Statisk Indhold -->
 		

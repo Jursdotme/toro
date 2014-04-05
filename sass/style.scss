@@ -19,12 +19,20 @@
 =            Imports            =
 ===============================*/
 @import "settings";
-@import "../bower_components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap";
-@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/fontawesome/scss/font-awesome";
+// OwlCarousel styles
+@import "owlcarousel/owl.carousel.scss";
+@import "owlcarousel/owl.theme.scss";
+@import "owlcarousel/owl.transitions.scss";
+
+// Import Fancybox styles
+@import "fancybox/jquery.fancybox.scss";
+@import "fancybox/helpers/jquery.fancybox-buttons.scss";
+@import "fancybox/helpers/jquery.fancybox-thumbs.scss";
+
 @import "toro";
-@import "ui-kit/ui-kit";
 @import "site";
-@import "woocommerce";
-@import "conditionizr";
 
 /*-----  End of Imports  ------*/

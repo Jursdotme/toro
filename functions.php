@@ -112,36 +112,16 @@ function toro_header_scripts()
     if (!is_admin()) {
     
     	wp_deregister_script('jquery'); // Deregister WordPress jQuery
-    	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2', true); // Google CDN jQuery
-    	wp_enqueue_script('jquery'); // Enqueue it!
-    	
-    	wp_register_script('conditionizr', 'http://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.0.0/conditionizr.min.js', array(), '4.0.0', true); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
-        
-        wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2', true); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
-        
+    	        
         wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.min.js', array(), '1.0.0', true); // Custom scripts
         wp_enqueue_script('toroscripts'); // Enqueue it!
-    }
-}
-
-// Load Toro conditional scripts
-function toro_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/javascripts/scriptname.js', array('jquery'), '1.0.0', true); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
     }
 }
 
 // Load Toro styles
 function toro_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize-css/normalize.css', array(), '1.0', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
-    
-    wp_register_style('toro', get_template_directory_uri() . '/stylesheets/style.css', array(), '1.0', 'all');
+    wp_register_style('toro', get_template_directory_uri() . '/stylesheets/build/min/global.min.css', array(), '1.0', 'all');
     wp_enqueue_style('toro'); // Enqueue it!
 }
 
@@ -335,7 +315,6 @@ function torocomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'toro_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'toro_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'toro_styles'); // Add Theme Stylesheet
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()

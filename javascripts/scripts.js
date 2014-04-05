@@ -1,29 +1,3 @@
-// Bootstrap
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/affix.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/alert.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/button.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/collapse.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/dropdown.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/modal.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/scrollspy.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/tab.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/tooltip.js"
-// @codekit-prepend "../bower_components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap/popover.js"
-
-// Owl Carousel
-// @codekit-prepend "../bower_components/owlcarousel/owl-carousel/owl.carousel.js"
-
-// Fancybox 2
-// @codekit-prepend "../bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"
-// @codekit-prepend "../bower_components/fancybox/source/jquery.fancybox.pack.js"
-// @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-buttons.js"
-// @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-media.js"
-// @codekit-prepend "../bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.js"
-
-
-
 // DOM Ready
 $(function() {
 	
@@ -40,77 +14,6 @@ $(function() {
 	}
 
 });
-
-/*====================================
-=            Conditionizr            =
-====================================*/
-
-conditionizr.add('chrome', ['class'], function () {
-  return !!window.chrome && /google/i.test(navigator.vendor);
-});
-
-conditionizr.add('safari', ['class'], function () {
-  return /constructor/i.test(window.HTMLElement);
-});
-
-conditionizr.add('firefox', ['class'], function () {
-  return typeof InstallTrigger !== 'undefined';
-});
-
-conditionizr.add('ie11', ['class'], function () {
-  return /(?:\sTrident\/7\.0;.*\srv:11\.0)/i.test(navigator.userAgent);
-});
-
-conditionizr.add('ie10', ['class'], function () {
-  var version = false;
-  /*@cc_on
-    if (/^10/.test(@_jscript_version) && /MSIE 10\.0(?!.*IEMobile)/i.test(navigator.userAgent))
-    version = true
-  @*/
-  return version;
-});
-
-conditionizr.add('ie9', ['class'], function () {
-  var version = false;
-  /*@cc_on
-    if (/^9/.test(@_jscript_version) && /MSIE 9\.0(?!.*IEMobile)/i.test(navigator.userAgent))
-    version = true
-  @*/
-  return version;
-});
-
-conditionizr.add('ie8', ['class'], function () {
-  var version = false;
-  /*@cc_on
-    if (@_jscript_version > 5.7 && !/^(9|10)/.test(@_jscript_version))
-    version = true
-  @*/
-  return version;
-});
-
-conditionizr.add('touch', ['class'], function () {
-  return !!'ontouchstart' in window || !!navigator.msMaxTouchPoints;
-});
-
-conditionizr.add('ios', ['class'], function () {
-  return /(iPad|iPhone|iPod)/i.test(navigator.userAgent);
-});
-
-conditionizr.add('mac', ['class'], function () {
-  return /mac/i.test(navigator.platform);
-});
-
-conditionizr.add('windows', ['class'], function () {
-  return /win/i.test(navigator.platform);
-});
-
-conditionizr.add('linux', ['class'], function () {
-  return /linux/i.test(navigator.platform) && !/android|cros/i.test(navigator.userAgent);
-});
-
-console.log(conditionizr)
-
-/*-----  End of Conditionizr  ------*/
 
 /*===============================================
 =            Pagination active state            =
@@ -180,6 +83,31 @@ var tables = $("table");
 
 
 /*-----  End of Make Wordpress galleries work  ------*/
+
+/*========================================
+=            Frontpage slider            =
+========================================*/
+
+$(document).ready(function() {
+ 
+  $("#frontpage-slider").owlCarousel({
+    navigation : true, // Show next and prev buttons
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem:true
+
+    // "singleItem:true" is a shortcut for:
+    // items : 1, 
+    // itemsDesktop : false,
+    // itemsDesktopSmall : false,
+    // itemsTablet: false,
+    // itemsMobile : false
+  });
+ 
+});
+
+/*-----  End of Frontpage slider  ------*/
+
 
 
 
