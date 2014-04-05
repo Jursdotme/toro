@@ -53,7 +53,8 @@ module.exports = function(grunt) {
 			options: {
 		      style: 'expanded',
 		      banner: '<%= tag.banner %>',
-		      compass: false
+		      compass: false,
+		      quiet: true
 		    },
 		  all: {
 		    files: {
@@ -200,6 +201,7 @@ module.exports = function(grunt) {
 		
 		// WATCH
 		watch: {
+
 			// Reloads of the GruntFile.js is changed.
 			configFiles: {
 		    files: [ 'Gruntfile.js'],
@@ -210,6 +212,9 @@ module.exports = function(grunt) {
 		  },
 		  // Watch for changes to SCSS files.
 		  sass_all: {
+		  	options: {
+					livereload: true
+				},
 		    files: '<%= project.sass %>/{,*/}*.{scss,sass}',
 		    tasks: ['sass:all','autoprefixer:all','cssmin:css']
 		  },

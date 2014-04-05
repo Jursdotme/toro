@@ -21,6 +21,8 @@
     "fontawesome": "~4.0.3",
     "bourbon": "~3.1.8",
     "jQuery": "~1.11.0",
-    "modernizr": "~2.7.2"
+    "modernizr": "~2.7.2",
+    "conditionizr": "https://github.com/conditionizr/conditionizr.git#~4.3.0",
+    "fancybox": "~2.1.5"
   }
 }

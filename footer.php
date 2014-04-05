@@ -50,5 +50,8 @@
 			});
 		</script>	
 
+		<!-- Grunt Live Reload Script -->
+		<script src="//localhost:35729/livereload.js"></script>
+		
 	</body>
 </html>
