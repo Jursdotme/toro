@@ -96,7 +96,7 @@ add_action( 'wp_dashboard_setup', 'toro_custom_dashboard_widgets' );
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function toro_login_css() {
-	wp_enqueue_style( 'toro_login_css', get_template_directory_uri() . '/stylesheets/admin.css', false );
+	wp_enqueue_style( 'toro_login_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
@@ -122,7 +122,7 @@ you like.
 
 // Custom Stylesheet
 function toro_custom_wp_admin_style() {
-        wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/stylesheets/admin.css', false );
+        wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', false );
        
 }
 add_action( 'admin_enqueue_scripts', 'toro_custom_wp_admin_style' );

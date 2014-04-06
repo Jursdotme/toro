@@ -491,6 +491,31 @@ add_action( 'init', 'my_theme_add_editor_styles' );
 /*-----  End of Add custom editor classes to TinyMCE  ------*/
 
 
+/*====================================================
+=            Limit size of uploaded image            =
+====================================================*/
+
+function tomjn_deny_giant_images($file){
+    $type = explode('/',$file['type']);
+
+    if($type[0] == 'image'){
+        list( $width, $height, $imagetype, $hwstring, $mime, $rgb_r_cmyk, $bit ) = getimagesize( $file['tmp_name'] );
+        if($width * $height > 3200728){ // I added 100,000 as sometimes there are more rows/columns than visible pixels depending on the format
+            $file['error'] = 'Dette billede er for stort du bliver nød til at skalerer det inden upload, helst mindre end 3.2MP eller 2048x1536.';
+        }
+    }
+    return $file;
+}
+add_filter('wp_handle_upload_prefilter','tomjn_deny_giant_images');
+
+/*-----  End of Limit size of uploaded image  ------*/
+
+
+function load_custom_wp_admin_style() {
+        wp_register_script( 'custom_wp_admin_css', get_template_directory_uri() . '/javascripts/admin-scripts.js', true, '1.0.0' );
+        wp_enqueue_script( 'custom_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 
 ?>

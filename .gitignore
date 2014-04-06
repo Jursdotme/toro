@@ -28,3 +28,8 @@ node_modules
 .sass-cache
 
 bower_components
+javascripts/admin-scripts.js
+
+library/admin.php
+
+iModul.php
