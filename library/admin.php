@@ -96,7 +96,7 @@ add_action( 'wp_dashboard_setup', 'toro_custom_dashboard_widgets' );
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function toro_login_css() {
-	wp_enqueue_style( 'toro_login_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', false );
+	wp_enqueue_style( 'toro_login_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', true );
 }
 
 // changing the logo link from wordpress.org to your site
@@ -129,7 +129,7 @@ add_action( 'admin_enqueue_scripts', 'toro_custom_wp_admin_style' );
 
 // Custom Backend Footer
 function toro_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://inzite.dk" target="_blank">INZITE Media & Marketing</a></span>. Built using <a href="https://github.com/Jursdotme/toro" target="_blank">Toro</a>.', 'toro' );
+	_e( '<span id="footer-thankyou"><span class="inzite-code"></span> with <span class="inzite-heart"></span> by <a href="http://inzite.dk" target="_blank"><span class="inzite-inzite"></span></a></span>', 'toro' );
 }
 
 // adding it to the admin area

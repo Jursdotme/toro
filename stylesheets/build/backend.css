@@ -13,24 +13,292 @@
 /*==================================================
 =            Custom stuff and overrides            =
 ==================================================*/
+body.login {
+  background: #363b3f !important;
+}
+
 .login h1 a {
-  background-image: url(../img/Login-logo.png);
-  background-size: 312px 117px;
+  background-image: url(../../../img/inzite_tagline.png);
+  background-image: none, url(../../../img/inzite_tagline.svg);
+  background-size: 320px 80px;
   background-position: center top;
   background-repeat: no-repeat;
   color: #999;
-  height: 117px;
+  height: 80px;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.3em;
   margin: 0 auto 25px;
   padding: 0;
   text-decoration: none;
-  width: 312px;
+  width: 320px;
   text-indent: -9999px;
   outline: 0;
   overflow: hidden;
   display: block;
+}
+
+@font-face {
+  font-family: 'inzite';
+  src: url("../../../fonts/inzite/inzite.eot?zec0lt");
+  src: url("../../../fonts/inzite/inzite.eot?#iefixzec0lt") format("embedded-opentype"), url("../../../fonts/inzite/inzite.woff?zec0lt") format("woff"), url("../../../fonts/inzite/inzite.ttf?zec0lt") format("truetype"), url("../../../fonts/inzite/inzite.svg?zec0lt#inzite") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="inzite-"], [class*=" inzite-"] {
+  font-family: 'inzite';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.inzite-inzite_tagline:before {
+  content: "\e632";
+}
+
+.inzite-toro_tagline:before {
+  content: "\e634";
+}
+
+.inzite-toro:before {
+  content: "\e631";
+}
+
+.inzite-inzite:before {
+  content: "\f120";
+}
+
+.inzite-phone:before {
+  content: "\e600";
+}
+
+.inzite-mobile:before {
+  content: "\e601";
+}
+
+.inzite-mail:before {
+  content: "\e602";
+}
+
+.inzite-paperplane:before {
+  content: "\e603";
+}
+
+.inzite-pencil:before {
+  content: "\e604";
+}
+
+.inzite-location:before {
+  content: "\e605";
+}
+
+.inzite-heart:before {
+  content: "\e606";
+}
+
+.inzite-star:before {
+  content: "\e607";
+}
+
+.inzite-comment:before {
+  content: "\e608";
+}
+
+.inzite-quote:before {
+  content: "\e609";
+}
+
+.inzite-house:before {
+  content: "\e60a";
+}
+
+.inzite-search:before {
+  content: "\e60b";
+}
+
+.inzite-cog:before {
+  content: "\e60c";
+}
+
+.inzite-music:before {
+  content: "\e60d";
+}
+
+.inzite-music2:before {
+  content: "\e60e";
+}
+
+.inzite-key:before {
+  content: "\e60f";
+}
+
+.inzite-earth:before {
+  content: "\e610";
+}
+
+.inzite-code:before {
+  content: "\e611";
+}
+
+.inzite-light-bulb:before {
+  content: "\e612";
+}
+
+.inzite-rss:before {
+  content: "\e613";
+}
+
+.inzite-signal:before {
+  content: "\e614";
+}
+
+.inzite-checkmark:before {
+  content: "\e615";
+}
+
+.inzite-cross:before {
+  content: "\e616";
+}
+
+.inzite-minus:before {
+  content: "\e617";
+}
+
+.inzite-plus:before {
+  content: "\e618";
+}
+
+.inzite-info:before {
+  content: "\e619";
+}
+
+.inzite-question:before {
+  content: "\e61a";
+}
+
+.inzite-play:before {
+  content: "\e61b";
+}
+
+.inzite-pause:before {
+  content: "\e61c";
+}
+
+.inzite-resize-enlarge:before {
+  content: "\e61d";
+}
+
+.inzite-resize-shrink:before {
+  content: "\e61e";
+}
+
+.inzite-arrow-left:before {
+  content: "\e61f";
+}
+
+.inzite-arrow-down:before {
+  content: "\e620";
+}
+
+.inzite-arrow-up:before {
+  content: "\e621";
+}
+
+.inzite-arrow-right:before {
+  content: "\e622";
+}
+
+.inzite-ellipsis:before {
+  content: "\e623";
+}
+
+.inzite-dot:before {
+  content: "\e624";
+}
+
+.inzite-github:before {
+  content: "\e625";
+}
+
+.inzite-vimeo:before {
+  content: "\e626";
+}
+
+.inzite-twitter:before {
+  content: "\e627";
+}
+
+.inzite-facebook:before {
+  content: "\e628";
+}
+
+.inzite-facebook2:before {
+  content: "\e629";
+}
+
+.inzite-googleplus:before {
+  content: "\e62a";
+}
+
+.inzite-tumblr:before {
+  content: "\e62b";
+}
+
+.inzite-linkedin:before {
+  content: "\e62c";
+}
+
+.inzite-dropbox:before {
+  content: "\e62d";
+}
+
+.inzite-skype:before {
+  content: "\e62e";
+}
+
+.inzite-paypal:before {
+  content: "\e62f";
+}
+
+.inzite-soundcloud:before {
+  content: "\e630";
+}
+
+#wp-admin-bar-wp-logo > a > .ab-icon {
+  font: 400 20px/1 'inzite';
+  width: auto !important;
+}
+#wp-admin-bar-wp-logo > a > .ab-icon:before {
+  font-family: 'inzite' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+#footer-thankyou {
+  font-size: 16px;
+}
+#footer-thankyou [class^=inzite-] {
+  font-size: 16px;
+  top: 2px;
+  position: relative;
+}
+#footer-thankyou .inzite-inzite {
+  top: 0px;
+  font-size: 14px;
+  margin-left: 4px;
+}
+#footer-thankyou a:hover {
+  text-decoration: none;
 }
 
 /*------------------------------------------------------------------------------

@@ -65,26 +65,64 @@ $link: #DF4931;
 =            Custom stuff and overrides            =
 ==================================================*/
 
+body.login {
+	background: $base-color !important;
+}
+
 .login h1 a {
-	background-image: url(../img/Login-logo.png);
-	background-size: 312px 117px;
+	background-image: url(../../../img/inzite_tagline.png);
+	background-image: none,url(../../../img/inzite_tagline.svg);
+	background-size: 320px 80px;
 	background-position: center top;
 	background-repeat: no-repeat;
 	color: #999;
-	height: 117px;
+	height: 80px;
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 1.3em;
 	margin: 0 auto 25px;
 	padding: 0;
 	text-decoration: none;
-	width: 312px;
+	width: 320px;
 	text-indent: -9999px;
 	outline: 0;
 	overflow: hidden;
 	display: block;
 }
 
+
+@import "fonts/inzite";
+
+#wp-admin-bar-wp-logo > a > .ab-icon {
+	font: 400 20px/1 'inzite';
+	width: auto !important;
+	&:before  {
+		font-family: 'inzite' !important;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+	}
+}
+
+#footer-thankyou {
+	font-size: 16px;
+	[class^=inzite-] {
+		font-size: 16px;
+		top: 2px;
+		position: relative;
+	}
+	.inzite-inzite{
+		top: 0px;
+		font-size: 14px;
+		margin-left: 4px;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+}
 
 /*------------------------------------------------------------------------------
 
