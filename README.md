@@ -54,3 +54,50 @@ Assuming that the stuff above has been installed you should be able to follow th
 That's really all there is to it. Grunt is now listening to changes in sass and javascript files and compiles, concatenates, minifies and outputs the necessary files.
 
 Next time you return to the project you only need to run ```grunt``` (step 5) make grunt watch the project again.
+
+## Adding packages with bower
+
+Using a local or remote package
+
+```
+bower install <package>
+```
+Installing a local or remote package and add it into the project's bower.json dependencies
+
+```
+bower install <package> -save
+```
+
+Using a specific version of a package
+
+```
+bower install <package>#<version>
+```
+
+Using a different name and a specific version of a package
+
+```
+bower install <name>=<package>#<version>
+```
+
+Where ```<package>``` can be any one of the following:
+
+- A name that maps to a package registered with Bower, e.g, ```jquery```. ‡
+- A public remote Git endpoint, e.g., ```git://github.com/someone/some-package.git```. ‡
+- A private Git repository, e.g., ```https://github.com/someone/some-package.git```. If the protocol is https, a prompt will ask for the credentials. ssh can also be used, e.g., ```git@github.com:someone/some-package.git``` and can authenticate with the user's ssh public/private keys. ‡
+- A local endpoint, i.e., a folder that's a Git repository. ‡
+- A public remote Subversion endpoint, e.g., ```svn+http://package.googlecode.com/svn/```. ‡
+- A private Subversion repository, e.g., ```svn+ssh://package.googlecode.com/svn/```. ‡
+- A local endpoint, i.e., a folder that's an Subversion repository, e.g., ```svn+file:///path/to/svn/```. ‡
+- A shorthand endpoint, e.g., ```someone/some-package``` (defaults to GitHub). ‡
+- A URL to a file, including ```zip``` and ```tar``` files. Its contents will be extracted.
+
+‡ These types of ```<package>``` might have versions available. You can specify a [semver](http://semver.org/) compatible version to fetch a specific release, and lock the package to that version. You can also specify a [range](https://github.com/isaacs/node-semver#ranges) of versions.
+
+If you are using a package that is a git endpoint, you may use any tag, commit SHA, or branch name as a version. For example: ```<package>#<sha>```. Using branches is not recommended because the HEAD does not reference a fixed commit SHA.
+
+If you are using a package that is a subversion endpoint, you may use any tag, revision number, or branch name as a version. For example: ```<package>#<revision>```.
+
+All package contents are installed in the ```bower_components``` directory by default. You should **never** directly modify the contents of this directory.
+
+Using ```bower list``` will show all the packages that are installed locally.

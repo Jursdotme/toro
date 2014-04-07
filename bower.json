@@ -22,7 +22,8 @@
     "bourbon": "~3.1.8",
     "jQuery": "~1.11.0",
     "modernizr": "~2.7.2",
-    "conditionizr": "https://github.com/conditionizr/conditionizr.git#~4.3.0",
-    "fancybox": "~2.1.5"
+    "fancybox": "~2.1.5",
+    "masonry": "~3.1.5",
+    "conditionizr": "~4.3.0"
   }
 }
