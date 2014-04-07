@@ -24,7 +24,18 @@
 
 	</head>
 	<body <?php body_class(); ?>>
+		
+		<?php if(is_front_page() ) { ?>
+			
+		<nav class="navbar navbar-transparent navbar-static-top" role="navigation">
+
+		<?php } else { ?>
+
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+		<?php } ?>
+
+
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">

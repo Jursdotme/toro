@@ -1,0 +1,108 @@
+/**
+ * Header 24 stylesheet  
+ * */
+
+ // Vertical centering
+@mixin v-center{
+  &.v-center,
+  .v-center {
+    display: table;
+     width: 100%;
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      margin-top: 0; margin-bottom:0;
+      float: none;
+    }
+    @media (min-width: 768px) {
+      &.row {
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      padding-left:20px;
+      padding-right:20px;
+      &.row {
+
+        display: block;
+        width: auto;
+        &:before,
+        &:after {
+          display: none;
+        }
+        > * {
+          display: block;
+          vertical-align: baseline;
+        }
+      }
+    }
+  }  
+}
+
+ .header-24 {
+    margin-bottom: $grid-gutter-width;
+    .bg-image {
+        background-image: url("../../../img/test-image-01.jpg");
+        background-size:cover;
+        background-position:center;
+        padding-top:$grid-gutter-width*6;
+        padding-bottom:$grid-gutter-width*6;
+        @include v-center;
+        color: white;
+        &:before {
+            content: "";
+            pointer-events:none;
+            background: rgba($gray-dark,0.1);
+            background-size:cover;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: 0; 
+            background-position:center;
+        }
+        .hero-unit {
+            margin: 0 0 35px;
+            padding: 0;
+            background: transparent;
+            h1 {
+                margin: 0 0 17px;
+                font-size: 41px;
+                color: white;
+                line-height: 44px;
+                letter-spacing: -0.01em;
+                font-weight: 300;
+            }
+            p {
+                font-size: 21px;
+                line-height: 28px;
+                font-weight:300;
+                color: $gray-lighter;
+            }
+        }
+        .btn.btn-gray {
+            
+            @include button-variant(#fff, $asbestos, $asbestos);
+            
+        }
+        .btns .btn {
+            padding-left: 30px;
+            padding-right: 30px;
+            & + .btn {
+                margin-left: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .btns .btn {
+                display: block;
+                & + .btn {
+                    margin: 10px 0 0;
+                }
+            }
+        }
+    }
+}

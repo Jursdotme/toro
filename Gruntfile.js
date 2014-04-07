@@ -162,6 +162,10 @@ module.exports = function(grunt) {
 					'<%= project.bootstrap_scripts %>/tooltip.js',
 					'<%= project.bootstrap_scripts %>/popover.js',
 
+					// Masonry
+					'<%= project.bower %>/masonry/dist/masonry.pkgd.min.js',
+
+
 					// Owl Carousel
 					'<%= project.bower %>/owlcarousel/owl-carousel/owl.carousel.js',
 

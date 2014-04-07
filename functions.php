@@ -113,7 +113,7 @@ function toro_header_scripts()
     
     	wp_deregister_script('jquery'); // Deregister WordPress jQuery
     	        
-        wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.min.js', array(), '1.0.0', true); // Custom scripts
+        wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.js', array(), '1.0.0', true); // Custom scripts
         wp_enqueue_script('toroscripts'); // Enqueue it!
     }
 }

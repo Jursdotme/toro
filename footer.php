@@ -28,27 +28,6 @@
 			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)})(document,'script');
 		</script>
-		
-		<script>
-		// OWL Setup
-			$(document).ready(function() {
-
-				// Costumizing Owl Carusel: http://www.owlgraphic.com/owlcarousel/#customizing
-	 
-			  $("#frontpage-slider").owlCarousel({
-			    autoPlay : 3000,
-			    stopOnHover : true,
-			    navigation:true,
-			    paginationSpeed : 1000,
-			    goToFirstSpeed : 2000,
-			    singleItem : true,
-			    autoHeight : false,
-			    items : 1,
-			    // transitionStyle : "goDown"
-			  });
-			 
-			});
-		</script>	
 
 		<!-- Grunt Live Reload Script -->
 		<script src="//localhost:35729/livereload.js"></script>
