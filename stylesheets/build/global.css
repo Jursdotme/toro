@@ -487,27 +487,27 @@ h6 .small, .h6 small,
 }
 
 h1, .h1 {
-  font-size: 62.006px;
+  font-size: 3.8147rem;
 }
 
 h2, .h2 {
-  font-size: 51.996px;
+  font-size: 3.05176rem;
 }
 
 h3, .h3 {
-  font-size: 39.998px;
+  font-size: 2.44141rem;
 }
 
 h4, .h4 {
-  font-size: 28.994px;
+  font-size: 1.95313rem;
 }
 
 h5, .h5 {
-  font-size: 28px;
+  font-size: 1.5625rem;
 }
 
 h6, .h6 {
-  font-size: 23.996px;
+  font-size: 1.25rem;
 }
 
 p {
