@@ -18,9 +18,9 @@
 /*===============================
 =            Imports            =
 ===============================*/
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "settings";
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/fontawesome/scss/font-awesome";
 // OwlCarousel styles
 @import "components/owlcarousel/owl.carousel.scss";
