@@ -83,12 +83,14 @@ $font-size-base:          14px;
 $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 
-$font-size-h1:            $font-size-base * 4.429; // ~36px
-$font-size-h2:            $font-size-base * 3.714; // ~30px
-$font-size-h3:            $font-size-base * 2.857; // ~24px
-$font-size-h4:            $font-size-base * 2.071; // ~18px
-$font-size-h5:            $font-size-base * 2;
-$font-size-h6:            $font-size-base * 1.714; // ~12px
+$type-scale: 1.25; // perfect fifth
+
+$font-size-h1:            modular-scale(1rem,   6, $type-scale);
+$font-size-h2:            modular-scale(1rem,   5, $type-scale);
+$font-size-h3:            modular-scale(1rem,   4, $type-scale);
+$font-size-h4:            modular-scale(1rem,   3, $type-scale);
+$font-size-h5:            modular-scale(1rem,   2, $type-scale);
+$font-size-h6:            modular-scale(1rem,   1, $type-scale);
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429; // 20/14

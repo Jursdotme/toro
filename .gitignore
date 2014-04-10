@@ -33,3 +33,7 @@ javascripts/admin-scripts.js
 library/admin.php
 
 iModul.php
+
+stylesheets/build/global.css
+
+stylesheets/build/autoprefixed/global.autoprefixed.css
