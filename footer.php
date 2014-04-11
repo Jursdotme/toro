@@ -1,26 +1,25 @@
-			
-			<!-- footer -->
-			<?php include "edit_post_link.php" ?>
-			<div class="container">
-				<footer id footer class="footer row" role="contentinfo">
-					
-					<div class="col-md-9 col-sm-8 col-xs-12">
+<!-- footer -->
+<?php include "edit_post_link.php" ?>
+<div class="container">
+	<footer id footer class="footer row" role="contentinfo">
 
-						<!-- copyright -->
-						<p class="copyright">
-							&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?> 
-							<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
-						</p>
-						<!-- /copyright -->
-						
-					</div>
+		<div class="col-md-9 col-sm-8 col-xs-12">
 
-				</footer>
-			</div>
-			<!-- /footer -->
+			<!-- copyright -->
+			<p class="copyright">
+				&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?>
+				<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
+			</p>
+			<!-- /copyright -->
+
+		</div>
+
+	</footer>
+</div>
+<!-- /footer -->
 
 		<?php wp_footer(); ?>
-		
+
 		<!-- analytics -->
 		<script>
 			var _gaq=[['_setAccount','UA-XXXXXXXX-XX'],['_trackPageview']];
@@ -31,6 +30,6 @@
 
 		<!-- Grunt Live Reload Script -->
 		<script src="//localhost:35729/livereload.js"></script>
-		
+
 	</body>
 </html>

@@ -30,8 +30,6 @@ node_modules
 bower_components
 javascripts/admin-scripts.js
 
-library/admin.php
-
 iModul.php
 
 stylesheets/build/global.css
