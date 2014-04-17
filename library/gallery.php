@@ -1,5 +1,5 @@
-<?php 
-add_shortcode('gallery', 'my_gallery_shortcode'); 
+<?php
+add_shortcode('gallery', 'my_gallery_shortcode');
 
 function my_gallery_shortcode($attr) {
 	$post = get_post();
@@ -104,7 +104,7 @@ function my_gallery_shortcode($attr) {
 		// 		</{$captiontag}>";
 		// }
 		$output .= "</a></{$itemtag}>";
-		
+
 	}
 
 	$output .= "</div>\n";

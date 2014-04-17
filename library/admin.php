@@ -123,7 +123,7 @@ you like.
 // Custom Stylesheet
 function toro_custom_wp_admin_style() {
         wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', false );
-       
+
 }
 add_action( 'admin_enqueue_scripts', 'toro_custom_wp_admin_style' );
 
@@ -134,5 +134,92 @@ function toro_custom_admin_footer() {
 
 // adding it to the admin area
 add_filter( 'admin_footer_text', 'toro_custom_admin_footer' );
+
+
+/********* ADD CUSTOM EDITOR CLASSES TO TINYMCE ***********/
+
+
+// Callback function to insert 'styleselect' into the $buttons array
+function my_mce_buttons_2( $buttons ) {
+		array_unshift( $buttons, 'styleselect' );
+		return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter('mce_buttons_2', 'my_mce_buttons_2');
+
+// Callback function to filter the MCE settings
+function my_mce_before_init_insert_formats( $init_array ) {
+		// Define the style_formats array
+		$style_formats = array(
+				// Each array child is a format with it's own settings
+				array(
+						'title' => 'Lead',
+						'block' => 'p',
+						'classes' => 'lead',
+						'wrapper' => false,
+
+				),
+				array(
+						'title' => 'Quote',
+						'block' => 'blockquote',
+						'classes' => '',
+						'wrapper' => false,
+
+				),
+				array(
+						'title' => 'Citat af',
+						'block' => 'footer',
+						'classes' => '',
+						'wrapper' => false,
+				),
+				array(
+						'title' => 'Small',
+						'inline' => 'small',
+						'classes' => '',
+						'wrapper' => false,
+						'exact' => true
+				),
+		);
+		// Insert the array, JSON ENCODED, into 'style_formats'
+		$init_array['style_formats'] = json_encode( $style_formats );
+
+		return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+
+function my_theme_add_editor_styles() {
+		add_editor_style( 'stylesheets/build/min/global.min.css' );
+}
+add_action( 'init', 'my_theme_add_editor_styles' );
+
+
+/************* LIMIT SIZE OF UPLOADED IMAGE *******************/
+
+
+function tomjn_deny_giant_images($file){
+		$type = explode('/',$file['type']);
+
+		if($type[0] == 'image'){
+				list( $width, $height, $imagetype, $hwstring, $mime, $rgb_r_cmyk, $bit ) = getimagesize( $file['tmp_name'] );
+				if($width * $height > 3200728){ // I added 100,000 as sometimes there are more rows/columns than visible pixels depending on the format
+						$file['error'] = 'Dette billede er for stort du bliver nød til at skalerer det inden upload, helst mindre end 3.2MP eller 2048x1536.';
+				}
+		}
+		return $file;
+}
+add_filter('wp_handle_upload_prefilter','tomjn_deny_giant_images');
+
+
+/************* LOAD CUSTOM TORO ADMIN COLOR SCHEME *******************/
+
+
+function load_custom_wp_admin_style() {
+				wp_register_script( 'custom_wp_admin_css', get_template_directory_uri() . '/javascripts/admin-scripts.js', true, '1.0.0' );
+				wp_enqueue_script( 'custom_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 ?>
