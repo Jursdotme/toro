@@ -299,8 +299,9 @@ th {
     display: none;
   }
 
-  .table td,
-  .table th {
+  .table td, .mce-item-table td,
+  .table th,
+  .mce-item-table th {
     background-color: #fff !important;
   }
 
@@ -313,7 +314,7 @@ th {
     border: 1px solid #000;
   }
 
-  .table {
+  .table, .mce-item-table {
     border-collapse: collapse !important;
   }
 
@@ -1740,37 +1741,47 @@ th {
   text-align: left;
 }
 
-.table {
+.table, .mce-item-table {
   width: 100%;
   margin-bottom: 20px;
 }
-.table > thead > tr > th,
+.table > thead > tr > th, .mce-item-table > thead > tr > th,
 .table > thead > tr > td,
+.mce-item-table > thead > tr > td,
 .table > tbody > tr > th,
+.mce-item-table > tbody > tr > th,
 .table > tbody > tr > td,
+.mce-item-table > tbody > tr > td,
 .table > tfoot > tr > th,
-.table > tfoot > tr > td {
+.mce-item-table > tfoot > tr > th,
+.table > tfoot > tr > td,
+.mce-item-table > tfoot > tr > td {
   padding: 8px;
   line-height: 1.42857;
   vertical-align: top;
   border-top: 1px solid #dddddd;
 }
-.table > thead > tr > th {
+.table > thead > tr > th, .mce-item-table > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #dddddd;
 }
-.table > caption + thead > tr:first-child > th,
+.table > caption + thead > tr:first-child > th, .mce-item-table > caption + thead > tr:first-child > th,
 .table > caption + thead > tr:first-child > td,
+.mce-item-table > caption + thead > tr:first-child > td,
 .table > colgroup + thead > tr:first-child > th,
+.mce-item-table > colgroup + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > td,
+.mce-item-table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > th,
-.table > thead:first-child > tr:first-child > td {
+.mce-item-table > thead:first-child > tr:first-child > th,
+.table > thead:first-child > tr:first-child > td,
+.mce-item-table > thead:first-child > tr:first-child > td {
   border-top: 0;
 }
-.table > tbody + tbody {
+.table > tbody + tbody, .mce-item-table > tbody + tbody {
   border-top: 2px solid #dddddd;
 }
-.table .table {
+.table .table, .mce-item-table .table, .table .mce-item-table, .mce-item-table .mce-item-table {
   background-color: white;
 }
 
@@ -1822,16 +1833,25 @@ table th[class*="col-"] {
   display: table-cell;
 }
 
-.table > thead > tr > td.active,
-.table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th,
+.table > thead > tr > td.active, .mce-item-table > thead > tr > td.active,
+.table > thead > tr > th.active,
+.mce-item-table > thead > tr > th.active, .table > thead > tr.active > td, .mce-item-table > thead > tr.active > td, .table > thead > tr.active > th, .mce-item-table > thead > tr.active > th,
 .table > tbody > tr > td.active,
+.mce-item-table > tbody > tr > td.active,
 .table > tbody > tr > th.active,
+.mce-item-table > tbody > tr > th.active,
 .table > tbody > tr.active > td,
+.mce-item-table > tbody > tr.active > td,
 .table > tbody > tr.active > th,
+.mce-item-table > tbody > tr.active > th,
 .table > tfoot > tr > td.active,
+.mce-item-table > tfoot > tr > td.active,
 .table > tfoot > tr > th.active,
+.mce-item-table > tfoot > tr > th.active,
 .table > tfoot > tr.active > td,
-.table > tfoot > tr.active > th {
+.mce-item-table > tfoot > tr.active > td,
+.table > tfoot > tr.active > th,
+.mce-item-table > tfoot > tr.active > th {
   background-color: whitesmoke;
 }
 
@@ -1840,16 +1860,25 @@ table th[class*="col-"] {
   background-color: #e8e8e8;
 }
 
-.table > thead > tr > td.success,
-.table > thead > tr > th.success, .table > thead > tr.success > td, .table > thead > tr.success > th,
+.table > thead > tr > td.success, .mce-item-table > thead > tr > td.success,
+.table > thead > tr > th.success,
+.mce-item-table > thead > tr > th.success, .table > thead > tr.success > td, .mce-item-table > thead > tr.success > td, .table > thead > tr.success > th, .mce-item-table > thead > tr.success > th,
 .table > tbody > tr > td.success,
+.mce-item-table > tbody > tr > td.success,
 .table > tbody > tr > th.success,
+.mce-item-table > tbody > tr > th.success,
 .table > tbody > tr.success > td,
+.mce-item-table > tbody > tr.success > td,
 .table > tbody > tr.success > th,
+.mce-item-table > tbody > tr.success > th,
 .table > tfoot > tr > td.success,
+.mce-item-table > tfoot > tr > td.success,
 .table > tfoot > tr > th.success,
+.mce-item-table > tfoot > tr > th.success,
 .table > tfoot > tr.success > td,
-.table > tfoot > tr.success > th {
+.mce-item-table > tfoot > tr.success > td,
+.table > tfoot > tr.success > th,
+.mce-item-table > tfoot > tr.success > th {
   background-color: #dff0d8;
 }
 
@@ -1858,16 +1887,25 @@ table th[class*="col-"] {
   background-color: #d0e9c6;
 }
 
-.table > thead > tr > td.info,
-.table > thead > tr > th.info, .table > thead > tr.info > td, .table > thead > tr.info > th,
+.table > thead > tr > td.info, .mce-item-table > thead > tr > td.info,
+.table > thead > tr > th.info,
+.mce-item-table > thead > tr > th.info, .table > thead > tr.info > td, .mce-item-table > thead > tr.info > td, .table > thead > tr.info > th, .mce-item-table > thead > tr.info > th,
 .table > tbody > tr > td.info,
+.mce-item-table > tbody > tr > td.info,
 .table > tbody > tr > th.info,
+.mce-item-table > tbody > tr > th.info,
 .table > tbody > tr.info > td,
+.mce-item-table > tbody > tr.info > td,
 .table > tbody > tr.info > th,
+.mce-item-table > tbody > tr.info > th,
 .table > tfoot > tr > td.info,
+.mce-item-table > tfoot > tr > td.info,
 .table > tfoot > tr > th.info,
+.mce-item-table > tfoot > tr > th.info,
 .table > tfoot > tr.info > td,
-.table > tfoot > tr.info > th {
+.mce-item-table > tfoot > tr.info > td,
+.table > tfoot > tr.info > th,
+.mce-item-table > tfoot > tr.info > th {
   background-color: #d9edf7;
 }
 
@@ -1876,16 +1914,25 @@ table th[class*="col-"] {
   background-color: #c4e3f3;
 }
 
-.table > thead > tr > td.warning,
-.table > thead > tr > th.warning, .table > thead > tr.warning > td, .table > thead > tr.warning > th,
+.table > thead > tr > td.warning, .mce-item-table > thead > tr > td.warning,
+.table > thead > tr > th.warning,
+.mce-item-table > thead > tr > th.warning, .table > thead > tr.warning > td, .mce-item-table > thead > tr.warning > td, .table > thead > tr.warning > th, .mce-item-table > thead > tr.warning > th,
 .table > tbody > tr > td.warning,
+.mce-item-table > tbody > tr > td.warning,
 .table > tbody > tr > th.warning,
+.mce-item-table > tbody > tr > th.warning,
 .table > tbody > tr.warning > td,
+.mce-item-table > tbody > tr.warning > td,
 .table > tbody > tr.warning > th,
+.mce-item-table > tbody > tr.warning > th,
 .table > tfoot > tr > td.warning,
+.mce-item-table > tfoot > tr > td.warning,
 .table > tfoot > tr > th.warning,
+.mce-item-table > tfoot > tr > th.warning,
 .table > tfoot > tr.warning > td,
-.table > tfoot > tr.warning > th {
+.mce-item-table > tfoot > tr.warning > td,
+.table > tfoot > tr.warning > th,
+.mce-item-table > tfoot > tr.warning > th {
   background-color: #fcf8e3;
 }
 
@@ -1894,16 +1941,25 @@ table th[class*="col-"] {
   background-color: #faf2cc;
 }
 
-.table > thead > tr > td.danger,
-.table > thead > tr > th.danger, .table > thead > tr.danger > td, .table > thead > tr.danger > th,
+.table > thead > tr > td.danger, .mce-item-table > thead > tr > td.danger,
+.table > thead > tr > th.danger,
+.mce-item-table > thead > tr > th.danger, .table > thead > tr.danger > td, .mce-item-table > thead > tr.danger > td, .table > thead > tr.danger > th, .mce-item-table > thead > tr.danger > th,
 .table > tbody > tr > td.danger,
+.mce-item-table > tbody > tr > td.danger,
 .table > tbody > tr > th.danger,
+.mce-item-table > tbody > tr > th.danger,
 .table > tbody > tr.danger > td,
+.mce-item-table > tbody > tr.danger > td,
 .table > tbody > tr.danger > th,
+.mce-item-table > tbody > tr.danger > th,
 .table > tfoot > tr > td.danger,
+.mce-item-table > tfoot > tr > td.danger,
 .table > tfoot > tr > th.danger,
+.mce-item-table > tfoot > tr > th.danger,
 .table > tfoot > tr.danger > td,
-.table > tfoot > tr.danger > th {
+.mce-item-table > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th,
+.mce-item-table > tfoot > tr.danger > th {
   background-color: #f2dede;
 }
 
@@ -1922,15 +1978,20 @@ table th[class*="col-"] {
     border: 1px solid #dddddd;
     -webkit-overflow-scrolling: touch;
   }
-  .table-responsive > .table {
+  .table-responsive > .table, .table-responsive > .mce-item-table {
     margin-bottom: 0;
   }
-  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > thead > tr > th, .table-responsive > .mce-item-table > thead > tr > th,
   .table-responsive > .table > thead > tr > td,
+  .table-responsive > .mce-item-table > thead > tr > td,
   .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .mce-item-table > tbody > tr > th,
   .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .mce-item-table > tbody > tr > td,
   .table-responsive > .table > tfoot > tr > th,
-  .table-responsive > .table > tfoot > tr > td {
+  .table-responsive > .mce-item-table > tfoot > tr > th,
+  .table-responsive > .table > tfoot > tr > td,
+  .table-responsive > .mce-item-table > tfoot > tr > td {
     white-space: nowrap;
   }
   .table-responsive > .table-bordered {
@@ -5323,66 +5384,98 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-top-width: 0;
 }
 
-.panel > .table,
-.panel > .table-responsive > .table {
+.panel > .table, .panel > .mce-item-table,
+.panel > .table-responsive > .table,
+.panel > .table-responsive > .mce-item-table {
   margin-bottom: 0;
 }
-.panel > .table:first-child,
-.panel > .table-responsive:first-child > .table:first-child {
+.panel > .table:first-child, .panel > .mce-item-table:first-child,
+.panel > .table-responsive:first-child > .table:first-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
-.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .mce-item-table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .mce-item-table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .mce-item-table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .mce-item-table:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+.panel > .table-responsive:first-child > .mce-item-table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child > tbody:first-child > tr:first-child th:first-child {
   border-top-left-radius: 3px;
 }
-.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .mce-item-table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .mce-item-table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .mce-item-table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .mce-item-table:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+.panel > .table-responsive:first-child > .mce-item-table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .mce-item-table:first-child > tbody:first-child > tr:first-child th:last-child {
   border-top-right-radius: 3px;
 }
-.panel > .table:last-child,
-.panel > .table-responsive:last-child > .table:last-child {
+.panel > .table:last-child, .panel > .mce-item-table:last-child,
+.panel > .table-responsive:last-child > .table:last-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .mce-item-table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .mce-item-table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .mce-item-table:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .mce-item-table:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tfoot:last-child > tr:last-child th:first-child {
   border-bottom-left-radius: 3px;
 }
-.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .mce-item-table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .mce-item-table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .mce-item-table:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .mce-item-table:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .mce-item-table:last-child > tfoot:last-child > tr:last-child th:last-child {
   border-bottom-right-radius: 3px;
 }
-.panel > .panel-body + .table,
+.panel > .panel-body + .table, .panel > .panel-body + .mce-item-table,
 .panel > .panel-body + .table-responsive {
   border-top: 1px solid #dddddd;
 }
-.panel > .table > tbody:first-child > tr:first-child th,
-.panel > .table > tbody:first-child > tr:first-child td {
+.panel > .table > tbody:first-child > tr:first-child th, .panel > .mce-item-table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td,
+.panel > .mce-item-table > tbody:first-child > tr:first-child td {
   border-top: 0;
 }
 .panel > .table-bordered,
@@ -9312,6 +9405,10 @@ img.alignright {
   .visible-with-uncollapsed-topbar {
     display: none !important;
   }
+}
+
+body#tinymce {
+  margin: 10px;
 }
 
 /**

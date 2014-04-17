@@ -110,9 +110,9 @@ function desktop_nav() {
 function toro_header_scripts()
 {
     if (!is_admin()) {
-    
+
     	wp_deregister_script('jquery'); // Deregister WordPress jQuery
-    	        
+
         wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.js', array(), '1.0.0', true); // Custom scripts
         wp_enqueue_script('toroscripts'); // Enqueue it!
     }
@@ -270,7 +270,7 @@ function torocomments($comment, $args, $depth)
 {
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
-	
+
 	if ( 'div' == $args['style'] ) {
 		$tag = 'div';
 		$add_below = 'comment';
@@ -358,7 +358,7 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 
 function remove_submenus() {
   global $submenu;
-  unset($submenu['themes.php'][10]); // Removes Menu  
+  unset($submenu['themes.php'][10]); // Removes Menu
 }
 add_action('admin_menu', 'remove_submenus');
 
@@ -369,28 +369,28 @@ function new_nav_menu () {
 }
 add_action('admin_menu', 'new_nav_menu');
 
-function custom_menu_order($menu_ord) {  
-if (!$menu_ord) return true;  
+function custom_menu_order($menu_ord) {
+if (!$menu_ord) return true;
 
-return array(  
-    'index.php', // Dashboard  
-    'edit.php', // Posts 
+return array(
+    'index.php', // Dashboard
+    'edit.php', // Posts
     'upload.php', // Media
     'edit.php?post_type=page', // Pages
-    'edit-comments.php', // Comments 
-    'link-manager.php', // Links 
-    'separator1', // First separator  
+    'edit-comments.php', // Comments
+    'link-manager.php', // Links
+    'separator1', // First separator
     'nav-menus.php', // Navigation
-    'separator2', // Second separator  
-    'themes.php', // Appearance  
-    'plugins.php', // Plugins  
-    'users.php', // Users  
-    'tools.php', // Tools  
-    'options-general.php', // Settings  
-    'separator-last', // Last separator  
+    'separator2', // Second separator
+    'themes.php', // Appearance
+    'plugins.php', // Plugins
+    'users.php', // Users
+    'tools.php', // Tools
+    'options-general.php', // Settings
+    'separator-last', // Last separator
 );
-}  
-add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order  
+}
+add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order
 add_filter('menu_order', 'custom_menu_order');
 
 // If Dynamic Sidebar Exists
@@ -441,50 +441,50 @@ function my_mce_buttons_2( $buttons ) {
 add_filter('mce_buttons_2', 'my_mce_buttons_2');
 
 // Callback function to filter the MCE settings
-function my_mce_before_init_insert_formats( $init_array ) {  
+function my_mce_before_init_insert_formats( $init_array ) {
     // Define the style_formats array
-    $style_formats = array(  
+    $style_formats = array(
         // Each array child is a format with it's own settings
-        array(  
-            'title' => 'Lead',  
-            'block' => 'p',  
+        array(
+            'title' => 'Lead',
+            'block' => 'p',
             'classes' => 'lead',
             'wrapper' => false,
-            
+
         ),
-        array(  
-            'title' => 'Quote',  
-            'block' => 'blockquote',  
+        array(
+            'title' => 'Quote',
+            'block' => 'blockquote',
             'classes' => '',
             'wrapper' => false,
-            
+
         ),
-        array(  
-            'title' => 'Citat af',  
-            'block' => 'footer',  
+        array(
+            'title' => 'Citat af',
+            'block' => 'footer',
             'classes' => '',
             'wrapper' => false,
         ),
-        array(  
-            'title' => 'Small',  
-            'inline' => 'small',  
+        array(
+            'title' => 'Small',
+            'inline' => 'small',
             'classes' => '',
             'wrapper' => false,
             'exact' => true
         ),
-    );  
+    );
     // Insert the array, JSON ENCODED, into 'style_formats'
-    $init_array['style_formats'] = json_encode( $style_formats );  
-    
-    return $init_array;  
-  
-} 
-// Attach callback to 'tiny_mce_before_init' 
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
+    $init_array['style_formats'] = json_encode( $style_formats );
+
+    return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
 
 function my_theme_add_editor_styles() {
-    add_editor_style( 'stylesheets/style.css' );
+    add_editor_style( 'stylesheets/build/min/global.min.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
 

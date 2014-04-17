@@ -37,7 +37,7 @@ $navbar-transparent-toggle-border-color:        none;
       background-color: $navbar-transparent-brand-hover-bg;
     }
   }
-  
+
 
   &.navbar-static-top {
     border-width: 0;
@@ -222,7 +222,7 @@ $navbar-transparent-toggle-border-color:        none;
       background-color: $navbar-transparent-brand-hover-bg;
     }
   }
-  
+
 
   &.navbar-static-top {
     border-width: 0;
@@ -470,3 +470,13 @@ img.alignright {
 	}
 }
 
+
+// Make tabeles work in TinyMCE
+.mce-item-table {
+  @extend .table;
+}
+
+// Add padding to Tiny MCE editor window
+body#tinymce {
+  margin: 10px;
+}
