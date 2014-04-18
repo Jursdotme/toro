@@ -9,11 +9,11 @@
 	External Modules/Files
 \*------------------------------------*/
 
-require_once( 'library/functions/admin.php' ); // this comes turned off by default
-require_once( 'library/functions/gallery.php' ); // this comes turned off by default
-require_once( 'library/functions/widgets.php' ); // this comes turned off by default
-require_once( 'library/functions/nav_menus.php' ); // this comes turned off by default
-require_once( 'library/functions/comments-callback.php' ); // this comes turned off by default
+require_once( 'partials/functions/admin.php' ); // this comes turned off by default
+require_once( 'partials/functions/gallery.php' ); // this comes turned off by default
+require_once( 'partials/functions/widgets.php' ); // this comes turned off by default
+require_once( 'partials/functions/nav_menus.php' ); // this comes turned off by default
+require_once( 'partials/functions/comments-callback.php' ); // this comes turned off by default
 
 /*------------------------------------*\
 	Theme Support
