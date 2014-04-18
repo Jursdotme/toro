@@ -11,9 +11,9 @@
 			</div>
 
 		
-			<?php get_template_part('loop'); ?>
+			<?php get_template_part('partials/markup/loop'); ?>
 			
-			<?php get_template_part('pagination'); ?>
+			<?php get_template_part('partials/markup/pagination'); ?>
 		
 		</section>
 		<!-- /section -->

@@ -65,7 +65,7 @@
 	
 	<?php endif; ?>
 		
-		<?php get_template_part('pagination'); ?>
+		<?php get_template_part('partials/markup/pagination'); ?>
 	
 	</section>
 	<!-- /section -->
