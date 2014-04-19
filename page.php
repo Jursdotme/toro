@@ -6,7 +6,7 @@
 	<div class="row">
 		
 		<!-- section -->
-		<section role="main" class="col-md-9 col-sm-8 col-xs-12">
+		<section role="main" class="col-sm-10 col-sm-offset-1">
 			
 				<div class="page-header">
 					<h1><?php the_title(); ?></h1>
