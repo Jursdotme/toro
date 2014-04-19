@@ -1,21 +1,23 @@
 <!-- footer -->
 <?php include "edit_post_link.php" ?>
-<div class="container">
-	<footer id footer class="footer row" role="contentinfo">
+<footer class="page-footer">
+	<div class="container">
+		<div class="row" role="contentinfo">
 
-		<div class="col-md-9 col-sm-8 col-xs-12">
+			<div class="col-sm-12">
 
-			<!-- copyright -->
-			<p class="copyright">
-				&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?>
-				<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
-			</p>
-			<!-- /copyright -->
+				<!-- copyright -->
+				<p class="copyright">
+					&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?>
+					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
+				</p>
+				<!-- /copyright -->
+
+			</div>
 
 		</div>
-
-	</footer>
-</div>
+	</div>
+</footer>
 <!-- /footer -->
 
 		<?php wp_footer(); ?>

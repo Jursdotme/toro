@@ -4,7 +4,7 @@
 	<div class="row">
 	
 		<!-- section -->
-		<section role="main" class="col-md-9 col-xs-12">
+		<section role="main" class="col-sm-10 col-sm-offset-1">
 		
 			<h1><?php _e( 'Archives', 'toro' ); ?></h1>
 		

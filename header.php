@@ -46,7 +46,7 @@
 		        <span class="icon-bar"></span>
 		      </button>
 		      <a class="navbar-brand" href="<?php echo home_url(); ?>">
-		                <?php bloginfo('name'); ?>
+		                <span class="inzite-inzite_tagline"></span>
 		            </a>
 		    </div>
 	    	<?php desktop_nav(); ?>

@@ -5,7 +5,7 @@
 	<div class="row">
 		
 		<!-- section -->
-		<section role="main" class="col-xs-12 col-sm-8 col-md-9 columns">
+		<section role="main" class="col-sm-10 col-sm-offset-1">
 			<div class="page-header">
 				<h1><?php _e( 'Latest Posts', 'toro' ); ?></h1>
 			</div>

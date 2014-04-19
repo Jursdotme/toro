@@ -45,6 +45,7 @@ $tag_text_color: #fff;
 				font-weight: 200;
 				border-radius: 0 3px 3px 0;
 				color: $tag_text_color;
+				line-height: $grid-gutter-width;
 				&:hover {
 					background: darken($tag_background_color, 5%);
 					text-decoration: none;
