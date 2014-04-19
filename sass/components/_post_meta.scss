@@ -1,0 +1,51 @@
+$tag_container_background: #fff;
+$tag_background_color: $brand-primary;
+$tag_text_color: #fff;
+
+.tags-container {
+	@include section-wrapper($tag_container_background, $grid-gutter-width);
+	ul.tags {
+		list-style: none;
+		padding: 0;
+		li {
+			float: left;
+			a {
+				position: relative;
+				background: $tag_background_color;
+				margin: 0 $grid-gutter-width 0 0;
+				padding: 2px 10px 3px 15px;
+				font-weight: 200;
+				border-radius: 0 3px 3px 0;
+				color: $tag_text_color;
+				&:hover {
+					background: darken($tag_background_color, 5%);
+					text-decoration: none;
+					&:before {
+						border-right: 10px solid darken($tag_background_color, 5%);
+					}
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: -10px;
+					width: 0; 
+					height: 0; 
+					border-top: 12px solid transparent;
+					border-bottom: 12px solid transparent;
+					border-right:10px solid $tag_background_color;
+				}
+				&:after {
+					content: "";
+					background: $tag_container_background;
+					height: 6px;
+					width: 6px;
+					border-radius: 10px;
+					position: absolute;
+					left: 0;
+					top: 9px;
+				}
+			}
+		}
+	}
+}

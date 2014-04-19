@@ -7,7 +7,7 @@
 
 // Stylesheet: Main Stylesheet
 
-// There is no actual css or sass in this file. This is where all files 
+// There is no actual css or sass in this file. This is where all files
 // get concatinated and exported as a single file (/stylesheets/style.css).
 // only exception is normalize and conditionizer styles. These are in their
 // seperate files.
@@ -32,6 +32,7 @@
 @import "components/fancybox/helpers/jquery.fancybox-buttons.scss";
 @import "components/fancybox/helpers/jquery.fancybox-thumbs.scss";
 
+@import "components/toro_mixins";
 @import "toro";
 @import "site";
 

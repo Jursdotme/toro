@@ -1,24 +1,36 @@
-<div class="comments">
-	<?php if (post_password_required()) : ?>
-	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'toro' ); ?></p>
-</div>
+<div class="comment-background">
+	<div class="container">
+		<div class="row">
 
-	<?php return; endif; ?>
+			<div class="col-sm-6">
+				<div class="comments">
+					<?php if (post_password_required()) : ?>
+					<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'toro' ); ?></p>
+				</div>
 
-<?php if (have_comments()) : ?>
+					<?php return; endif; ?>
 
-	<h2><?php comments_number(); ?></h2>
+				<?php if (have_comments()) : ?>
 
-	<ul>
-		<?php wp_list_comments('type=comment&callback=torocomments'); // Custom callback in functions.php ?>
-	</ul>
+					<h2><?php comments_number(); ?></h2>
 
-<?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-	
-	<p><?php _e( 'Comments are closed here.', 'toro' ); ?></p>
-	
-<?php endif; ?>
+					<ul>
+						<?php wp_list_comments('type=comment&callback=torocomments'); // Custom callback in functions.php ?>
+					</ul>
 
-<?php comment_form(); ?>
+				<?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
+					<p><?php _e( 'Comments are closed here.', 'toro' ); ?></p>
+
+				<?php endif; ?>
+
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<?php comment_form(); ?>
+			</div>
+
+		</div>
+	</div>
 </div>

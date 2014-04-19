@@ -1,0 +1,4 @@
+@mixin section-wrapper($background-color, $padding) {
+  background: $background-color;
+  padding: $padding 0;
+}
