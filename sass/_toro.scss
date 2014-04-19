@@ -1,13 +1,29 @@
 /***********  COMMENTS  ***********/
+
 @import "components/comments";
 
+
 /***********  POST META  ***********/
+
 @import "components/post_meta";
 
+
 /***********  POST META  ***********/
+
 @import "components/breadcrumbs";
 
+
+/***********  TOP BARS  ***********/
+
+@import "components/transparent-topbar";
+@import "components/custom-topbar";
+
+
 /***********  PAGE CONTAINER  ***********/
+
+// USAGE:
+// Add <div id="page-container"> as the first thing before <body>
+
 #page-container {
   .container {
     padding: 0 $grid-gutter-width;
@@ -30,379 +46,8 @@
   }
 }
 
-/*=====================================
-=            Custom Topbar            =
-=====================================*/
 
-// Transparent navbar
-// Reset transparent navbar basics
-$navbar-transparent-color:                      $gray-light;
-$navbar-transparent-mobile-dropdown-bg:         $gray-darker;
-$navbar-transparent-mobile-header-bg:           $gray-dark;
-// Tansparent navbar links
-$navbar-transparent-link-color:                 #fff;
-$navbar-transparent-link-hover-color:           $gray-light;
-$navbar-transparent-link-hover-bg:              transparent;
-$navbar-transparent-link-active-color:          $navbar-transparent-link-hover-color;
-$navbar-transparent-link-disabled-color:        #444;
-$navbar-transparent-link-disabled-bg:           transparent;
-
-// Tansparent navbar brand label
-$navbar-transparent-brand-color:                $navbar-transparent-link-color;
-$navbar-transparent-brand-hover-color:          $gray-light;
-$navbar-transparent-brand-hover-bg:             transparent;
-
-// Tansparent navbar toggle
-$navbar-transparent-toggle-hover-bg:            #333;
-$navbar-transparent-toggle-icon-bar-bg:         #fff;
-$navbar-transparent-toggle-border-color:        none;
-.navbar-transparent {
-  background-color: none;
-  border-color: none;
-  margin-bottom: -50px;
-  .navbar-brand {
-    color: $navbar-transparent-brand-color;
-    @include transition (all 0.2s ease-in-out);
-    &:hover,
-    &:focus {
-      color: $navbar-transparent-brand-hover-color;
-      background-color: $navbar-transparent-brand-hover-bg;
-    }
-  }
-
-
-  &.navbar-static-top {
-    border-width: 0;
-    @media (max-width: $grid-float-breakpoint-max){
-      border-width: 0;
-      .navbar-collapse {
-        background: $navbar-transparent-mobile-dropdown-bg;
-      }
-      .navbar-header {
-        background: $navbar-transparent-mobile-header-bg;
-      }
-    }
-  }
-
-  .navbar-text {
-    color: $navbar-transparent-color;
-  }
-
-  .navbar-nav {
-    > li > a {
-      color: $navbar-transparent-link-color;
-      @include transition (all 0.2s ease-in-out);
-      &:hover,
-      &:focus {
-        color: $navbar-transparent-link-hover-color;
-        background-color: $navbar-transparent-link-hover-bg;
-      }
-    }
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $navbar-transparent-link-active-color;
-        background-color: none;
-      }
-    }
-    > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $navbar-transparent-link-disabled-color;
-        background-color: $navbar-transparent-link-disabled-bg;
-      }
-    }
-  }
-
-  // Darken the responsive nav toggle
-  .navbar-toggle {
-    border-color: $navbar-transparent-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: $navbar-transparent-toggle-hover-bg;
-    }
-    .icon-bar {
-      background-color: $navbar-transparent-toggle-icon-bar-bg;
-    }
-  }
-
-  .navbar-collapse,
-  .navbar-form {
-    border: none;
-    box-shadow: none;
-  }
-
-  // Dropdowns
-  .navbar-nav {
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        background-color: none;
-        color: $navbar-transparent-link-active-color;
-      }
-    }
-
-    @media (max-width: $grid-float-breakpoint-max) {
-      // Dropdowns get custom display
-      .open .dropdown-menu {
-        > .dropdown-header {
-          border-color: none;
-        }
-        .divider {
-          background-color: none;
-        }
-        > li > a {
-          color: $navbar-transparent-link-color;
-          &:hover,
-          &:focus {
-            color: $navbar-transparent-link-hover-color;
-            background-color: $navbar-transparent-link-hover-bg;
-          }
-        }
-        > .active > a {
-          &,
-          &:hover,
-          &:focus {
-            color: $navbar-transparent-link-active-color;
-            background-color: none;
-          }
-        }
-        > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
-            color: $navbar-transparent-link-disabled-color;
-            background-color: $navbar-transparent-link-disabled-bg;
-          }
-        }
-      }
-    }
-  }
-
-  .navbar-link {
-    color: $navbar-transparent-link-color;
-    &:hover {
-      color: $navbar-transparent-link-hover-color;
-    }
-  }
-  .navbar-nav > li > .dropdown-menu {
-    margin-top: 0;
-    border-radius: 4px;
-  }
-
-  @media (min-width: $grid-float-breakpoint-max) {
-    .dropdown-menu {
-      &:before {
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-bottom: 7px solid white;
-        position: absolute;
-        top: -7px;
-        right: 32px;
-      }
-    }
-  }
-}
-
-
-
-
-/*-----  End of Custom Topbar  ------*/
-
-/*==========================================
-=            Transparent Topbar            =
-==========================================*/
-
-// Transparent navbar
-// Reset transparent navbar basics
-$navbar-transparent-color:                      $gray-light;
-$navbar-transparent-mobile-dropdown-bg:         $gray-darker;
-$navbar-transparent-mobile-header-bg:           $gray-dark;
-// Tansparent navbar links
-$navbar-transparent-link-color:                 #fff;
-$navbar-transparent-link-hover-color:           $gray-light;
-$navbar-transparent-link-hover-bg:              transparent;
-$navbar-transparent-link-active-color:          $navbar-transparent-link-hover-color;
-$navbar-transparent-link-disabled-color:        #444;
-$navbar-transparent-link-disabled-bg:           transparent;
-
-// Tansparent navbar brand label
-$navbar-transparent-brand-color:                $navbar-transparent-link-color;
-$navbar-transparent-brand-hover-color:          $gray-light;
-$navbar-transparent-brand-hover-bg:             transparent;
-
-// Tansparent navbar toggle
-$navbar-transparent-toggle-hover-bg:            #333;
-$navbar-transparent-toggle-icon-bar-bg:         #fff;
-$navbar-transparent-toggle-border-color:        none;
-.navbar-transparent {
-  background-color: none;
-  border-color: none;
-  margin-bottom: -50px;
-  .navbar-brand {
-    color: $navbar-transparent-brand-color;
-    @include transition (all 0.2s ease-in-out);
-    &:hover,
-    &:focus {
-      color: $navbar-transparent-brand-hover-color;
-      background-color: $navbar-transparent-brand-hover-bg;
-    }
-  }
-
-
-  &.navbar-static-top {
-    border-width: 0;
-    @media (max-width: $grid-float-breakpoint-max){
-      border-width: 0;
-      .navbar-collapse {
-        background: $navbar-transparent-mobile-dropdown-bg;
-      }
-      .navbar-header {
-        background: $navbar-transparent-mobile-header-bg;
-      }
-    }
-  }
-
-  .navbar-text {
-    color: $navbar-transparent-color;
-  }
-
-  .navbar-nav {
-    > li > a {
-      color: $navbar-transparent-link-color;
-      @include transition (all 0.2s ease-in-out);
-      &:hover,
-      &:focus {
-        color: $navbar-transparent-link-hover-color;
-        background-color: $navbar-transparent-link-hover-bg;
-      }
-    }
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $navbar-transparent-link-active-color;
-        background-color: none;
-      }
-    }
-    > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $navbar-transparent-link-disabled-color;
-        background-color: $navbar-transparent-link-disabled-bg;
-      }
-    }
-  }
-
-  // Darken the responsive nav toggle
-  .navbar-toggle {
-    border-color: $navbar-transparent-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: $navbar-transparent-toggle-hover-bg;
-    }
-    .icon-bar {
-      background-color: $navbar-transparent-toggle-icon-bar-bg;
-    }
-  }
-
-  .navbar-collapse,
-  .navbar-form {
-    border: none;
-    box-shadow: none;
-  }
-
-  // Dropdowns
-  .navbar-nav {
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        background-color: none;
-        color: $navbar-transparent-link-active-color;
-      }
-    }
-
-    @media (max-width: $grid-float-breakpoint-max) {
-      // Dropdowns get custom display
-      .open .dropdown-menu {
-        > .dropdown-header {
-          border-color: none;
-        }
-        .divider {
-          background-color: none;
-        }
-        > li > a {
-          color: $navbar-transparent-link-color;
-          &:hover,
-          &:focus {
-            color: $navbar-transparent-link-hover-color;
-            background-color: $navbar-transparent-link-hover-bg;
-          }
-        }
-        > .active > a {
-          &,
-          &:hover,
-          &:focus {
-            color: $navbar-transparent-link-active-color;
-            background-color: none;
-          }
-        }
-        > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
-            color: $navbar-transparent-link-disabled-color;
-            background-color: $navbar-transparent-link-disabled-bg;
-          }
-        }
-      }
-    }
-  }
-
-  .navbar-link {
-    color: $navbar-transparent-link-color;
-    &:hover {
-      color: $navbar-transparent-link-hover-color;
-    }
-  }
-  .navbar-nav > li > .dropdown-menu {
-    margin-top: 0;
-    border-radius: 4px;
-  }
-
-  @media (min-width: $grid-float-breakpoint-max) {
-    .dropdown-menu {
-      &:before {
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-bottom: 7px solid white;
-        position: absolute;
-        top: -7px;
-        right: 32px;
-      }
-    }
-  }
-}
-
-
-
-
-/*-----  End of Transparent Topbar  ------*/
-
-
-
-
+/***********  PAGINATION PLACEMENT  ***********/
 div.pagination {
 	display: block;
 	padding-left: 0;
@@ -411,11 +56,14 @@ div.pagination {
 	text-align: center;
 }
 
+
+/***********  STYLE STICKY POSTS  ***********/
 .sticky {
 	@extend .well;
 }
 
-// Letter spacing on larger heading sizes
+
+/***********  LETTER SPACING ON LARGER HEADING SIZES  ***********/
 
 h1 { letter-spacing: -0.05em ; }
 h2 { letter-spacing: -0.05em ; }
@@ -424,11 +72,15 @@ h4 { letter-spacing: -0.03em ; }
 h5 { letter-spacing: -0.02em ; }
 h6 { letter-spacing: -0.01em ; }
 
+
+/***********  MAKE RSPONSIVE IMAGES BEHAVE  ***********/
 img {
 	max-width: 100%;
 	height: auto;
 }
 
+
+/***********  WORDPRESS STYLE IMAGE ALIGNMENT  ***********/
 img.alignleft {
 	margin-right: $grid-gutter-width/2;
 	@extend .pull-left;
@@ -443,6 +95,9 @@ img.alignright {
 	@extend .center-block;
 }
 
+
+/***********  WORDPRESS CAPTIONS  ***********/
+
 .wp-caption {
 	@extend .thumbnail;
 	max-width: 100%;
@@ -451,15 +106,14 @@ img.alignright {
 	}
 }
 
-.glyphicon.fa {top: 0px;}
+
+/***********  PADDING ON BUTTONS IN INPUT GROUPS  ***********/
 
 .input-group > .input-group-btn > .btn {
 	padding: 6px 12px 7px 12px;
 }
 
-/*=================================================
-=            Additional Helper classes            =
-=================================================*/
+/***********  GENERAL HELPER CLASSES  ***********/
 
 .no-radius {
 	border-radius: 0!important;
@@ -469,14 +123,16 @@ img.alignright {
 	border-width: 0 !important;
 }
 
-/*-----  End of Additional Helper classes  ------*/
 
+/***********  MAKE BUTTON HOVER PRITTIER  ***********/
 
 .btn {
 	@include transition (all .2s ease-in-out);
 }
 
-// Custom buttons
+
+/***********  CUSTOM BUTTONS  ***********/
+
 .btn-clear-danger {
   @include button-variant($brand-danger, #fff, $brand-danger);
   background: none;
@@ -487,6 +143,9 @@ img.alignright {
   	color: #fff;
   }
 }
+
+
+/***********  TOPBAR VISIBILITY ON SMALL SCREENS  ***********/
 
 // make things vivible only on mobile menu
 .visible-with-collapsed-topbar {
@@ -502,6 +161,8 @@ img.alignright {
 	}
 }
 
+
+/***********  FIXES TO TINYMCE  ***********/
 
 // Make tabeles work in TinyMCE
 .mce-item-table {

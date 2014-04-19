@@ -9194,163 +9194,7 @@ button.close {
   border-radius: 4px;
 }
 
-/***********  PAGE CONTAINER  ***********/
-#page-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding: 0;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-}
-#page-container .container {
-  padding: 0 30px;
-}
-@media (max-width: 768px) {
-  #page-container .container {
-    padding: 0 15px;
-  }
-}
-#page-container:before, #page-container:after {
-  content: " ";
-  display: table;
-}
-#page-container:after {
-  clear: both;
-}
-@media (min-width: 768px) {
-  #page-container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  #page-container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  #page-container {
-    width: 1170px;
-  }
-}
-
-/*=====================================
-=            Custom Topbar            =
-=====================================*/
-.navbar-transparent {
-  background-color: none;
-  border-color: none;
-  margin-bottom: -50px;
-}
-.navbar-transparent .navbar-brand {
-  color: white;
-  -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-}
-.navbar-transparent .navbar-brand:hover, .navbar-transparent .navbar-brand:focus {
-  color: #999999;
-  background-color: transparent;
-}
-.navbar-transparent.navbar-static-top {
-  border-width: 0;
-}
-@media (max-width: 767px) {
-  .navbar-transparent.navbar-static-top {
-    border-width: 0;
-  }
-  .navbar-transparent.navbar-static-top .navbar-collapse {
-    background: #222222;
-  }
-  .navbar-transparent.navbar-static-top .navbar-header {
-    background: #333333;
-  }
-}
-.navbar-transparent .navbar-text {
-  color: #999999;
-}
-.navbar-transparent .navbar-nav > li > a {
-  color: white;
-  -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-}
-.navbar-transparent .navbar-nav > li > a:hover, .navbar-transparent .navbar-nav > li > a:focus {
-  color: #999999;
-  background-color: transparent;
-}
-.navbar-transparent .navbar-nav > .active > a, .navbar-transparent .navbar-nav > .active > a:hover, .navbar-transparent .navbar-nav > .active > a:focus {
-  color: #999999;
-  background-color: none;
-}
-.navbar-transparent .navbar-nav > .disabled > a, .navbar-transparent .navbar-nav > .disabled > a:hover, .navbar-transparent .navbar-nav > .disabled > a:focus {
-  color: #444444;
-  background-color: transparent;
-}
-.navbar-transparent .navbar-toggle {
-  border-color: none;
-}
-.navbar-transparent .navbar-toggle:hover, .navbar-transparent .navbar-toggle:focus {
-  background-color: #333333;
-}
-.navbar-transparent .navbar-toggle .icon-bar {
-  background-color: white;
-}
-.navbar-transparent .navbar-collapse,
-.navbar-transparent .navbar-form {
-  border: none;
-  box-shadow: none;
-}
-.navbar-transparent .navbar-nav > .open > a, .navbar-transparent .navbar-nav > .open > a:hover, .navbar-transparent .navbar-nav > .open > a:focus {
-  background-color: none;
-  color: #999999;
-}
-@media (max-width: 767px) {
-  .navbar-transparent .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: none;
-  }
-  .navbar-transparent .navbar-nav .open .dropdown-menu .divider {
-    background-color: none;
-  }
-  .navbar-transparent .navbar-nav .open .dropdown-menu > li > a {
-    color: white;
-  }
-  .navbar-transparent .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-transparent .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #999999;
-    background-color: transparent;
-  }
-  .navbar-transparent .navbar-nav .open .dropdown-menu > .active > a, .navbar-transparent .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-transparent .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #999999;
-    background-color: none;
-  }
-  .navbar-transparent .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-transparent .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-transparent .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #444444;
-    background-color: transparent;
-  }
-}
-.navbar-transparent .navbar-link {
-  color: white;
-}
-.navbar-transparent .navbar-link:hover {
-  color: #999999;
-}
-.navbar-transparent .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
-  border-radius: 4px;
-}
-@media (min-width: 767px) {
-  .navbar-transparent .dropdown-menu:before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid white;
-    position: absolute;
-    top: -7px;
-    right: 32px;
-  }
-}
-
-/*-----  End of Custom Topbar  ------*/
+/***********  TOP BARS  ***********/
 /*==========================================
 =            Transparent Topbar            =
 ==========================================*/
@@ -9468,6 +9312,141 @@ button.close {
 }
 
 /*-----  End of Transparent Topbar  ------*/
+.navbar-custom {
+  background-color: #333333;
+  border-color: #1a1a1a;
+}
+.navbar-custom .navbar-brand {
+  color: white;
+}
+.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
+  color: white;
+  background-color: transparent;
+}
+.navbar-custom .navbar-text {
+  color: white;
+}
+.navbar-custom .navbar-nav > li > a {
+  color: white;
+}
+.navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus {
+  color: white;
+  background-color: #2b2b2b;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #262626;
+}
+.navbar-custom .navbar-nav > .disabled > a, .navbar-custom .navbar-nav > .disabled > a:hover, .navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #444444;
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #333333;
+}
+.navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
+  background-color: #333333;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #212121;
+}
+.navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus {
+  background-color: #262626;
+  color: white;
+}
+@media (max-width: 767px) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: #1a1a1a;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu .divider {
+    background-color: #1a1a1a;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: white;
+    background-color: #2b2b2b;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: white;
+    background-color: #262626;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444444;
+    background-color: transparent;
+  }
+}
+.navbar-custom .navbar-link {
+  color: white;
+}
+.navbar-custom .navbar-link:hover {
+  color: white;
+}
+.navbar-custom .dropdown-menu {
+  background: #262626;
+}
+.navbar-custom .dropdown-menu li > a {
+  color: white;
+}
+.navbar-custom .dropdown-menu li > a:hover, .navbar-custom .dropdown-menu li > a:focus {
+  color: white;
+  background: #1a1a1a;
+}
+.navbar-custom .dropdown-menu .active > a {
+  color: white;
+  background: #d03530;
+}
+.navbar-custom .dropdown-menu .active > a:hover, .navbar-custom .dropdown-menu .active > a:focus {
+  color: white;
+  background: #a72a26;
+}
+
+/***********  PAGE CONTAINER  ***********/
+#page-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+#page-container .container {
+  padding: 0 30px;
+}
+@media (max-width: 768px) {
+  #page-container .container {
+    padding: 0 15px;
+  }
+}
+#page-container:before, #page-container:after {
+  content: " ";
+  display: table;
+}
+#page-container:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  #page-container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  #page-container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  #page-container {
+    width: 1170px;
+  }
+}
+
+/***********  PAGINATION PLACEMENT  ***********/
 div.pagination {
   display: block;
   padding-left: 0;
@@ -9476,6 +9455,8 @@ div.pagination {
   text-align: center;
 }
 
+/***********  STYLE STICKY POSTS  ***********/
+/***********  LETTER SPACING ON LARGER HEADING SIZES  ***********/
 h1 {
   letter-spacing: -0.05em;
 }
@@ -9500,11 +9481,13 @@ h6 {
   letter-spacing: -0.01em;
 }
 
+/***********  MAKE RSPONSIVE IMAGES BEHAVE  ***********/
 img {
   max-width: 100%;
   height: auto;
 }
 
+/***********  WORDPRESS STYLE IMAGE ALIGNMENT  ***********/
 img.alignleft {
   margin-right: 15px;
 }
@@ -9513,6 +9496,7 @@ img.alignright {
   margin-left: 15px;
 }
 
+/***********  WORDPRESS CAPTIONS  ***********/
 .wp-caption {
   max-width: 100%;
 }
@@ -9520,17 +9504,12 @@ img.alignright {
   margin-bottom: 0;
 }
 
-.glyphicon.fa {
-  top: 0px;
-}
-
+/***********  PADDING ON BUTTONS IN INPUT GROUPS  ***********/
 .input-group > .input-group-btn > .btn, #respond .input-group > .input-group-btn > #submit {
   padding: 6px 12px 7px 12px;
 }
 
-/*=================================================
-=            Additional Helper classes            =
-=================================================*/
+/***********  GENERAL HELPER CLASSES  ***********/
 .no-radius {
   border-radius: 0 !important;
 }
@@ -9539,12 +9518,13 @@ img.alignright {
   border-width: 0 !important;
 }
 
-/*-----  End of Additional Helper classes  ------*/
+/***********  MAKE BUTTON HOVER PRITTIER  ***********/
 .btn, #respond #submit {
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
 }
 
+/***********  CUSTOM BUTTONS  ***********/
 .btn-clear-danger {
   color: #d9534f;
   background-color: white;
@@ -9582,6 +9562,7 @@ img.alignright {
   color: #fff;
 }
 
+/***********  TOPBAR VISIBILITY ON SMALL SCREENS  ***********/
 @media (min-width: 767px) {
   .visible-with-collapsed-topbar {
     display: none !important;
@@ -9594,6 +9575,7 @@ img.alignright {
   }
 }
 
+/***********  FIXES TO TINYMCE  ***********/
 body#tinymce {
   margin: 10px;
 }

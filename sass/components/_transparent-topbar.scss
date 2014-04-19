@@ -1,3 +1,7 @@
+/*==========================================
+=            Transparent Topbar            =
+==========================================*/
+
 // Transparent navbar
 // Reset transparent navbar basics
 $navbar-transparent-color:                      $gray-light;
@@ -33,7 +37,7 @@ $navbar-transparent-toggle-border-color:        none;
       background-color: $navbar-transparent-brand-hover-bg;
     }
   }
-  
+
 
   &.navbar-static-top {
     border-width: 0;
@@ -175,3 +179,6 @@ $navbar-transparent-toggle-border-color:        none;
 }
 
 
+
+
+/*-----  End of Transparent Topbar  ------*/
