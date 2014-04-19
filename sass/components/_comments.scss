@@ -81,4 +81,11 @@
   .comment-notes {
     display: none;
   }
+  #submit {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+  .logged-in-as {
+    @extend .help-block;
+  }
 }

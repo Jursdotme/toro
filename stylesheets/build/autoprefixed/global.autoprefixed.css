@@ -305,8 +305,9 @@ th {
     background-color: #fff !important;
   }
 
-  .btn > .caret,
-  .dropup > .btn > .caret {
+  .btn > .caret, #respond #submit > .caret,
+  .dropup > .btn > .caret,
+  #respond .dropup > #submit > .caret {
     border-top-color: #000 !important;
   }
 
@@ -2199,7 +2200,8 @@ input[type="checkbox"],
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn,
+#respond .input-group-sm > .input-group-btn > #submit {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2209,7 +2211,8 @@ input[type="checkbox"],
 
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn {
+.input-group-sm > .input-group-btn > select.btn,
+#respond .input-group-sm > .input-group-btn > select#submit {
   height: 30px;
   line-height: 30px;
 }
@@ -2217,16 +2220,19 @@ select.input-sm, .input-group-sm > select.form-control,
 textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
+#respond .input-group-sm > .input-group-btn > textarea#submit,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn {
+.input-group-sm > .input-group-btn > select[multiple].btn,
+#respond .input-group-sm > .input-group-btn > select[multiple]#submit {
   height: auto;
 }
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn,
+#respond .input-group-lg > .input-group-btn > #submit {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2236,7 +2242,8 @@ select[multiple].input-sm,
 
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn {
+.input-group-lg > .input-group-btn > select.btn,
+#respond .input-group-lg > .input-group-btn > select#submit {
   height: 46px;
   line-height: 46px;
 }
@@ -2244,10 +2251,12 @@ select.input-lg, .input-group-lg > select.form-control,
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
+#respond .input-group-lg > .input-group-btn > textarea#submit,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn {
+.input-group-lg > .input-group-btn > select[multiple].btn,
+#respond .input-group-lg > .input-group-btn > select[multiple]#submit {
   height: auto;
 }
 
@@ -2268,7 +2277,7 @@ select[multiple].input-lg,
   text-align: center;
 }
 
-.has-success .help-block,
+.has-success .help-block, .has-success #respond .logged-in-as, #respond .has-success .logged-in-as,
 .has-success .control-label,
 .has-success .radio,
 .has-success .checkbox,
@@ -2293,7 +2302,7 @@ select[multiple].input-lg,
   color: #3c763d;
 }
 
-.has-warning .help-block,
+.has-warning .help-block, .has-warning #respond .logged-in-as, #respond .has-warning .logged-in-as,
 .has-warning .control-label,
 .has-warning .radio,
 .has-warning .checkbox,
@@ -2318,7 +2327,7 @@ select[multiple].input-lg,
   color: #8a6d3b;
 }
 
-.has-error .help-block,
+.has-error .help-block, .has-error #respond .logged-in-as, #respond .has-error .logged-in-as,
 .has-error .control-label,
 .has-error .radio,
 .has-error .checkbox,
@@ -2347,7 +2356,7 @@ select[multiple].input-lg,
   margin-bottom: 0;
 }
 
-.help-block {
+.help-block, #respond .logged-in-as {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
@@ -2429,7 +2438,7 @@ select[multiple].input-lg,
   right: 15px;
 }
 
-.btn {
+.btn, #respond #submit {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2448,21 +2457,21 @@ select[multiple].input-lg,
   -ms-user-select: none;
           user-select: none;
 }
-.btn:focus, .btn:active:focus, .btn.active:focus {
+.btn:focus, #respond #submit:focus, .btn:active:focus, #respond #submit:active:focus, .btn.active:focus, #respond .active#submit:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.btn:hover, .btn:focus {
+.btn:hover, #respond #submit:hover, .btn:focus, #respond #submit:focus {
   color: #333333;
   text-decoration: none;
 }
-.btn:active, .btn.active {
+.btn:active, #respond #submit:active, .btn.active, #respond .active#submit {
   outline: 0;
   background-image: none;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+.btn.disabled, #respond .disabled#submit, .btn[disabled], #respond [disabled]#submit, fieldset[disabled] .btn, fieldset[disabled] #respond #submit, #respond fieldset[disabled] #submit {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -2500,32 +2509,32 @@ select[multiple].input-lg,
   background-color: #333333;
 }
 
-.btn-primary {
+.btn-primary, #respond #submit {
   color: white;
   background-color: #d03530;
   border-color: #bc2f2b;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+.btn-primary:hover, #respond #submit:hover, .btn-primary:focus, #respond #submit:focus, .btn-primary:active, #respond #submit:active, .btn-primary.active, #respond .active#submit {
   color: white;
   background-color: #af2c28;
   border-color: #8a231f;
 }
-.open .btn-primary.dropdown-toggle {
+.open .btn-primary.dropdown-toggle, .open #respond .dropdown-toggle#submit, #respond .open .dropdown-toggle#submit {
   color: white;
   background-color: #af2c28;
   border-color: #8a231f;
 }
-.btn-primary:active, .btn-primary.active {
+.btn-primary:active, #respond #submit:active, .btn-primary.active, #respond .active#submit {
   background-image: none;
 }
-.open .btn-primary.dropdown-toggle {
+.open .btn-primary.dropdown-toggle, .open #respond .dropdown-toggle#submit, #respond .open .dropdown-toggle#submit {
   background-image: none;
 }
-.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+.btn-primary.disabled, #respond .disabled#submit, .btn-primary.disabled:hover, #respond .disabled#submit:hover, .btn-primary.disabled:focus, #respond .disabled#submit:focus, .btn-primary.disabled:active, #respond .disabled#submit:active, .btn-primary.disabled.active, #respond .disabled.active#submit, .btn-primary[disabled], #respond [disabled]#submit, .btn-primary[disabled]:hover, #respond [disabled]#submit:hover, .btn-primary[disabled]:focus, #respond [disabled]#submit:focus, .btn-primary[disabled]:active, #respond [disabled]#submit:active, .btn-primary[disabled].active, #respond [disabled].active#submit, fieldset[disabled] .btn-primary, fieldset[disabled] #respond #submit, #respond fieldset[disabled] #submit, fieldset[disabled] .btn-primary:hover, fieldset[disabled] #respond #submit:hover, #respond fieldset[disabled] #submit:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] #respond #submit:focus, #respond fieldset[disabled] #submit:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] #respond #submit:active, #respond fieldset[disabled] #submit:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] #respond .active#submit, #respond fieldset[disabled] .active#submit {
   background-color: #d03530;
   border-color: #bc2f2b;
 }
-.btn-primary .badge {
+.btn-primary .badge, #respond #submit .badge {
   color: #d03530;
   background-color: white;
 }
@@ -2673,21 +2682,21 @@ select[multiple].input-lg,
   text-decoration: none;
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, #respond .btn-group-lg > #submit {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, #respond .btn-group-sm > #submit {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
 
-.btn-xs, .btn-group-xs > .btn {
+.btn-xs, .btn-group-xs > .btn, #respond .btn-group-xs > #submit {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3703,26 +3712,36 @@ input[type="button"].btn-block {
   display: inline-block;
   vertical-align: middle;
 }
-.btn-group > .btn,
-.btn-group-vertical > .btn {
+.btn-group > .btn, #respond .btn-group > #submit,
+.btn-group-vertical > .btn,
+#respond .btn-group-vertical > #submit {
   position: relative;
   float: left;
 }
-.btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+.btn-group > .btn:hover, #respond .btn-group > #submit:hover, .btn-group > .btn:focus, #respond .btn-group > #submit:focus, .btn-group > .btn:active, #respond .btn-group > #submit:active, .btn-group > .btn.active, #respond .btn-group > .active#submit,
 .btn-group-vertical > .btn:hover,
+#respond .btn-group-vertical > #submit:hover,
 .btn-group-vertical > .btn:focus,
+#respond .btn-group-vertical > #submit:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
+#respond .btn-group-vertical > #submit:active,
+.btn-group-vertical > .btn.active,
+#respond .btn-group-vertical > .active#submit {
   z-index: 2;
 }
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus {
+.btn-group > .btn:focus, #respond .btn-group > #submit:focus,
+.btn-group-vertical > .btn:focus,
+#respond .btn-group-vertical > #submit:focus {
   outline: none;
 }
 
-.btn-group .btn + .btn,
+.btn-group .btn + .btn, .btn-group #respond #submit + .btn, #respond .btn-group #submit + .btn, .btn-group #respond .btn + #submit, #respond .btn-group .btn + #submit, .btn-group #respond #submit + #submit, #respond .btn-group #submit + #submit,
 .btn-group .btn + .btn-group,
+.btn-group #respond #submit + .btn-group,
+#respond .btn-group #submit + .btn-group,
 .btn-group .btn-group + .btn,
+.btn-group #respond .btn-group + #submit,
+#respond .btn-group .btn-group + #submit,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -3741,25 +3760,25 @@ input[type="button"].btn-block {
 .btn-toolbar .input-group {
   float: left;
 }
-.btn-toolbar > .btn,
+.btn-toolbar > .btn, #respond .btn-toolbar > #submit,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #respond .btn-group > #submit:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, #respond .btn-group > #submit:first-child {
   margin-left: 0;
 }
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #respond .btn-group > #submit:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), #respond .btn-group > #submit:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -3769,17 +3788,17 @@ input[type="button"].btn-block {
   float: left;
 }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #respond .btn-group > .btn-group:not(:first-child):not(:last-child) > #submit {
   border-radius: 0;
 }
 
-.btn-group > .btn-group:first-child > .btn:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child, #respond .btn-group > .btn-group:first-child > #submit:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn-group:last-child > .btn:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child, #respond .btn-group > .btn-group:last-child > #submit:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3789,12 +3808,12 @@ input[type="button"].btn-block {
   outline: 0;
 }
 
-.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #respond .btn-group > #submit + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #respond .btn-group-lg.btn-group > #submit + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3806,22 +3825,23 @@ input[type="button"].btn-block {
   box-shadow: none;
 }
 
-.btn .caret {
+.btn .caret, #respond #submit .caret {
   margin-left: 0;
 }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, #respond .btn-group-lg > #submit .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #respond .btn-group-lg > #submit .caret, #respond .dropup .btn-group-lg > #submit .caret {
   border-width: 0 5px 5px;
 }
 
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, #respond .btn-group-vertical > #submit,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn,
+#respond .btn-group-vertical > .btn-group > #submit {
   display: block;
   float: none;
   width: 100%;
@@ -3834,42 +3854,44 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn-group:after {
   clear: both;
 }
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn, #respond .btn-group-vertical > .btn-group > #submit {
   float: none;
 }
-.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn, #respond .btn-group-vertical > #submit + .btn, #respond .btn-group-vertical > .btn + #submit, #respond .btn-group-vertical > #submit + #submit,
 .btn-group-vertical > .btn + .btn-group,
+#respond .btn-group-vertical > #submit + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
+#respond .btn-group-vertical > .btn-group + #submit,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), #respond .btn-group-vertical > #submit:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-.btn-group-vertical > .btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), #respond .btn-group-vertical > #submit:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), #respond .btn-group-vertical > #submit:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #respond .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #submit {
   border-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #respond .btn-group-vertical > .btn-group:first-child:not(:last-child) > #submit:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #respond .btn-group-vertical > .btn-group:last-child:not(:first-child) > #submit:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3880,18 +3902,19 @@ input[type="button"].btn-block {
   table-layout: fixed;
   border-collapse: separate;
 }
-.btn-group-justified > .btn,
+.btn-group-justified > .btn, #respond .btn-group-justified > #submit,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
-.btn-group-justified > .btn-group .btn {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #respond #submit, #respond .btn-group-justified > .btn-group #submit {
   width: 100%;
 }
 
-[data-toggle="buttons"] > .btn > input[type="radio"],
-[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+[data-toggle="buttons"] > .btn > input[type="radio"], #respond [data-toggle="buttons"] > #submit > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"],
+#respond [data-toggle="buttons"] > #submit > input[type="checkbox"] {
   display: none;
 }
 
@@ -3944,14 +3967,16 @@ input[type="button"].btn-block {
 }
 .input-group-addon.input-sm,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .input-group-addon.btn {
+.input-group-sm > .input-group-btn > .input-group-addon.btn,
+#respond .input-group-sm > .input-group-btn > .input-group-addon#submit {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
 }
 .input-group-addon.input-lg,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .input-group-addon.btn {
+.input-group-lg > .input-group-btn > .input-group-addon.btn,
+#respond .input-group-lg > .input-group-btn > .input-group-addon#submit {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 6px;
@@ -3964,10 +3989,14 @@ input[type="button"].btn-block {
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
+#respond .input-group-btn:first-child > #submit,
 .input-group-btn:first-child > .btn-group > .btn,
+#respond .input-group-btn:first-child > .btn-group > #submit,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+#respond .input-group-btn:last-child > #submit:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+#respond .input-group-btn:last-child > .btn-group:not(:last-child) > #submit {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -3979,10 +4008,14 @@ input[type="button"].btn-block {
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
+#respond .input-group-btn:last-child > #submit,
 .input-group-btn:last-child > .btn-group > .btn,
+#respond .input-group-btn:last-child > .btn-group > #submit,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+#respond .input-group-btn:first-child > #submit:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+#respond .input-group-btn:first-child > .btn-group:not(:first-child) > #submit {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3996,20 +4029,20 @@ input[type="button"].btn-block {
   font-size: 0;
   white-space: nowrap;
 }
-.input-group-btn > .btn {
+.input-group-btn > .btn, #respond .input-group-btn > #submit {
   position: relative;
 }
-.input-group-btn > .btn + .btn {
+.input-group-btn > .btn + .btn, #respond .input-group-btn > #submit + .btn, #respond .input-group-btn > .btn + #submit, #respond .input-group-btn > #submit + #submit {
   margin-left: -1px;
 }
-.input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
+.input-group-btn > .btn:hover, #respond .input-group-btn > #submit:hover, .input-group-btn > .btn:focus, #respond .input-group-btn > #submit:focus, .input-group-btn > .btn:active, #respond .input-group-btn > #submit:active {
   z-index: 2;
 }
-.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn, #respond .input-group-btn:first-child > #submit,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
-.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn, #respond .input-group-btn:last-child > #submit,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -4443,11 +4476,11 @@ input[type="button"].btn-block {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #respond .btn-group-sm > .navbar-btn#submit {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #respond .btn-group-xs > .navbar-btn#submit {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -4791,7 +4824,7 @@ input[type="button"].btn-block {
 .label:empty {
   display: none;
 }
-.btn .label {
+.btn .label, #respond #submit .label {
   position: relative;
   top: -1px;
 }
@@ -4855,11 +4888,11 @@ input[type="button"].btn-block {
 .badge:empty {
   display: none;
 }
-.btn .badge {
+.btn .badge, #respond #submit .badge {
   position: relative;
   top: -1px;
 }
-.btn-xs .badge, .btn-group-xs > .btn .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, #respond .btn-group-xs > #submit .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -5881,11 +5914,11 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.modal-footer .btn + .btn {
+.modal-footer .btn + .btn, .modal-footer #respond #submit + .btn, #respond .modal-footer #submit + .btn, .modal-footer #respond .btn + #submit, #respond .modal-footer .btn + #submit, .modal-footer #respond #submit + #submit, #respond .modal-footer #submit + #submit {
   margin-left: 5px;
   margin-bottom: 0;
 }
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #respond #submit + .btn, #respond .modal-footer .btn-group #submit + .btn, .modal-footer .btn-group #respond .btn + #submit, #respond .modal-footer .btn-group .btn + #submit, .modal-footer .btn-group #respond #submit + #submit, #respond .modal-footer .btn-group #submit + #submit {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -6298,7 +6331,7 @@ button.close {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-.carousel-caption .btn {
+.carousel-caption .btn, .carousel-caption #respond #submit, #respond .carousel-caption #submit {
   text-shadow: none;
 }
 
@@ -9490,7 +9523,7 @@ img.alignright {
   top: 0px;
 }
 
-.input-group > .input-group-btn > .btn {
+.input-group > .input-group-btn > .btn, #respond .input-group > .input-group-btn > #submit {
   padding: 6px 12px 7px 12px;
 }
 
@@ -9506,7 +9539,7 @@ img.alignright {
 }
 
 /*-----  End of Additional Helper classes  ------*/
-.btn {
+.btn, #respond #submit {
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
 }
@@ -9652,47 +9685,47 @@ body#tinymce {
   font-weight: 300;
   color: #eeeeee;
 }
-.header-24 .bg-image .btn.btn-gray {
+.header-24 .bg-image .btn.btn-gray, .header-24 .bg-image #respond .btn-gray#submit, #respond .header-24 .bg-image .btn-gray#submit {
   color: white;
   background-color: #7f8c8d;
   border-color: #7f8c8d;
 }
-.header-24 .bg-image .btn.btn-gray:hover, .header-24 .bg-image .btn.btn-gray:focus, .header-24 .bg-image .btn.btn-gray:active, .header-24 .bg-image .btn.btn-gray.active {
+.header-24 .bg-image .btn.btn-gray:hover, .header-24 .bg-image #respond .btn-gray#submit:hover, #respond .header-24 .bg-image .btn-gray#submit:hover, .header-24 .bg-image .btn.btn-gray:focus, .header-24 .bg-image #respond .btn-gray#submit:focus, #respond .header-24 .bg-image .btn-gray#submit:focus, .header-24 .bg-image .btn.btn-gray:active, .header-24 .bg-image #respond .btn-gray#submit:active, #respond .header-24 .bg-image .btn-gray#submit:active, .header-24 .bg-image .btn.btn-gray.active, .header-24 .bg-image #respond .btn-gray.active#submit, #respond .header-24 .bg-image .btn-gray.active#submit {
   color: white;
   background-color: #6b7778;
   border-color: #616d6d;
 }
-.open .header-24 .bg-image .btn.btn-gray.dropdown-toggle {
+.open .header-24 .bg-image .btn.btn-gray.dropdown-toggle, .open .header-24 .bg-image #respond .btn-gray.dropdown-toggle#submit, #respond .open .header-24 .bg-image .btn-gray.dropdown-toggle#submit {
   color: white;
   background-color: #6b7778;
   border-color: #616d6d;
 }
-.header-24 .bg-image .btn.btn-gray:active, .header-24 .bg-image .btn.btn-gray.active {
+.header-24 .bg-image .btn.btn-gray:active, .header-24 .bg-image #respond .btn-gray#submit:active, #respond .header-24 .bg-image .btn-gray#submit:active, .header-24 .bg-image .btn.btn-gray.active, .header-24 .bg-image #respond .btn-gray.active#submit, #respond .header-24 .bg-image .btn-gray.active#submit {
   background-image: none;
 }
-.open .header-24 .bg-image .btn.btn-gray.dropdown-toggle {
+.open .header-24 .bg-image .btn.btn-gray.dropdown-toggle, .open .header-24 .bg-image #respond .btn-gray.dropdown-toggle#submit, #respond .open .header-24 .bg-image .btn-gray.dropdown-toggle#submit {
   background-image: none;
 }
-.header-24 .bg-image .btn.btn-gray.disabled, .header-24 .bg-image .btn.btn-gray.disabled:hover, .header-24 .bg-image .btn.btn-gray.disabled:focus, .header-24 .bg-image .btn.btn-gray.disabled:active, .header-24 .bg-image .btn.btn-gray.disabled.active, .header-24 .bg-image .btn.btn-gray[disabled], .header-24 .bg-image .btn.btn-gray[disabled]:hover, .header-24 .bg-image .btn.btn-gray[disabled]:focus, .header-24 .bg-image .btn.btn-gray[disabled]:active, .header-24 .bg-image .btn.btn-gray[disabled].active, fieldset[disabled] .header-24 .bg-image .btn.btn-gray, fieldset[disabled] .header-24 .bg-image .btn.btn-gray:hover, fieldset[disabled] .header-24 .bg-image .btn.btn-gray:focus, fieldset[disabled] .header-24 .bg-image .btn.btn-gray:active, fieldset[disabled] .header-24 .bg-image .btn.btn-gray.active {
+.header-24 .bg-image .btn.btn-gray.disabled, .header-24 .bg-image #respond .btn-gray.disabled#submit, #respond .header-24 .bg-image .btn-gray.disabled#submit, .header-24 .bg-image .btn.btn-gray.disabled:hover, .header-24 .bg-image #respond .btn-gray.disabled#submit:hover, #respond .header-24 .bg-image .btn-gray.disabled#submit:hover, .header-24 .bg-image .btn.btn-gray.disabled:focus, .header-24 .bg-image #respond .btn-gray.disabled#submit:focus, #respond .header-24 .bg-image .btn-gray.disabled#submit:focus, .header-24 .bg-image .btn.btn-gray.disabled:active, .header-24 .bg-image #respond .btn-gray.disabled#submit:active, #respond .header-24 .bg-image .btn-gray.disabled#submit:active, .header-24 .bg-image .btn.btn-gray.disabled.active, .header-24 .bg-image #respond .btn-gray.disabled.active#submit, #respond .header-24 .bg-image .btn-gray.disabled.active#submit, .header-24 .bg-image .btn.btn-gray[disabled], .header-24 .bg-image #respond .btn-gray[disabled]#submit, #respond .header-24 .bg-image .btn-gray[disabled]#submit, .header-24 .bg-image .btn.btn-gray[disabled]:hover, .header-24 .bg-image #respond .btn-gray[disabled]#submit:hover, #respond .header-24 .bg-image .btn-gray[disabled]#submit:hover, .header-24 .bg-image .btn.btn-gray[disabled]:focus, .header-24 .bg-image #respond .btn-gray[disabled]#submit:focus, #respond .header-24 .bg-image .btn-gray[disabled]#submit:focus, .header-24 .bg-image .btn.btn-gray[disabled]:active, .header-24 .bg-image #respond .btn-gray[disabled]#submit:active, #respond .header-24 .bg-image .btn-gray[disabled]#submit:active, .header-24 .bg-image .btn.btn-gray[disabled].active, .header-24 .bg-image #respond .btn-gray[disabled].active#submit, #respond .header-24 .bg-image .btn-gray[disabled].active#submit, fieldset[disabled] .header-24 .bg-image .btn.btn-gray, fieldset[disabled] .header-24 .bg-image #respond .btn-gray#submit, #respond fieldset[disabled] .header-24 .bg-image .btn-gray#submit, fieldset[disabled] .header-24 .bg-image .btn.btn-gray:hover, fieldset[disabled] .header-24 .bg-image #respond .btn-gray#submit:hover, #respond fieldset[disabled] .header-24 .bg-image .btn-gray#submit:hover, fieldset[disabled] .header-24 .bg-image .btn.btn-gray:focus, fieldset[disabled] .header-24 .bg-image #respond .btn-gray#submit:focus, #respond fieldset[disabled] .header-24 .bg-image .btn-gray#submit:focus, fieldset[disabled] .header-24 .bg-image .btn.btn-gray:active, fieldset[disabled] .header-24 .bg-image #respond .btn-gray#submit:active, #respond fieldset[disabled] .header-24 .bg-image .btn-gray#submit:active, fieldset[disabled] .header-24 .bg-image .btn.btn-gray.active, fieldset[disabled] .header-24 .bg-image #respond .btn-gray.active#submit, #respond fieldset[disabled] .header-24 .bg-image .btn-gray.active#submit {
   background-color: #7f8c8d;
   border-color: #7f8c8d;
 }
-.header-24 .bg-image .btn.btn-gray .badge {
+.header-24 .bg-image .btn.btn-gray .badge, .header-24 .bg-image #respond .btn-gray#submit .badge, #respond .header-24 .bg-image .btn-gray#submit .badge {
   color: #7f8c8d;
   background-color: white;
 }
-.header-24 .bg-image .btns .btn {
+.header-24 .bg-image .btns .btn, .header-24 .bg-image .btns #respond #submit, #respond .header-24 .bg-image .btns #submit {
   padding-left: 30px;
   padding-right: 30px;
 }
-.header-24 .bg-image .btns .btn + .btn {
+.header-24 .bg-image .btns .btn + .btn, .header-24 .bg-image .btns #respond #submit + .btn, #respond .header-24 .bg-image .btns #submit + .btn, .header-24 .bg-image .btns #respond .btn + #submit, #respond .header-24 .bg-image .btns .btn + #submit, .header-24 .bg-image .btns #respond #submit + #submit, #respond .header-24 .bg-image .btns #submit + #submit {
   margin-left: 20px;
 }
 @media (max-width: 480px) {
-  .header-24 .bg-image .btns .btn {
+  .header-24 .bg-image .btns .btn, .header-24 .bg-image .btns #respond #submit, #respond .header-24 .bg-image .btns #submit {
     display: block;
   }
-  .header-24 .bg-image .btns .btn + .btn {
+  .header-24 .bg-image .btns .btn + .btn, .header-24 .bg-image .btns #respond #submit + .btn, #respond .header-24 .bg-image .btns #submit + .btn, .header-24 .bg-image .btns #respond .btn + #submit, #respond .header-24 .bg-image .btns .btn + #submit, .header-24 .bg-image .btns #respond #submit + #submit, #respond .header-24 .bg-image .btns #submit + #submit {
     margin: 10px 0 0;
   }
 }

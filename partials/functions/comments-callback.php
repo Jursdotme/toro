@@ -1,6 +1,50 @@
 <?php
 
 
+
+
+
+/*********************** CUSTOM COMMENT FORM ***********************/
+
+
+function toro_comment_form_fields($fields) {
+  
+
+    $fields['author'] = '<div class="comment-form-author form-group">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+                       '<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div>';
+
+
+    $fields['email'] = '<div class="comment-form-email form-group"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+                       '<input id="email" class="form-control" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>';
+
+
+    $fields['url'] = '<div class="comment-form-url form-group"><label for="url">' . __( 'Website' ) . '</label> ' .
+                       '<input id="url" class="form-control" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>';
+
+  return $fields;
+}
+
+
+
+function my_comment_form_defaults( $defaults ) {
+    
+
+      $defaults['comment_field'] = '<div class="comment-form-comment form-group"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>';
+
+      $defaults['comment_notes_after'] = '';
+
+
+    return $defaults;
+}
+
+
+add_filter( 'comment_form_defaults', 'my_comment_form_defaults' );
+
+add_filter('comment_form_default_fields','toro_comment_form_fields');
+
+
+
+
 /*********************** CUSTOM COMMENTS CALLBACK ***********************/
 
 
