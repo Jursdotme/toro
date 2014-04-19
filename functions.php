@@ -16,6 +16,7 @@ require_once( 'partials/functions/nav_menus.php' ); // this comes turned off by 
 require_once( 'partials/functions/comments-callback.php' ); // this comes turned off by default
 require_once( 'partials/functions/excerpt.php' ); // this comes turned off by default
 require_once( 'partials/functions/image_sizes.php' ); // this comes turned off by default
+require_once( 'partials/functions/breadcrumbs.php' ); // this comes turned off by default
 
 /*------------------------------------*\
 	Theme Support

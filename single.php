@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php the_breadcrumb(); ?>
+
 <div class="container">
 
 	<div class="row">
@@ -15,7 +17,7 @@
 				<!-- post title -->
 				<div class="page-header">
 					<h1>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<?php the_title(); ?>
 					</h1>
 				</div>
 				<!-- /post title -->

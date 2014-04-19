@@ -4193,7 +4193,7 @@ input[type="button"].btn-block {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   border: 1px solid transparent;
 }
 .navbar:before, .navbar:after {
@@ -9276,6 +9276,19 @@ button.close {
   position: absolute;
   left: 0;
   top: 9px;
+}
+
+/***********  POST META  ***********/
+#crumbs {
+  background: #eeeeee;
+  padding: 0 0;
+}
+#crumbs .breadcrumb {
+  padding: 30px 15px;
+  margin-bottom: 0;
+  list-style: none;
+  background-color: #eeeeee;
+  border-radius: 4px;
 }
 
 /***********  PAGE CONTAINER  ***********/
