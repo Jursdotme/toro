@@ -4,16 +4,22 @@
 	<div class="container">
 		<div class="row" role="contentinfo">
 
-			<div class="col-sm-12">
+			<div class="col-sm-5">
 
 				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
-				</p>
-				<!-- /copyright -->
 
+					<p class="copyright">
+						&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'toro'); ?>
+						<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//jurs.me" title="Toro">Toro</a>.
+					</p>
+
+				<!-- /copyright -->
+				
 			</div>
+
+			
+			<?php footer_nav(); ?>
+			
 
 		</div>
 	</div>

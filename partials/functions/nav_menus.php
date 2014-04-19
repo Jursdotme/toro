@@ -10,19 +10,23 @@
     // registering wp3+ menus
     register_nav_menus(
         array(
-            'desktop_nav' => __( 'Desktop Menu', 'torotheme' ),   // main nav in header
+            'topbar' => __( 'Topbar Menu', 'torotheme' ),   // main nav in header
+            'footer_nav' => __( 'Footer Menu', 'torotheme' ),   // main nav in header
         )
     );
+
+
+/********************* DESKTOP NAVIGATION *********************/
 
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');
 
 // the main desktop menu
-function desktop_nav() {
+function topbar() {
     // display the wp3 menu if available
     wp_nav_menu(array(
         'menu'              => __( 'Desktop Menu', 'torotheme' ),    // nav name
-        'theme_location'    => 'desktop_nav',
+        'theme_location'    => 'topbar',
         'depth'             => 2,
         'container'         => 'div',
         'container_class'   => 'collapse navbar-collapse',
@@ -30,6 +34,35 @@ function desktop_nav() {
         'menu_class'        => 'nav navbar-nav navbar-right',
         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
         'walker'            => new wp_bootstrap_navwalker()
+    ));
+} /* end toro desktop main nav */
+
+/********************* MENUS & NAVIGATION *********************/
+
+// Register Custom Navigation Walker
+require_once('wp_footer_navwalker.php');
+
+
+// the main desktop menu
+function footer_nav() {
+    // display the wp3 menu if available
+    wp_nav_menu(array(
+        'theme_location'  => 'footer_nav',
+        'menu'            => __( 'Footer Menu', 'torotheme' ),
+        'container'       => '',
+        'container_class' => '',
+        'container_id'    => 'footer_nav',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '%3$s',
+        'depth'           => 0,
+        'walker'          => new wp_footer_navwalker()
     ));
 } /* end toro desktop main nav */
 

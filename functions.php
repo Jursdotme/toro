@@ -58,7 +58,7 @@ function toro_footer_scripts()
 // Load Toro styles
 function toro_styles()
 {
-    wp_register_style('toro', get_template_directory_uri() . '/stylesheets/build/min/global.min.css', array(), '1.0', 'all');
+    wp_register_style('toro', get_template_directory_uri() . '/stylesheets/build/autoprefixed/global.autoprefixed.css', array(), '1.0', 'all');
     wp_enqueue_style('toro'); // Enqueue it!
 }
 

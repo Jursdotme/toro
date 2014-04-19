@@ -49,6 +49,6 @@
 		                <span class="inzite-inzite_tagline"></span>
 		            </a>
 		    </div>
-	    	<?php desktop_nav(); ?>
+	    	<?php topbar(); ?>
 	    </div>
 		</nav>
