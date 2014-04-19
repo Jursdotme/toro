@@ -9138,6 +9138,7 @@ button.close {
 .tags-container ul.tags {
   list-style: none;
   padding: 0;
+  padding-left: 10px;
 }
 .tags-container ul.tags li {
   float: left;
