@@ -23,8 +23,13 @@
 				<!-- /post title -->
 
 				<!-- post details -->
-				<p><span class="date text-muted"><?php the_time('j. F - Y'); ?></span>
-				<span class="author text-muted"><?php _e( 'Skrevet af', 'toro' ); ?> <?php the_author_posts_link(); ?></span></p>
+				<p class="post-meta">
+					<span class="date text-muted">
+						<span class="fa fa-calendar-o"></span> <?php the_time('j. F - Y'); ?> 
+						<span class="fa fa-folder-o"></span> <?php the_category(', '); // Separated by commas ?>
+						<span class="fa fa-pencil-square-o"></span> <?php the_author_posts_link(); ?></span>
+					</span>
+				</p>
 				<!-- /post details -->
 
 				<!-- Featured Image -->
@@ -60,6 +65,6 @@
 	</div>
 </div>
 
-<?php include "comments-and-meta.php"; ?>
+<?php include "partials/markup/meta-after-post.php"; ?>
 
 <?php get_footer(); ?>

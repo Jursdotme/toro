@@ -2751,8 +2751,8 @@ input[type="button"].btn-block {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../../../bower_components/twitter-bootstrap-sass/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../../../bower_components/twitter-bootstrap-sass/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../../bower_components/twitter-bootstrap-sass/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../../../bower_components/twitter-bootstrap-sass/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../../../bower_components/twitter-bootstrap-sass/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 .glyphicon {
   position: relative;
@@ -9229,6 +9229,26 @@ button.close {
 }
 
 /***********  POST META  ***********/
+/* DATE & CATEGORIES */
+.post-meta {
+  font-weight: 200;
+  text-transform: uppercase;
+}
+.post-meta .fa {
+  color: #d03530;
+}
+.post-meta a {
+  color: #999999;
+}
+.post-meta a:hover {
+  border-bottom: 0.125em dashed #999999;
+  text-decoration: none;
+}
+.post-meta .fa-folder-o, .post-meta .fa-pencil-square-o {
+  margin-left: 60px;
+}
+
+/* TAGS */
 .tags-container {
   background: white;
   padding: 30px 0;

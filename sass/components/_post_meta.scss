@@ -1,3 +1,30 @@
+/* DATE & CATEGORIES */
+
+$icon-color: $brand-primary;
+$link-color: $gray-light;
+$meta-gutter: $grid-gutter-width*2;
+
+.post-meta {
+	font-weight: 200;
+	text-transform: uppercase;
+	.fa {
+		color: $icon-color;
+	}
+	a {
+		color: $gray-light;
+		&:hover {
+			border-bottom: .125em dashed $gray-light;
+			text-decoration: none;
+		}
+	}
+	.fa-folder-o, .fa-pencil-square-o {
+		margin-left: $meta-gutter;
+	}
+}
+
+/* TAGS */
+
+
 $tag_container_background: #fff;
 $tag_background_color: $brand-primary;
 $tag_text_color: #fff;
