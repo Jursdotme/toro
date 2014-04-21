@@ -24,6 +24,6 @@
     "modernizr": "~2.7.2",
     "fancybox": "~2.1.5",
     "masonry": "~3.1.5",
-    "conditionizr": "~4.3.0",
+    "conditionizr": "~4.3.0"
   }
 }
