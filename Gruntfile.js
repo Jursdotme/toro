@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 		  all: {
 		    files: {
 		      '<%= project.css %>/build/global.css': '<%= project.sass %>/style.scss',
-		      '<%= project.css %>/build/backend.css': '<%= project.sass %>/backend.scss'
+		      '<%= project.css %>/build/backend.css': '<%= project.sass %>/themes/backend.scss'
 		    }
 		  },
 		},

@@ -1,0 +1,44 @@
+/***********  MAKE RSPONSIVE IMAGES BEHAVE  ***********/
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/***********  WORDPRESS STYLE IMAGE ALIGNMENT  ***********/
+
+img.alignleft {
+  margin-right: $grid-gutter-width/2;
+  @extend .pull-left;
+}
+
+img.alignright {
+  margin-left: $grid-gutter-width/2;
+  @extend .pull-right;
+}
+
+.aligncenter {
+  @extend .center-block;
+}
+
+/***********  WORDPRESS CAPTIONS  ***********/
+
+.wp-caption {
+  @extend .thumbnail;
+  max-width: 100%;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/***********  PADDING ON BUTTONS IN INPUT GROUPS  ***********/
+
+.input-group > .input-group-btn > .btn {
+  padding: 6px 12px 7px 12px;
+}
+
+/***********  MAKE BUTTON HOVER PRITTIER  ***********/
+
+.btn {
+  @include transition (all .2s ease-in-out);
+}

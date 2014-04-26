@@ -91,7 +91,7 @@ body.login {
 }
 
 
-@import "components/fonts/inzite";
+@import "../components/fonts/inzite";
 
 #wp-admin-bar-wp-logo > a > .ab-icon {
 	font: 400 20px/1 'inzite';
@@ -2229,7 +2229,7 @@ $menu-customizer-text: mix( $base-color, $text-color, 40% ) !default;
 ==============================*/
 
 /*
- * Button mixin- creates 3d-ish button effect with correct 
+ * Button mixin- creates 3d-ish button effect with correct
  * highlights/shadows, based on a base color.
  */
 @mixin button( $button-color, $text-color: white ) {

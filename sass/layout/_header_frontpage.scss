@@ -1,5 +1,5 @@
 /**
- * Header 24 stylesheet  
+ * Header 24 stylesheet
  * */
 
  // Vertical centering
@@ -39,7 +39,7 @@
         }
       }
     }
-  }  
+  }
 }
 
  .header-24 {
@@ -62,7 +62,7 @@
             bottom: 0;
             right: 0;
             position: absolute;
-            z-index: 0; 
+            z-index: 0;
             background-position:center;
         }
         .hero-unit {
@@ -85,9 +85,9 @@
             }
         }
         .btn.btn-gray {
-            
+
             @include button-variant(#fff, $asbestos, $asbestos);
-            
+
         }
         .btns .btn {
             padding-left: 30px;

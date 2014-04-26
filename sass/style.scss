@@ -8,32 +8,63 @@
 // Stylesheet: Main Stylesheet
 
 // There is no actual css or sass in this file. This is where all files
-// get concatinated and exported as a single file (/stylesheets/style.css).
+// get concatinated, minified and exported as a single file (/stylesheets/build/min/global.min.css).
 // only exception is normalize and conditionizer styles. These are in their
 // seperate files.
 
 /*-----  End of info  ------*/
 
+/***********  SETTINGS  ***********/
+  @import "helpers/settings";
 
-/*===============================
-=            Imports            =
-===============================*/
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "settings";
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
-@import "../bower_components/fontawesome/scss/font-awesome";
+/***********  BASE  ***********/
+  @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+  @import "base/bootstrap";
+  @import "base/base";
+  @import "base/typography";
+
+/***********  HELPERS  ***********/
+
+  @import "helpers/mixins";
+  @import "helpers/general_helpers";
+
+
+/***********  FONTS  ***********/
+  @import "../bower_components/fontawesome/scss/font-awesome";
+
+
+/***********  VENDORS  ***********/
 // OwlCarousel styles
-@import "components/owlcarousel/owl.carousel.scss";
-@import "components/owlcarousel/owl.theme.scss";
-@import "components/owlcarousel/owl.transitions.scss";
+  @import "vendors/owlcarousel/owl.carousel.scss";
+  @import "vendors/owlcarousel/owl.theme.scss";
+  @import "vendors/owlcarousel/owl.transitions.scss";
 
 // Import Fancybox styles
-@import "components/fancybox/jquery.fancybox.scss";
-@import "components/fancybox/helpers/jquery.fancybox-buttons.scss";
-@import "components/fancybox/helpers/jquery.fancybox-thumbs.scss";
+  @import "vendors/fancybox/jquery.fancybox.scss";
+  @import "vendors/fancybox/helpers/jquery.fancybox-buttons.scss";
+  @import "vendors/fancybox/helpers/jquery.fancybox-thumbs.scss";
 
-@import "components/toro_mixins";
-@import "toro";
-@import "site";
+/***********  COMPONENTS  ***********/
+  // Footer
+  @import "components/footer_navigation";
 
-/*-----  End of Imports  ------*/
+  @import "components/topbar_brand";
+  @import "components/post_meta";
+  @import "components/pagination";
+  @import "components/sticky_post";
+
+  // Fonts
+  @import "components/fonts/inzite";
+
+/***********  LAYOUT  ***********/
+  @import "layout/header_frontpage";
+  @import "layout/comments";
+  @import "layout/breadcrumbs";
+  @import "layout/page_wrapper";
+
+  // Topbars
+  @import "layout/transparent-topbar";
+  @import "layout/custom_topbar";
+
+  // Footer
+  @import "layout/footer";

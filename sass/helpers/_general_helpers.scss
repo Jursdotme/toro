@@ -1,0 +1,37 @@
+/***********  GENERAL HELPER CLASSES  ***********/
+
+.no-radius {
+  border-radius: 0!important;
+}
+
+.no-border {
+  border-width: 0 !important;
+}
+
+/***********  TOPBAR VISIBILITY ON SMALL SCREENS  ***********/
+
+// make things visible only on mobile menu
+.visible-with-collapsed-topbar {
+  @media (min-width: $grid-float-breakpoint-max) {
+    display: none !important;
+  }
+}
+
+// make things visible only on desktop menu
+.visible-with-uncollapsed-topbar {
+  @media (max-width: $grid-float-breakpoint-max) {
+    display: none !important;
+  }
+}
+
+/***********  FIXES TO TINYMCE  ***********/
+
+// Make tabeles work in TinyMCE
+.mce-item-table {
+  @extend .table;
+}
+
+// Add padding to Tiny MCE editor window
+body#tinymce {
+  margin: 10px;
+}
