@@ -23,7 +23,9 @@
     "jQuery": "~1.11.0",
     "modernizr": "~2.7.2",
     "fancybox": "~2.1.5",
-    "masonry": "~3.1.5",
-    "conditionizr": "~4.3.0"
+    "conditionizr": "~4.3.0",
+    "matchHeight": "~0.5.1",
+    "isotope": "~2.0.0",
+    "imagesloaded": "~3.1.5"
   }
 }

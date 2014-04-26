@@ -3,9 +3,9 @@
  * http://jurs.me
  * @author Rasmus Jürs
  */
- 
+
 'use strict';
- 
+
 /**
  * Grunt Module
  */
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 		/*========================================
 		=            Stylesheet stuff            =
 		========================================*/
-		
+
 		// SASS
 		sass: {
 			options: {
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
 	    },
       css:{
     		expand: true,
-    		ext: '.min.css', 
+    		ext: '.min.css',
       	cwd: '<%= project.css %>/build/autoprefixed/',
         src: ['*.autoprefixed.css', '!*.min.css'],
         dest: '<%= project.css %>/build/min/'
@@ -126,13 +126,13 @@ module.exports = function(grunt) {
 		    ]
 		  }
 		},
-		
+
 		/*-----  End of Stylesheet stuff  ------*/
 
 		/*========================================
 		=            Javascript Stuff            =
 		========================================*/
-		
+
 		// Concatinate javascripts.
 		concat: {
 	    options: {
@@ -162,12 +162,18 @@ module.exports = function(grunt) {
 					'<%= project.bootstrap_scripts %>/tooltip.js',
 					'<%= project.bootstrap_scripts %>/popover.js',
 
-					// Masonry
-					'<%= project.bower %>/masonry/dist/masonry.pkgd.min.js',
+					// Isotope
+					'<%= project.bower %>/isotope/dist/isotope.pkgd.min.js',
+
+          // imagesLoaded
+          '<%= project.bower %>/imagesloaded/imagesloaded.pkgd.js',
 
 
 					// Owl Carousel
 					'<%= project.bower %>/owlcarousel/owl-carousel/owl.carousel.js',
+
+          // matchHeight
+          '<%= project.bower %>/matchHeight/jquery.matchHeight.js',
 
 					// Fancybox 2
 					'/fancybox/lib/jquery.mousewheel-3.0.6.pack.js',
@@ -194,15 +200,15 @@ module.exports = function(grunt) {
 		  }
 		},
 
-		
+
 		/*-----  End of Javascript Stuff  ------*/
-		
-		
-		
+
+
+
 		/*===================================
 		=            The Watcher            =
 		===================================*/
-		
+
 		// WATCH
 		watch: {
 
@@ -227,11 +233,11 @@ module.exports = function(grunt) {
 		  	tasks: ['concat:dist', 'uglify:all']
 		  }
 		},
-		
+
 		/*-----  End of The Watcher  ------*/
-		
-		
-	  
+
+
+
 	});
 
 	// USE MATCHDEP TO DYNAMICALY LOAD PLUGINS
@@ -250,5 +256,5 @@ module.exports = function(grunt) {
 	  'uglify:all',
 	  'watch'
 	]);
- 
+
 };

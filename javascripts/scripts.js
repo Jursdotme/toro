@@ -1,6 +1,6 @@
 // DOM Ready
 $(function() {
-	
+
 	// SVG fallback
 	// toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script#update
 	if (!Modernizr.svg) {
@@ -33,12 +33,12 @@ pagination.parent().addClass('active');
 var abbrs = $("abbr");
 
 abbrs.each(function() {
-  
+
   $(this)
   .attr("data-toggle", "tooltip")
   .attr("data-placement", "top")
   .tooltip()
-  
+
 });
 
 // Automatic Thumbnail on Image captions
@@ -89,7 +89,7 @@ var tables = $("table");
 ========================================*/
 
 $(document).ready(function() {
- 
+
   $("#carousel-header-24").owlCarousel({
     // Most important owl features
     items : 5,
@@ -101,99 +101,89 @@ $(document).ready(function() {
     itemsMobile : [479,1],
     singleItem : true,
     itemsScaleUp : false,
- 
+
     //Basic Speeds
     slideSpeed : 200,
     paginationSpeed : 800,
     rewindSpeed : 1000,
- 
+
     //Autoplay
     autoPlay : false,
     stopOnHover : false,
- 
+
     // Navigation
     navigation : false,
     navigationText : ["prev","next"],
     rewindNav : true,
     scrollPerPage : false,
- 
+
     //Pagination
     pagination : false,
     paginationNumbers: false,
- 
-    // Responsive 
+
+    // Responsive
     // responsive: true,
     // responsiveRefreshRate : 200,
     // responsiveBaseWidth: window,
- 
+
     // CSS Styles
     // baseClass : "owl-carousel",
     // theme : "owl-theme",
- 
+
     //Lazy load
     // lazyLoad : false,
     // lazyFollow : true,
     // lazyEffect : "fade",
- 
+
     //Auto height
     autoHeight : true,
- 
-    //JSON 
-    // jsonPath : false, 
+
+    //JSON
+    // jsonPath : false,
     // jsonSuccess : false,
- 
+
     //Mouse Events
     // dragBeforeAnimFinish : true,
     // mouseDrag : true,
     // touchDrag : true,
- 
+
     //Transitions
     // transitionStyle : false,
- 
+
     // Other
     // addClassActive : false,
- 
+
     //Callbacks
     // beforeUpdate : false,
     // afterUpdate : false,
-    // beforeInit: false, 
-    // afterInit: false, 
-    // beforeMove: false, 
+    // beforeInit: false,
+    // afterInit: false,
+    // beforeMove: false,
     // afterMove: false,
     // afterAction: false,
     // startDragging : false,
     // afterLazyLoad : false
   });
- 
+
 });
 
 /*-----  End of Frontpage slider  ------*/
 
 
 /*====================================
-=            Masonry Test            =
+=            Isotope Test            =
 ====================================*/
 
-var container = document.querySelector('#ms-container');
-var msnry = new Masonry( container, {
-  itemSelector: '.ms-item',
-  columnWidth: '.ms-item',                
+var $container = $('#isotope-container');
+// init
+$container.isotope({
+  // options
+  itemSelector: '.isotope-item',
+  layoutMode: 'masonry',
 });
 
-
-eventie.bind( container, 'click', function( event ) {
-  // don't proceed if item was not clicked on
-  if ( !classie.has( event.target, 'ms-item' ) ) {
-    return;
-  }
-  // change size of item via class
-  classie.toggle( event.target, 'col-md-6' );
-  // trigger layout
-  msnry.layout();
+$container.imagesLoaded( function() {
+  $container.isotope('layout');
 });
 
-/*-----  End of Masonry Test  ------*/
-
-
-
-
+/*-----  End of Isotope Test  ------*/
