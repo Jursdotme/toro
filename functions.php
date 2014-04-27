@@ -17,6 +17,8 @@ require_once( 'partials/functions/comments-callback.php' ); // this comes turned
 require_once( 'partials/functions/excerpt.php' ); // this comes turned off by default
 require_once( 'partials/functions/image_sizes.php' ); // this comes turned off by default
 require_once( 'partials/functions/breadcrumbs.php' ); // this comes turned off by default
+require_once( 'partials/functions/post-types.php' ); // this comes turned off by default
+require_once( 'partials/functions/pagination.php' ); // this comes turned off by default
 
 /*------------------------------------*\
 	Theme Support
@@ -102,32 +104,7 @@ function my_remove_recent_comments_style()
     ));
 }
 
-// Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function toro_pagination()
-{
-    global $wp_query;
-    $big = 999999999; // need an unlikely integer
-    $pages = paginate_links( array(
-            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format' => '?paged=%#%',
-            'current' => max( 1, get_query_var('paged') ),
-            'total' => $wp_query->max_num_pages,
-            'prev_next' => false,
-            'type'  => 'array',
-            'prev_next'   => TRUE,
-            'prev_text'    => __('«'),
-            'next_text'    => __('»'),
-        ) );
-        if( is_array( $pages ) ) {
-            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-            echo '<ul class="pagination">';
-            foreach ( $pages as $page ) {
-                    echo "<li>$page</li>";
-            }
-           echo '</ul>';
-        }
 
-}
 
 // Remove Admin bar
 function remove_admin_bar()
@@ -206,46 +183,3 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
-
-/*----------------------------------------------------*\
-    Move Menu administration to top level admin menu
-\*----------------------------------------------------*/
-
-function remove_submenus() {
-  global $submenu;
-  unset($submenu['themes.php'][10]); // Removes Menu
-}
-add_action('admin_menu', 'remove_submenus');
-
-function new_nav_menu () {
-    global $menu;
-    $menu[99] = array('', 'read', 'separator', '', 'menu-top menu-nav');
-    add_menu_page(__('Navigation', 'mav-menus'), __('Navigation', 'nav-menus'), 'edit_themes', 'nav-menus.php', '', '', 99);
-}
-add_action('admin_menu', 'new_nav_menu');
-
-function custom_menu_order($menu_ord) {
-if (!$menu_ord) return true;
-
-return array(
-    'index.php', // Dashboard
-    'edit.php', // Posts
-    'upload.php', // Media
-    'edit.php?post_type=page', // Pages
-    'edit-comments.php', // Comments
-    'link-manager.php', // Links
-    'separator1', // First separator
-    'nav-menus.php', // Navigation
-    'separator2', // Second separator
-    'themes.php', // Appearance
-    'plugins.php', // Plugins
-    'users.php', // Users
-    'tools.php', // Tools
-    'options-general.php', // Settings
-    'separator-last', // Last separator
-);
-}
-add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order
-add_filter('menu_order', 'custom_menu_order');
-
-?>

@@ -10,8 +10,8 @@
     // registering wp3+ menus
     register_nav_menus(
         array(
-            'topbar' => __( 'Topbar Menu', 'torotheme' ),   // main nav in header
-            'footer_nav' => __( 'Footer Menu', 'torotheme' ),   // main nav in header
+            'topbar' => __( 'Topbar Menu', 'toro' ),   // main nav in header
+            'footer_nav' => __( 'Footer Menu', 'toro' ),   // main nav in header
         )
     );
 
@@ -25,7 +25,7 @@ require_once('wp_bootstrap_navwalker.php');
 function topbar() {
     // display the wp3 menu if available
     wp_nav_menu(array(
-        'menu'              => __( 'Desktop Menu', 'torotheme' ),    // nav name
+        'menu'              => __( 'Desktop Menu', 'toro' ),    // nav name
         'theme_location'    => 'topbar',
         'depth'             => 2,
         'container'         => 'div',
@@ -48,7 +48,7 @@ function footer_nav() {
     // display the wp3 menu if available
     wp_nav_menu(array(
         'theme_location'  => 'footer_nav',
-        'menu'            => __( 'Footer Menu', 'torotheme' ),
+        'menu'            => __( 'Footer Menu', 'toro' ),
         'container'       => '',
         'container_class' => '',
         'container_id'    => 'footer_nav',
