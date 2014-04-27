@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 		        expand: true,
 		        cwd: 'bower_components/OwlCarousel/owl-carousel',
 		        src: ['**/*.css'],
-		        dest: 'sass/owlcarousel/',
+		        dest: 'sass/vendors/owlcarousel/',
 		        rename: function(dest, src) {
 		          return dest + src.replace(/\.css$/, ".scss");
 		        }
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 		        expand: true,
 		        cwd: 'bower_components/fancybox/source',
 		        src: ['**/*.css'],
-		        dest: 'sass/fancybox/',
+		        dest: 'sass/vendors/fancybox/',
 		        rename: function(dest, src) {
 		          return dest + src.replace(/\.css$/, ".scss");
 		        }
