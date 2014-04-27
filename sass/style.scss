@@ -27,6 +27,7 @@
 
   @import "helpers/mixins";
   @import "helpers/general_helpers";
+  @import "helpers/functions";
 
 
 /***********  FONTS  ***********/
@@ -52,6 +53,7 @@
   @import "components/post_meta";
   @import "components/pagination";
   @import "components/sticky_post";
+  @import "components/kitchen_sink";
 
   // Fonts
   @import "components/fonts/inzite";

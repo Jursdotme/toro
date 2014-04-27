@@ -35,3 +35,35 @@
 body#tinymce {
   margin: 10px;
 }
+
+/***********  EXTENDED COLOR VARIABLES  ***********/
+
+$dark-modifier: 20%;
+$darker-modifier: 40%;
+$light-modifier: 20%;
+$lighter-modifier: 40%;
+
+$brand-primary-dark: shade($brand-primary, $dark-modifier);
+$brand-primary-darker: shade($brand-primary, $darker-modifier);
+$brand-primary-light: tint($brand-primary, $light-modifier);
+$brand-primary-lighter: tint($brand-primary, $lighter-modifier);
+
+$brand-info-dark: shade($brand-info, $dark-modifier);
+$brand-info-darker: shade($brand-info, $darker-modifier);
+$brand-info-light: tint($brand-info, $light-modifier);
+$brand-info-lighter: tint($brand-info, $lighter-modifier);
+
+$brand-success-dark: shade($brand-success, $dark-modifier);
+$brand-success-darker: shade($brand-success, $darker-modifier);
+$brand-success-light: tint($brand-success, $light-modifier);
+$brand-success-lighter: tint($brand-success, $lighter-modifier);
+
+$brand-warning-dark: shade($brand-warning, $dark-modifier);
+$brand-warning-darker: shade($brand-warning, $darker-modifier);
+$brand-warning-light: tint($brand-warning, $light-modifier);
+$brand-warning-lighter: tint($brand-warning, $lighter-modifier);
+
+$brand-danger-dark: shade($brand-danger, $dark-modifier);
+$brand-danger-darker: shade($brand-danger, $darker-modifier);
+$brand-danger-light: tint($brand-danger, $light-modifier);
+$brand-danger-lighter: tint($brand-danger, $lighter-modifier);

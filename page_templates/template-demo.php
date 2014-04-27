@@ -1,5 +1,5 @@
 <?php
-	/* Template Name: Demo Page Template */ 
+	/* Template Name: Kitchen Sink */
 ?>
 
 <?php get_header(); ?>
@@ -10,8 +10,97 @@
     <p><a class="btn btn-primary btn-large" href="http://getbootstrap.com/">Read Bootstrap Docs »</a></p>
   </div>
 </div>
-<div class="container">
-      
+
+
+
+	<div class="container">
+
+
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Primary brand color</h2>
+			</div>
+			<div class="col-sm-9">
+				<div class="brand-primary">
+					<div class="color-swatch main original"></div>
+					<div class="color-swatch darker"></div>
+					<div class="color-swatch dark"></div>
+					<div class="color-swatch original"></div>
+					<div class="color-swatch light"></div>
+					<div class="color-swatch lighter"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Brand info color</h2>
+			</div>
+			<div class="col-sm-9">
+				<div class="brand-info">
+					<div class="color-swatch main original"></div>
+					<div class="color-swatch darker"></div>
+					<div class="color-swatch dark"></div>
+					<div class="color-swatch original"></div>
+					<div class="color-swatch light"></div>
+					<div class="color-swatch lighter"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Brand success color</h2>
+			</div>
+			<div class="col-sm-9">
+				<div class="brand-success">
+					<div class="color-swatch main original"></div>
+					<div class="color-swatch darker"></div>
+					<div class="color-swatch dark"></div>
+					<div class="color-swatch original"></div>
+					<div class="color-swatch light"></div>
+					<div class="color-swatch lighter"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Brand warning color</h2>
+			</div>
+			<div class="col-sm-9">
+				<div class="brand-warning">
+					<div class="color-swatch main original"></div>
+					<div class="color-swatch darker"></div>
+					<div class="color-swatch dark"></div>
+					<div class="color-swatch original"></div>
+					<div class="color-swatch light"></div>
+					<div class="color-swatch lighter"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Brand danger color</h2>
+			</div>
+			<div class="col-sm-9">
+				<div class="brand-danger">
+					<div class="color-swatch main original"></div>
+					<div class="color-swatch darker"></div>
+					<div class="color-swatch dark"></div>
+					<div class="color-swatch original"></div>
+					<div class="color-swatch light"></div>
+					<div class="color-swatch lighter"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
       <div class="row">
         <div class="col-lg-6">
           <div class="panel panel-default" id="headings">

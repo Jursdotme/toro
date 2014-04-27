@@ -1218,7 +1218,7 @@ img {
   height: auto;
 }
 
-.img-circle, .comments .avatar {
+.img-circle, .color-swatch, .comments .avatar {
   border-radius: 50%;
 }
 
@@ -6885,6 +6885,7 @@ body#tinymce {
   margin: 10px;
 }
 
+/***********  EXTENDED COLOR VARIABLES  ***********/
 /***********  FONTS  ***********/
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
@@ -9512,6 +9513,97 @@ div.pagination {
 }
 
 /***********  STYLE STICKY POSTS  ***********/
+.color-swatch {
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  float: left;
+}
+.color-swatch.main {
+  width: 150px;
+  height: 150px;
+}
+
+.brand-primary .original {
+  background: #d03530;
+}
+.brand-primary .dark {
+  background: #a62a26;
+}
+.brand-primary .darker {
+  background: #7c1f1c;
+}
+.brand-primary .light {
+  background: #d95d59;
+}
+.brand-primary .lighter {
+  background: #e28582;
+}
+
+.brand-info .original {
+  background: #5bc0de;
+}
+.brand-info .dark {
+  background: #4899b1;
+}
+.brand-info .darker {
+  background: #367385;
+}
+.brand-info .light {
+  background: #7bcce4;
+}
+.brand-info .lighter {
+  background: #9cd9eb;
+}
+
+.brand-success .original {
+  background: #5cb85c;
+}
+.brand-success .dark {
+  background: #499349;
+}
+.brand-success .darker {
+  background: #376e37;
+}
+.brand-success .light {
+  background: #7cc67c;
+}
+.brand-success .lighter {
+  background: #9dd49d;
+}
+
+.brand-warning .original {
+  background: #f0ad4e;
+}
+.brand-warning .dark {
+  background: #c08a3e;
+}
+.brand-warning .darker {
+  background: #90672e;
+}
+.brand-warning .light {
+  background: #f3bd71;
+}
+.brand-warning .lighter {
+  background: #f6cd94;
+}
+
+.brand-danger .original {
+  background: #d9534f;
+}
+.brand-danger .dark {
+  background: #ad423f;
+}
+.brand-danger .darker {
+  background: #82312f;
+}
+.brand-danger .light {
+  background: #e07572;
+}
+.brand-danger .lighter {
+  background: #e89795;
+}
+
 @font-face {
   font-family: 'inzite';
   src: url("../../../fonts/inzite/inzite.eot?zec0lt");
