@@ -26,6 +26,7 @@
     "conditionizr": "~4.3.0",
     "matchHeight": "~0.5.1",
     "isotope": "~2.0.0",
-    "imagesloaded": "~3.1.5"
+    "imagesloaded": "~3.1.5",
+    "respond": "~1.4.2"
   }
 }
