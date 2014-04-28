@@ -14,12 +14,12 @@
 					</p>
 
 				<!-- /copyright -->
-				
+
 			</div>
 
-			
+
 			<?php footer_nav(); ?>
-			
+
 
 		</div>
 	</div>
