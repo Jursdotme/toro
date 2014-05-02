@@ -61,6 +61,25 @@ function toro_footer_scripts()
     }
 }
 
+/**
+ * html5_shiv function.
+ *
+ * @access public
+ * @return void
+ */
+function html5_shiv() {
+        ?>
+        <!-- IE Fix for HTML5 Tags -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <![endif]-->
+        <?php
+}
+if(!is_admin()) {
+        add_action('wp_head','html5_shiv');
+}
+
 // Load Toro styles
 function toro_styles()
 {

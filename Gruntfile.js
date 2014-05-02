@@ -158,10 +158,6 @@ module.exports = function(grunt) {
 	    dist: {
 	      src: [
 
-
-          // Respond
-          '<%= project.bower %>/respond/src/respond.js',
-
 	      	// Conditionizr
           // '<%= project.bower %>/conditionizr/dist/conditionizr.js',
           // Conditionizr - Detects
@@ -198,7 +194,7 @@ module.exports = function(grunt) {
 					'<%= project.bootstrap_scripts %>/button.js',
 					// '<%= project.bootstrap_scripts %>/carousel.js',
 					// '<%= project.bootstrap_scripts %>/collapse.js',
-					// '<%= project.bootstrap_scripts %>/dropdown.js',
+					'<%= project.bootstrap_scripts %>/dropdown.js',
 					'<%= project.bootstrap_scripts %>/modal.js',
 					// '<%= project.bootstrap_scripts %>/scrollspy.js',
 					// '<%= project.bootstrap_scripts %>/tab.js',
