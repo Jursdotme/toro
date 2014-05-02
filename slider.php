@@ -1,6 +1,6 @@
 <!-- header-4 -->
 <div id="carousel-header-24" class="header-24 owl-carousel">
-  <header  class="v-center bg-midnight-blue bg-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/test-image-01.jpg');">
+  <header  class="v-center bg-midnight-blue bg-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/min/test-image-01.jpg');">
     <div class="background">&nbsp;</div>
     <div>
       <div class="container">
@@ -20,7 +20,7 @@
     </div>
   </header>
 
-  <header  class="v-center bg-midnight-blue bg-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/test-image-02.jpg');">
+  <header  class="v-center bg-midnight-blue bg-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/min/test-image-02.jpg');">
     <div class="background">&nbsp;</div>
     <div>
       <div class="container">
@@ -40,7 +40,7 @@
     </div>
   </header>
 
-  <header  class=" v-center bg-midnight-blue bg-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/test-image-03.jpg');">
+  <header  class=" v-center bg-midnight-blue bg-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/min/test-image-03.jpg');">
     <div class="background">&nbsp;</div>
     <div>
       <div class="container">
