@@ -140,55 +140,54 @@ module.exports = function(grunt) {
 	    },
 	    dist: {
 	      src: [
-	      	// jQuery
-	      	'<%= project.bower %>/jQuery/dist/jquery.js',
+
 
           // Respond
           '<%= project.bower %>/respond/src/respond.js',
 
 	      	// Conditionizr
-          '<%= project.bower %>/conditionizr/dist/conditionizr.js',
+          // '<%= project.bower %>/conditionizr/dist/conditionizr.js',
           // Conditionizr - Detects
-            '<%= project.bower %>/conditionizr/detects/chrome.js',
-            '<%= project.bower %>/conditionizr/detects/chromium.js',
-            '<%= project.bower %>/conditionizr/detects/firefox.js',
-            '<%= project.bower %>/conditionizr/detects/ie6.js',
-            '<%= project.bower %>/conditionizr/detects/ie7.js',
-            '<%= project.bower %>/conditionizr/detects/ie8.js',
-            '<%= project.bower %>/conditionizr/detects/ie9.js',
-            '<%= project.bower %>/conditionizr/detects/ie10.js',
-            '<%= project.bower %>/conditionizr/detects/ie10touch.js',
-            '<%= project.bower %>/conditionizr/detects/ie11.js',
-            '<%= project.bower %>/conditionizr/detects/ios.js',
-            '<%= project.bower %>/conditionizr/detects/linux.js',
-            '<%= project.bower %>/conditionizr/detects/mac.js',
-            '<%= project.bower %>/conditionizr/detects/opera.js',
-            '<%= project.bower %>/conditionizr/detects/retina.js',
-            '<%= project.bower %>/conditionizr/detects/safari.js',
-            '<%= project.bower %>/conditionizr/detects/touch.js',
-            '<%= project.bower %>/conditionizr/detects/windows.js',
-            '<%= project.bower %>/conditionizr/detects/winPhone7.js',
-            '<%= project.bower %>/conditionizr/detects/winPhone75.js',
-            '<%= project.bower %>/conditionizr/detects/winPhone8.js',
+            // '<%= project.bower %>/conditionizr/detects/chrome.js',
+            // '<%= project.bower %>/conditionizr/detects/chromium.js',
+            // '<%= project.bower %>/conditionizr/detects/firefox.js',
+            // '<%= project.bower %>/conditionizr/detects/ie6.js',
+            // '<%= project.bower %>/conditionizr/detects/ie7.js',
+            // '<%= project.bower %>/conditionizr/detects/ie8.js',
+            // '<%= project.bower %>/conditionizr/detects/ie9.js',
+            // '<%= project.bower %>/conditionizr/detects/ie10.js',
+            // '<%= project.bower %>/conditionizr/detects/ie10touch.js',
+            // '<%= project.bower %>/conditionizr/detects/ie11.js',
+            // '<%= project.bower %>/conditionizr/detects/ios.js',
+            // '<%= project.bower %>/conditionizr/detects/linux.js',
+            // '<%= project.bower %>/conditionizr/detects/mac.js',
+            // '<%= project.bower %>/conditionizr/detects/opera.js',
+            // '<%= project.bower %>/conditionizr/detects/retina.js',
+            // '<%= project.bower %>/conditionizr/detects/safari.js',
+            // '<%= project.bower %>/conditionizr/detects/touch.js',
+            // '<%= project.bower %>/conditionizr/detects/windows.js',
+            // '<%= project.bower %>/conditionizr/detects/winPhone7.js',
+            // '<%= project.bower %>/conditionizr/detects/winPhone75.js',
+            // '<%= project.bower %>/conditionizr/detects/winPhone8.js',
 
-            'javascripts/conditionizr/conditionizr_setup.js',
+            // 'javascripts/conditionizr/conditionizr_setup.js',
 
 	      	// Modernizr
 	      	'<%= project.bower %>/modernizr/modernizr.js',
 
 		      // Bootstrap
-					'<%= project.bootstrap_scripts %>/affix.js',
+					// '<%= project.bootstrap_scripts %>/affix.js',
 					'<%= project.bootstrap_scripts %>/alert.js',
 					'<%= project.bootstrap_scripts %>/button.js',
 					// '<%= project.bootstrap_scripts %>/carousel.js',
-					'<%= project.bootstrap_scripts %>/collapse.js',
-					'<%= project.bootstrap_scripts %>/dropdown.js',
+					// '<%= project.bootstrap_scripts %>/collapse.js',
+					// '<%= project.bootstrap_scripts %>/dropdown.js',
 					'<%= project.bootstrap_scripts %>/modal.js',
-					'<%= project.bootstrap_scripts %>/scrollspy.js',
-					'<%= project.bootstrap_scripts %>/tab.js',
-					'<%= project.bootstrap_scripts %>/transition.js',
+					// '<%= project.bootstrap_scripts %>/scrollspy.js',
+					// '<%= project.bootstrap_scripts %>/tab.js',
+					// '<%= project.bootstrap_scripts %>/transition.js',
 					'<%= project.bootstrap_scripts %>/tooltip.js',
-					'<%= project.bootstrap_scripts %>/popover.js',
+					// '<%= project.bootstrap_scripts %>/popover.js',
 
 					// Isotope
 					'<%= project.bower %>/isotope/dist/isotope.pkgd.min.js',

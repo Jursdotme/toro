@@ -52,7 +52,11 @@ function toro_footer_scripts()
 
     	wp_deregister_script('jquery'); // Deregister WordPress jQuery
 
-        wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.js', array(), '1.0.0', true); // Custom scripts
+
+        wp_register_script('cdn_jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), '1.11.0', true); // jQuery
+        wp_enqueue_script('cdn_jquery'); // Enqueue it!
+
+        wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.min.js', array(), '1.0.0', true); // Custom scripts
         wp_enqueue_script('toroscripts'); // Enqueue it!
     }
 }
@@ -60,7 +64,7 @@ function toro_footer_scripts()
 // Load Toro styles
 function toro_styles()
 {
-    wp_register_style('toro', get_template_directory_uri() . '/stylesheets/build/autoprefixed/global.autoprefixed.css', array(), '1.0', 'all');
+    wp_register_style('toro', get_template_directory_uri() . '/stylesheets/build/min/global.min.css', array(), '1.0', 'all');
     wp_enqueue_style('toro'); // Enqueue it!
 }
 
