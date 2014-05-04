@@ -25,7 +25,7 @@
 				<!-- post details -->
 				<p class="post-meta">
 					<span class="date text-muted">
-						<span class="fa fa-calendar-o"></span> <?php the_time('j. F - Y'); ?> 
+						<span class="fa fa-calendar-o"></span> <?php the_time('j. F - Y'); ?>
 						<span class="fa fa-folder-o"></span> <?php the_category(', '); // Separated by commas ?>
 						<span class="fa fa-pencil-square-o"></span> <?php the_author_posts_link(); ?></span>
 					</span>
@@ -65,6 +65,6 @@
 	</div>
 </div>
 
-<?php include "partials/markup/meta-after-post.php"; ?>
+<?php get_template_part( 'partials/objects/meta-after-post' ); ?> 
 
 <?php get_footer(); ?>

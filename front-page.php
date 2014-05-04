@@ -1,16 +1,16 @@
 <?php  get_header();?>
 
 <!-- Slider -->
-<?php include 'slider.php'; ?>
+<?php get_template_part( 'partials/objects/slider' ); ?> 
 
 <div class="container">
 	<div class="row">
 
 		<!-- Statisk Indhold -->
-		
+
 		<div class="col-md-12 col-xs-12">
 			<div class="frontpage-content">
-			
+
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
 				<?php endwhile; ?>

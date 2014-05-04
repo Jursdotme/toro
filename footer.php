@@ -1,5 +1,5 @@
 <!-- footer -->
-<?php include "edit_post_link.php" ?>
+<?php get_template_part( 'partials/objects/edit_post_link' ); ?> 
 <footer class="page-footer">
 	<div class="container">
 		<div class="row" role="contentinfo">

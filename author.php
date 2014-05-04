@@ -71,5 +71,4 @@
 	<!-- /section -->
 
 <?php get_sidebar(); ?>
-<?php include "edit_post_link.php" ?>
 <?php get_footer(); ?>
