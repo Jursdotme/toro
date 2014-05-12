@@ -19,6 +19,7 @@ require_once( 'partials/functions/image_sizes.php' ); // this comes turned off b
 require_once( 'partials/functions/breadcrumbs.php' ); // this comes turned off by default
 require_once( 'partials/functions/post-types.php' ); // this comes turned off by default
 require_once( 'partials/functions/pagination.php' ); // this comes turned off by default
+require_once( 'partials/functions/woocommerce_functions/wooc_base.php' ); // this comes turned off by default
 
 /*------------------------------------*\
 	Theme Support
