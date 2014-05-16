@@ -25,6 +25,9 @@ module.exports = function(grunt) {
 		  css: [
 		    '<%= project.src %>stylesheets'
 		  ],
+      javascripts: [
+        '<%= project.src %>/javascripts/build/'
+      ],
 		  bootstrap_scripts: [
 		    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/'
 		  ],
@@ -65,6 +68,34 @@ module.exports = function(grunt) {
 		=            Stylesheet stuff            =
 		========================================*/
 
+    mkdir: {
+      all: {
+        options: {
+          create: ['<%= project.sass %>/vendors/fancybox', '<%= project.sass %>/vendors/OwlCarousel']
+        },
+      },
+    },
+
+    // Convert CSS TO SCSS
+    "sass-convert" : {
+      options: {
+        from: 'css',
+        to: 'scss'
+      },
+      fancybox: {
+        cwd: '<%= project.bower %>/fancybox/source/',
+        src: ['*.css','*/*.css'],
+        filePrefix: '_',
+        dest: '<%= project.sass %>/vendors/fancybox'
+      },
+      owlcarousel: {
+        cwd: '<%= project.bower %>/OwlCarousel/owl-carousel/',
+        src: ['*.css','*/*.css'],
+        filePrefix: '_',
+        dest: '<%= project.sass %>/vendors/OwlCarousel'
+      }
+    },
+
 		// SASS
 		sass: {
 			options: {
@@ -73,19 +104,23 @@ module.exports = function(grunt) {
 		      compass: false,
 		      quiet: true
 		    },
-		  all: {
+		  frontend: {
 		    files: {
-		      '<%= project.css %>/build/global.css': '<%= project.sass %>/style.scss',
-		      '<%= project.css %>/build/backend.css': '<%= project.sass %>/themes/backend.scss'
+		      '<%= project.css %>/global.css': '<%= project.sass %>/style.scss'
 		    }
 		  },
+      backend: {
+        files: {
+          '<%= project.css %>/backend.css': '<%= project.sass %>/themes/backend.scss'
+        }
+      },
 		},
 
 		// CSS AUTOPREFIXER
 		autoprefixer: {
 	    options: {
 	      cascade: true,
-	      browsers: ['last 2 version', 'ie 8', 'ie 9']
+	      browsers: ['last 2 version', 'ie 8', 'ie 9'],
 	    },
 	    all: {
 	      options: {
@@ -93,56 +128,61 @@ module.exports = function(grunt) {
 	      },
 	      expand: true,
     		ext: '.autoprefixed.css',
-    		cwd: '<%= project.css %>/build/',
-	      src: ['*.css', '!*.autoprefixed.css'],
-	     	dest: '<%= project.css %>/build/autoprefixed/'
-	    }
+    		cwd: '<%= project.css %>/',
+	      src: ['*.css', '!*.autoprefixed.css', '!*.min.css'],
+	      dest: '<%= project.css %>/'
+	    },
+      dev: {
+        options: {
+          // Target-specific options go here.
+        },
+        expand: true,
+        ext: '.css',
+        cwd: '<%= project.css %>/',
+        src: ['*.css', '!*.autoprefixed.css', '!*.min.css'],
+        dest: '<%= project.css %>/'
+      },
+      backend: {
+        options: {
+          // Target-specific options go here.
+        },
+        expand: true,
+        ext: '.autoprefixed.css',
+        cwd: '<%= project.css %>/',
+        src: 'backend.css',
+        dest: '<%= project.css %>/'
+      }
 	  },
 
 	  // CSS MINIFIER
 		cssmin : {
 			options: {
-	      // report: 'gzip'
+	      report: 'gzip',
 	    },
       css:{
     		expand: true,
     		ext: '.min.css',
-      	cwd: '<%= project.css %>/build/autoprefixed/',
-        src: ['*.autoprefixed.css', '!*.min.css'],
-        dest: '<%= project.css %>/build/min/'
+      	cwd: '<%= project.css %>/',
+        src: ['*.autoprefixed.css', '!*.min.css',],
+        dest: '<%= project.css %>/'
+      },
+      backend:{
+        expand: true,
+        ext: '.min.css',
+        cwd: '<%= project.css %>/',
+        src: 'backend.autoprefixed.css',
+        dest: '<%= project.css %>/'
       }
     },
 
-    // CSS TO SCSS
-    //copy all css files to sass directory, and rename to .scss
-		copy: {
-		  OwlCarousel: {
-		    files: [
-		      {
-		        expand: true,
-		        cwd: 'bower_components/OwlCarousel/owl-carousel',
-		        src: ['**/*.css'],
-		        dest: 'sass/vendors/owlcarousel/',
-		        rename: function(dest, src) {
-		          return dest + src.replace(/\.css$/, ".scss");
-		        }
-		      }
-		    ]
-		  },
-		  fancybox: {
-		    files: [
-		      {
-		        expand: true,
-		        cwd: 'bower_components/fancybox/source',
-		        src: ['**/*.css'],
-		        dest: 'sass/vendors/fancybox/',
-		        rename: function(dest, src) {
-		          return dest + src.replace(/\.css$/, ".scss");
-		        }
-		      }
-		    ]
-		  }
-		},
+    bless: {
+      css: {
+        options: {},
+        files: {
+          'tmp/above-limit.css': 'test/input/global.css'
+        }
+      }
+    },
 
 		/*-----  End of Stylesheet stuff  ------*/
 
@@ -224,7 +264,7 @@ module.exports = function(grunt) {
 
 					'javascripts/scripts.js'
 				],
-	      dest: '<%= project.src %>javascripts/build/global.js',
+	      dest: '<%= project.src %>javascripts/build/global.concat.js',
 	    },
 	  },
 
@@ -232,10 +272,10 @@ module.exports = function(grunt) {
 		uglify: {
 		  all: {
 		  	options: {
-		  		// report: 'gzip'
+		  		report: 'gzip'
 		  	},
 		    files: {
-	        '<%= project.src %>javascripts/build/global.min.js': ['<%= project.src %>javascripts/build/global.js']
+	        '<%= project.src %>javascripts/build/global.js': ['<%= project.src %>javascripts/build/global.concat.js']
 	      }
 		  }
 		},
@@ -256,7 +296,7 @@ module.exports = function(grunt) {
 			configFiles: {
 		    files: [ 'Gruntfile.js'],
 		    options: {
-		      reload: true,
+		      reload: false,
 		      spawn: false
 		    }
 		  },
@@ -265,12 +305,20 @@ module.exports = function(grunt) {
 		  	options: {
 					livereload: true
 				},
-		    files: '<%= project.sass %>/{,*/}*.{scss,sass}',
-		    tasks: ['sass:all','autoprefixer:all','cssmin:css']
+      files: '<%= project.sass %>/{,*/}{,*/}*.{scss,sass}',
+		    tasks: [
+          'sass-convert',
+          'sass:frontend',
+          'autoprefixer:dev',
+          'rename:mintonone',
+        ]
 		  },
 		  javascripts: {
       files: ['<%= project.bower %>/{,*/}*.js', '<%= project.src %>javascripts/*.js'],
-		  	tasks: ['concat:dist', 'uglify:all']
+		  	tasks: [
+          'concat:dist',
+          'rename:concattonone',
+        ]
 		  }
       ,
       conditionizr: {
@@ -281,7 +329,43 @@ module.exports = function(grunt) {
 
 		/*-----  End of The Watcher  ------*/
 
+    // CLEAN
 
+    clean: {
+      all: {
+        src: ["<%= project.css %>", "<%= project.src %>javascripts/build/"]
+      },
+      frontend: {
+        src: ["<%= project.css %>/global.css", "<%= project.src %>javascripts/build/"]
+      },
+      backend: {
+        src: ["<%= project.css %>/backend.css"]
+      },
+      globalcss: {
+        src: ["<%= project.css %>/global.css"]
+      },
+      unused: {
+        src: ["<%= project.css %>/global.autoprefixed.css", "<%= project.css %>/global.min.css", "<%= project.src %>javascripts/build/global.concat.js", "<%= project.css %>/backend.min.css", "<%= project.css %>/backend.autoprefixed.css"]
+      }
+    },
+
+    rename: {
+      options : {
+        ignore: true
+      },
+      mintonone: {
+          src: '<%= project.css %>/global.min.css',
+          dest: '<%= project.css %>/global.css'
+      },
+      concattonone: {
+          src: '<%= project.src %>javascripts/build/global.concat.js',
+          dest: '<%= project.src %>javascripts/build/global.js'
+      },
+      backend: {
+          src: "<%= project.css %>/backend.min.css",
+          dest: "<%= project.css %>/backend.css"
+      },
+    },
 
 	});
 
@@ -293,14 +377,75 @@ module.exports = function(grunt) {
 	 * Run `grunt` on the command line
 	 */
 	grunt.registerTask('default', [
-	  'copy',
-	  'sass:all',
-	  'autoprefixer:all',
-	  'cssmin:css',
-	  'concat:dist',
-	  'uglify:all',
-	  'watch'
+    'clean:frontend',
+    'mkdir',
+    'sass-convert',
+    'sass:frontend',
+    'autoprefixer:dev',
+    'rename:mintonone',
+    'concat:dist',
+    'rename:concattonone',
+    'clean:unused',
+    'watch',
 	]);
+
+  grunt.registerTask('release', [
+    'clean:frontend',
+    'mkdir',
+    'sass-convert',
+    'sass:frontend',
+    'autoprefixer:all',
+    'cssmin:css',
+    'clean:globalcss',
+    'rename:mintonone',
+    'concat:dist',
+    'uglify:all',
+    'clean:backend',
+    'sass:backend',
+    'autoprefixer:backend',
+    'cssmin:backend',
+    'clean:backend',
+    'rename:backend',
+    'clean:unused',
+  ]);
+
+  grunt.registerTask('dev', [
+    'clean:frontend',
+    'mkdir',
+    'sass-convert',
+    'sass:frontend',
+    'autoprefixer:dev',
+    'rename:mintonone',
+    'concat:dist',
+    'rename:concattonone',
+    'clean:unused',
+  ]);
+
+  grunt.registerTask('backend', [
+    'clean:backend',
+    'sass:backend',
+    'autoprefixer:backend',
+    'cssmin:backend',
+    'clean:backend',
+    'rename:backend',
+    'clean:unused',
+  ]);
+
+  grunt.registerTask('clean-all', [
+    'clean:all',
+  ]);
+
+  grunt.registerTask('setup', [
+    'clean:all',
+    'mkdir',
+    'sass-convert',
+    'sass:frontend',
+    'autoprefixer:dev',
+    'rename:mintonone',
+    'concat:dist',
+    'rename:concattonone',
+    'clean:unused',
+  ]);
 
   grunt.registerTask('optimize', ['imagemin']);
 

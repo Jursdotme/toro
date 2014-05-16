@@ -5966,5 +5966,5 @@ $container.imagesLoaded( function() {
       $( this ).addClass('is-checked');
     });
   });
-	
+
 /*-----  End of Isotope Test  ------*/

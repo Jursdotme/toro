@@ -325,8 +325,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../../../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 .glyphicon {
   position: relative;
@@ -6895,8 +6895,8 @@ body#tinymce {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../../../bower_components/fontawesome/fonts/fontawesome-webfont.eot?v=4.0.3");
-  src: url("../../../bower_components/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../../../bower_components/fontawesome/fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../../../bower_components/fontawesome/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../../../bower_components/fontawesome/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  src: url("../bower_components/fontawesome/fonts/fontawesome-webfont.eot?v=4.0.3");
+  src: url("../bower_components/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../bower_components/fontawesome/fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../bower_components/fontawesome/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../bower_components/fontawesome/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -8599,6 +8599,17 @@ body#tinymce {
  *	v1.3.2
  */
 /* clearfix */
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
 .owl-carousel .owl-wrapper:after {
   content: ".";
   display: block;
@@ -8607,41 +8618,20 @@ body#tinymce {
   line-height: 0;
   height: 0;
 }
-
-/* display none until init */
-.owl-carousel {
-  display: none;
-  position: relative;
-  width: 100%;
-  -ms-touch-action: pan-y;
-}
-
-.owl-carousel .owl-wrapper {
-  display: none;
-  position: relative;
-  -webkit-transform: translate3d(0px, 0px, 0px);
-}
-
 .owl-carousel .owl-wrapper-outer {
   overflow: hidden;
   position: relative;
   width: 100%;
 }
-
 .owl-carousel .owl-wrapper-outer.autoHeight {
   -webkit-transition: height 500ms ease-in-out;
           transition: height 500ms ease-in-out;
 }
-
 .owl-carousel .owl-item {
   float: left;
 }
 
-.owl-controls .owl-page,
-.owl-controls .owl-buttons div {
-  cursor: pointer;
-}
-
+/* display none until init */
 .owl-controls {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -8650,6 +8640,9 @@ body#tinymce {
           user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+.owl-controls .owl-page, .owl-controls .owl-buttons div {
+  cursor: pointer;
+}
 
 /* mouse grab icon */
 .grabbing {
@@ -8657,8 +8650,7 @@ body#tinymce {
 }
 
 /* fix */
-.owl-carousel .owl-wrapper,
-.owl-carousel .owl-item {
+.owl-carousel .owl-wrapper, .owl-carousel .owl-item {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -8675,8 +8667,6 @@ body#tinymce {
   margin-top: 10px;
   text-align: center;
 }
-
-/* Styling Next and Prev buttons */
 .owl-theme .owl-controls .owl-buttons div {
   color: #FFF;
   display: inline-block;
@@ -8692,24 +8682,18 @@ body#tinymce {
   /*IE7 fix*/
   opacity: 0.5;
 }
-
-/* Clickable class fix problem with hover on touch devices */
-/* Use it for non-touch hover action */
 .owl-theme .owl-controls.clickable .owl-buttons div:hover {
   filter: Alpha(Opacity=100);
   /*IE7 fix*/
   opacity: 1;
   text-decoration: none;
 }
-
-/* Styling Pagination*/
 .owl-theme .owl-controls .owl-page {
   display: inline-block;
   zoom: 1;
   *display: inline;
   /*IE7 life-saver */
 }
-
 .owl-theme .owl-controls .owl-page span {
   display: block;
   width: 12px;
@@ -8721,15 +8705,16 @@ body#tinymce {
   border-radius: 20px;
   background: #869791;
 }
-
-.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls .owl-page.active span {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+}
 .owl-theme .owl-controls.clickable .owl-page:hover span {
   filter: Alpha(Opacity=100);
   /*IE7 fix*/
   opacity: 1;
 }
-
-/* If PaginationNumbers is true */
 .owl-theme .owl-controls .owl-page span.owl-numbers {
   height: auto;
   width: auto;
@@ -8739,6 +8724,11 @@ body#tinymce {
   border-radius: 30px;
 }
 
+/* Styling Next and Prev buttons */
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+/* Styling Pagination*/
+/* If PaginationNumbers is true */
 /* preloading images */
 .owl-item.loading {
   min-height: 150px;
@@ -8859,12 +8849,7 @@ body#tinymce {
     -webkit-transform: translateZ(-500px);
   }
 
-  75% {
-    opacity: .5;
-    -webkit-transform: translateZ(-500px) translateX(-200%);
-  }
-
-  100% {
+  75%, 100% {
     opacity: .5;
     -webkit-transform: translateZ(-500px) translateX(-200%);
   }
@@ -8876,13 +8861,7 @@ body#tinymce {
             transform: translateZ(-500px);
   }
 
-  75% {
-    opacity: .5;
-    -webkit-transform: translateZ(-500px) translateX(-200%);
-            transform: translateZ(-500px) translateX(-200%);
-  }
-
-  100% {
+  75%, 100% {
     opacity: .5;
     -webkit-transform: translateZ(-500px) translateX(-200%);
             transform: translateZ(-500px) translateX(-200%);
@@ -8974,15 +8953,37 @@ body#tinymce {
   }
 }
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
-.fancybox-wrap,
-.fancybox-skin,
-.fancybox-outer,
-.fancybox-inner,
-.fancybox-image,
-.fancybox-wrap iframe,
-.fancybox-wrap object,
-.fancybox-nav,
-.fancybox-nav span,
+.fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+.fancybox-wrap iframe, .fancybox-wrap object {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+.fancybox-nav {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+.fancybox-nav span {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+
 .fancybox-tmp {
   padding: 0;
   margin: 0;
@@ -9009,16 +9010,16 @@ body#tinymce {
 .fancybox-opened {
   z-index: 8030;
 }
-
 .fancybox-opened .fancybox-skin {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.fancybox-outer, .fancybox-inner {
+.fancybox-outer {
   position: relative;
 }
 
 .fancybox-inner {
+  position: relative;
   overflow: hidden;
 }
 
@@ -9060,7 +9061,6 @@ body#tinymce {
   cursor: pointer;
   z-index: 8060;
 }
-
 #fancybox-loading div {
   width: 44px;
   height: 44px;
@@ -9138,7 +9138,6 @@ body#tinymce {
   overflow: hidden !important;
   width: auto;
 }
-
 .fancybox-lock body {
   overflow: hidden !important;
 }
@@ -9189,7 +9188,6 @@ body#tinymce {
   z-index: 8050;
   text-align: center;
 }
-
 .fancybox-title-float-wrap .child {
   display: inline-block;
   margin-right: -100%;
@@ -9245,15 +9243,12 @@ body#tinymce {
   width: 100%;
   z-index: 8050;
 }
-
 #fancybox-buttons.top {
   top: 10px;
 }
-
 #fancybox-buttons.bottom {
   bottom: 10px;
 }
-
 #fancybox-buttons ul {
   display: block;
   width: 166px;
@@ -9270,13 +9265,11 @@ body#tinymce {
   background: linear, top, #444444 0%, #343434 50%, #292929 50%, #333333 100%;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#222222',GradientType=0 );
 }
-
 #fancybox-buttons ul li {
   float: left;
   margin: 0;
   padding: 0;
 }
-
 #fancybox-buttons a {
   display: block;
   width: 30px;
@@ -9288,45 +9281,36 @@ body#tinymce {
   outline: none;
   opacity: 0.8;
 }
-
 #fancybox-buttons a:hover {
   opacity: 1;
 }
-
 #fancybox-buttons a.btnPrev {
   background-position: 5px 0;
 }
-
 #fancybox-buttons a.btnNext {
   background-position: -33px 0;
   border-right: 1px solid #3e3e3e;
 }
-
 #fancybox-buttons a.btnPlay {
   background-position: 0 -30px;
 }
-
 #fancybox-buttons a.btnPlayOn {
   background-position: -30px -30px;
 }
-
 #fancybox-buttons a.btnToggle {
   background-position: 3px -60px;
   border-left: 1px solid #111;
   border-right: 1px solid #3e3e3e;
   width: 35px;
 }
-
 #fancybox-buttons a.btnToggleOn {
   background-position: -27px -60px;
 }
-
 #fancybox-buttons a.btnClose {
   border-left: 1px solid #111;
   width: 35px;
   background-position: -56px 0px;
 }
-
 #fancybox-buttons a.btnDisabled {
   opacity: 0.4;
   cursor: default;
@@ -9339,38 +9323,31 @@ body#tinymce {
   overflow: hidden;
   z-index: 8050;
 }
-
 #fancybox-thumbs.bottom {
   bottom: 2px;
 }
-
 #fancybox-thumbs.top {
   top: 2px;
 }
-
 #fancybox-thumbs ul {
   position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 #fancybox-thumbs ul li {
   float: left;
   padding: 1px;
   opacity: 0.5;
 }
-
 #fancybox-thumbs ul li.active {
   opacity: 0.75;
   padding: 0;
   border: 1px solid #fff;
 }
-
 #fancybox-thumbs ul li:hover {
   opacity: 1;
 }
-
 #fancybox-thumbs ul li a {
   display: block;
   position: relative;
@@ -9379,7 +9356,6 @@ body#tinymce {
   background: #111;
   outline: none;
 }
-
 #fancybox-thumbs ul li img {
   display: block;
   position: relative;
@@ -9605,8 +9581,8 @@ div.pagination {
 
 @font-face {
   font-family: 'inzite';
-  src: url("../../../fonts/inzite/inzite.eot?zec0lt");
-  src: url("../../../fonts/inzite/inzite.eot?#iefixzec0lt") format("embedded-opentype"), url("../../../fonts/inzite/inzite.woff?zec0lt") format("woff"), url("../../../fonts/inzite/inzite.ttf?zec0lt") format("truetype"), url("../../../fonts/inzite/inzite.svg?zec0lt#inzite") format("svg");
+  src: url("../fonts/inzite/inzite.eot?zec0lt");
+  src: url("../fonts/inzite/inzite.eot?#iefixzec0lt") format("embedded-opentype"), url("../fonts/inzite/inzite.woff?zec0lt") format("woff"), url("../fonts/inzite/inzite.ttf?zec0lt") format("truetype"), url("../fonts/inzite/inzite.svg?zec0lt#inzite") format("svg");
   font-weight: normal;
   font-style: normal;
 }
