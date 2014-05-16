@@ -96,7 +96,7 @@ add_action( 'wp_dashboard_setup', 'toro_custom_dashboard_widgets' );
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function toro_login_css() {
-	wp_enqueue_style( 'toro_login_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', true );
+	wp_enqueue_style( 'toro_login_css', get_template_directory_uri() . '/stylesheets/backend.css', true );
 }
 
 // changing the logo link from wordpress.org to your site
