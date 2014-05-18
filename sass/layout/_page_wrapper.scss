@@ -7,13 +7,12 @@
   .container {
     padding: 0 $grid-gutter-width;
     @media (max-width: $screen-sm-min) {
-      padding: 0 $grid-gutter-width/2;
+      padding: 0 $grid-gutter-width / 2;
     }
   }
-  @include container-fixed();
+  @include container-fixed;
   padding: 0;
   box-shadow: 0 0 5px 0 rgba(black, 0.3);
-
   @media (min-width: $screen-sm-min) {
     width: $container-sm;
   }

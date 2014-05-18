@@ -1,12 +1,12 @@
 /***********  TOPBAR BRAND  ***********/
 .navbar-brand {
   span.inzite-inzite_tagline {
-    font-size: 40px;
-    color: white;
+    font-size : 40px;
+    color     : white;
     &:before {
-      margin-top: -9px;
-      position: absolute;
-      margin-left: $grid-gutter-width/2;
+      margin-top  : -9px;
+      position    : absolute;
+      margin-left : $grid-gutter-width/2;
     }
   }
 }

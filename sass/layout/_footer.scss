@@ -1,12 +1,11 @@
-$footer-background: $gray-darker;
-$footer-padding: $grid-gutter-width;
-$footer-color: #fff;
-
+$footer-background : $gray-darker;
+$footer-padding    : $grid-gutter-width;
+$footer-color      : white;
 
 footer.page-footer {
-	@include section-wrapper($footer-background, $footer-padding);
-	color: $footer-color;
-	p {
-		margin: 0;
-	}
+  @include section-wrapper($footer-background, $footer-padding);
+  color: $footer-color;
+  p {
+    margin: 0;
+  }
 }

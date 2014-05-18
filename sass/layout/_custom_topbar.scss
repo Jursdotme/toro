@@ -1,42 +1,41 @@
 // Custom navbar
 // Reset inverted navbar basics
-$navbar-custom-color:                      #fff;
-$navbar-custom-bg:                         $gray-dark;
-$navbar-custom-border:                     darken($navbar-custom-bg, 10%);
+$navbar-custom-color                         : white;
+$navbar-custom-bg                            : $gray-dark;
+$navbar-custom-border                        : darken($navbar-custom-bg, 10%);
 
 // Custom navbar links
-$navbar-custom-link-color:                 #fff;
-$navbar-custom-link-hover-color:           #fff;
-$navbar-custom-link-hover-bg:              darken($gray-dark, 3%);
-$navbar-custom-link-active-color:          $navbar-custom-link-hover-color;
-$navbar-custom-link-active-bg:             darken($navbar-custom-bg, 5%);
-$navbar-custom-link-disabled-color:        #444;
-$navbar-custom-link-disabled-bg:           transparent;
+$navbar-custom-link-color                    : white;
+$navbar-custom-link-hover-color              : white;
+$navbar-custom-link-hover-bg                 : darken($gray-dark, 3%);
+$navbar-custom-link-active-color             : $navbar-custom-link-hover-color;
+$navbar-custom-link-active-bg                : darken($navbar-custom-bg, 5%);
+$navbar-custom-link-disabled-color           : #444444;
+$navbar-custom-link-disabled-bg              : transparent;
 
 // Custom navbar brand label
-$navbar-custom-brand-color:                $navbar-custom-link-color;
-$navbar-custom-brand-hover-color:          #fff;
-$navbar-custom-brand-hover-bg:             transparent;
+$navbar-custom-brand-color                   : $navbar-custom-link-color;
+$navbar-custom-brand-hover-color             : white;
+$navbar-custom-brand-hover-bg                : transparent;
 
 // Custom navbar toggle
-$navbar-custom-toggle-hover-bg:            #333;
-$navbar-custom-toggle-icon-bar-bg:         #fff;
-$navbar-custom-toggle-border-color:        #333;
+$navbar-custom-toggle-hover-bg               : #333333;
+$navbar-custom-toggle-icon-bar-bg            : white;
+$navbar-custom-toggle-border-color           : #333333;
 
 // Desktop dropdown menu
-$desktop-dropdown-bg-color:                   darken($gray-dark,5%);
-$desktop-dropdown-link-color:                 white;
-$desktop-dropdown-link-hover-color:           white;
-$desktop-dropdown-link-bg-hover-color:        darken($gray-dark,10%);
-$desktop-dropdown-active-link-bg-color:       $brand-primary;
-$desktop-dropdown-active-link-color:          white;
-$desktop-dropdown-active-link-hover-color:    white;
-$desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
+$desktop-dropdown-bg-color                   : darken($gray-dark, 5%);
+$desktop-dropdown-link-color                 : white;
+$desktop-dropdown-link-hover-color           : white;
+$desktop-dropdown-link-bg-hover-color        : darken($gray-dark, 10%);
+$desktop-dropdown-active-link-bg-color       : $brand-primary;
+$desktop-dropdown-active-link-color          : white;
+$desktop-dropdown-active-link-hover-color    : white;
+$desktop-dropdown-active-link-bg-hover-color : darken($brand-primary, 10%);
 
 .navbar-custom {
   background-color: $navbar-custom-bg;
   border-color: $navbar-custom-border;
-
   .navbar-brand {
     color: $navbar-custom-brand-color;
     &:hover,
@@ -45,15 +44,12 @@ $desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
       background-color: $navbar-custom-brand-hover-bg;
     }
   }
-
   .navbar-text {
     color: $navbar-custom-color;
   }
-
   .navbar-nav {
     > li > a {
       color: $navbar-custom-link-color;
-
       &:hover,
       &:focus {
         color: $navbar-custom-link-hover-color;
@@ -77,7 +73,6 @@ $desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
       }
     }
   }
-
   // Darken the responsive nav toggle
   .navbar-toggle {
     border-color: $navbar-custom-toggle-border-color;
@@ -89,12 +84,10 @@ $desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
       background-color: $navbar-custom-toggle-icon-bar-bg;
     }
   }
-
   .navbar-collapse,
   .navbar-form {
     border-color: darken($navbar-custom-bg, 7%);
   }
-
   // Dropdowns
   .navbar-nav {
     > .open > a {
@@ -105,7 +98,6 @@ $desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
         color: $navbar-custom-link-active-color;
       }
     }
-
     @media (max-width: $grid-float-breakpoint-max) {
       // Dropdowns get custom display
       .open .dropdown-menu {
@@ -142,7 +134,6 @@ $desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
       }
     }
   }
-
   .navbar-link {
     color: $navbar-custom-link-color;
     &:hover {
@@ -169,5 +160,4 @@ $desktop-dropdown-active-link-bg-hover-color: darken($brand-primary,10%);
       }
     }
   }
-  
 }

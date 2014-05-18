@@ -37,7 +37,7 @@ abbrs.each(function() {
   $(this)
   .attr("data-toggle", "tooltip")
   .attr("data-placement", "top")
-  .tooltip()
+  .tooltip();
 
 });
 
@@ -57,7 +57,7 @@ var tables = $("table");
 
     var theClass = $(this).attr("class");
 
-    if(theClass == null || theClass == "") {
+    if(theClass === null || theClass === "") {
       $(this).addClass("table table-default");
     }
 
@@ -72,11 +72,11 @@ var tables = $("table");
 
   $(document).ready(function() {
     $(".fancybox").fancybox({
-      prevEffect  : 'elastic',
-      nextEffect  : 'elastic',
-      helpers : {
-        title : {
-          type: 'inside'
+      prevEffect : 'elastic',
+      nextEffect : 'elastic',
+      helpers    : {
+        title    : {
+          type   : 'inside'
         }
       }});
   });
@@ -92,77 +92,77 @@ $(document).ready(function() {
 
   $("#carousel-header-24").owlCarousel({
     // Most important owl features
-    items : 5,
-    itemsCustom : false,
-    itemsDesktop : [1199,4],
-    itemsDesktopSmall : [980,3],
-    itemsTablet: [768,2],
-    itemsTabletSmall: false,
-    itemsMobile : [479,1],
-    singleItem : true,
-    itemsScaleUp : false,
+    items                    : 5,
+    itemsCustom              : false,
+    itemsDesktop             : [1199,4],
+    itemsDesktopSmall        : [980,3],
+    itemsTablet              : [768,2],
+    itemsTabletSmall         : false,
+    itemsMobile              : [479,1],
+    singleItem               : true,
+    itemsScaleUp             : false,
 
     //Basic Speeds
-    slideSpeed : 200,
-    paginationSpeed : 800,
-    rewindSpeed : 1000,
+    slideSpeed               : 200,
+    paginationSpeed          : 800,
+    rewindSpeed              : 1000,
 
     //Autoplay
-    autoPlay : false,
-    stopOnHover : false,
+    autoPlay                 : false,
+    stopOnHover              : false,
 
     // Navigation
-    navigation : false,
-    navigationText : ["prev","next"],
-    rewindNav : true,
-    scrollPerPage : false,
+    navigation               : false,
+    navigationText           : ["prev","next"],
+    rewindNav                : true,
+    scrollPerPage            : false,
 
     //Pagination
-    pagination : false,
-    paginationNumbers: false,
+    pagination               : false,
+    paginationNumbers        : false,
 
     // Responsive
-    // responsive: true,
+    // responsive            : true,
     // responsiveRefreshRate : 200,
-    // responsiveBaseWidth: window,
+    // responsiveBaseWidth   : window,
 
     // CSS Styles
-    // baseClass : "owl-carousel",
-    // theme : "owl-theme",
+    // baseClass             : "owl-carousel",
+    // theme                 : "owl-theme",
 
     //Lazy load
-    // lazyLoad : false,
-    // lazyFollow : true,
-    // lazyEffect : "fade",
+    // lazyLoad              : false,
+    // lazyFollow            : true,
+    // lazyEffect            : "fade",
 
     //Auto height
-    autoHeight : true,
+    autoHeight               : true,
 
     //JSON
-    // jsonPath : false,
-    // jsonSuccess : false,
+    // jsonPath              : false,
+    // jsonSuccess           : false,
 
     //Mouse Events
-    // dragBeforeAnimFinish : true,
-    // mouseDrag : true,
-    // touchDrag : true,
+    // dragBeforeAnimFinish  : true,
+    // mouseDrag             : true,
+    // touchDrag             : true,
 
     //Transitions
-    // transitionStyle : false,
+    // transitionStyle       : false,
 
     // Other
-    // addClassActive : false,
+    // addClassActive        : false,
 
     //Callbacks
-    // beforeUpdate : false,
-    // afterUpdate : false,
-    // beforeInit: false,
-    // afterInit: false,
-    // beforeMove: false,
-    // afterMove: false,
-    // afterAction: false,
-    // startDragging : false,
-    // afterLazyLoad : false
+    // beforeUpdate          : false,
+    // afterUpdate           : false,
+    // beforeInit            : false,
+    // afterInit             : false,
+    // beforeMove            : false,
+    // afterMove             : false,
+    // afterAction           : false,
+    // startDragging         : false,
+    // afterLazyLoad         : false
   });
 
 });
@@ -178,8 +178,8 @@ var $container = $('#isotope-container');
 // init
 $container.isotope({
   // options
-  itemSelector: '.isotope-item',
-  layoutMode: 'masonry'
+  itemSelector : '.isotope-item',
+  layoutMode   : 'masonry'
 });
 
 $container.imagesLoaded( function() {

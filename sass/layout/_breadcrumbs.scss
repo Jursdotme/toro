@@ -1,12 +1,12 @@
 #crumbs {
-	
+
 	@include section-wrapper($gray-lighter,0);
-	
+
 	.breadcrumb {
-		padding: $grid-gutter-width 15px;
-		margin-bottom: 0;
-		list-style: none;
-		background-color: $gray-lighter;
-		border-radius: 4px;
+		padding          : $grid-gutter-width 15px;
+		margin-bottom    : 0;
+		list-style       : none;
+		background-color : $gray-lighter;
+		border-radius    : 4px;
 	}
 }

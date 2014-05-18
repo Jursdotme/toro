@@ -1,7 +1,7 @@
 .color-swatch {
   width: 100px;
   height: 100px;
-  margin: $grid-gutter-width/2;
+  margin: $grid-gutter-width / 2;
   @extend .img-circle;
   float: left;
   &.main {
@@ -10,25 +10,18 @@
   }
 }
 
-@each $name, $color in  (primary, $brand-primary),
-                        (info, $brand-info),
-                        (success, $brand-success),
-                        (warning, $brand-warning),
-                        (danger, $brand-danger) {
+@each $name, $color in (primary, $brand-primary), (info, $brand-info), (success, $brand-success), (warning, $brand-warning), (danger, $brand-danger) {
   // Brand Primary
   .brand-#{$name} {
     .original {
       background: $color;
     }
-
     .dark {
       background: shade($color, $dark-modifier);
     }
-
     .darker {
       background: shade($color, $darker-modifier);
     }
-
     .light {
       background: tint($color, $light-modifier);
     }
