@@ -31,7 +31,7 @@ function topbar() {
         'container'         => 'div',
         'container_class'   => 'collapse navbar-collapse',
         'container_id'      => 'bs-example-navbar-collapse-1',
-        'menu_class'        => 'nav navbar-nav navbar-right',
+        'menu_class'        => 'nav navbar-nav navbar-left',
         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
         'walker'            => new wp_bootstrap_navwalker()
     ));

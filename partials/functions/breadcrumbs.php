@@ -1,6 +1,6 @@
-<?php 
+<?php
 function the_breadcrumb() {
-              echo '<div id="crumbs"><div class="container"><div class="row"><div class="col-sm-12">';
+              echo '<div class="container"><div class="row"><div class="col-sm-12">';
               echo '<ol class="breadcrumb">';
       if (!is_home()) {
               echo '<li><a href="';
@@ -30,6 +30,6 @@ function the_breadcrumb() {
       elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
       elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
       echo '</ol>';
-      echo '</div></div></div></div>';
+      echo '</div></div></div>';
 }
  ?>

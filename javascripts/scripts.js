@@ -90,7 +90,7 @@ var tables = $("table");
 
 $(document).ready(function() {
 
-  $("#carousel-header-24").owlCarousel({
+  $("#frontpage-slider").owlCarousel({
     // Most important owl features
     items                    : 5,
     itemsCustom              : false,
@@ -108,7 +108,7 @@ $(document).ready(function() {
     rewindSpeed              : 1000,
 
     //Autoplay
-    autoPlay                 : false,
+    autoPlay                 : 5000,
     stopOnHover              : false,
 
     // Navigation

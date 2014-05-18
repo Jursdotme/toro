@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 /*********************** CUSTOM COMMENT FORM ***********************/
 
 
@@ -38,63 +34,73 @@ add_filter( 'comment_form_defaults', 'my_comment_form_defaults' );
 add_filter('comment_form_default_fields','toro_comment_form_fields');
 
 
-/*********************** CUSTOM COMMENTS CALLBACK ***********************/
+if ( ! function_exists( '_toro_comment' ) ) :
+/**
+ * Template for comments and pingbacks.
+ *
+ * Used as a callback by wp_list_comments() for displaying the comments.
+ */
+function _toro_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
 
-function torocomments($comment, $args, $depth)
-{
-  $GLOBALS['comment'] = $comment;
-  extract($args, EXTR_SKIP);
+	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
-  if ( 'div' == $args['style'] ) {
-    $tag = 'div';
-    $add_below = 'comment';
-  } else {
-    $tag = 'li';
-    $add_below = 'div-comment';
-  }
-?>
-    <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-    <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
+		<div class="comment-body">
+			<?php _e( 'Pingback:', '_toro' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', '_toro' ), '<span class="edit-link">', '</span>' ); ?>
+		</div>
 
-      <?php if ( 'div' != $args['style'] ) : ?>
-      <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-      <?php endif; ?>
+	<?php else : ?>
 
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body media">
+			<a class="pull-left" href="#">
+				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+			</a>
 
-          <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
+			<div class="media-body">
+				<div class="media-body-wrap panel panel-default">
 
+					<div class="panel-heading">
+						<h5 class="media-heading"><?php printf( __( '%s <span class="says">says:</span>', '_toro' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h5>
+						<div class="comment-meta">
+							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+								<time datetime="<?php comment_time( 'c' ); ?>">
+									<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', '_toro' ), get_comment_date(), get_comment_time() ); ?>
+								</time>
+							</a>
+							<?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', '_toro' ), '<span class="edit-link">', '</span>' ); ?>
+						</div>
+					</div>
 
-          <div class="comment-author vcard">
-            <?php printf(__('<cite class="fn">%s</cite>', 'toro' ), get_comment_author_link()) ?>
-          </div>
+					<?php if ( '0' == $comment->comment_approved ) : ?>
+						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', '_toro' ); ?></p>
+					<?php endif; ?>
 
+					<div class="comment-content panel-body">
+						<?php comment_text(); ?>
+					</div><!-- .comment-content -->
 
-          <?php if ($comment->comment_approved == '0') : ?>
-          <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'toro' ) ?></em>
-          <br />
-          <?php endif; ?>
+					<?php comment_reply_link(
+						array_merge(
+							$args, array(
+                'reply_text' => __('<span class="fa fa-reply"></span> Reply', 'toro' ),
+								'add_below' => 'div-comment',
+								'depth' 	=> $depth,
+								'max_depth' => $args['max_depth'],
+								'before' 	=> '<footer class="reply comment-reply panel-footer">',
+								'after' 	=> '</footer><!-- .reply -->'
+							)
+						)
+					); ?>
 
+				</div>
+			</div><!-- .media-body -->
 
-          <div class="comment-content">
+		</article><!-- .comment-body -->
 
-            <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-              <?php
-                printf( __('%1$s at %2$s', 'toro' ), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'toro' ),'  ','' );
-              ?>
-            </div>
-
-            <?php comment_text() ?>
-
-          </div>
-
-
-          <div class="reply">
-            <?php comment_reply_link(array_merge( array('reply_text' => __('<span class="fa fa-reply"></span> Reply', 'toro' )), array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-          </div>
-
-
-      <?php if ( 'div' != $args['style'] ) : ?>
-      </div>
-      <?php endif; ?>
-
-<?php } ?>
+	<?php
+	endif;
+}
+endif; // ends check for _toro_comment()
+ ?>

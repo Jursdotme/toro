@@ -1,0 +1,7 @@
+.hero-unit {
+  @include section-wrapper($brand-primary, $grid-gutter-width*3);
+  .lead {
+    text-align: center;
+    color: #fff;
+  }
+}

@@ -42,3 +42,9 @@ img.alignright {
 .btn {
   @include transition(all 0.2s ease-in-out);
 }
+
+/***********  MAKE BUTTON HOVER PRITTIER  ***********/
+
+.row.no-margin {
+  margin: 0;
+}

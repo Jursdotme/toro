@@ -25,16 +25,17 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<?php if(is_front_page() ) { ?>
-
-		<nav class="navbar navbar-transparent navbar-static-top" role="navigation">
-
-		<?php } else { ?>
+		<div class="container page-head">
+			<div class="row">
+				<div class="col-sm-12">
+					<a class="top-logo" href="<?php echo home_url(); ?>">
+										<span class="inzite-inzite_tagline"></span>
+								</a>
+				</div>
+			</div>
+		</div>
 
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-
-		<?php } ?>
-
 
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,9 +46,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="<?php echo home_url(); ?>">
-		                <span class="inzite-inzite_tagline"></span>
-		            </a>
+
 		    </div>
 	    	<?php topbar(); ?>
 	    </div>

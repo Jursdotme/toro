@@ -102,7 +102,9 @@ module.exports = function(grunt) {
 		      style: 'expanded',
 		      banner: '<%= tag.banner %>',
 		      compass: false,
-		      quiet: true
+		      quiet: true,
+          sourcemap: true,
+          lineNumbers: true
 		    },
 		  frontend: {
 		    files: {
@@ -307,7 +309,6 @@ module.exports = function(grunt) {
 				},
       files: '<%= project.sass %>/{,*/}{,*/}*.{scss,sass}',
 		    tasks: [
-          'sass-convert',
           'sass:frontend',
           'autoprefixer:dev',
           'rename:mintonone',

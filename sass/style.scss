@@ -1,36 +1,24 @@
-/*============================
-=            info            =
-============================*/
+/***********  THEMES  ***********/
+  // @import "themes/flatly/theme-variables";
+  // @import "themes/flatly/theme-styles";
 
-// Site Name: Toro
-// Author: Rasmus Jürs
-
-// Stylesheet: Main Stylesheet
-
-// There is no actual css or sass in this file. This is where all files
-// get concatinated, minified and exported as a single file (/stylesheets/build/min/global.min.css).
-// only exception is normalize and conditionizer styles. These are in their
-// seperate files.
-
-/*-----  End of info  ------*/
-
-/***********  SETTINGS  ***********/
-  @import "helpers/settings";
 
 /***********  BASE  ***********/
+  @import "base/_icon-fonts";
   @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
   @import "base/bootstrap";
   @import "base/base";
-  @import "base/typography";
 
 /***********  HELPERS  ***********/
 
   @import "helpers/mixins";
   @import "helpers/general_helpers";
   @import "helpers/functions";
-
+  @import "helpers/background-colors";
 
 /***********  FONTS  ***********/
+
+  @import "base/typography";
   @import "../bower_components/fontawesome/scss/font-awesome";
 
 
@@ -54,15 +42,17 @@
   @import "components/pagination";
   @import "components/sticky_post";
   @import "components/kitchen_sink";
+  @import "components/slider";
+
 
   // Fonts
   @import "components/fonts/inzite";
 
 /***********  LAYOUT  ***********/
-  @import "layout/header_frontpage";
   @import "layout/comments";
   @import "layout/breadcrumbs";
   @import "layout/page_wrapper";
+  @import "layout/frontpage";
 
   // Topbars
   @import "layout/transparent-topbar";

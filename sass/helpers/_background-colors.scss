@@ -1,0 +1,42 @@
+$background-padding: $grid-gutter-width*3;
+
+.bg-gray-darker {
+  @include section-wrapper($gray-darker, $background-padding);
+}
+
+.bg-gray-dark {
+  @include section-wrapper($gray-dark, $background-padding);
+}
+
+.bg-gray {
+  @include section-wrapper($gray, $background-padding);
+}
+
+.bg-gray-light {
+  @include section-wrapper($gray-light, $background-padding);
+}
+
+.bg-gray-lighter {
+  @include section-wrapper($gray-lighter, $background-padding);
+  color: $gray-dark;
+}
+
+.bg-brand-primary {
+  @include section-wrapper($brand-primary, $background-padding);
+}
+
+.bg-brand-success {
+  @include section-wrapper($brand-success, $background-padding);
+}
+
+.bg-brand-info {
+  @include section-wrapper($brand-info, $background-padding);
+}
+
+.bg-brand-warning {
+  @include section-wrapper($brand-warning, $background-padding);
+}
+
+.bg-brand-danger {
+  @include section-wrapper($brand-danger, $background-padding);
+}
