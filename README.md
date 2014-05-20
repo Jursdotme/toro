@@ -101,3 +101,15 @@ If you are using a package that is a subversion endpoint, you may use any tag, r
 All package contents are installed in the ```bower_components``` directory by default. You should **never** directly modify the contents of this directory.
 
 Using ```bower list``` will show all the packages that are installed locally.
+
+## Troubleshooting Windows
+
+There are a few additional steps when using grunt on Windows (Vista+).
+1. You need to set up Ruby 1.9.3 and use this to install SASS. "Start Command Prompt with Ruby"
+2. Set up the correct path and environment variables.
+  1. From the Desktop, right-click `My Computer` and click `Properties`.
+  2. Click `Advanced System Settings` link in the left column.
+  3. In the System Properties window click the `Environment Variables` button.
+  4. Under `System Variables` find the `path` variable and add (**Not replace!**) `C:\Program Files\nodejs\;C:\Program Files (x86)\Git\cmd;C:\Ruby193\bin` if it isn't allready there.
+
+After this you should be able to run the grunt commands without problems.
