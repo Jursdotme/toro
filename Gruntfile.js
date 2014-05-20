@@ -103,7 +103,6 @@ module.exports = function(grunt) {
 		      banner: '<%= tag.banner %>',
 		      compass: false,
 		      quiet: true,
-          sourcemap: true,
           lineNumbers: true
 		    },
 		  frontend: {
@@ -389,6 +388,18 @@ module.exports = function(grunt) {
     'clean:unused',
     'watch',
 	]);
+
+  grunt.registerTask('build', [
+    'clean:frontend',
+    'mkdir',
+    'sass-convert',
+    'sass:frontend',
+    'autoprefixer:dev',
+    'rename:mintonone',
+    'concat:dist',
+    'rename:concattonone',
+    'clean:unused',
+  ]);
 
   grunt.registerTask('release', [
     'clean:frontend',
