@@ -47,22 +47,6 @@ module.exports = function(grunt) {
 		          ' */\n'
 		},
 
-    /*========================================
-    =                ImageMin                =
-    ========================================*/
-
-    imagemin: {
-      dynamic: {                         // Another target
-        files: [{
-          expand: true,                  // Enable dynamic expansion
-          cwd: 'img/org/',                   // Src matches are relative to this path
-          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-          dest: 'img/min/'                  // Destination path prefix
-        }]
-      }
-    },
-
-    /*---------  End of ImageMin  ----------*/
 
 		/*========================================
 		=            Stylesheet stuff            =
@@ -458,7 +442,5 @@ module.exports = function(grunt) {
     'rename:concattonone',
     'clean:unused',
   ]);
-
-  grunt.registerTask('optimize', ['imagemin']);
 
 };
