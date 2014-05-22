@@ -2,11 +2,12 @@
   // @import "themes/flatly/theme-variables";
   // @import "themes/flatly/theme-styles";
 
-
 /***********  BASE  ***********/
+
   @import "base/_icon-fonts";
+  @import "../bower_components/fontawesome/scss/font-awesome";
   @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
-  @import "base/bootstrap";
+  @import "vendors/bootstrap";
   @import "base/base";
 
 /***********  HELPERS  ***********/
@@ -16,47 +17,40 @@
   @import "helpers/functions";
   @import "helpers/background-colors";
 
-/***********  FONTS  ***********/
-
-  @import "base/typography";
-  @import "../bower_components/fontawesome/scss/font-awesome";
-
-
 /***********  VENDORS  ***********/
+
 // OwlCarousel styles
   @import "vendors/OwlCarousel/_owl.carousel.scss";
   @import "vendors/OwlCarousel/_owl.theme.scss";
   @import "vendors/OwlCarousel/_owl.transitions.scss";
 
 // Import Fancybox styles
-  @import "vendors/fancybox/jquery.fancybox.scss";
   @import "vendors/fancybox/helpers/jquery.fancybox-buttons.scss";
   @import "vendors/fancybox/helpers/jquery.fancybox-thumbs.scss";
+  @import "vendors/fancybox/jquery.fancybox.scss";
 
 /***********  COMPONENTS  ***********/
-  // Footer
-  @import "components/footer_navigation";
 
-  @import "components/topbar_brand";
-  @import "components/post_meta";
-  @import "components/pagination";
-  @import "components/sticky_post";
+  @import "components/fonts/inzite";
+  @import "components/footer_navigation";
   @import "components/kitchen_sink";
+  @import "components/page_wrapper";
+  @import "components/post_meta";
+  @import "components/sticky_post";
+  @import "components/topbar_brand";
   @import "components/slider";
 
-
-  // Fonts
-  @import "components/fonts/inzite";
-
 /***********  LAYOUT  ***********/
-  @import "layout/comments";
+
   @import "layout/breadcrumbs";
-  @import "layout/page_wrapper";
-  @import "layout/frontpage";
+  @import "layout/comments";
+  @import "layout/footer";
+  @import "layout/pagination";
 
   // Topbars
-  @import "layout/transparent-topbar";
   @import "layout/custom_topbar";
+  @import "layout/transparent-topbar";
 
-  // Footer
-  @import "layout/footer";
+/***********  PAGES  ***********/
+
+  @import "pages/frontpage";
