@@ -214,18 +214,18 @@ module.exports = function(grunt) {
 	      	'<%= project.bower %>/modernizr/modernizr.js',
 
 		      // Bootstrap
-					// '<%= project.bootstrap_scripts %>/affix.js',
+					'<%= project.bootstrap_scripts %>/affix.js',
 					'<%= project.bootstrap_scripts %>/alert.js',
 					'<%= project.bootstrap_scripts %>/button.js',
-					// '<%= project.bootstrap_scripts %>/carousel.js',
+					'<%= project.bootstrap_scripts %>/carousel.js',
 					'<%= project.bootstrap_scripts %>/collapse.js',
 					'<%= project.bootstrap_scripts %>/dropdown.js',
 					'<%= project.bootstrap_scripts %>/modal.js',
-					// '<%= project.bootstrap_scripts %>/scrollspy.js',
-					// '<%= project.bootstrap_scripts %>/tab.js',
-					// '<%= project.bootstrap_scripts %>/transition.js',
+					'<%= project.bootstrap_scripts %>/scrollspy.js',
+					'<%= project.bootstrap_scripts %>/tab.js',
+					'<%= project.bootstrap_scripts %>/transition.js',
 					'<%= project.bootstrap_scripts %>/tooltip.js',
-					// '<%= project.bootstrap_scripts %>/popover.js',
+					'<%= project.bootstrap_scripts %>/popover.js',
 
 					// Isotope
 					'<%= project.bower %>/isotope/dist/isotope.pkgd.min.js',
@@ -281,7 +281,7 @@ module.exports = function(grunt) {
 			configFiles: {
 		    files: [ 'Gruntfile.js'],
 		    options: {
-		      reload: false,
+		      reload: true,
 		      spawn: false
 		    }
 		  },
