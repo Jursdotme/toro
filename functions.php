@@ -131,10 +131,10 @@ function my_remove_recent_comments_style()
 
 
 // Remove Admin bar
-function remove_admin_bar()
-{
-    return false;
-}
+// function remove_admin_bar()
+// {
+//     return false;
+// }
 
 // Remove 'text/css' from our enqueued stylesheet
 function html5_style_remove($tag)
@@ -200,7 +200,7 @@ add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (S
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+// add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images

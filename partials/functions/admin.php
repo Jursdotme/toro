@@ -122,7 +122,7 @@ you like.
 
 // Custom Stylesheet
 function toro_custom_wp_admin_style() {
-        wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/stylesheets/build/min/backend.min.css', false );
+        wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/stylesheets/backend.css', false );
 
 }
 add_action( 'admin_enqueue_scripts', 'toro_custom_wp_admin_style' );
