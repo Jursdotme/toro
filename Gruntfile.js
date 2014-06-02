@@ -248,6 +248,7 @@ module.exports = function(grunt) {
 					'<%= project.bower %>/fancybox/source/helpers/jquery.fancybox-thumbs.js',
 
 					'javascripts/vendors/wow.js',
+					'javascripts/vendors/Chart.js',
 
           'javascripts/woocommerce-scripts.js',
 

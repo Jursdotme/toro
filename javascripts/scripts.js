@@ -264,4 +264,6 @@ $container.imagesLoaded( function() {
 
 })();
 
+
+// INITIATE WOW.JS
 new WOW().init();
