@@ -10,12 +10,17 @@
   @import "vendors/bootstrap";
   @import "base/base";
 
+/***********  WOOCOMMERCE  ***********/
+
+  @import "woocommerce/woocommerce_base";
+
 /***********  HELPERS  ***********/
 
   @import "helpers/mixins";
   @import "helpers/general_helpers";
   @import "helpers/functions";
   @import "helpers/background-colors";
+  @import "helpers/animate/animation_base";
 
 /***********  VENDORS  ***********/
 
@@ -39,6 +44,7 @@
   @import "components/sticky_post";
   @import "components/topbar_brand";
   @import "components/slider";
+  @import "components/pagination";
 
 /***********  LAYOUT  ***********/
 

@@ -263,3 +263,5 @@ $container.imagesLoaded( function() {
   }
 
 })();
+
+new WOW().init();

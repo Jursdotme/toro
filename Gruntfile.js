@@ -247,6 +247,10 @@ module.exports = function(grunt) {
 					'<%= project.bower %>/fancybox/source/helpers/jquery.fancybox-media.js',
 					'<%= project.bower %>/fancybox/source/helpers/jquery.fancybox-thumbs.js',
 
+					'javascripts/vendors/wow.js',
+
+          'javascripts/woocommerce-scripts.js',
+
 					'javascripts/scripts.js'
 				],
 	      dest: '<%= project.src %>javascripts/build/global.concat.js',
