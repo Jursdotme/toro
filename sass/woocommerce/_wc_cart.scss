@@ -1,0 +1,44 @@
+.shop_table.cart {
+  @extend .table;
+  @extend .table-striped;
+  .quantity  {
+    @extend .form-group;
+    input {
+      @extend .form-control;
+      max-width: 50px;
+    }
+  }
+  .attachment-shop_thumbnail {
+    @extend .thumbnail;
+    margin: 0;
+  }
+}
+
+.button {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.checkout-button {
+  @extend .btn;
+  @extend .btn-success;
+}
+
+.coupon {
+  @extend .input-group;
+  .button {
+    
+  }
+}
+
+.button-container {
+  text-align: right;
+}
+
+
+.cart_totals {
+  table {
+    @extend .table;
+    @extend .table-striped;
+  }
+}

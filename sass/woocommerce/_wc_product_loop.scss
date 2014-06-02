@@ -1,0 +1,18 @@
+ul.products {
+  @extend .row;
+  padding: 0;
+  list-style: none;
+  > li {
+    @extend .col-lg-3;
+    @extend .col-md-3;
+    @extend .col-sm-4;
+    @extend .col-xs-6;
+    margin-bottom: $grid-gutter-width;
+    > a {
+      display: block;
+      &.button {
+        display: inline-block;
+      }
+    }
+  }
+}

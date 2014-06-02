@@ -1,0 +1,23 @@
+nav.woocommerce-pagination {
+  text-align: center;
+}
+.page-numbers {
+  @extend .pagination;
+
+  > li {
+    > a, > span {
+      border-radius: 0;
+    }
+  }
+  .current {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border;
+      cursor: default;
+    }
+  }
+}

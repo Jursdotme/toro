@@ -1,0 +1,4 @@
+.woocommerce-message {
+  @extend .alert;
+  @extend .alert-success;
+}
