@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <p class="lead wow fadeInUp delay-2">
+        <p class="lead wow fadeInUp">
           Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
         </p>
       </div>
@@ -20,7 +20,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4 wow fadeInUp">
+      <div class="col-sm-6 col-md-4 wow bounceInRight" data-wow-offset="300">
         <div class="thumbnail">
           <img src="http://placehold.it/640x480" alt="...">
           <div class="caption">
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="col-sm-6 col-md-4 wow fadeInUp delay-1">
+      <div class="col-sm-6 col-md-4 wow bounceInRight" data-wow-offset="300" data-wow-delay="0.2s">
         <div class="thumbnail">
           <img src="http://placehold.it/640x480" alt="...">
           <div class="caption">
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="col-sm-6 col-md-4 wow fadeInUp delay-2">
+      <div class="col-sm-6 col-md-4 wow bounceInRight" data-wow-offset="300" data-wow-delay="0.4s">
         <div class="thumbnail">
           <img src="http://placehold.it/640x480" alt="...">
           <div class="caption">
@@ -68,7 +68,7 @@
 <div class="bg-gray-lighter">
 <div class="container">
   <div class="row">
-    <div class="col-sm-7 wow fadeInLeft">
+    <div class="col-sm-7 wow fadeInLeft" data-wow-offset="300">
       <h3>Vivamus sagittis lacus vel augue laoreet rutrum faucibus auctor.</h3>
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <?php the_content(); ?>
@@ -77,21 +77,21 @@
     </div>
 
     <div class="col-sm-4 col-sm-offset-1">
-      <h3 class="wow fadeInRight">Latest News</h3>
-      <div class="list-group">
-        <a href="#" class="list-group-item active wow fadeInRight delay-1">
+      <h3 class="wow fadeInRight" data-wow-offset="300">Latest News</h3>
+      <div class="list-group" data-wow-offset="300">
+        <a href="#" class="list-group-item active wow flipInY" data-wow-offset="300" data-wow-delay="0.1s">
           <h4 class="list-group-item-heading">List group item heading</h4>
           <p class="list-group-item-text">Nulla vitae elit libero, a pharetra augue.</p>
         </a>
-        <a href="#" class="list-group-item wow fadeInRight delay-2">
+        <a href="#" class="list-group-item wow flipInY" data-wow-offset="300" data-wow-delay="0.2s">
           <h4 class="list-group-item-heading">List group item heading</h4>
           <p class="list-group-item-text">Nulla vitae elit libero, a pharetra augue.</p>
         </a>
-        <a href="#" class="list-group-item wow fadeInRight delay-3">
+        <a href="#" class="list-group-item wow flipInY" data-wow-offset="300" data-wow-delay="0.3s">
           <h4 class="list-group-item-heading">List group item heading</h4>
           <p class="list-group-item-text">Nulla vitae elit libero, a pharetra augue.</p>
         </a>
-        <a href="#" class="list-group-item wow fadeInRight delay-4">
+        <a href="#" class="list-group-item wow flipInY" data-wow-offset="300" data-wow-delay="0.4s">
           <h4 class="list-group-item-heading">List group item heading</h4>
           <p class="list-group-item-text">Nulla vitae elit libero, a pharetra augue.</p>
         </a>
