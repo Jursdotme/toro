@@ -16484,3 +16484,39 @@ div.pagination, div.page-numbers {
   text-align: center;
   color: #fff;
 }
+
+/* line 1, ../sass/pages/page_builder/_layout-1.scss */
+.layout-1 {
+  background: #eeeeee;
+  padding: 90px 0;
+}
+/* line 3, ../sass/pages/page_builder/_layout-1.scss */
+.layout-1 img {
+  max-width: 100px;
+  margin-bottom: 50px;
+}
+/* line 7, ../sass/pages/page_builder/_layout-1.scss */
+.layout-1 h2 {
+  margin-bottom: 70px;
+}
+
+/* line 1, ../sass/pages/page_builder/_layout-2.scss */
+.layout-2 {
+  background: #eeeeee;
+  padding: 90px 0;
+}
+/* line 3, ../sass/pages/page_builder/_layout-2.scss */
+.layout-2 img {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 50px;
+}
+/* line 8, ../sass/pages/page_builder/_layout-2.scss */
+.layout-2 h2 {
+  text-align: center;
+}
+/* line 11, ../sass/pages/page_builder/_layout-2.scss */
+.layout-2 h4 {
+  margin-bottom: 70px;
+  text-align: center;
+}

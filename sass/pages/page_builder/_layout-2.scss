@@ -1,0 +1,15 @@
+.layout-2 {
+  @include section-wrapper($bg-color, $section-padding);
+  img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 50px;
+  }
+  h2 {
+    text-align: center;
+  }
+  h4 {
+    margin-bottom: 70px;
+    text-align: center;
+  }
+}

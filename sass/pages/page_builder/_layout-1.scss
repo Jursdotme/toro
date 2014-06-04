@@ -1,0 +1,10 @@
+.layout-1 {
+  @include section-wrapper($bg-color, $section-padding);
+  img {
+    max-width: 100px;
+    margin-bottom: 50px;
+  }
+  h2 {
+    margin-bottom: 70px;
+  }
+}
