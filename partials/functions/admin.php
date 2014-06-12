@@ -215,11 +215,37 @@ add_filter('wp_handle_upload_prefilter','tomjn_deny_giant_images');
 
 /************* LOAD CUSTOM TORO ADMIN COLOR SCHEME *******************/
 
-
 function load_custom_wp_admin_style() {
 				wp_register_script( 'custom_wp_admin_css', get_template_directory_uri() . '/javascripts/admin-scripts.js', true, '1.0.0' );
 				wp_enqueue_script( 'custom_wp_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+/************* LOAD CUSTOM TORO ADMIN WELCOME MESSAGE *******************/
+add_action( 'admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11 );
+
+function wp_admin_bar_my_custom_account_menu( $wp_admin_bar ) {
+$user_id = get_current_user_id();
+$current_user = wp_get_current_user();
+$profile_url = get_edit_profile_url( $user_id );
+
+if ( 0 != $user_id ) {
+/* Add the "My Account" menu */
+$avatar = get_avatar( $user_id, 28 );
+$howdy = sprintf( __('Welcome, toro'), $current_user->display_name );
+$class = empty( $avatar ) ? '' : 'with-avatar';
+
+$wp_admin_bar->add_menu( array(
+'id' => 'my-account',
+'parent' => 'top-secondary',
+'title' => $howdy . $avatar,
+'href' => $profile_url,
+'meta' => array(
+'class' => $class,
+),
+) );
+
+}
+}
 
 ?>
