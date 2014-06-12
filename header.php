@@ -23,7 +23,19 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> style="
+		background-color: <?php echo of_get_option( 'background_color', '#fff' ); ?>;
+		background-image: url('<?php echo of_get_option( 'background_image' ); ?>');
+		background-repeat:<?php echo of_get_option( 'background_tiling' ); ?>;
+		background-attachment:<?php echo of_get_option( 'background_image' ); ?>;
+		background-position:<?php echo of_get_option( 'background_position', 'left top' ); ?>;
+		background-size:<?php echo of_get_option( 'background_size' ); ?>;
+		background-attachment:<?php if ( of_get_option( 'fix_image' ) == 1) {echo 'fixed'; } else { echo 'inherit'; }; ?>;
+		">
+
+	<?php if (of_get_option( 'use_wrapper' )  == 1 ) {
+		echo '<div id="page-wrapper" style="background-color:'. of_get_option( 'wrapper_color', '#fff' ) .';">';
+	} ?>
 
 		<div class="container page-head">
 			<div class="row">

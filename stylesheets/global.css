@@ -16063,6 +16063,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 /* line 14, ../sass/components/_slider.scss */
+#page-wrapper .owl-carousel.container {
+  padding: 0;
+}
+
+/* line 18, ../sass/components/_slider.scss */
 .slider-caption {
   position: absolute;
   bottom: 0;

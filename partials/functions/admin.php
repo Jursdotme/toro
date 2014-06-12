@@ -89,6 +89,8 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 add_action( 'wp_dashboard_setup', 'toro_custom_dashboard_widgets' );
 
 
+
+
 /************* CUSTOM LOGIN PAGE *****************/
 
 // calling your own login css so you can style it
@@ -109,6 +111,8 @@ function toro_login_title() { return get_option( 'INZITE Media & Marketing' ); }
 add_action( 'login_enqueue_scripts', 'toro_login_css', 10 );
 add_filter( 'login_headerurl', 'toro_login_url' );
 add_filter( 'login_headertitle', 'toro_login_title' );
+
+
 
 
 /************* CUSTOMIZE ADMIN *******************/
@@ -134,6 +138,8 @@ function toro_custom_admin_footer() {
 
 // adding it to the admin area
 add_filter( 'admin_footer_text', 'toro_custom_admin_footer' );
+
+
 
 
 /********* ADD CUSTOM EDITOR CLASSES TO TINYMCE ***********/
@@ -196,6 +202,8 @@ function my_theme_add_editor_styles() {
 add_action( 'init', 'my_theme_add_editor_styles' );
 
 
+
+
 /************* LIMIT SIZE OF UPLOADED IMAGE *******************/
 
 
@@ -213,6 +221,22 @@ function tomjn_deny_giant_images($file){
 add_filter('wp_handle_upload_prefilter','tomjn_deny_giant_images');
 
 
+
+
+/*
+ * Loads the Options Panel
+ *
+ * If you're loading from a child theme use stylesheet_directory
+ * instead of template_directory
+ */
+
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/options-framework/' );
+require_once dirname( __DIR__ ) . '/../options-framework/options-framework.php';
+
+
+
+
+
 /************* LOAD CUSTOM TORO ADMIN COLOR SCHEME *******************/
 
 function load_custom_wp_admin_style() {
@@ -220,6 +244,9 @@ function load_custom_wp_admin_style() {
 				wp_enqueue_script( 'custom_wp_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+
+
 
 /************* LOAD CUSTOM TORO ADMIN WELCOME MESSAGE *******************/
 

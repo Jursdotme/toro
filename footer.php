@@ -38,5 +38,8 @@
 		<!-- Grunt Live Reload Script -->
 		<script src="//localhost:35729/livereload.js"></script>
 
+		<?php if (of_get_option( 'use_wrapper' )  == 1 ) {
+			echo '</div>';
+		} ?>
 	</body>
 </html>
