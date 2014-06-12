@@ -7,7 +7,7 @@
 
 /********************* DISABLE DEFAULT STYLES *********************/
 
-  define('WOOCOMMERCE_USE_CSS', false);
+  add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
   require_once( 'wc_breadcrumbs.php' );
   require_once( 'wc_before_shop_loop.php' );

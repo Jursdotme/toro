@@ -222,6 +222,7 @@ function load_custom_wp_admin_style() {
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 /************* LOAD CUSTOM TORO ADMIN WELCOME MESSAGE *******************/
+
 add_action( 'admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11 );
 
 function wp_admin_bar_my_custom_account_menu( $wp_admin_bar ) {
