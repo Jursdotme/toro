@@ -12,6 +12,7 @@
         array(
             'topbar' => __( 'Topbar Menu', 'toro' ),   // main nav in header
             'footer_nav' => __( 'Footer Menu', 'toro' ),   // main nav in header
+            // 'simple_nav' => __('Simple Menu', 'toro' ),
         )
     );
 
@@ -63,6 +64,34 @@ function footer_nav() {
         'items_wrap'      => '%3$s',
         'depth'           => 0,
         'walker'          => new wp_footer_navwalker()
+    ));
+} /* end toro desktop main nav */
+
+
+// Simple Navigation
+require_once('wp_simple_navwalker.php');
+
+
+// the main desktop menu
+function header_nav() {
+    // display the wp3 menu if available
+    wp_nav_menu(array(
+        'theme_location'  => 'header_nav',
+        'menu'            => __( 'Header Menu', 'toro' ),
+        'container'       => 'ul',
+        'container_class' => '',
+        'container_id'    => 'header_nav',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul id="%1$s" class="%2$s nav nav-pills pull-right">%3$s</ul>',
+        'depth'           => 1,
+        'walker'          => new wp_simple_navwalker()
     ));
 } /* end toro desktop main nav */
 
