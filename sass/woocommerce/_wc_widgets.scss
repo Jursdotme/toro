@@ -1,3 +1,20 @@
 .product_list_widget {
 	@extend .media-list;
 }
+
+
+
+// CART WIDGET
+.product_list_widget {
+	@extend .list-group;
+	li {
+		@extend .list-group-item;
+		margin-top: 0;
+	}
+	a img {
+		@extend .media-object;
+	}
+	.quantity {
+		
+	}
+}

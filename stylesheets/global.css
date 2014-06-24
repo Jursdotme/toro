@@ -7,7 +7,6 @@
  * MIT licensed.
  */
 
-@charset "UTF-8";
 /***********  THEMES  ***********/
 @import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
 /* line 9, ../sass/themes/inzite/_theme-styles.scss */
@@ -9187,7 +9186,7 @@ a.active.wp-caption,
 }
 
 /* line 26, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_media.scss */
-.media-object {
+.media-object, .product_list_widget a img {
   display: block;
 }
 
@@ -9212,13 +9211,13 @@ a.active.wp-caption,
 }
 
 /* line 10, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group {
+.list-group, .product_list_widget {
   margin-bottom: 20px;
   padding-left: 0;
 }
 
 /* line 21, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item {
+.list-group-item, .product_list_widget li {
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -9227,22 +9226,22 @@ a.active.wp-caption,
   border: 1px solid #f6f6f6;
 }
 /* line 31, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item:first-child {
+.list-group-item:first-child, .product_list_widget li:first-child {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
 /* line 34, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item:last-child {
+.list-group-item:last-child, .product_list_widget li:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 /* line 40, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item > .badge {
+.list-group-item > .badge, .product_list_widget li > .badge {
   float: right;
 }
 /* line 43, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item > .badge + .badge {
+.list-group-item > .badge + .badge, .product_list_widget li > .badge + .badge {
   margin-right: 5px;
 }
 
@@ -9262,31 +9261,31 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 
 /* line 72, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
+.list-group-item.disabled, .product_list_widget li.disabled, .list-group-item.disabled:hover, .product_list_widget li.disabled:hover, .list-group-item.disabled:focus, .product_list_widget li.disabled:focus {
   background-color: #eeeeee;
   color: #999999;
 }
 /* line 79, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading {
+.list-group-item.disabled .list-group-item-heading, .product_list_widget li.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .product_list_widget li.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading, .product_list_widget li.disabled:focus .list-group-item-heading {
   color: inherit;
 }
 /* line 82, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text {
+.list-group-item.disabled .list-group-item-text, .product_list_widget li.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .product_list_widget li.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text, .product_list_widget li.disabled:focus .list-group-item-text {
   color: #999999;
 }
 /* line 88, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+.list-group-item.active, .product_list_widget li.active, .list-group-item.active:hover, .product_list_widget li.active:hover, .list-group-item.active:focus, .product_list_widget li.active:focus {
   z-index: 2;
   color: white;
   background-color: #ce2922;
   border-color: #ce2922;
 }
 /* line 97, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.active .list-group-item-heading, .list-group-item.active:hover .list-group-item-heading, .list-group-item.active:focus .list-group-item-heading {
+.list-group-item.active .list-group-item-heading, .product_list_widget li.active .list-group-item-heading, .list-group-item.active:hover .list-group-item-heading, .product_list_widget li.active:hover .list-group-item-heading, .list-group-item.active:focus .list-group-item-heading, .product_list_widget li.active:focus .list-group-item-heading {
   color: inherit;
 }
 /* line 100, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_list-group.scss */
-.list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
+.list-group-item.active .list-group-item-text, .product_list_widget li.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .product_list_widget li.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text, .product_list_widget li.active:focus .list-group-item-text {
   color: #f6c8c6;
 }
 
@@ -9463,29 +9462,29 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 59, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group, .comments .comment-body > .list-group {
+.panel > .list-group, .comments .comment-body > .list-group, .panel > .product_list_widget, .comments .comment-body > .product_list_widget {
   margin-bottom: 0;
 }
 /* line 62, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group .list-group-item, .comments .comment-body > .list-group .list-group-item {
+.panel > .list-group .list-group-item, .comments .comment-body > .list-group .list-group-item, .panel > .product_list_widget .list-group-item, .comments .comment-body > .product_list_widget .list-group-item, .product_list_widget .panel > .list-group li, .product_list_widget .comments .comment-body > .list-group li, .panel > .product_list_widget li, .comments .comment-body > .product_list_widget li {
   border-width: 1px 0;
   border-radius: 0;
 }
 /* line 69, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group:first-child .list-group-item:first-child, .comments .comment-body > .list-group:first-child .list-group-item:first-child {
+.panel > .list-group:first-child .list-group-item:first-child, .comments .comment-body > .list-group:first-child .list-group-item:first-child, .panel > .product_list_widget:first-child .list-group-item:first-child, .comments .comment-body > .product_list_widget:first-child .list-group-item:first-child, .panel > .list-group:first-child .product_list_widget li:first-child, .product_list_widget .panel > .list-group:first-child li:first-child, .comments .comment-body > .list-group:first-child .product_list_widget li:first-child, .product_list_widget .comments .comment-body > .list-group:first-child li:first-child, .panel > .product_list_widget:first-child li:first-child, .comments .comment-body > .product_list_widget:first-child li:first-child {
   border-top: 0;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 /* line 76, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .list-group:last-child .list-group-item:last-child, .comments .comment-body > .list-group:last-child .list-group-item:last-child {
+.panel > .list-group:last-child .list-group-item:last-child, .comments .comment-body > .list-group:last-child .list-group-item:last-child, .panel > .product_list_widget:last-child .list-group-item:last-child, .comments .comment-body > .product_list_widget:last-child .list-group-item:last-child, .panel > .list-group:last-child .product_list_widget li:last-child, .product_list_widget .panel > .list-group:last-child li:last-child, .comments .comment-body > .list-group:last-child .product_list_widget li:last-child, .product_list_widget .comments .comment-body > .list-group:last-child li:last-child, .panel > .product_list_widget:last-child li:last-child, .comments .comment-body > .product_list_widget:last-child li:last-child {
   border-bottom: 0;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
 /* line 85, /Users/Rasmus/Desktop/toro/wp-content/themes/toro/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading + .list-group .list-group-item:first-child, .comments .comment-body .comment-author + .list-group .list-group-item:first-child {
+.panel-heading + .list-group .list-group-item:first-child, .comments .comment-body .comment-author + .list-group .list-group-item:first-child, .panel-heading + .product_list_widget .list-group-item:first-child, .comments .comment-body .comment-author + .product_list_widget .list-group-item:first-child, .product_list_widget .panel-heading + .list-group li:first-child, .product_list_widget .comments .comment-body .comment-author + .list-group li:first-child, .panel-heading + .product_list_widget li:first-child, .comments .comment-body .comment-author + .product_list_widget li:first-child {
   border-top-width: 0;
 }
 
@@ -11421,13 +11420,17 @@ nav.woocommerce-pagination {
   display: none;
 }
 
+/* line 10, ../sass/woocommerce/_wc_widgets.scss */
+.product_list_widget li {
+  margin-top: 0;
+}
+
 /* line 6, ../sass/woocommerce/_wc_notices.scss */
 .woocommerce-error {
   padding-left: 30px;
 }
 
-/* line 15, ../sass/woocommerce/_wc_checkout.scss */
-.payment_methods 
+/* line 14, ../sass/woocommerce/_wc_checkout.scss */
 #payment > ul {
   list-style: none;
 }

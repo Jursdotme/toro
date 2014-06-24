@@ -16,7 +16,7 @@ global $woocommerce;
 
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 
-<ul class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
+<ul class="cart_list product_list_widget <?php echo $args['list_class']; ?> media-list">
 
 	<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 
@@ -32,14 +32,16 @@ global $woocommerce;
 					$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 
 					?>
-					<li>
-						<a href="<?php echo get_permalink( $product_id ); ?>">
-							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name; ?>
+					<li class="media">
+						<a href="<?php echo get_permalink( $product_id ); ?>" class="pull-left">
+							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
 						</a>
-
+						<div class="media-body">
+						<h4 class="media-heading"><?php echo $product_name; ?></h4>
 						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
 						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+						</div>
 					</li>
 					<?php
 				}
