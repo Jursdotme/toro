@@ -6848,7 +6848,41 @@ var byRow = $('body').hasClass('test-rows');
 $('.products').each(function() {
     $(this).children('.product').matchHeight(byRow);
 });
-;// DOM Ready
+
+
+
+
+// SINGLE PRODUCT TABS
+
+$('.description_tab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+$('.description_tab a:first').tab('show') // Select first tab
+
+
+// TOGGLE SHIPPING CALCULATION
+
+$( ".shipping-calculator-button" ).click(function() {
+  $( ".shipping-calculator-form" ).slideToggle( "slow", function() {
+    // Animation complete.
+  });
+});
+
+
+// SINGLE IMAGE FANCYBOX
+
+$(document).ready(function() {
+    $(".zoom").fancybox({
+      prevEffect : 'elastic',
+      nextEffect : 'elastic',
+      helpers    : {
+        title    : {
+          type   : 'inside'
+        }
+      }});
+  });;// DOM Ready
 $(function() {
 
 	// SVG fallback
@@ -7117,3 +7151,4 @@ $container.imagesLoaded( function() {
 
 // INITIATE WOW.JS
 new WOW().init();
+

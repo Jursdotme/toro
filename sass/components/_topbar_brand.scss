@@ -3,9 +3,16 @@
   margin-bottom: $grid-gutter-width;
   .top-logo {
     font-size: 50px;
-    color: $headings-color;
+    color: #fff;
     &:hover {
       text-decoration: none;
     }
   }
+}
+
+
+.bg-page-head {
+  @include section-wrapper($brand-primary, $grid-gutter-width);
+  padding-top: $grid-gutter-width+$navbar-height;
+  margin-bottom: $grid-gutter-width;
 }

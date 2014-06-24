@@ -1,3 +1,4 @@
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 /*=================================
 =            Variables            =
 =================================*/
@@ -70,7 +71,7 @@ body.login {
 }
 
 .login h1 a {
-	background-image: url(../img/min/inzite_tagline.png);
+	background-image: url(../inzite_tagline.png);
 	background-image: none,url(../img/svg/inzite_tagline.svg);
 	background-size: 320px 80px;
 	background-position: center top;
@@ -1293,7 +1294,7 @@ table.widefat .spam a:hover {
 }
 
 #adminmenu li.wp-menu-separator {
-	background: transparent;
+	background: tint($base-color,10%);
 	border-color: transparent;
 }
 

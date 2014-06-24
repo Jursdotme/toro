@@ -1,0 +1,10 @@
+.wc-forward {
+	@extend .btn;
+	@extend .btn-success;
+}
+
+.woocommerce-error {
+	@extend .alert;
+	@extend .alert-danger;
+	padding-left: $grid-gutter-width;
+}

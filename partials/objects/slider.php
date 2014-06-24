@@ -2,7 +2,7 @@
 
 
   <div class="item">
-    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/min/test-image-04.jpg)">
+    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/test-image-04.jpg)">
       <div class="slider-caption">
         <div class="container">
         <div class="row">
@@ -23,7 +23,7 @@
   </div>
 
   <div class="item">
-    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/min/test-image-01.jpg)">
+    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/test-image-01.jpg)">
       <div class="slider-caption">
         <div class="container">
         <div class="row">
@@ -44,7 +44,7 @@
   </div>
 
   <div class="item">
-    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/min/test-image-02.jpg)">
+    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/test-image-02.jpg)">
       <div class="slider-caption">
         <div class="container">
         <div class="row">
@@ -65,7 +65,7 @@
   </div>
 
   <div class="item">
-    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/min/test-image-03.jpg)">
+    <div class="image-container" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/test-image-03.jpg)">
       <div class="slider-caption">
         <div class="container">
         <div class="row">

@@ -5,7 +5,9 @@
     @extend .form-group;
     input {
       @extend .form-control;
-      max-width: 50px;
+      max-width: 80px;
+      position: absolute;
+      right: 0;
     }
   }
   .attachment-shop_thumbnail {
@@ -24,10 +26,17 @@
   @extend .btn-success;
 }
 
+.shop_table.cart .actions {
+  padding: 8px 0;
+}
+
 .coupon {
   @extend .input-group;
   .button {
     
+  }
+  .input-text {
+    @extend .form-control;
   }
 }
 
@@ -41,4 +50,15 @@
     @extend .table;
     @extend .table-striped;
   }
+}
+
+.shipping_calculator {
+  @extend .pull-right;
+  .shipping-calculator-form {
+    margin-bottom: $grid-gutter-width;
+  }
+}
+
+.shipping-calculator-form {
+  display: none;
 }

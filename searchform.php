@@ -5,5 +5,6 @@
 		<span class="input-group-btn">
 			<button class="btn btn-default" type="submit" role="button"><?php _e( 'Search', 'toro' ); ?></button>
 		</span>
+</div>
 </form>
 <!-- /search -->

@@ -1,8 +1,8 @@
 .owl-carousel {
-  margin: -$navbar-margin-bottom 0 0 0;
+  margin: -$grid-gutter-width 0 0 0;
   padding: 0;
   .image-container {
-    background-image    : url(../img/min/test-image-01.jpg) no-repeat center center;
+    background-image    : url(../test-image-01.jpg) no-repeat center center;
     background-position : center center;
     background-repeat   : no-repeat;
     background-size     : cover;

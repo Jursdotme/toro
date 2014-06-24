@@ -1,4 +1,3 @@
-
 .woocommerce.archive {
   .onsale {
     display: block;
@@ -15,8 +14,14 @@
     margin-bottom: $grid-gutter-width;
     > a {
       display: block;
-      &.button {
+      color: $headings-color;
+      &:hover {
+        text-decoration: none;
+      }
+      &.btn {
         display: inline-block;
+        margin-top: 10px;
+        color: #fff;
       }
     }
   }

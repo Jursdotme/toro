@@ -1,0 +1,21 @@
+.form-row {
+	@extend .form-group;
+}
+
+.input-text, .country_select {
+	@extend .form-control;
+}
+
+.shop_table {
+	@extend .table;
+	@extend .table-striped;
+}
+
+#payment > ul {
+	list-style: none;
+}
+
+.payment_box {
+	@extend .alert;
+	@extend .alert-info;
+}

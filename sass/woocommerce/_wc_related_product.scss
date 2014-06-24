@@ -1,0 +1,15 @@
+.related.products {
+    margin-bottom: $grid-gutter-width;
+    a {
+      display: block;
+      color: $headings-color;
+      &:hover {
+        text-decoration: none;
+      }
+      &.btn {
+        display: inline-block;
+        margin-top: 10px;
+        color: #fff;
+      }
+    }
+  }

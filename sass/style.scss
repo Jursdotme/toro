@@ -1,6 +1,6 @@
 /***********  THEMES  ***********/
-  // @import "themes/flatly/theme-variables";
-  // @import "themes/flatly/theme-styles";
+  @import "themes/inzite/theme-variables";
+  @import "themes/inzite/theme-styles";
 
 /***********  BASE  ***********/
 
@@ -45,6 +45,7 @@
   @import "components/topbar_brand";
   @import "components/slider";
   @import "components/pagination";
+  @import "components/social_widget";
 
 /***********  LAYOUT  ***********/
 

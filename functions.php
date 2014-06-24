@@ -49,13 +49,13 @@ if (function_exists('add_theme_support'))
 // Load Toro scripts (footer.php)
 function toro_footer_scripts()
 {
-    if (!is_admin()) {
+      if (!is_admin()) {
 
-    	wp_deregister_script('jquery'); // Deregister WordPress jQuery
+    	  wp_deregister_script( 'jquery' ); // Deregister WordPress jQuery
 
 
-        wp_register_script('cdn_jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), '1.11.0', true); // jQuery
-        wp_enqueue_script('cdn_jquery'); // Enqueue it!
+        wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), '1.11.0', true); // jQuery
+        wp_enqueue_script('jquery'); // Enqueue it!
 
         wp_register_script('toroscripts', get_template_directory_uri() . '/javascripts/build/global.js', array(), '1.0.0', true); // Custom scripts
         wp_enqueue_script('toroscripts'); // Enqueue it!
@@ -173,7 +173,7 @@ function enable_threaded_comments()
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'toro_footer_scripts'); // Add Custom Scripts to wp_head
+add_action('wp_enqueue_scripts', 'toro_footer_scripts'); // Add Custom Scripts to wp_head
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'toro_styles'); // Add Theme Stylesheet
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
@@ -200,7 +200,7 @@ add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (S
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
- add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images

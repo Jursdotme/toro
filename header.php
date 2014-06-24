@@ -13,8 +13,8 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<!-- icons -->
-		<link href="<?php echo get_template_directory_uri(); ?>/img/min/icons/favicon.ico" rel="shortcut icon">
-		<link href="<?php echo get_template_directory_uri(); ?>/img/min/icons/touch.png" rel="apple-touch-icon-precomposed">
+		<link href="<?php echo get_template_directory_uri(); ?>/icons/favicon.ico" rel="shortcut icon">
+		<link href="<?php echo get_template_directory_uri(); ?>/icons/touch.png" rel="apple-touch-icon-precomposed">
 
 		<!-- css + javascript -->
 		<?php wp_head(); ?>
@@ -37,17 +37,7 @@
 		echo '<div id="page-wrapper" style="background-color:'. of_get_option( 'wrapper_color', '#fff' ) .';">';
 	} ?>
 
-		<div class="container page-head">
-			<div class="row">
-				<div class="col-sm-12">
-					<a class="top-logo" href="<?php echo home_url(); ?>">
-										<span class="inzite-inzite_tagline"></span>
-								</a>
-				</div>
-			</div>
-		</div>
-
-		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -63,3 +53,15 @@
 	    	<?php topbar(); ?>
 	    </div>
 		</nav>
+		
+		<div class="bg-page-head">
+			<div class="container page-head">
+				<div class="row">
+					<div class="col-sm-12">
+						<a class="top-logo" href="<?php echo home_url(); ?>">
+							<span class="inzite-inzite_tagline"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>

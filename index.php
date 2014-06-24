@@ -16,7 +16,7 @@
 		</section>
 		<!-- section -->
 
-		<?php get_sidebar(); // The sidebar has .large-3 columns. (Change it in sidebar.php) ?>
+		<?php // get_sidebar(); // The sidebar has .large-3 columns. (Change it in sidebar.php) ?>
 
 	</div>
 </div>

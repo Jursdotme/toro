@@ -45,7 +45,7 @@
 		</section>
 		<!-- /section -->
 
-		<?php get_sidebar(); // The sidebar has ..col-md-3. (Change it in sidebar.php) ?>
+		<?php // get_sidebar(); // The sidebar has ..col-md-3. (Change it in sidebar.php) ?>
 
 	</div>
 </div>

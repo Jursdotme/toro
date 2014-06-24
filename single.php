@@ -7,7 +7,7 @@
 	<div class="row">
 
 		<!-- section -->
-		<section role="main" class="col-sm-12">
+		<section role="main" class="col-sm-9">
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -68,6 +68,10 @@
 
 		</section>
 		<!-- /section -->
+
+		<aside>
+			<?php // get_sidebar(); ?>
+		</aside>
 
 	</div>
 </div>

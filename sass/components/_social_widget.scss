@@ -1,0 +1,16 @@
+$twitter-blue: #55ACEE;
+$facebook-blue: #3B5998;
+$google-red: #DF4A32;
+$border-darken: 0%;
+
+.btn-twitter {
+  @include button-variant(white, $twitter-blue, shade($twitter-blue, $border-darken));
+}
+
+.btn-facebook {
+  @include button-variant(white, $facebook-blue, shade($facebook-blue, $border-darken));
+}
+
+.btn-google-plus {
+  @include button-variant(white, $google-red, shade($google-red, $border-darken))
+}

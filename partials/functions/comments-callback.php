@@ -3,8 +3,15 @@
 /*********************** CUSTOM COMMENT FORM ***********************/
 
 
+
 function toro_comment_form_fields( $fields ) {
 
+if (!isset($req)){ $req = ""; };
+if (!isset($html5)){ $html5 = ""; };
+if (!isset($aria_req)){ $aria_req = ""; };
+if (!isset($commenter['comment_author'])){ $commenter['comment_author'] = ""; };
+if (!isset($commenter['comment_author_email'])){ $commenter['comment_author_email'] = ""; };
+if (!isset($commenter['comment_author_url'])){ $commenter['comment_author_url'] = ""; };
 
     $fields['author'] = '<div class="comment-form-author form-group">' . '<label for="author">' . __( 'Name' , 'toro' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                        '<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div>';

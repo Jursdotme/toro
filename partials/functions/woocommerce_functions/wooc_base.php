@@ -16,84 +16,16 @@
   require_once( 'wc_notices.php' );
   require_once( 'wc_single_tabs.php' );
   require_once( 'wc_related_products.php' );
-
-// WooCommerce Functions for toro theme
-
-if ( ! function_exists( 'toro_woo_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- */
-function toro_woo_setup() {
-	/*
-	 * Enable support for WooCemmerce.
-	*/
-	add_theme_support( 'woocommerce' );
-
-}
-endif; // toro_woo_setup
-add_action( 'after_setup_theme', 'toro_woo_setup' );
-
-/**
- * Set Default Thumbnail Sizes for Woo Commerce Product Pages, on Theme Activation
-*/
-global $pagenow;
-
-if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) add_action( 'init', 'toro_woocommerce_image_dimensions', 1 );
-/**
- * Define image sizes
-*/
-function toro_woocommerce_image_dimensions() {
-  $catalog = array(
-		'width' 	=> '350',	// px
-		'height'	=> '453',	// px
-		'crop'		=> 1 		// true
-	);
-	$single = array(
-		'width' 	=> '570',	// px
-		'height'	=> '708',	// px
-		'crop'		=> 1 		// true
-	);
-	$thumbnail = array(
-		'width' 	=> '350',	// px
-		'height'	=> '453',	// px
-		'crop'		=> 0 		// false
-	);
-	// Image sizes
-	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
-	update_option( 'shop_single_image_size', $single ); 		// Single product image
-	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
-}
-
-/*
- * Add basic WooCommerce template support
- *
- */
-
-// First let's remove original WooCommerce wrappers
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-// Now we can add our own, the same used for theme Pages
-add_action('woocommerce_before_main_content', 'toro_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'toro_wrapper_end', 10);
-
-function toro_wrapper_start() {
-  echo '<div id="content" class="site-content container">';
-  echo '<div id="primary" class="content-area col-sm-12 col-md-8 '.of_get_option('site_layout').' ">';
-  echo '<main id="main" class="site-main" role="main">';
-}
-
-
-function toro_wrapper_end() {
-  echo '</main></div>';
-}
+  require_once( 'wc_sidebar.php' );
+  require_once( 'wc_checkout_form.php' );
+  require_once( 'wc_remove_stuff.php' );
 
 // Replace WooComemrce button class with Bootstrap
 add_filter('woocommerce_loop_add_to_cart_link', 'toro_commerce_switch_buttons');
 
 function toro_commerce_switch_buttons( $button ){
 
-  $button = str_replace('button', 'btn btn-default', $button);
+  $button = str_replace('button', 'btn btn-primary', $button);
 
   return $button;
 
