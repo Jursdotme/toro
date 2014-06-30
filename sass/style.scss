@@ -4,23 +4,20 @@
 
 /***********  BASE  ***********/
 
-  @import "base/_icon-fonts";
-  @import "../bower_components/fontawesome/scss/font-awesome";
   @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
   @import "vendors/bootstrap";
   @import "base/base";
 
 /***********  WOOCOMMERCE  ***********/
 
-  @import "woocommerce/woocommerce_base";
+  // @import "woocommerce/woocommerce_base";
 
 /***********  HELPERS  ***********/
-
+  // @import "helpers/block-grid";
   @import "helpers/mixins";
   @import "helpers/general_helpers";
   @import "helpers/functions";
   @import "helpers/background-colors";
-  @import "helpers/animate/animation_base";
 
 /***********  VENDORS  ***********/
 
@@ -38,7 +35,6 @@
 
   @import "components/fonts/inzite";
   @import "components/footer_navigation";
-  @import "components/kitchen_sink";
   @import "components/page_wrapper";
   @import "components/post_meta";
   @import "components/sticky_post";
@@ -56,9 +52,9 @@
 
   // Topbars
   @import "layout/custom_topbar";
-  @import "layout/transparent-topbar";
+  // @import "layout/transparent-topbar";
 
 /***********  PAGES  ***********/
 
   @import "pages/frontpage";
-  @import "pages/page_builder/page_builder";
+  // @import "pages/page_builder/page_builder";

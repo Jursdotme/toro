@@ -3,14 +3,8 @@
   .images {
     @extend .col-sm-4;
   }
-  .thumbnails {
-    @extend .block-grid-lg-3;
-    .single_thumbnail {
-      @extend .block-grid-item;
-    }
-    a {
-      @extend .thumbnail;
-    }
+  .single_thumbnail .attachment-shop_thumbnail {
+    width: (100%)/3;
   }
   .summary.entry-summary {
     @extend .col-sm-8;
@@ -60,9 +54,9 @@
 }
 
 .quantity {
-  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
   position: relative;
   input[type="button"] {

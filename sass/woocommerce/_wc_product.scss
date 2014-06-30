@@ -34,7 +34,7 @@
 }
 
 .woocommerce .star-rating, .woocommerce-page .star-rating {
-  font-family: 'Glyphicons Halflings';
+  font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -51,12 +51,13 @@
 }
 
 .woocommerce .star-rating:before, .woocommerce-page .star-rating:before {
-  content: "\e007\e007\e007\e007\e007";
+  content: "\f006\f006\f006\f006\f006";
   color: #e0dadf;
   float: left;
   top: 0;
   left: 0;
   position: absolute;
+  letter-spacing: 2px;
 }
 
 .woocommerce .star-rating span, .woocommerce-page .star-rating span {
@@ -69,10 +70,11 @@
 }
 
 .woocommerce .star-rating span:before, .woocommerce-page .star-rating span:before {
-  content: "\e006\e006\e006\e006\e006";
+  content: "\f005\f005\f005\f005\f005";
   top: 0;
   left: 0;
   position: absolute;
+  letter-spacing: 2px;
 }
 
 .price {

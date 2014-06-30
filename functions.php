@@ -86,6 +86,12 @@ function toro_styles()
 {
     wp_register_style('toro', get_template_directory_uri() . '/stylesheets/global.css', array(), '1.0', 'all');
     wp_enqueue_style('toro'); // Enqueue it!
+
+    wp_register_style('animate_css', '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('animate_css'); // Enqueue it!
+
+    wp_register_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('fontawesome'); // Enqueue it!
 }
 
 // Remove Injected classes, ID's and Page ID's from Navigation <li> items
