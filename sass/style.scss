@@ -13,7 +13,7 @@
   // @import "woocommerce/woocommerce_base";
 
 /***********  HELPERS  ***********/
-  // @import "helpers/block-grid";
+  @import "helpers/block-grid";
   @import "helpers/mixins";
   @import "helpers/general_helpers";
   @import "helpers/functions";
@@ -52,9 +52,9 @@
 
   // Topbars
   @import "layout/custom_topbar";
-  // @import "layout/transparent-topbar";
+  @import "layout/transparent-topbar";
 
 /***********  PAGES  ***********/
 
   @import "pages/frontpage";
-  // @import "pages/page_builder/page_builder";
+  @import "pages/page_builder/page_builder";

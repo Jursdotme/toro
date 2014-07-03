@@ -162,9 +162,11 @@ module.exports = function(grunt) {
 
     bless: {
       css: {
-        options: {},
+        options: {
+					imports: false
+				},
         files: {
-          'tmp/above-limit.css': 'test/input/global.css'
+          'stylesheets/global-blessed.css': 'stylesheets/global.css'
         }
       }
     },

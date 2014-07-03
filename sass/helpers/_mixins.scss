@@ -46,13 +46,13 @@
 }
 
 // MAKE WORDPRESS GALLERY USE BLOCK GRID
-// @for $i from 1 through 9 {
-//   .gallery-columns-#{$i} {
-//     @extend .block-grid-lg-#{$i};
-//     .gallery-item {
-//       @extend .block-grid-item;
-//     }
-//   }
-// }
+@for $i from 1 through 9 {
+ .gallery-columns-#{$i} {
+   @extend .block-grid-lg-#{$i};
+   .gallery-item {
+     @extend .block-grid-item;
+   }
+ }
+}
 
 // END BLOCK GRID
