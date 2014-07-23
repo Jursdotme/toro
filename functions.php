@@ -40,6 +40,8 @@ if (function_exists('add_theme_support'))
 
     // Localisation Support
     load_theme_textdomain('toro', get_template_directory() . '/languages');
+    // Localisation Support
+    load_theme_textdomain('toro_developer', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\
