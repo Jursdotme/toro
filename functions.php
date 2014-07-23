@@ -84,7 +84,7 @@ if(!is_admin()) {
 // Load Toro styles
 function toro_styles()
 {
-    wp_register_style('toro_styles_part1', get_template_directory_uri() . '/stylesheets/global-blessed-blessed1.css', array(), '1.0', 'all');
+    wp_register_style('toro_styles_part1', get_template_directory_uri() . '/stylesheets/global.css', array(), '1.0', 'all');
     wp_enqueue_style('toro_styles_part1'); // Enqueue it!
 
     wp_register_style('toro_styles_part2', get_template_directory_uri() . '/stylesheets/global-blessed.css', array(), '1.0', 'all');

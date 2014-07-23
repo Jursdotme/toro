@@ -72,12 +72,6 @@ module.exports = function(grunt) {
         filePrefix: '_',
         dest: '<%= project.sass %>/vendors/fancybox'
       },
-      owlcarousel: {
-        cwd: '<%= project.bower %>/OwlCarousel/owl-carousel/',
-        src: ['*.css','*/*.css'],
-        filePrefix: '_',
-        dest: '<%= project.sass %>/vendors/OwlCarousel'
-      }
     },
 
 		// SASS
@@ -237,7 +231,14 @@ module.exports = function(grunt) {
 
 
 					// Owl Carousel
-					'<%= project.bower %>/owlcarousel/owl-carousel/owl.carousel.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.carousel.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.animate.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.autoplay.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.autoheight.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.hash.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.lazyload.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.navigation.js',
+          '<%= project.bower %>/owl.carousel/src/js/owl.video.js',
 
           // matchHeight
           '<%= project.bower %>/matchHeight/jquery.matchHeight.js',

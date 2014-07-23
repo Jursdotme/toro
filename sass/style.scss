@@ -19,18 +19,6 @@
   @import "helpers/functions";
   @import "helpers/background-colors";
 
-/***********  VENDORS  ***********/
-
-// OwlCarousel styles
-  @import "vendors/OwlCarousel/_owl.carousel.scss";
-  @import "vendors/OwlCarousel/_owl.theme.scss";
-  @import "vendors/OwlCarousel/_owl.transitions.scss";
-
-// Import Fancybox styles
-  @import "vendors/fancybox/helpers/jquery.fancybox-buttons.scss";
-  @import "vendors/fancybox/helpers/jquery.fancybox-thumbs.scss";
-  @import "vendors/fancybox/jquery.fancybox.scss";
-
 /***********  COMPONENTS  ***********/
 
   @import "components/fonts/inzite";
@@ -58,3 +46,22 @@
 
   @import "pages/frontpage";
   @import "pages/page_builder/page_builder";
+
+  /***********  VENDORS  ***********/
+
+// OwlCarousel styles
+  @import "../bower_components/owl.carousel/src/scss/owl.theme.default.scss";
+  // @import "../bower_components/owl.carousel/src/scss/owl.theme.green.scss";
+  // @import "../bower_components/owl.carousel/src/scss/_mixins.scss";
+  // @import "../bower_components/owl.carousel/src/scss/_theme.scss";
+  @import "../bower_components/owl.carousel/src/scss/owl.carousel.scss";
+  @import "../bower_components/owl.carousel/src/scss/owl.animate.scss";
+  @import "../bower_components/owl.carousel/src/scss/owl.autoheight.scss";
+  // @import "../bower_components/owl.carousel/src/scss/owl.lazyload.scss";
+  // @import "../bower_components/owl.carousel/src/scss/owl.video.scss";
+  
+
+// Import Fancybox styles
+  @import "vendors/fancybox/helpers/jquery.fancybox-buttons.scss";
+  @import "vendors/fancybox/helpers/jquery.fancybox-thumbs.scss";
+  @import "vendors/fancybox/jquery.fancybox.scss";
