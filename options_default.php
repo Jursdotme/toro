@@ -20,7 +20,7 @@ function optionsframework_option_name() {
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
  * When creating the 'id' fields, make sure to use all lowercase and no spaces.
  *
- * If you are making your theme translatable, you should replace 'options_framework_theme'
+ * If you are making your theme translatable, you should replace 'toro_developer'
  * with the actual text domain for your theme.  Read more:
  * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
  */
@@ -29,20 +29,20 @@ function optionsframework_options() {
 
 	// Test data
 	$test_array = array(
-		'one' => __('One', 'options_framework_theme'),
-		'two' => __('Two', 'options_framework_theme'),
-		'three' => __('Three', 'options_framework_theme'),
-		'four' => __('Four', 'options_framework_theme'),
-		'five' => __('Five', 'options_framework_theme')
+		'one' => __('One', 'toro_developer'),
+		'two' => __('Two', 'toro_developer'),
+		'three' => __('Three', 'toro_developer'),
+		'four' => __('Four', 'toro_developer'),
+		'five' => __('Five', 'toro_developer')
 	);
 
 	// Multicheck Array
 	$multicheck_array = array(
-		'one' => __('French Toast', 'options_framework_theme'),
-		'two' => __('Pancake', 'options_framework_theme'),
-		'three' => __('Omelette', 'options_framework_theme'),
-		'four' => __('Crepe', 'options_framework_theme'),
-		'five' => __('Waffle', 'options_framework_theme')
+		'one' => __('French Toast', 'toro_developer'),
+		'two' => __('Pancake', 'toro_developer'),
+		'three' => __('Omelette', 'toro_developer'),
+		'four' => __('Crepe', 'toro_developer'),
+		'five' => __('Waffle', 'toro_developer')
 	);
 
 	// Multicheck Defaults
@@ -103,41 +103,41 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __('Basic Settings', 'options_framework_theme'),
+		'name' => __('Basic Settings', 'toro_developer'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Input Text Mini', 'options_framework_theme'),
-		'desc' => __('A mini text input field.', 'options_framework_theme'),
+		'name' => __('Input Text Mini', 'toro_developer'),
+		'desc' => __('A mini text input field.', 'toro_developer'),
 		'id' => 'example_text_mini',
 		'std' => 'Default',
 		'class' => 'mini',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Input Text', 'options_framework_theme'),
-		'desc' => __('A text input field.', 'options_framework_theme'),
+		'name' => __('Input Text', 'toro_developer'),
+		'desc' => __('A text input field.', 'toro_developer'),
 		'id' => 'example_text',
 		'std' => 'Default Value',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Input with Placeholder', 'options_framework_theme'),
-		'desc' => __('A text input field with an HTML5 placeholder.', 'options_framework_theme'),
+		'name' => __('Input with Placeholder', 'toro_developer'),
+		'desc' => __('A text input field with an HTML5 placeholder.', 'toro_developer'),
 		'id' => 'example_placeholder',
 		'placeholder' => 'Placeholder',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Textarea', 'options_framework_theme'),
-		'desc' => __('Textarea description.', 'options_framework_theme'),
+		'name' => __('Textarea', 'toro_developer'),
+		'desc' => __('Textarea description.', 'toro_developer'),
 		'id' => 'example_textarea',
 		'std' => 'Default Text',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('Input Select Small', 'options_framework_theme'),
-		'desc' => __('Small Select Box.', 'options_framework_theme'),
+		'name' => __('Input Select Small', 'toro_developer'),
+		'desc' => __('Small Select Box.', 'toro_developer'),
 		'id' => 'example_select',
 		'std' => 'three',
 		'type' => 'select',
@@ -145,8 +145,8 @@ function optionsframework_options() {
 		'options' => $test_array);
 
 	$options[] = array(
-		'name' => __('Input Select Wide', 'options_framework_theme'),
-		'desc' => __('A wider select box.', 'options_framework_theme'),
+		'name' => __('Input Select Wide', 'toro_developer'),
+		'desc' => __('A wider select box.', 'toro_developer'),
 		'id' => 'example_select_wide',
 		'std' => 'two',
 		'type' => 'select',
@@ -154,8 +154,8 @@ function optionsframework_options() {
 
 	if ( $options_categories ) {
 	$options[] = array(
-		'name' => __('Select a Category', 'options_framework_theme'),
-		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
+		'name' => __('Select a Category', 'toro_developer'),
+		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'toro_developer'),
 		'id' => 'example_select_categories',
 		'type' => 'select',
 		'options' => $options_categories);
@@ -163,61 +163,61 @@ function optionsframework_options() {
 
 	if ( $options_tags ) {
 	$options[] = array(
-		'name' => __('Select a Tag', 'options_check'),
-		'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
+		'name' => __('Select a Tag', 'toro_developer'),
+		'desc' => __('Passed an array of tags with term_id and term_name', 'toro_developer'),
 		'id' => 'example_select_tags',
 		'type' => 'select',
 		'options' => $options_tags);
 	}
 
 	$options[] = array(
-		'name' => __('Select a Page', 'options_framework_theme'),
-		'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
+		'name' => __('Select a Page', 'toro_developer'),
+		'desc' => __('Passed an pages with ID and post_title', 'toro_developer'),
 		'id' => 'example_select_pages',
 		'type' => 'select',
 		'options' => $options_pages);
 
 	$options[] = array(
-		'name' => __('Input Radio (one)', 'options_framework_theme'),
-		'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
+		'name' => __('Input Radio (one)', 'toro_developer'),
+		'desc' => __('Radio select with default options "one".', 'toro_developer'),
 		'id' => 'example_radio',
 		'std' => 'one',
 		'type' => 'radio',
 		'options' => $test_array);
 
 	$options[] = array(
-		'name' => __('Example Info', 'options_framework_theme'),
-		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
+		'name' => __('Example Info', 'toro_developer'),
+		'desc' => __('This is just some example information you can put in the panel.', 'toro_developer'),
 		'type' => 'info');
 
 	$options[] = array(
-		'name' => __('Input Checkbox', 'options_framework_theme'),
-		'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
+		'name' => __('Input Checkbox', 'toro_developer'),
+		'desc' => __('Example checkbox, defaults to true.', 'toro_developer'),
 		'id' => 'example_checkbox',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Advanced Settings', 'options_framework_theme'),
+		'name' => __('Advanced Settings', 'toro_developer'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('Click here and see what happens.', 'options_framework_theme'),
+		'name' => __('Check to Show a Hidden Text Input', 'toro_developer'),
+		'desc' => __('Click here and see what happens.', 'toro_developer'),
 		'id' => 'example_showhidden',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('This option is hidden unless activated by a checkbox click.', 'options_framework_theme'),
+		'name' => __('Hidden Text Input', 'toro_developer'),
+		'desc' => __('This option is hidden unless activated by a checkbox click.', 'toro_developer'),
 		'id' => 'example_text_hidden',
 		'std' => 'Hello',
 		'class' => 'hidden',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Uploader Test', 'options_framework_theme'),
-		'desc' => __('This creates a full size uploader that previews the image.', 'options_framework_theme'),
+		'name' => __('Uploader Test', 'toro_developer'),
+		'desc' => __('This creates a full size uploader that previews the image.', 'toro_developer'),
 		'id' => 'example_uploader',
 		'type' => 'upload');
 
@@ -234,36 +234,36 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' =>  __('Example Background', 'options_framework_theme'),
-		'desc' => __('Change the background CSS.', 'options_framework_theme'),
+		'name' =>  __('Example Background', 'toro_developer'),
+		'desc' => __('Change the background CSS.', 'toro_developer'),
 		'id' => 'example_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
 
 	$options[] = array(
-		'name' => __('Multicheck', 'options_framework_theme'),
-		'desc' => __('Multicheck description.', 'options_framework_theme'),
+		'name' => __('Multicheck', 'toro_developer'),
+		'desc' => __('Multicheck description.', 'toro_developer'),
 		'id' => 'example_multicheck',
 		'std' => $multicheck_defaults, // These items get checked by default
 		'type' => 'multicheck',
 		'options' => $multicheck_array);
 
 	$options[] = array(
-		'name' => __('Colorpicker', 'options_framework_theme'),
-		'desc' => __('No color selected by default.', 'options_framework_theme'),
+		'name' => __('Colorpicker', 'toro_developer'),
+		'desc' => __('No color selected by default.', 'toro_developer'),
 		'id' => 'example_colorpicker',
 		'std' => '',
 		'type' => 'color' );
 
-	$options[] = array( 'name' => __('Typography', 'options_framework_theme'),
-		'desc' => __('Example typography.', 'options_framework_theme'),
+	$options[] = array( 'name' => __('Typography', 'toro_developer'),
+		'desc' => __('Example typography.', 'toro_developer'),
 		'id' => "example_typography",
 		'std' => $typography_defaults,
 		'type' => 'typography' );
 
 	$options[] = array(
-		'name' => __('Custom Typography', 'options_framework_theme'),
-		'desc' => __('Custom typography options.', 'options_framework_theme'),
+		'name' => __('Custom Typography', 'toro_developer'),
+		'desc' => __('Custom typography options.', 'toro_developer'),
 		'id' => "custom_typography",
 		'std' => $typography_defaults,
 		'type' => 'typography',

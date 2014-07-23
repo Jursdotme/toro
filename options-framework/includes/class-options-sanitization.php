@@ -238,10 +238,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'textdomain' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'textdomain' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'textdomain' ),
-		'repeat'    => __( 'Repeat All', 'textdomain' ),
+		'no-repeat' => __( 'No Repeat', 'toro_developer' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'toro_developer' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'toro_developer' ),
+		'repeat'    => __( 'Repeat All', 'toro_developer' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -254,15 +254,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'textdomain' ),
-		'top center'    => __( 'Top Center', 'textdomain' ),
-		'top right'     => __( 'Top Right', 'textdomain' ),
-		'center left'   => __( 'Middle Left', 'textdomain' ),
-		'center center' => __( 'Middle Center', 'textdomain' ),
-		'center right'  => __( 'Middle Right', 'textdomain' ),
-		'bottom left'   => __( 'Bottom Left', 'textdomain' ),
-		'bottom center' => __( 'Bottom Center', 'textdomain' ),
-		'bottom right'  => __( 'Bottom Right', 'textdomain')
+		'top left'      => __( 'Top Left', 'toro_developer' ),
+		'top center'    => __( 'Top Center', 'toro_developer' ),
+		'top right'     => __( 'Top Right', 'toro_developer' ),
+		'center left'   => __( 'Middle Left', 'toro_developer' ),
+		'center center' => __( 'Middle Center', 'toro_developer' ),
+		'center right'  => __( 'Middle Right', 'toro_developer' ),
+		'bottom left'   => __( 'Bottom Left', 'toro_developer' ),
+		'bottom center' => __( 'Bottom Center', 'toro_developer' ),
+		'bottom right'  => __( 'Bottom Right', 'toro_developer')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -275,8 +275,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'textdomain' ),
-		'fixed'  => __( 'Fixed in Place', 'textdomain')
+		'scroll' => __( 'Scroll Normally', 'toro_developer' ),
+		'fixed'  => __( 'Fixed in Place', 'toro_developer')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -350,10 +350,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'textdomain' ),
-		'italic'      => __( 'Italic', 'textdomain' ),
-		'bold'        => __( 'Bold', 'textdomain' ),
-		'bold italic' => __( 'Bold Italic', 'textdomain' )
+		'normal'      => __( 'Normal', 'toro_developer' ),
+		'italic'      => __( 'Italic', 'toro_developer' ),
+		'bold'        => __( 'Bold', 'toro_developer' ),
+		'bold italic' => __( 'Bold Italic', 'toro_developer' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }
